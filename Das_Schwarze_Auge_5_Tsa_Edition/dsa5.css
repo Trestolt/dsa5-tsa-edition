@@ -1,70 +1,76 @@
 /* latin-ext */
+
 @font-face {
-  font-family: 'Gentium Book Basic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(https://fonts.gstatic.com/s/gentiumbookbasic/v10/pe0zMJCbPYBVokB1LHA9bbyaQb8ZGjc4XrF686Y.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  font-family  : 'Gentium Book Basic';
+  font-display : swap;
+  font-style   : normal;
+  font-weight  : 400;
+  src          : local('Gentium Book Basic'),
+                 local('GentiumBookBasic'),
+                 url(https://fonts.gstatic.com/s/gentiumbookbasic/v10/pe0zMJCbPYBVokB1LHA9bbyaQb8ZGjc4XrF686Y.woff2) format('woff2');
 }
+
+@font-face {
+  font-family  : 'Gentium Book Basic';
+  font-display : swap;
+  font-style   : normal;
+  font-weight  : 400;
+  src          : local('Gentium Book Basic'),
+                 local('GentiumBookBasic'),
+                 url(https://fonts.gstatic.com/s/gentiumbookbasic/v10/pe0zMJCbPYBVokB1LHA9bbyaQb8ZGjc4ULF6.woff2) format('woff2');
+}
+
 /* latin */
-@font-face {
-  font-family: 'Gentium Book Basic';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Gentium Book Basic'), local('GentiumBookBasic'), url(https://fonts.gstatic.com/s/gentiumbookbasic/v10/pe0zMJCbPYBVokB1LHA9bbyaQb8ZGjc4ULF6.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+
+* {
+  font-family : 'Gentium Book Basic',
+                serif;
 }
 
-* {  font-family : 'Gentium Book Basic', serif; }
-
-
-/*color schemes*/
+/* color schemes */
 
 .sheet-sheet_color[value="1"] ~ * {
-  --color-font-tab-checked: white;
-  --bg-tab-unchecked: white;
-  --bg-tab-checked: green;
-  --bg-sheet: #ffffff;
-  --bg-input: #ffffff;
-  --bg-input-readonly: #f5f5f5;
-  --color-font: black;
-  --color-border: black;
+  --color-font-tab-checked : white;
+  --bg-tab-unchecked       : white;
+  --bg-tab-checked         : green;
+  --bg-sheet               : #ffffff;
+  --bg-input               : #ffffff;
+  --bg-input-readonly      : #f5f5f5;
+  --color-font             : black;
+  --color-border           : black;
 }
 
 .charsheet .sheet-sheet_color[value="2"] ~ * {
-  --color-font-tab-checked: #f1ebda;
-  --bg-tab-unchecked: #f1ebda;
-  --bg-tab-checked: #a68b3f;
-  --bg-sheet: #d0b884;
-  --bg-input: #f1ebda;
-  --bg-input-readonly: #ceb87e;
-  --color-font: #4a3e1c;
-  --color-border: #4a3e1c;
+  --color-font-tab-checked : #f1ebda;
+  --bg-tab-unchecked       : #f1ebda;
+  --bg-tab-checked         : #a68b3f;
+  --bg-sheet               : #d0b884;
+  --bg-input               : #f1ebda;
+  --bg-input-readonly      : #ceb87e;
+  --color-font             : #4a3e1c;
+  --color-border           : #4a3e1c;
 }
 
-
 .sheet-sheet_color[value="3"] ~ * {
- --color-font-tab-checked: #99c2ff;
- --bg-tab-unchecked: #99c2ff;
- --bg-tab-checked: #1a75ff;
- --bg-sheet: #3385ff;
- --bg-input: #99c2ff;
- --bg-input-readonly: #66a3ff;
- --color-font: #001433;
- --color-border: #001433;
+  --color-font-tab-checked : #99c2ff;
+  --bg-tab-unchecked       : #99c2ff;
+  --bg-tab-checked         : #1a75ff;
+  --bg-sheet               : #3385ff;
+  --bg-input               : #99c2ff;
+  --bg-input-readonly      : #66a3ff;
+  --color-font             : #001433;
+  --color-border           : #001433;
 }
 
 .charsheet .sheet-sheet_color[value="4"] ~ * {
-  --color-font-tab-checked: #e6e6e6;
-  --bg-tab-unchecked: #e6e6e6;
-  --bg-tab-checked: #8c8c8c;
-  --bg-sheet: #bfbfbf;
-  --bg-input: #f2f2f2;
-  --bg-input-readonly: #d9d9d9;
-  --color-font: black;
-  --color-border: black;
+  --color-font-tab-checked : #e6e6e6;
+  --bg-tab-unchecked       : #e6e6e6;
+  --bg-tab-checked         : #8c8c8c;
+  --bg-sheet               : #bfbfbf;
+  --bg-input               : #f2f2f2;
+  --bg-input-readonly      : #d9d9d9;
+  --color-font             : black;
+  --color-border           : black;
 }
 
 .sheet-charsheet {
@@ -88,13 +94,12 @@
 .sheet-charsheet select[readonly],
 .sheet-charsheet textarea[disabled],
 .sheet-charsheet textarea[readonly] {
-   color           : var(--color-font);
-   background-color: var(--bg-input-readonly);
+  color            : var(--color-font);
+  background-color : var(--bg-input-readonly);
 }
 
-
 .sheet-charsheet span.sheet-tab {
-  background     : var(--bg-tab-unchecked);
+  background : var(--bg-tab-unchecked);
 }
 
 .sheet-charsheet input.sheet-tab[type="radio"]:checked + span.sheet-tab {
@@ -102,8 +107,6 @@
   color      : var(--color-font-tab-checked);
   background : var(--bg-tab-checked);
 }
-
-
 
 /* Standard-Settings */
 
@@ -192,8 +195,6 @@ span.sheet-tab {
   /* add a nice border */
 }
 
-
-
 .sheet-subsection {
   margin  : 10px;
   padding : 5px;
@@ -211,11 +212,7 @@ span.sheet-tab {
   white-space : nowrap;
 }
 
-/**
- * ****
- *
- * Grids ****
- */
+/* **** Grids **** */
 
 /* Title grid */
 
@@ -1101,11 +1098,7 @@ input[type="checkbox"].sheet-modifikator {
   grid-column : 10 /10;
 }
 
-/**
- * .sheet-talent-header7 { grid-column: 9 /9;
- *
- * }
- */
+/* .sheet-talent-header7 { grid-column: 9 /9; } */
 
 .sheet-talent-header8 {
   text-align  : center;
@@ -2826,11 +2819,7 @@ input.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeit-filtered {
   display : block;
 }
 
-/**
- * --- Artefakte
- *
- * ---
- */
+/* --- Artefakte --- */
 
 textarea.sheet-zm_gegenstand {
   width  : 64em;
