@@ -40,15 +40,15 @@
   --color-border           : black;
 }
 
-.charsheet .sheet-sheet_color[value="2"] ~ * {
-  --color-font-tab-checked : #f1ebda;
-  --bg-tab-unchecked       : #f1ebda;
-  --bg-tab-checked         : #a68b3f;
-  --bg-sheet               : #d0b884;
-  --bg-input               : #f1ebda;
-  --bg-input-readonly      : #ceb87e;
-  --color-font             : #4a3e1c;
-  --color-border           : #4a3e1c;
+.sheet-sheet_color[value="2"] ~ * {
+  --color-font-tab-checked : #f2e0be;
+  --bg-tab-unchecked       : #f2e0be;
+  --bg-tab-checked         : #6b2302;
+  --bg-sheet               : #d4c79a;
+  --bg-input               : #f2e0be;
+  --bg-input-readonly      : #d4c79a;
+  --color-font             : #6b2302;
+  --color-border           : #d1a875;
 }
 
 .sheet-sheet_color[value="3"] ~ * {
@@ -62,7 +62,7 @@
   --color-border           : #001433;
 }
 
-.charsheet .sheet-sheet_color[value="4"] ~ * {
+.sheet-sheet_color[value="4"] ~ * {
   --color-font-tab-checked : #e6e6e6;
   --bg-tab-unchecked       : #e6e6e6;
   --bg-tab-checked         : #8c8c8c;
@@ -72,6 +72,19 @@
   --color-font             : black;
   --color-border           : black;
 }
+
+.sheet-sheet_color[value="5"] ~ * {
+  --color-font-tab-checked : #e9f0cd;
+  --bg-tab-unchecked       : #9cac67;
+  --bg-tab-checked         : #ba842b;
+  --bg-sheet               : #d1dab1;
+  --bg-input               : #e9f0cd;
+  --bg-input-readonly      : #d1dab1;
+  --color-font             : #6f5934;
+  --color-border           : #ba842b;
+}
+
+
 
 .sheet-charsheet {
   min-width        : 800px;
