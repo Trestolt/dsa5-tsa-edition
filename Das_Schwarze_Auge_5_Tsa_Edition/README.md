@@ -4,8 +4,8 @@
 
 2019-10-29:
 - Fix eines Problems mit der Auswahl und Berechnung von Fernkampfwaffen
-- Neu: Unter Optionen stehen diverse Farbschema zur Auswahl: Yrn White (Default), Nebachot Sand, Rekki Blue, Perceval Grey,
-- Aufruf: Wer Ideen hat oder das eigene Farbschema im Bogen sehen möchte kann mir eine Nachricht an untenstehende Emailadresse senden.
+- Neu: Unter Optionen stehen diverse Farbschema zur Auswahl: Yrn White (Default), Nebachot Sand, Rekki Blue, Perceval Grey, Gerasim Green)
+- Aufruf: Wer Ideen hat und das eigene Farbschema im Bogen sehen möchte, kann mir eine Nachricht an untenstehende Emailadresse senden.
   Das Farbschema sollte folgende Punkte abdecken und der Namen einen Bezug zu Aventurien aufweisen:
 {
   --color-font-tab-checked : white;
