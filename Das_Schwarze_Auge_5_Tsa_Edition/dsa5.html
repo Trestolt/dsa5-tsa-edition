@@ -5859,6 +5859,7 @@
 					<option value="4" data-i18n="5-parade">5. Parade</option>
 				</select>
 				<input class="kampf-nah kampf-nah-value8" type="number" name="attr_parade_malus" value="0" readonly />
+				<input class="hidden" type="number" name="attr_ausweichen_malus" value="0" readonly />
 				<input class="kampf-nah kampf-nah-value9" type="number" name="attr_parade_zweite_mod" value="0" readonly />
 				<input class="kampf-nah kampf-nah-value10" type="number" name="attr_pa_schildpassiv_bonus" value="0" readonly />
 
@@ -5875,8 +5876,8 @@
 				<span class="kampf-nah kampf-nah-label10" data-i18n="ausweichen">Ausweichen</span>
 				<input class="kampf-nah kampf-nah-value13" type="number" name="attr_ausweichen_zweite_mod" value="0" readonly hidden />
 				<input class="kampf-nah kampf-nah-value14" type="number" name="attr_aw_roll" value="0" readonly />
-				<button class="default kampf-nah kampf-nah-button13" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
-				<button class="default kampf-nah kampf-nah-button14" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+				<button class="default kampf-nah kampf-nah-button13" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
+				<button class="default kampf-nah kampf-nah-button14" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
 
 				<span class="kampf-nah kampf-nah-label11" data-i18n="beidhaendigerkampf">Beidhändiger Kampf</span>
 				<input type="checkbox" class="kampf-nah kampf-nah-checkbox1" name="attr_beidhand_kampf" value='1' />
@@ -8508,6 +8509,9 @@
 		case "stoffbearbeitung_fw_mod":
 		getAttrs(["stoffbearbeitung_fw"], function(target_value) {	setAttrs({ stoffbearbeitung_fw: parseInt(target_value.stoffbearbeitung_fw) - oldvalue + modifier_value	});	});
 		break;
+		case "gs_mod":
+		getAttrs(["gs_modifikator"], function(target_value) {	setAttrs({ gs_modifikator: parseInt(target_value.gs_modifikator) - oldvalue + modifier_value	});	});
+		break;
 		default:
 		break;
 		} //Ende Switch
@@ -10856,13 +10860,13 @@ on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe cha
 							tp_dice_roll: tp_dice_roll,
 							tp_zusatz_roll: tp_zusatz_roll,
 							passierschlag_tp_zusatz_roll: passierschlag_tp_zusatz_roll,
-							kampfstatus_modifier: status_modifier
+							kampfstatus_modifier: status_modifier,
+							parade_malus: parade_malus,
+							ausweichen_malus: ausweichen_malus
+
 			});
 	});
 });
-
-
-
 
 
 
@@ -11425,5 +11429,25 @@ on("sheet:opened change:liturgiedauer_mod change:geste_mod change:reichweite_mod
 			        });
 	    });
 });
+
+
+
+/* Berechnungen Status und Zustände */
+/*
+on("change:liegend", function() {
+	    getAttrs(["liegend", "gs_gesamt"], function(values) {
+						var liegend = parseInt(values.liegend||0);
+						console.log("liegend" + liegend);
+
+						if (liegend == 1)
+						   {change_modifier("gs_mod",0,4);
+							 }
+						else {change_modifier("gs_mod",4,0);
+						     };
+	    });
+});
+
+
+*/
 
 </script>
