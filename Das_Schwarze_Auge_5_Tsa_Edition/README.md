@@ -2,6 +2,11 @@
 
 ## Änderungen
 
+- Überarbeitung Design Status Tab
+
+2019-11-02:
+- Bugfix: Output Option für Talente funktioniert jetzt wie erwartet
+
 2019-10-29:
 - Fix eines Problems mit der Auswahl und Berechnung von Fernkampfwaffen
 - Neu: Unter Optionen stehen diverse Farbschema zur Auswahl: Yrn White (Default), Nebachot Sand, Rekki Blue, Perceval Grey, Gerasim Green)
