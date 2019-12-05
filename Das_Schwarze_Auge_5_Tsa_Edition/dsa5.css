@@ -1075,7 +1075,7 @@ input[type="checkbox"].sheet-modifikator {
 
 /* Grid Talent */
 
-input[type="checkbox"].sheet-show_status_mod:checked~* {
+input[type="checkbox"].sheet-show_status_mod~* {
     --status_display: inline;
     --status_visibility: visible;
     --anmerkung_display: none;
@@ -1084,7 +1084,7 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
     
 }
 
-input[type="checkbox"].sheet-show_status_mod~* {
+input[type="checkbox"].sheet-show_status_mod:checked~* {
     --status_display: none;
     --status_visibility: hidden;
     --anmerkung_display: inline;
@@ -1318,9 +1318,12 @@ input[type="checkbox"].sheet-talent {
     height: 100%;
 }
 
+textarea.sheet-talent {
+        width: 97%;
+        height: 150px;
+        margin: 10px;
 
-
-
+}
 
 
 
