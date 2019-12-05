@@ -1075,7 +1075,7 @@ input[type="checkbox"].sheet-modifikator {
 
 /* Grid Talent */
 
-input[type="checkbox"].sheet-show_status_mod~* {
+input[type="checkbox"].sheet-show_status_mod:checked~* {
     --status_display: inline;
     --status_visibility: visible;
     --anmerkung_display: none;
@@ -1084,7 +1084,7 @@ input[type="checkbox"].sheet-show_status_mod~* {
     
 }
 
-input[type="checkbox"].sheet-show_status_mod:checked~* {
+input[type="checkbox"].sheet-show_status_mod~* {
     --status_display: none;
     --status_visibility: hidden;
     --anmerkung_display: inline;
