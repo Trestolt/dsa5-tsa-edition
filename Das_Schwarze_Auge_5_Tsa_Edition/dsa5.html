@@ -383,7 +383,12 @@
 	<div class="section tab2">
 		<div class="Sonderfertigkeiten">
 			<h2 data-i18n="sonderfertigkeiten">Sonderfertigkeiten</h2>
-
+			<span class="modifikator" data-i18n="show_description">Beschreibung anzeigen</span>
+			<input type="checkbox" name="attr_show_description_sf" class="show_description_sf" value="1" checked />
+			<span class="modifikator" data-i18n="show_modifier">Modifikatoren anzeigen</span>
+			<input type="checkbox" name="attr_show_modifier_sf" class="show_modifier_sf" value="1" checked />
+			<br>
+			<span data-i18n="filter">Filter:</span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb0" title="all" value="0" checked></input>
 			<span class="sonderfertigkeit-cb0" data-i18n="alle">Alle</span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb1" title="sonderfertigkeit" value="1"></input>
@@ -418,699 +423,708 @@
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb8" value="8"></input>
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb9" value="9"></input>
 					<div class="modifikator-grid sonderfertigkeit-filtered">
-						<span class="sonderfertigkeittyp-span" data-i18n="typ">Typ</span>
-						<select class="sonderfertigkeittyp-in" name="attr_sonderfertigkeittyp">
-							<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
-							<option value="1" data-i18n="allgemeine-sonderfertigkeit">Allgemeine Sonderfertigkeit
-							</option>
-							<option value="2" data-i18n="talent-sonderfertigkeit">Talentsonderfertigkeit</option>
-							<option value="3" data-i18n="kampfsonderfertigkeit">Kampfsonderfertigkeit</option>
-							<option value="4" data-i18n="magiesonderfertigkeit">Magiesonderfertigkeit</option>
-							<option value="5" data-i18n="karmale-sonderfertigkeit">Karmale Sonderfertigkeit</option>
-							<option value="6" data-i18n="vorteil">Vorteil</option>
-							<option value="7" data-i18n="nachteil">Nachteil</option>
-							<option value="9" data-i18n="schipsf">SchiP-Sonderfertigkeit</option>
-							<option value="8" data-i18n="sonstiges">Sonstiges</option>
-						</select>
-						<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
-						<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
-						<input class="modifikator modifikator-description" type="text" name='attr_sonderfertigkeit_anmerkung' value='Anmerkung' />
-						<select class="modifikator modifikator-select1" name="attr_sonderfertigkeit_auswahl1">
-							<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
-							</option>
-							<optgroup label="Eigenschaften">
-								<option value="mu_mod" data-i18n="mu_mod">Mut +/-</option>
-								<option value="kl_mod" data-i18n="kl_mod">Klugheit +/-</option>
-								<option value="in_mod" data-i18n="in_mod">Intuition +/-</option>
-								<option value="ch_mod" data-i18n="ch_mod">Charisma +/-</option>
-								<option value="ff_mod" data-i18n="ff_mod">Fingerfertigkeit +/-</option>
-								<option value="ge_mod" data-i18n="ge_mod">Gewandheit +/-</option>
-								<option value="ko_mod" data-i18n="ko_mod">Konstitution +/-</option>
-								<option value="kk_mod" data-i18n="kk_mod">Koerperkraft +/-</option>
-							</optgroup>
-							<optgroup label="abgeleitete Werte">
-								<option value="le_modifikator" data-i18n="le_modifikator">Lebensenergie +/-</option>
-								<option value="ae_modifikator" data-i18n="ae_modifikator">Astralenergie +/-</option>
-								<option value="ke_modifikator" data-i18n="ke_modifikator">Karmalenergie +/-</option>
-								<option value="sk_modifikator" data-i18n="sk_modifikator">Seelenkraft +/-</option>
-								<option value="zk_modifikator" data-i18n="zk_modifikator">Zähigkeit +/-</option>
-								<option value="ini_modifikator" data-i18n="ini_modifikator">Initiative +/-</option>
-								<option value="aw_modifikator" data-i18n="aw_modifikator">Ausweichen +/-</option>
-								<option value="gs_modifikator" data-i18n="gs_modifikator">Geschwindigkeit +/-</option>
-								<option value="schips_modifikator" data-i18n="schips_modifikator">Schicksalspunkte +/-
+						<div class="modifikator sf1">
+							<span class="sonderfertigkeittyp-span" data-i18n="typ">Typ</span>
+							<select class="sonderfertigkeittyp-in" name="attr_sonderfertigkeittyp">
+								<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
+								<option value="1" data-i18n="allgemeine-sonderfertigkeit">Allgemeine Sonderfertigkeit</option>
+								<option value="2" data-i18n="talent-sonderfertigkeit">Talentsonderfertigkeit</option>
+								<option value="3" data-i18n="kampfsonderfertigkeit">Kampfsonderfertigkeit</option>
+								<option value="4" data-i18n="magiesonderfertigkeit">Magiesonderfertigkeit</option>
+								<option value="5" data-i18n="karmale-sonderfertigkeit">Karmale Sonderfertigkeit</option>
+								<option value="6" data-i18n="vorteil">Vorteil</option>
+								<option value="7" data-i18n="nachteil">Nachteil</option>
+								<option value="9" data-i18n="schipsf">SchiP-Sonderfertigkeit</option>
+								<option value="8" data-i18n="sonstiges">Sonstiges</option>
+							</select>
+							<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
+							<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
+						</div>
+						<div class="modifikator sf2">
+							<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung'>Beschreibung</textarea>
+						</div>
+						<div class="modifikator sf3 sf_modifier">
+							<select class="modifikator modifikator-select1" name="attr_sonderfertigkeit_auswahl1">
+								<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
 								</option>
-								<option value="le_regeneration_mod" data-i18n="le_regeneration_mod">Regeneration LE +/-
-								</option>
-								<option value="ae_regeneration_mod" data-i18n="ae_regeneration_mod">Regeneration AE +/-
-								</option>
-								<option value="ke_regeneration_mod" data-i18n="ke_regeneration_mod">Regeneration KE +/-
-								</option>
-							</optgroup>
-							<optgroup label="Kampfsonderfertigkeiten">
-								<option value="at_sf_mod" data-i18n="at_sf_mod">Attacke +/-</option>
-								<option value="pa_sf_mod" data-i18n="pa_sf_mod">Parade +/-</option>
-								<option value="aw_sf_mod" data-i18n="aw_sf_mod">Ausweichen +/-</option>
-								<option value="tp_sf_mod" data-i18n="tp_sf_mod">Trefferpunkte +/-</option>
-								<option value="fk_sf_mod" data-i18n="fk_sf_mod">Fernkampf +/-</option>
-								<option value="nh_at_sf_mod" data-i18n="nh_at_sf_mod">Nebenhand AT +/-</option>
-								<option value="nh_pa_sf_mod" data-i18n="nh_pa_sf_mod">Nebenhand PA +/-</option>
-								<option value="nh_tp_sf_mod" data-i18n="nh_tp_sf_mod">Nebenhand TP +/-</option>
-								<option value="parade_zweite_mod" data-i18n="parade_zweite_mod">Zusätzliche PA +/-
-								</option>
-								<option value="ausweichen_zweite_mod" data-i18n="ausweichen_zweite_mod">Zusätzliches AW
-									+/- </option>
-								<option value="beidhand_kampf_mod" data-i18n="beidhand_kampf_mod">Beidhändigkeit-Mod.
-									+/- </option>
-								<option value="falsche_hand_mod" data-i18n="falsche_hand_mod">Falsche Hand Mod. +/-
-								</option>
-							</optgroup>
-							<optgroup label="Talente Würfelmodifikator">
-							</optgroup>
-							<optgroup label="Körpertalente">
-								<option value="fliegen_sf_mod" data-i18n="fliegen">Fliegen</option>
-								<option value="gaukeleien_sf_mod" data-i18n="gaukeleien">Gaukeleien</option>
-								<option value="klettern_sf_mod" data-i18n="klettern">Klettern</option>
-								<option value="koerperbeherrschung_sf_mod" data-i18n="koerperbeherrschung">
-									Körperbeherrschung</option>
-								<option value="kraftakt_sf_mod" data-i18n="kraftakt">Kraftakt</option>
-								<option value="reiten_sf_mod" data-i18n="reiten">Reiten</option>
-								<option value="schwimmen_sf_mod" data-i18n="schwimmen">Schwimmen</option>
-								<option value="selbstbeherrschung_sf_mod" data-i18n="selbstbeherrschung">
-									Selbstbeherrschung</option>
-								<option value="singen_sf_mod" data-i18n="singen">Singen</option>
-								<option value="sinnesschaerfe_sf_mod" data-i18n="sinnesschaerfe">Sinnesschärfe</option>
-								<option value="tanzen_sf_mod" data-i18n="tanzen">Tanzen</option>
-								<option value="taschendiebstahl_sf_mod" data-i18n="taschendiebstahl">Taschendiebstahl
-								</option>
-								<option value="verbergen_sf_mod" data-i18n="verbergen">Verbergen</option>
-								<option value="zechen_sf_mod" data-i18n="zechen">Zechen</option>
-							</optgroup>
-							<optgroup label="Gesellschaftstalente">
-								<option value="bekehren_sf_mod" data-i18n="bekehren">Bekehren</option>
-								<option value="betoeren_sf_mod" data-i18n="betoeren">Betören</option>
-								<option value="einschuechtern_sf_mod" data-i18n="einschuechtern">Einschüchtern</option>
-								<option value="etikette_sf_mod" data-i18n="etikette">Etikette</option>
-								<option value="gassenwissen_sf_mod" data-i18n="gassenwissen">Gassenwissen</option>
-								<option value="menschenkenntnis_sf_mod" data-i18n="menschenkenntnis">Menschenkenntnis
-								</option>
-								<option value="ueberreden_sf_mod" data-i18n="ueberreden">Überreden</option>
-								<option value="verkleiden_sf_mod" data-i18n="verkleiden">Verkleiden</option>
-								<option value="willenskraft_sf_mod" data-i18n="willenskraft">Willenskraft</option>
-							</optgroup>
-							<optgroup label="Naturtalente">
-								<option value="faehrtensuchen_sf_mod" data-i18n="faehrtensuchen">Fährtensuchen</option>
-								<option value="fesseln_sf_mod" data-i18n="fesseln">Fesseln</option>
-								<option value="fischen_sf_mod" data-i18n="fischen">Fischen</option>
-								<option value="orientierung_sf_mod" data-i18n="orientierung">orientierung</option>
-								<option value="pflanzenkunde_sf_mod" data-i18n="pflanzenkunde">pflanzenkunde</option>
-								<option value="tierkunde_sf_mod" data-i18n="tierkunde">tierkunde</option>
-								<option value="wildnisleben_sf_mod" data-i18n="wildnisleben">wildnisleben</option>
-							</optgroup>
-							<optgroup label="Wissenstalente">
-								<option value="glueckspiel_sf_mod" data-i18n="glueckspiel">glueckspiel</option>
-								<option value="geographie_sf_mod" data-i18n="geographie">geographie</option>
-								<option value="geschichtswissen_sf_mod" data-i18n="geschichtswissen">geschichtswissen
-								</option>
-								<option value="goetterkulte_sf_mod" data-i18n="goetterkulte">goetterkulte</option>
-								<option value="kriegskunst_sf_mod" data-i18n="kriegskunst">kriegskunst</option>
-								<option value="magiekunde_sf_mod" data-i18n="magiekunde">magiekunde</option>
-								<option value="mechanik_sf_mod" data-i18n="mechanik">mechanik</option>
-								<option value="rechnen_sf_mod" data-i18n="rechnen">rechnen</option>
-								<option value="rechtskunde_sf_mod" data-i18n="rechtskunde">rechtskunde</option>
-								<option value="sagenlegenden_sf_mod" data-i18n="sagenlegenden">sagenlegenden</option>
-								<option value="sphaerenkunde_sf_mod" data-i18n="sphaerenkunde">sphaerenkunde</option>
-								<option value="sternkunde_sf_mod" data-i18n="sternkunde">sternkunde</option>
-							</optgroup>
-							<optgroup label="Handwerkstalente">
-								<option value="alchemie_sf_mod" data-i18n="alchemie">alchemie</option>
-								<option value="boote_sf_mod" data-i18n="boote">boote</option>
-								<option value="fahrzeuge_sf_mod" data-i18n="fahrzeuge">fahrzeuge</option>
-								<option value="handel_sf_mod" data-i18n="handel">handel</option>
-								<option value="hkgift_sf_mod" data-i18n="hkgift">hkgift</option>
-								<option value="hkkrankheiten_sf_mod" data-i18n="hkkrankheiten">hkkrankheiten</option>
-								<option value="hkseele_sf_mod" data-i18n="hkseele">hkseele</option>
-								<option value="hkwunden_sf_mod" data-i18n="hkwunden">hkwunden</option>
-								<option value="holzbearbeitung_sf_mod" data-i18n="holzbearbeitung">holzbearbeitung
-								</option>
-								<option value="lebensmittelbearbeitung_sf_mod" data-i18n="lebensmittelbearbeitung">
-									lebensmittelbearbeitung</option>
-								<option value="lederbearbeitung_sf_mod" data-i18n="lederbearbeitung">lederbearbeitung
-								</option>
-								<option value="malenzeichnen_sf_mod" data-i18n="malenzeichnen">malenzeichnen</option>
-								<option value="metallbearbeitung_sf_mod" data-i18n="metallbearbeitung">metallbearbeitung
-								</option>
-								<option value="musizieren_sf_mod" data-i18n="musizieren">musizieren</option>
-								<option value="schloesserknacken_sf_mod" data-i18n="schloesserknacken">schloesserknacken
-								</option>
-								<option value="steinbearbeitung_sf_mod" data-i18n="steinbearbeitung">steinbearbeitung
-								</option>
-								<option value="stoffbearbeitung_sf_mod" data-i18n="stoffbearbeitung">stoffbearbeitung
-								</option>
-							</optgroup>
-							<optgroup label="Magie und Glaube">
-								<option value="magie_sf_mod" data-i18n="magie-modifikator">Zauberwirken +/-</option>
-								<option value="glaube_sf_mod" data-i18n="glaube-modifikator">Göttliches Wirken +/-
-								</option>
-							</optgroup>
-							<optgroup label="Talente FW-Modifikator">
-							</optgroup>
-							<optgroup label="Körpertalente">
-								<option value="fliegen_fw_mod" data-i18n="fliegenfw">Fliegen</option>
-								<option value="gaukeleien_fw_mod" data-i18n="gaukeleienfw">Gaukeleien</option>
-								<option value="klettern_fw_mod" data-i18n="kletternfw">Klettern</option>
-								<option value="koerperbeherrschung_fw_mod" data-i18n="koerperbeherrschungfw">
-									Körperbeherrschung</option>
-								<option value="kraftakt_fw_mod" data-i18n="kraftaktfw">Kraftakt</option>
-								<option value="reiten_fw_mod" data-i18n="reitenfw">Reiten</option>
-								<option value="schwimmen_fw_mod" data-i18n="schwimmenfw">Schwimmen</option>
-								<option value="selbstbeherrschung_fw_mod" data-i18n="selbstbeherrschungfw">
-									Selbstbeherrschung</option>
-								<option value="singen_fw_mod" data-i18n="singenfw">Singen</option>
-								<option value="sinnesschaerfe_fw_mod" data-i18n="sinnesschaerfefw">Sinnesschärfe
-								</option>
-								<option value="tanzen_fw_mod" data-i18n="tanzenfw">Tanzen</option>
-								<option value="taschendiebstahl_fw_mod" data-i18n="taschendiebstahlfw">Taschendiebstahl
-								</option>
-								<option value="verbergen_fw_mod" data-i18n="verbergenfw">Verbergen</option>
-								<option value="zechen_fw_mod" data-i18n="zechenfw">Zechen</option>
-							</optgroup>
-							<optgroup label="Gesellschaftstalente">
-								<option value="bekehren_fw_mod" data-i18n="bekehrenfw">Bekehren</option>
-								<option value="betoeren_fw_mod" data-i18n="betoerenfw">Betören</option>
-								<option value="einschuechtern_fw_mod" data-i18n="einschuechternfw">Einschüchtern
-								</option>
-								<option value="etikette_fw_mod" data-i18n="etikettefw">Etikette</option>
-								<option value="gassenwissen_fw_mod" data-i18n="gassenwissenfw"></option>
-								<option value="menschenkenntnis_fw_mod" data-i18n="menschenkenntnisfw">Menschenkenntnis
-								</option>
-								<option value="ueberreden_fw_mod" data-i18n="ueberredenfw">Überreden</option>
-								<option value="verkleiden_fw_mod" data-i18n="verkleidenfw">Verkleiden</option>
-								<option value="willenskraft_fw_mod" data-i18n="willenskraftfw">Willenskraft</option>
-							</optgroup>
-							<optgroup label="Naturtalente">
-								<option value="faehrtensuchen_fw_mod" data-i18n="faehrtensuchenfw">Fährtensuchen
-								</option>
-								<option value="fesseln_fw_mod" data-i18n="fesselnfw">Fesseln</option>
-								<option value="fischen_fw_mod" data-i18n="fischenfw">Fischen</option>
-								<option value="orientierung_fw_mod" data-i18n="orientierungfw">orientierung</option>
-								<option value="pflanzenkunde_fw_mod" data-i18n="pflanzenkundefw">pflanzenkunde</option>
-								<option value="tierkunde_fw_mod" data-i18n="tierkundefw">tierkunde</option>
-								<option value="wildnisleben_fw_mod" data-i18n="wildnislebenfw">wildnisleben</option>
-							</optgroup>
-							<optgroup label="Wissenstalente">
-								<option value="glueckspiel_fw_mod" data-i18n="glueckspielfw">glueckspiel</option>
-								<option value="geographie_fw_mod" data-i18n="geographiefw">geographie</option>
-								<option value="geschichtswissen_fw_mod" data-i18n="geschichtswissenfw">geschichtswissen
-								</option>
-								<option value="goetterkulte_fw_mod" data-i18n="goetterkultefw">goetterkulte</option>
-								<option value="kriegskunst_fw_mod" data-i18n="kriegskunstfw">kriegskunst</option>
-								<option value="magiekunde_fw_mod" data-i18n="magiekundefw">magiekunde</option>
-								<option value="mechanik_fw_mod" data-i18n="mechanikfw">mechanik</option>
-								<option value="rechnen_fw_mod" data-i18n="rechnenfw">rechnen</option>
-								<option value="rechtskunde_fw_mod" data-i18n="rechtskundefw">rechtskunde</option>
-								<option value="sagenlegenden_fw_mod" data-i18n="sagenlegendenfw">sagenlegenden</option>
-								<option value="sphaerenkunde_fw_mod" data-i18n="sphaerenkundefw">sphaerenkunde</option>
-								<option value="sternkunde_fw_mod" data-i18n="sternkundefw">sternkunde</option>
-							</optgroup>
-							<optgroup label="Handwerkstalente">
-								<option value="alchemie_fw_mod" data-i18n="alchemiefw">alchemie</option>
-								<option value="boote_fw_mod" data-i18n="bootefw">boote</option>
-								<option value="fahrzeuge_fw_mod" data-i18n="fahrzeugefw">fahrzeuge</option>
-								<option value="handel_fw_mod" data-i18n="handelfw">handel</option>
-								<option value="hkgift_fw_mod" data-i18n="hkgiftfw">hkgift</option>
-								<option value="hkkrankheiten_fw_mod" data-i18n="hkkrankheitenfw">hkkrankheiten</option>
-								<option value="hkseele_fw_mod" data-i18n="hkseelefw">hkseele</option>
-								<option value="hkwunden_fw_mod" data-i18n="hkwundenfw">hkwunden</option>
-								<option value="holzbearbeitung_fw_mod" data-i18n="holzbearbeitungfw">holzbearbeitung
-								</option>
-								<option value="lebensmittelbearbeitung_fw_mod" data-i18n="lebensmittelbearbeitungfw">
-									lebensmittelbearbeitung</option>
-								<option value="lederbearbeitung_fw_mod" data-i18n="lederbearbeitungfw">lederbearbeitung
-								</option>
-								<option value="malenzeichnen_fw_mod" data-i18n="malenzeichnenfw">malenzeichnen</option>
-								<option value="metallbearbeitung_fw_mod" data-i18n="metallbearbeitungfw">
-									metallbearbeitung</option>
-								<option value="musizieren_fw_mod" data-i18n="musizierenfw">musizieren</option>
-								<option value="schloesserknacken_fw_mod" data-i18n="schloesserknackenfw">
-									schloesserknacken</option>
-								<option value="steinbearbeitung_fw_mod" data-i18n="steinbearbeitungfw">steinbearbeitung
-								</option>
-								<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
-								</option>
-							</optgroup>
-						</select>
-						<input class="modifikator modifikator-value1" type="number" name='attr_sonderfertigkeit_mod1' value='0' />
+								<optgroup label="Eigenschaften">
+									<option value="mu_mod" data-i18n="mu_mod">Mut +/-</option>
+									<option value="kl_mod" data-i18n="kl_mod">Klugheit +/-</option>
+									<option value="in_mod" data-i18n="in_mod">Intuition +/-</option>
+									<option value="ch_mod" data-i18n="ch_mod">Charisma +/-</option>
+									<option value="ff_mod" data-i18n="ff_mod">Fingerfertigkeit +/-</option>
+									<option value="ge_mod" data-i18n="ge_mod">Gewandheit +/-</option>
+									<option value="ko_mod" data-i18n="ko_mod">Konstitution +/-</option>
+									<option value="kk_mod" data-i18n="kk_mod">Koerperkraft +/-</option>
+								</optgroup>
+								<optgroup label="abgeleitete Werte">
+									<option value="le_modifikator" data-i18n="le_modifikator">Lebensenergie +/-</option>
+									<option value="ae_modifikator" data-i18n="ae_modifikator">Astralenergie +/-</option>
+									<option value="ke_modifikator" data-i18n="ke_modifikator">Karmalenergie +/-</option>
+									<option value="sk_modifikator" data-i18n="sk_modifikator">Seelenkraft +/-</option>
+									<option value="zk_modifikator" data-i18n="zk_modifikator">Zähigkeit +/-</option>
+									<option value="ini_modifikator" data-i18n="ini_modifikator">Initiative +/-</option>
+									<option value="aw_modifikator" data-i18n="aw_modifikator">Ausweichen +/-</option>
+									<option value="gs_modifikator" data-i18n="gs_modifikator">Geschwindigkeit +/-</option>
+									<option value="schips_modifikator" data-i18n="schips_modifikator">Schicksalspunkte +/-
+									</option>
+									<option value="le_regeneration_mod" data-i18n="le_regeneration_mod">Regeneration LE +/-
+									</option>
+									<option value="ae_regeneration_mod" data-i18n="ae_regeneration_mod">Regeneration AE +/-
+									</option>
+									<option value="ke_regeneration_mod" data-i18n="ke_regeneration_mod">Regeneration KE +/-
+									</option>
+								</optgroup>
+								<optgroup label="Kampfsonderfertigkeiten">
+									<option value="at_sf_mod" data-i18n="at_sf_mod">Attacke +/-</option>
+									<option value="pa_sf_mod" data-i18n="pa_sf_mod">Parade +/-</option>
+									<option value="aw_sf_mod" data-i18n="aw_sf_mod">Ausweichen +/-</option>
+									<option value="tp_sf_mod" data-i18n="tp_sf_mod">Trefferpunkte +/-</option>
+									<option value="fk_sf_mod" data-i18n="fk_sf_mod">Fernkampf +/-</option>
+									<option value="nh_at_sf_mod" data-i18n="nh_at_sf_mod">Nebenhand AT +/-</option>
+									<option value="nh_pa_sf_mod" data-i18n="nh_pa_sf_mod">Nebenhand PA +/-</option>
+									<option value="nh_tp_sf_mod" data-i18n="nh_tp_sf_mod">Nebenhand TP +/-</option>
+									<option value="parade_zweite_mod" data-i18n="parade_zweite_mod">Zusätzliche PA +/-
+									</option>
+									<option value="ausweichen_zweite_mod" data-i18n="ausweichen_zweite_mod">Zusätzliches AW
+										+/- </option>
+									<option value="beidhand_kampf_mod" data-i18n="beidhand_kampf_mod">Beidhändigkeit-Mod.
+										+/- </option>
+									<option value="falsche_hand_mod" data-i18n="falsche_hand_mod">Falsche Hand Mod. +/-
+									</option>
+								</optgroup>
+								<optgroup label="Talente Würfelmodifikator">
+								</optgroup>
+								<optgroup label="Körpertalente">
+									<option value="fliegen_sf_mod" data-i18n="fliegen">Fliegen</option>
+									<option value="gaukeleien_sf_mod" data-i18n="gaukeleien">Gaukeleien</option>
+									<option value="klettern_sf_mod" data-i18n="klettern">Klettern</option>
+									<option value="koerperbeherrschung_sf_mod" data-i18n="koerperbeherrschung">
+										Körperbeherrschung</option>
+									<option value="kraftakt_sf_mod" data-i18n="kraftakt">Kraftakt</option>
+									<option value="reiten_sf_mod" data-i18n="reiten">Reiten</option>
+									<option value="schwimmen_sf_mod" data-i18n="schwimmen">Schwimmen</option>
+									<option value="selbstbeherrschung_sf_mod" data-i18n="selbstbeherrschung">
+										Selbstbeherrschung</option>
+									<option value="singen_sf_mod" data-i18n="singen">Singen</option>
+									<option value="sinnesschaerfe_sf_mod" data-i18n="sinnesschaerfe">Sinnesschärfe</option>
+									<option value="tanzen_sf_mod" data-i18n="tanzen">Tanzen</option>
+									<option value="taschendiebstahl_sf_mod" data-i18n="taschendiebstahl">Taschendiebstahl
+									</option>
+									<option value="verbergen_sf_mod" data-i18n="verbergen">Verbergen</option>
+									<option value="zechen_sf_mod" data-i18n="zechen">Zechen</option>
+								</optgroup>
+								<optgroup label="Gesellschaftstalente">
+									<option value="bekehren_sf_mod" data-i18n="bekehren">Bekehren</option>
+									<option value="betoeren_sf_mod" data-i18n="betoeren">Betören</option>
+									<option value="einschuechtern_sf_mod" data-i18n="einschuechtern">Einschüchtern</option>
+									<option value="etikette_sf_mod" data-i18n="etikette">Etikette</option>
+									<option value="gassenwissen_sf_mod" data-i18n="gassenwissen">Gassenwissen</option>
+									<option value="menschenkenntnis_sf_mod" data-i18n="menschenkenntnis">Menschenkenntnis
+									</option>
+									<option value="ueberreden_sf_mod" data-i18n="ueberreden">Überreden</option>
+									<option value="verkleiden_sf_mod" data-i18n="verkleiden">Verkleiden</option>
+									<option value="willenskraft_sf_mod" data-i18n="willenskraft">Willenskraft</option>
+								</optgroup>
+								<optgroup label="Naturtalente">
+									<option value="faehrtensuchen_sf_mod" data-i18n="faehrtensuchen">Fährtensuchen</option>
+									<option value="fesseln_sf_mod" data-i18n="fesseln">Fesseln</option>
+									<option value="fischen_sf_mod" data-i18n="fischen">Fischen</option>
+									<option value="orientierung_sf_mod" data-i18n="orientierung">orientierung</option>
+									<option value="pflanzenkunde_sf_mod" data-i18n="pflanzenkunde">pflanzenkunde</option>
+									<option value="tierkunde_sf_mod" data-i18n="tierkunde">tierkunde</option>
+									<option value="wildnisleben_sf_mod" data-i18n="wildnisleben">wildnisleben</option>
+								</optgroup>
+								<optgroup label="Wissenstalente">
+									<option value="glueckspiel_sf_mod" data-i18n="glueckspiel">glueckspiel</option>
+									<option value="geographie_sf_mod" data-i18n="geographie">geographie</option>
+									<option value="geschichtswissen_sf_mod" data-i18n="geschichtswissen">geschichtswissen
+									</option>
+									<option value="goetterkulte_sf_mod" data-i18n="goetterkulte">goetterkulte</option>
+									<option value="kriegskunst_sf_mod" data-i18n="kriegskunst">kriegskunst</option>
+									<option value="magiekunde_sf_mod" data-i18n="magiekunde">magiekunde</option>
+									<option value="mechanik_sf_mod" data-i18n="mechanik">mechanik</option>
+									<option value="rechnen_sf_mod" data-i18n="rechnen">rechnen</option>
+									<option value="rechtskunde_sf_mod" data-i18n="rechtskunde">rechtskunde</option>
+									<option value="sagenlegenden_sf_mod" data-i18n="sagenlegenden">sagenlegenden</option>
+									<option value="sphaerenkunde_sf_mod" data-i18n="sphaerenkunde">sphaerenkunde</option>
+									<option value="sternkunde_sf_mod" data-i18n="sternkunde">sternkunde</option>
+								</optgroup>
+								<optgroup label="Handwerkstalente">
+									<option value="alchemie_sf_mod" data-i18n="alchemie">alchemie</option>
+									<option value="boote_sf_mod" data-i18n="boote">boote</option>
+									<option value="fahrzeuge_sf_mod" data-i18n="fahrzeuge">fahrzeuge</option>
+									<option value="handel_sf_mod" data-i18n="handel">handel</option>
+									<option value="hkgift_sf_mod" data-i18n="hkgift">hkgift</option>
+									<option value="hkkrankheiten_sf_mod" data-i18n="hkkrankheiten">hkkrankheiten</option>
+									<option value="hkseele_sf_mod" data-i18n="hkseele">hkseele</option>
+									<option value="hkwunden_sf_mod" data-i18n="hkwunden">hkwunden</option>
+									<option value="holzbearbeitung_sf_mod" data-i18n="holzbearbeitung">holzbearbeitung
+									</option>
+									<option value="lebensmittelbearbeitung_sf_mod" data-i18n="lebensmittelbearbeitung">
+										lebensmittelbearbeitung</option>
+									<option value="lederbearbeitung_sf_mod" data-i18n="lederbearbeitung">lederbearbeitung
+									</option>
+									<option value="malenzeichnen_sf_mod" data-i18n="malenzeichnen">malenzeichnen</option>
+									<option value="metallbearbeitung_sf_mod" data-i18n="metallbearbeitung">metallbearbeitung
+									</option>
+									<option value="musizieren_sf_mod" data-i18n="musizieren">musizieren</option>
+									<option value="schloesserknacken_sf_mod" data-i18n="schloesserknacken">schloesserknacken
+									</option>
+									<option value="steinbearbeitung_sf_mod" data-i18n="steinbearbeitung">steinbearbeitung
+									</option>
+									<option value="stoffbearbeitung_sf_mod" data-i18n="stoffbearbeitung">stoffbearbeitung
+									</option>
+								</optgroup>
+								<optgroup label="Magie und Glaube">
+									<option value="magie_sf_mod" data-i18n="magie-modifikator">Zauberwirken +/-</option>
+									<option value="glaube_sf_mod" data-i18n="glaube-modifikator">Göttliches Wirken +/-
+									</option>
+								</optgroup>
+								<optgroup label="Talente FW-Modifikator">
+								</optgroup>
+								<optgroup label="Körpertalente">
+									<option value="fliegen_fw_mod" data-i18n="fliegenfw">Fliegen</option>
+									<option value="gaukeleien_fw_mod" data-i18n="gaukeleienfw">Gaukeleien</option>
+									<option value="klettern_fw_mod" data-i18n="kletternfw">Klettern</option>
+									<option value="koerperbeherrschung_fw_mod" data-i18n="koerperbeherrschungfw">
+										Körperbeherrschung</option>
+									<option value="kraftakt_fw_mod" data-i18n="kraftaktfw">Kraftakt</option>
+									<option value="reiten_fw_mod" data-i18n="reitenfw">Reiten</option>
+									<option value="schwimmen_fw_mod" data-i18n="schwimmenfw">Schwimmen</option>
+									<option value="selbstbeherrschung_fw_mod" data-i18n="selbstbeherrschungfw">
+										Selbstbeherrschung</option>
+									<option value="singen_fw_mod" data-i18n="singenfw">Singen</option>
+									<option value="sinnesschaerfe_fw_mod" data-i18n="sinnesschaerfefw">Sinnesschärfe
+									</option>
+									<option value="tanzen_fw_mod" data-i18n="tanzenfw">Tanzen</option>
+									<option value="taschendiebstahl_fw_mod" data-i18n="taschendiebstahlfw">Taschendiebstahl
+									</option>
+									<option value="verbergen_fw_mod" data-i18n="verbergenfw">Verbergen</option>
+									<option value="zechen_fw_mod" data-i18n="zechenfw">Zechen</option>
+								</optgroup>
+								<optgroup label="Gesellschaftstalente">
+									<option value="bekehren_fw_mod" data-i18n="bekehrenfw">Bekehren</option>
+									<option value="betoeren_fw_mod" data-i18n="betoerenfw">Betören</option>
+									<option value="einschuechtern_fw_mod" data-i18n="einschuechternfw">Einschüchtern
+									</option>
+									<option value="etikette_fw_mod" data-i18n="etikettefw">Etikette</option>
+									<option value="gassenwissen_fw_mod" data-i18n="gassenwissenfw"></option>
+									<option value="menschenkenntnis_fw_mod" data-i18n="menschenkenntnisfw">Menschenkenntnis
+									</option>
+									<option value="ueberreden_fw_mod" data-i18n="ueberredenfw">Überreden</option>
+									<option value="verkleiden_fw_mod" data-i18n="verkleidenfw">Verkleiden</option>
+									<option value="willenskraft_fw_mod" data-i18n="willenskraftfw">Willenskraft</option>
+								</optgroup>
+								<optgroup label="Naturtalente">
+									<option value="faehrtensuchen_fw_mod" data-i18n="faehrtensuchenfw">Fährtensuchen
+									</option>
+									<option value="fesseln_fw_mod" data-i18n="fesselnfw">Fesseln</option>
+									<option value="fischen_fw_mod" data-i18n="fischenfw">Fischen</option>
+									<option value="orientierung_fw_mod" data-i18n="orientierungfw">orientierung</option>
+									<option value="pflanzenkunde_fw_mod" data-i18n="pflanzenkundefw">pflanzenkunde</option>
+									<option value="tierkunde_fw_mod" data-i18n="tierkundefw">tierkunde</option>
+									<option value="wildnisleben_fw_mod" data-i18n="wildnislebenfw">wildnisleben</option>
+								</optgroup>
+								<optgroup label="Wissenstalente">
+									<option value="glueckspiel_fw_mod" data-i18n="glueckspielfw">glueckspiel</option>
+									<option value="geographie_fw_mod" data-i18n="geographiefw">geographie</option>
+									<option value="geschichtswissen_fw_mod" data-i18n="geschichtswissenfw">geschichtswissen
+									</option>
+									<option value="goetterkulte_fw_mod" data-i18n="goetterkultefw">goetterkulte</option>
+									<option value="kriegskunst_fw_mod" data-i18n="kriegskunstfw">kriegskunst</option>
+									<option value="magiekunde_fw_mod" data-i18n="magiekundefw">magiekunde</option>
+									<option value="mechanik_fw_mod" data-i18n="mechanikfw">mechanik</option>
+									<option value="rechnen_fw_mod" data-i18n="rechnenfw">rechnen</option>
+									<option value="rechtskunde_fw_mod" data-i18n="rechtskundefw">rechtskunde</option>
+									<option value="sagenlegenden_fw_mod" data-i18n="sagenlegendenfw">sagenlegenden</option>
+									<option value="sphaerenkunde_fw_mod" data-i18n="sphaerenkundefw">sphaerenkunde</option>
+									<option value="sternkunde_fw_mod" data-i18n="sternkundefw">sternkunde</option>
+								</optgroup>
+								<optgroup label="Handwerkstalente">
+									<option value="alchemie_fw_mod" data-i18n="alchemiefw">alchemie</option>
+									<option value="boote_fw_mod" data-i18n="bootefw">boote</option>
+									<option value="fahrzeuge_fw_mod" data-i18n="fahrzeugefw">fahrzeuge</option>
+									<option value="handel_fw_mod" data-i18n="handelfw">handel</option>
+									<option value="hkgift_fw_mod" data-i18n="hkgiftfw">hkgift</option>
+									<option value="hkkrankheiten_fw_mod" data-i18n="hkkrankheitenfw">hkkrankheiten</option>
+									<option value="hkseele_fw_mod" data-i18n="hkseelefw">hkseele</option>
+									<option value="hkwunden_fw_mod" data-i18n="hkwundenfw">hkwunden</option>
+									<option value="holzbearbeitung_fw_mod" data-i18n="holzbearbeitungfw">holzbearbeitung
+									</option>
+									<option value="lebensmittelbearbeitung_fw_mod" data-i18n="lebensmittelbearbeitungfw">
+										lebensmittelbearbeitung</option>
+									<option value="lederbearbeitung_fw_mod" data-i18n="lederbearbeitungfw">lederbearbeitung
+									</option>
+									<option value="malenzeichnen_fw_mod" data-i18n="malenzeichnenfw">malenzeichnen</option>
+									<option value="metallbearbeitung_fw_mod" data-i18n="metallbearbeitungfw">
+										metallbearbeitung</option>
+									<option value="musizieren_fw_mod" data-i18n="musizierenfw">musizieren</option>
+									<option value="schloesserknacken_fw_mod" data-i18n="schloesserknackenfw">
+										schloesserknacken</option>
+									<option value="steinbearbeitung_fw_mod" data-i18n="steinbearbeitungfw">steinbearbeitung
+									</option>
+									<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
+									</option>
+								</optgroup>
 
-						<select class="modifikator modifikator-select2" name="attr_sonderfertigkeit_auswahl2">
-							<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
-							</option>
-							<optgroup label="Eigenschaften">
-								<option value="mu_mod" data-i18n="mu_mod">Mut +/-</option>
-								<option value="kl_mod" data-i18n="kl_mod">Klugheit +/-</option>
-								<option value="in_mod" data-i18n="in_mod">Intuition +/-</option>
-								<option value="ch_mod" data-i18n="ch_mod">Charisma +/-</option>
-								<option value="ff_mod" data-i18n="ff_mod">Fingerfertigkeit +/-</option>
-								<option value="ge_mod" data-i18n="ge_mod">Gewandheit +/-</option>
-								<option value="ko_mod" data-i18n="ko_mod">Konstitution +/-</option>
-								<option value="kk_mod" data-i18n="kk_mod">Koerperkraft +/-</option>
-							</optgroup>
-							<optgroup label="abgeleitete Werte">
-								<option value="le_modifikator" data-i18n="le_modifikator">Lebensenergie +/-</option>
-								<option value="ae_modifikator" data-i18n="ae_modifikator">Astralenergie +/-</option>
-								<option value="ke_modifikator" data-i18n="ke_modifikator">Karmalenergie +/-</option>
-								<option value="sk_modifikator" data-i18n="sk_modifikator">Seelenkraft +/-</option>
-								<option value="zk_modifikator" data-i18n="zk_modifikator">Zähigkeit +/-</option>
-								<option value="ini_modifikator" data-i18n="ini_modifikator">Initiative +/-</option>
-								<option value="aw_modifikator" data-i18n="aw_modifikator">Ausweichen +/-</option>
-								<option value="gs_modifikator" data-i18n="gs_modifikator">Geschwindigkeit +/-</option>
-								<option value="schips_modifikator" data-i18n="schips_modifikator">Schicksalspunkte +/-
+							</select>
+							<input class="modifikator modifikator-value1" type="number" name='attr_sonderfertigkeit_mod1' value='0' />
+						</div>
+						<div class="modifikator sf4 sf_modifier">
+							<select class="modifikator modifikator-select2" name="attr_sonderfertigkeit_auswahl2">
+								<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
 								</option>
-								<option value="le_regeneration_mod" data-i18n="le_regeneration_mod">Regeneration LE +/-
+								<optgroup label="Eigenschaften">
+									<option value="mu_mod" data-i18n="mu_mod">Mut +/-</option>
+									<option value="kl_mod" data-i18n="kl_mod">Klugheit +/-</option>
+									<option value="in_mod" data-i18n="in_mod">Intuition +/-</option>
+									<option value="ch_mod" data-i18n="ch_mod">Charisma +/-</option>
+									<option value="ff_mod" data-i18n="ff_mod">Fingerfertigkeit +/-</option>
+									<option value="ge_mod" data-i18n="ge_mod">Gewandheit +/-</option>
+									<option value="ko_mod" data-i18n="ko_mod">Konstitution +/-</option>
+									<option value="kk_mod" data-i18n="kk_mod">Koerperkraft +/-</option>
+								</optgroup>
+								<optgroup label="abgeleitete Werte">
+									<option value="le_modifikator" data-i18n="le_modifikator">Lebensenergie +/-</option>
+									<option value="ae_modifikator" data-i18n="ae_modifikator">Astralenergie +/-</option>
+									<option value="ke_modifikator" data-i18n="ke_modifikator">Karmalenergie +/-</option>
+									<option value="sk_modifikator" data-i18n="sk_modifikator">Seelenkraft +/-</option>
+									<option value="zk_modifikator" data-i18n="zk_modifikator">Zähigkeit +/-</option>
+									<option value="ini_modifikator" data-i18n="ini_modifikator">Initiative +/-</option>
+									<option value="aw_modifikator" data-i18n="aw_modifikator">Ausweichen +/-</option>
+									<option value="gs_modifikator" data-i18n="gs_modifikator">Geschwindigkeit +/-</option>
+									<option value="schips_modifikator" data-i18n="schips_modifikator">Schicksalspunkte +/-
+									</option>
+									<option value="le_regeneration_mod" data-i18n="le_regeneration_mod">Regeneration LE +/-
+									</option>
+									<option value="ae_regeneration_mod" data-i18n="ae_regeneration_mod">Regeneration AE +/-
+									</option>
+									<option value="ke_regeneration_mod" data-i18n="ke_regeneration_mod">Regeneration KE +/-
+									</option>
+								</optgroup>
+								<optgroup label="Kampfsonderfertigkeiten">
+									<option value="at_sf_mod" data-i18n="at_sf_mod">Attacke +/-</option>
+									<option value="pa_sf_mod" data-i18n="pa_sf_mod">Parade +/-</option>
+									<option value="aw_sf_mod" data-i18n="aw_sf_mod">Ausweichen +/-</option>
+									<option value="tp_sf_mod" data-i18n="tp_sf_mod">Trefferpunkte +/-</option>
+									<option value="fk_sf_mod" data-i18n="fk_sf_mod">Fernkampf +/-</option>
+									<option value="nh_at_sf_mod" data-i18n="nh_at_sf_mod">Nebenhand AT +/-</option>
+									<option value="nh_pa_sf_mod" data-i18n="nh_pa_sf_mod">Nebenhand PA +/-</option>
+									<option value="nh_tp_sf_mod" data-i18n="nh_tp_sf_mod">Nebenhand TP +/-</option>
+									<option value="parade_zweite_mod" data-i18n="parade_zweite_mod">Zusätzliche PA +/-
+									</option>
+									<option value="ausweichen_zweite_mod" data-i18n="ausweichen_zweite_mod">Zusätzliches AW
+										+/-</option>
+									<option value="beidhand_kampf_mod" data-i18n="beidhand_kampf_mod">Beidhändigkeit-Mod.
+										+/-</option>
+									<option value="falsche_hand_mod" data-i18n="falsche_hand_mod">Falsche Hand Mod. +/-
+									</option>
+								</optgroup>
+								<optgroup label="Talente Würfelmodifikator">
+								</optgroup>
+								<optgroup label="Körpertalente">
+									<option value="fliegen_sf_mod" data-i18n="fliegen">Fliegen</option>
+									<option value="gaukeleien_sf_mod" data-i18n="gaukeleien">Gaukeleien</option>
+									<option value="klettern_sf_mod" data-i18n="klettern">Klettern</option>
+									<option value="koerperbeherrschung_sf_mod" data-i18n="koerperbeherrschung">
+										Körperbeherrschung</option>
+									<option value="kraftakt_sf_mod" data-i18n="kraftakt">Kraftakt</option>
+									<option value="reiten_sf_mod" data-i18n="reiten">Reiten</option>
+									<option value="schwimmen_sf_mod" data-i18n="schwimmen">Schwimmen</option>
+									<option value="selbstbeherrschung_sf_mod" data-i18n="selbstbeherrschung">
+										Selbstbeherrschung</option>
+									<option value="singen_sf_mod" data-i18n="singen">Singen</option>
+									<option value="sinnesschaerfe_sf_mod" data-i18n="sinnesschaerfe">Sinnesschärfe</option>
+									<option value="tanzen_sf_mod" data-i18n="tanzen">Tanzen</option>
+									<option value="taschendiebstahl_sf_mod" data-i18n="taschendiebstahl">Taschendiebstahl
+									</option>
+									<option value="verbergen_sf_mod" data-i18n="verbergen">Verbergen</option>
+									<option value="zechen_sf_mod" data-i18n="zechen">Zechen</option>
+								</optgroup>
+								<optgroup label="Gesellschaftstalente">
+									<option value="bekehren_sf_mod" data-i18n="bekehren">Bekehren</option>
+									<option value="betoeren_sf_mod" data-i18n="betoeren">Betören</option>
+									<option value="einschuechtern_sf_mod" data-i18n="einschuechtern">Einschüchtern</option>
+									<option value="etikette_sf_mod" data-i18n="etikette">Etikette</option>
+									<option value="gassenwissen_sf_mod" data-i18n="gassenwissen">Gassenwissen</option>
+									<option value="menschenkenntnis_sf_mod" data-i18n="menschenkenntnis">Menschenkenntnis
+									</option>
+									<option value="ueberreden_sf_mod" data-i18n="ueberreden">Überreden</option>
+									<option value="verkleiden_sf_mod" data-i18n="verkleiden">Verkleiden</option>
+									<option value="willenskraft_sf_mod" data-i18n="willenskraft">Willenskraft</option>
+								</optgroup>
+								<optgroup label="Naturtalente">
+									<option value="faehrtensuchen_sf_mod" data-i18n="faehrtensuchen">Fährtensuchen</option>
+									<option value="fesseln_sf_mod" data-i18n="fesseln">Fesseln</option>
+									<option value="fischen_sf_mod" data-i18n="fischen">Fischen</option>
+									<option value="orientierung_sf_mod" data-i18n="orientierung">orientierung</option>
+									<option value="pflanzenkunde_sf_mod" data-i18n="pflanzenkunde">pflanzenkunde</option>
+									<option value="tierkunde_sf_mod" data-i18n="tierkunde">tierkunde</option>
+									<option value="wildnisleben_sf_mod" data-i18n="wildnisleben">wildnisleben</option>
+								</optgroup>
+								<optgroup label="Wissenstalente">
+									<option value="glueckspiel_sf_mod" data-i18n="glueckspiel">glueckspiel</option>
+									<option value="geographie_sf_mod" data-i18n="geographie">geographie</option>
+									<option value="geschichtswissen_sf_mod" data-i18n="geschichtswissen">geschichtswissen
+									</option>
+									<option value="goetterkulte_sf_mod" data-i18n="goetterkulte">goetterkulte</option>
+									<option value="kriegskunst_sf_mod" data-i18n="kriegskunst">kriegskunst</option>
+									<option value="magiekunde_sf_mod" data-i18n="magiekunde">magiekunde</option>
+									<option value="mechanik_sf_mod" data-i18n="mechanik">mechanik</option>
+									<option value="rechnen_sf_mod" data-i18n="rechnen">rechnen</option>
+									<option value="rechtskunde_sf_mod" data-i18n="rechtskunde">rechtskunde</option>
+									<option value="sagenlegenden_sf_mod" data-i18n="sagenlegenden">sagenlegenden</option>
+									<option value="sphaerenkunde_sf_mod" data-i18n="sphaerenkunde">sphaerenkunde</option>
+									<option value="sternkunde_sf_mod" data-i18n="sternkunde">sternkunde</option>
+								</optgroup>
+								<optgroup label="Handwerkstalente">
+									<option value="alchemie_sf_mod" data-i18n="alchemie">alchemie</option>
+									<option value="boote_sf_mod" data-i18n="boote">boote</option>
+									<option value="fahrzeuge_sf_mod" data-i18n="fahrzeuge">fahrzeuge</option>
+									<option value="handel_sf_mod" data-i18n="handel">handel</option>
+									<option value="hkgift_sf_mod" data-i18n="hkgift">hkgift</option>
+									<option value="hkkrankheiten_sf_mod" data-i18n="hkkrankheiten">hkkrankheiten</option>
+									<option value="hkseele_sf_mod" data-i18n="hkseele">hkseele</option>
+									<option value="hkwunden_sf_mod" data-i18n="hkwunden">hkwunden</option>
+									<option value="holzbearbeitung_sf_mod" data-i18n="holzbearbeitung">holzbearbeitung
+									</option>
+									<option value="lebensmittelbearbeitung_sf_mod" data-i18n="lebensmittelbearbeitung">
+										lebensmittelbearbeitung</option>
+									<option value="lederbearbeitung_sf_mod" data-i18n="lederbearbeitung">lederbearbeitung
+									</option>
+									<option value="malenzeichnen_sf_mod" data-i18n="malenzeichnen">malenzeichnen</option>
+									<option value="metallbearbeitung_sf_mod" data-i18n="metallbearbeitung">metallbearbeitung
+									</option>
+									<option value="musizieren_sf_mod" data-i18n="musizieren">musizieren</option>
+									<option value="schloesserknacken_sf_mod" data-i18n="schloesserknacken">schloesserknacken
+									</option>
+									<option value="steinbearbeitung_sf_mod" data-i18n="steinbearbeitung">steinbearbeitung
+									</option>
+									<option value="stoffbearbeitung_sf_mod" data-i18n="stoffbearbeitung">stoffbearbeitung
+									</option>
+								</optgroup>
+								<optgroup label="Magie und Glaube">
+									<option value="magie_sf_mod" data-i18n="magie-modifikator">Zauberwirken +/-</option>
+									<option value="glaube_sf_mod" data-i18n="glaube-modifikator">Göttliches Wirken +/-
+									</option>
+								</optgroup>
+								<optgroup label="Talente FW-Modifikator">
+								</optgroup>
+								<optgroup label="Körpertalente">
+									<option value="fliegen_fw_mod" data-i18n="fliegenfw">Fliegen</option>
+									<option value="gaukeleien_fw_mod" data-i18n="gaukeleienfw">Gaukeleien</option>
+									<option value="klettern_fw_mod" data-i18n="kletternfw">Klettern</option>
+									<option value="koerperbeherrschung_fw_mod" data-i18n="koerperbeherrschungfw">
+										Körperbeherrschung</option>
+									<option value="kraftakt_fw_mod" data-i18n="kraftaktfw">Kraftakt</option>
+									<option value="reiten_fw_mod" data-i18n="reitenfw">Reiten</option>
+									<option value="schwimmen_fw_mod" data-i18n="schwimmenfw">Schwimmen</option>
+									<option value="selbstbeherrschung_fw_mod" data-i18n="selbstbeherrschungfw">
+										Selbstbeherrschung</option>
+									<option value="singen_fw_mod" data-i18n="singenfw">Singen</option>
+									<option value="sinnesschaerfe_fw_mod" data-i18n="sinnesschaerfefw">Sinnesschärfe
+									</option>
+									<option value="tanzen_fw_mod" data-i18n="tanzenfw">Tanzen</option>
+									<option value="taschendiebstahl_fw_mod" data-i18n="taschendiebstahlfw">Taschendiebstahl
+									</option>
+									<option value="verbergen_fw_mod" data-i18n="verbergenfw">Verbergen</option>
+									<option value="zechen_fw_mod" data-i18n="zechenfw">Zechen</option>
+								</optgroup>
+								<optgroup label="Gesellschaftstalente">
+									<option value="bekehren_fw_mod" data-i18n="bekehrenfw">Bekehren</option>
+									<option value="betoeren_fw_mod" data-i18n="betoerenfw">Betören</option>
+									<option value="einschuechtern_fw_mod" data-i18n="einschuechternfw">Einschüchtern
+									</option>
+									<option value="etikette_fw_mod" data-i18n="etikettefw">Etikette</option>
+									<option value="gassenwissen_fw_mod" data-i18n="gassenwissenfw"></option>
+									<option value="menschenkenntnis_fw_mod" data-i18n="menschenkenntnisfw">Menschenkenntnis
+									</option>
+									<option value="ueberreden_fw_mod" data-i18n="ueberredenfw">Überreden</option>
+									<option value="verkleiden_fw_mod" data-i18n="verkleidenfw">Verkleiden</option>
+									<option value="willenskraft_fw_mod" data-i18n="willenskraftfw">Willenskraft</option>
+								</optgroup>
+								<optgroup label="Naturtalente">
+									<option value="faehrtensuchen_fw_mod" data-i18n="faehrtensuchenfw">Fährtensuchen
+									</option>
+									<option value="fesseln_fw_mod" data-i18n="fesselnfw">Fesseln</option>
+									<option value="fischen_fw_mod" data-i18n="fischenfw">Fischen</option>
+									<option value="orientierung_fw_mod" data-i18n="orientierungfw">orientierung</option>
+									<option value="pflanzenkunde_fw_mod" data-i18n="pflanzenkundefw">pflanzenkunde</option>
+									<option value="tierkunde_fw_mod" data-i18n="tierkundefw">tierkunde</option>
+									<option value="wildnisleben_fw_mod" data-i18n="wildnislebenfw">wildnisleben</option>
+								</optgroup>
+								<optgroup label="Wissenstalente">
+									<option value="glueckspiel_fw_mod" data-i18n="glueckspielfw">glueckspiel</option>
+									<option value="geographie_fw_mod" data-i18n="geographiefw">geographie</option>
+									<option value="geschichtswissen_fw_mod" data-i18n="geschichtswissenfw">geschichtswissen
+									</option>
+									<option value="goetterkulte_fw_mod" data-i18n="goetterkultefw">goetterkulte</option>
+									<option value="kriegskunst_fw_mod" data-i18n="kriegskunstfw">kriegskunst</option>
+									<option value="magiekunde_fw_mod" data-i18n="magiekundefw">magiekunde</option>
+									<option value="mechanik_fw_mod" data-i18n="mechanikfw">mechanik</option>
+									<option value="rechnen_fw_mod" data-i18n="rechnenfw">rechnen</option>
+									<option value="rechtskunde_fw_mod" data-i18n="rechtskundefw">rechtskunde</option>
+									<option value="sagenlegenden_fw_mod" data-i18n="sagenlegendenfw">sagenlegenden</option>
+									<option value="sphaerenkunde_fw_mod" data-i18n="sphaerenkundefw">sphaerenkunde</option>
+									<option value="sternkunde_fw_mod" data-i18n="sternkundefw">sternkunde</option>
+								</optgroup>
+								<optgroup label="Handwerkstalente">
+									<option value="alchemie_fw_mod" data-i18n="alchemiefw">alchemie</option>
+									<option value="boote_fw_mod" data-i18n="bootefw">boote</option>
+									<option value="fahrzeuge_fw_mod" data-i18n="fahrzeugefw">fahrzeuge</option>
+									<option value="handel_fw_mod" data-i18n="handelfw">handel</option>
+									<option value="hkgift_fw_mod" data-i18n="hkgiftfw">hkgift</option>
+									<option value="hkkrankheiten_fw_mod" data-i18n="hkkrankheitenfw">hkkrankheiten</option>
+									<option value="hkseele_fw_mod" data-i18n="hkseelefw">hkseele</option>
+									<option value="hkwunden_fw_mod" data-i18n="hkwundenfw">hkwunden</option>
+									<option value="holzbearbeitung_fw_mod" data-i18n="holzbearbeitungfw">holzbearbeitung
+									</option>
+									<option value="lebensmittelbearbeitung_fw_mod" data-i18n="lebensmittelbearbeitungfw">
+										lebensmittelbearbeitung</option>
+									<option value="lederbearbeitung_fw_mod" data-i18n="lederbearbeitungfw">lederbearbeitung
+									</option>
+									<option value="malenzeichnen_fw_mod" data-i18n="malenzeichnenfw">malenzeichnen</option>
+									<option value="metallbearbeitung_fw_mod" data-i18n="metallbearbeitungfw">
+										metallbearbeitung</option>
+									<option value="musizieren_fw_mod" data-i18n="musizierenfw">musizieren</option>
+									<option value="schloesserknacken_fw_mod" data-i18n="schloesserknackenfw">
+										schloesserknacken</option>
+									<option value="steinbearbeitung_fw_mod" data-i18n="steinbearbeitungfw">steinbearbeitung
+									</option>
+									<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
+									</option>
+								</optgroup>
+							</select>
+							<input class="modifikator modifikator-value2" type="number" name='attr_sonderfertigkeit_mod2' value='0' />
+						</div>
+						<div class="modifikator sf5 sf_modifier">
+							<select class="modifikator modifikator-select3" name="attr_sonderfertigkeit_auswahl3">
+								<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
 								</option>
-								<option value="ae_regeneration_mod" data-i18n="ae_regeneration_mod">Regeneration AE +/-
-								</option>
-								<option value="ke_regeneration_mod" data-i18n="ke_regeneration_mod">Regeneration KE +/-
-								</option>
-							</optgroup>
-							<optgroup label="Kampfsonderfertigkeiten">
-								<option value="at_sf_mod" data-i18n="at_sf_mod">Attacke +/-</option>
-								<option value="pa_sf_mod" data-i18n="pa_sf_mod">Parade +/-</option>
-								<option value="aw_sf_mod" data-i18n="aw_sf_mod">Ausweichen +/-</option>
-								<option value="tp_sf_mod" data-i18n="tp_sf_mod">Trefferpunkte +/-</option>
-								<option value="fk_sf_mod" data-i18n="fk_sf_mod">Fernkampf +/-</option>
-								<option value="nh_at_sf_mod" data-i18n="nh_at_sf_mod">Nebenhand AT +/-</option>
-								<option value="nh_pa_sf_mod" data-i18n="nh_pa_sf_mod">Nebenhand PA +/-</option>
-								<option value="nh_tp_sf_mod" data-i18n="nh_tp_sf_mod">Nebenhand TP +/-</option>
-								<option value="parade_zweite_mod" data-i18n="parade_zweite_mod">Zusätzliche PA +/-
-								</option>
-								<option value="ausweichen_zweite_mod" data-i18n="ausweichen_zweite_mod">Zusätzliches AW
-									+/-</option>
-								<option value="beidhand_kampf_mod" data-i18n="beidhand_kampf_mod">Beidhändigkeit-Mod.
-									+/-</option>
-								<option value="falsche_hand_mod" data-i18n="falsche_hand_mod">Falsche Hand Mod. +/-
-								</option>
-							</optgroup>
-							<optgroup label="Talente Würfelmodifikator">
-							</optgroup>
-							<optgroup label="Körpertalente">
-								<option value="fliegen_sf_mod" data-i18n="fliegen">Fliegen</option>
-								<option value="gaukeleien_sf_mod" data-i18n="gaukeleien">Gaukeleien</option>
-								<option value="klettern_sf_mod" data-i18n="klettern">Klettern</option>
-								<option value="koerperbeherrschung_sf_mod" data-i18n="koerperbeherrschung">
-									Körperbeherrschung</option>
-								<option value="kraftakt_sf_mod" data-i18n="kraftakt">Kraftakt</option>
-								<option value="reiten_sf_mod" data-i18n="reiten">Reiten</option>
-								<option value="schwimmen_sf_mod" data-i18n="schwimmen">Schwimmen</option>
-								<option value="selbstbeherrschung_sf_mod" data-i18n="selbstbeherrschung">
-									Selbstbeherrschung</option>
-								<option value="singen_sf_mod" data-i18n="singen">Singen</option>
-								<option value="sinnesschaerfe_sf_mod" data-i18n="sinnesschaerfe">Sinnesschärfe</option>
-								<option value="tanzen_sf_mod" data-i18n="tanzen">Tanzen</option>
-								<option value="taschendiebstahl_sf_mod" data-i18n="taschendiebstahl">Taschendiebstahl
-								</option>
-								<option value="verbergen_sf_mod" data-i18n="verbergen">Verbergen</option>
-								<option value="zechen_sf_mod" data-i18n="zechen">Zechen</option>
-							</optgroup>
-							<optgroup label="Gesellschaftstalente">
-								<option value="bekehren_sf_mod" data-i18n="bekehren">Bekehren</option>
-								<option value="betoeren_sf_mod" data-i18n="betoeren">Betören</option>
-								<option value="einschuechtern_sf_mod" data-i18n="einschuechtern">Einschüchtern</option>
-								<option value="etikette_sf_mod" data-i18n="etikette">Etikette</option>
-								<option value="gassenwissen_sf_mod" data-i18n="gassenwissen">Gassenwissen</option>
-								<option value="menschenkenntnis_sf_mod" data-i18n="menschenkenntnis">Menschenkenntnis
-								</option>
-								<option value="ueberreden_sf_mod" data-i18n="ueberreden">Überreden</option>
-								<option value="verkleiden_sf_mod" data-i18n="verkleiden">Verkleiden</option>
-								<option value="willenskraft_sf_mod" data-i18n="willenskraft">Willenskraft</option>
-							</optgroup>
-							<optgroup label="Naturtalente">
-								<option value="faehrtensuchen_sf_mod" data-i18n="faehrtensuchen">Fährtensuchen</option>
-								<option value="fesseln_sf_mod" data-i18n="fesseln">Fesseln</option>
-								<option value="fischen_sf_mod" data-i18n="fischen">Fischen</option>
-								<option value="orientierung_sf_mod" data-i18n="orientierung">orientierung</option>
-								<option value="pflanzenkunde_sf_mod" data-i18n="pflanzenkunde">pflanzenkunde</option>
-								<option value="tierkunde_sf_mod" data-i18n="tierkunde">tierkunde</option>
-								<option value="wildnisleben_sf_mod" data-i18n="wildnisleben">wildnisleben</option>
-							</optgroup>
-							<optgroup label="Wissenstalente">
-								<option value="glueckspiel_sf_mod" data-i18n="glueckspiel">glueckspiel</option>
-								<option value="geographie_sf_mod" data-i18n="geographie">geographie</option>
-								<option value="geschichtswissen_sf_mod" data-i18n="geschichtswissen">geschichtswissen
-								</option>
-								<option value="goetterkulte_sf_mod" data-i18n="goetterkulte">goetterkulte</option>
-								<option value="kriegskunst_sf_mod" data-i18n="kriegskunst">kriegskunst</option>
-								<option value="magiekunde_sf_mod" data-i18n="magiekunde">magiekunde</option>
-								<option value="mechanik_sf_mod" data-i18n="mechanik">mechanik</option>
-								<option value="rechnen_sf_mod" data-i18n="rechnen">rechnen</option>
-								<option value="rechtskunde_sf_mod" data-i18n="rechtskunde">rechtskunde</option>
-								<option value="sagenlegenden_sf_mod" data-i18n="sagenlegenden">sagenlegenden</option>
-								<option value="sphaerenkunde_sf_mod" data-i18n="sphaerenkunde">sphaerenkunde</option>
-								<option value="sternkunde_sf_mod" data-i18n="sternkunde">sternkunde</option>
-							</optgroup>
-							<optgroup label="Handwerkstalente">
-								<option value="alchemie_sf_mod" data-i18n="alchemie">alchemie</option>
-								<option value="boote_sf_mod" data-i18n="boote">boote</option>
-								<option value="fahrzeuge_sf_mod" data-i18n="fahrzeuge">fahrzeuge</option>
-								<option value="handel_sf_mod" data-i18n="handel">handel</option>
-								<option value="hkgift_sf_mod" data-i18n="hkgift">hkgift</option>
-								<option value="hkkrankheiten_sf_mod" data-i18n="hkkrankheiten">hkkrankheiten</option>
-								<option value="hkseele_sf_mod" data-i18n="hkseele">hkseele</option>
-								<option value="hkwunden_sf_mod" data-i18n="hkwunden">hkwunden</option>
-								<option value="holzbearbeitung_sf_mod" data-i18n="holzbearbeitung">holzbearbeitung
-								</option>
-								<option value="lebensmittelbearbeitung_sf_mod" data-i18n="lebensmittelbearbeitung">
-									lebensmittelbearbeitung</option>
-								<option value="lederbearbeitung_sf_mod" data-i18n="lederbearbeitung">lederbearbeitung
-								</option>
-								<option value="malenzeichnen_sf_mod" data-i18n="malenzeichnen">malenzeichnen</option>
-								<option value="metallbearbeitung_sf_mod" data-i18n="metallbearbeitung">metallbearbeitung
-								</option>
-								<option value="musizieren_sf_mod" data-i18n="musizieren">musizieren</option>
-								<option value="schloesserknacken_sf_mod" data-i18n="schloesserknacken">schloesserknacken
-								</option>
-								<option value="steinbearbeitung_sf_mod" data-i18n="steinbearbeitung">steinbearbeitung
-								</option>
-								<option value="stoffbearbeitung_sf_mod" data-i18n="stoffbearbeitung">stoffbearbeitung
-								</option>
-							</optgroup>
-							<optgroup label="Magie und Glaube">
-								<option value="magie_sf_mod" data-i18n="magie-modifikator">Zauberwirken +/-</option>
-								<option value="glaube_sf_mod" data-i18n="glaube-modifikator">Göttliches Wirken +/-
-								</option>
-							</optgroup>
-							<optgroup label="Talente FW-Modifikator">
-							</optgroup>
-							<optgroup label="Körpertalente">
-								<option value="fliegen_fw_mod" data-i18n="fliegenfw">Fliegen</option>
-								<option value="gaukeleien_fw_mod" data-i18n="gaukeleienfw">Gaukeleien</option>
-								<option value="klettern_fw_mod" data-i18n="kletternfw">Klettern</option>
-								<option value="koerperbeherrschung_fw_mod" data-i18n="koerperbeherrschungfw">
-									Körperbeherrschung</option>
-								<option value="kraftakt_fw_mod" data-i18n="kraftaktfw">Kraftakt</option>
-								<option value="reiten_fw_mod" data-i18n="reitenfw">Reiten</option>
-								<option value="schwimmen_fw_mod" data-i18n="schwimmenfw">Schwimmen</option>
-								<option value="selbstbeherrschung_fw_mod" data-i18n="selbstbeherrschungfw">
-									Selbstbeherrschung</option>
-								<option value="singen_fw_mod" data-i18n="singenfw">Singen</option>
-								<option value="sinnesschaerfe_fw_mod" data-i18n="sinnesschaerfefw">Sinnesschärfe
-								</option>
-								<option value="tanzen_fw_mod" data-i18n="tanzenfw">Tanzen</option>
-								<option value="taschendiebstahl_fw_mod" data-i18n="taschendiebstahlfw">Taschendiebstahl
-								</option>
-								<option value="verbergen_fw_mod" data-i18n="verbergenfw">Verbergen</option>
-								<option value="zechen_fw_mod" data-i18n="zechenfw">Zechen</option>
-							</optgroup>
-							<optgroup label="Gesellschaftstalente">
-								<option value="bekehren_fw_mod" data-i18n="bekehrenfw">Bekehren</option>
-								<option value="betoeren_fw_mod" data-i18n="betoerenfw">Betören</option>
-								<option value="einschuechtern_fw_mod" data-i18n="einschuechternfw">Einschüchtern
-								</option>
-								<option value="etikette_fw_mod" data-i18n="etikettefw">Etikette</option>
-								<option value="gassenwissen_fw_mod" data-i18n="gassenwissenfw"></option>
-								<option value="menschenkenntnis_fw_mod" data-i18n="menschenkenntnisfw">Menschenkenntnis
-								</option>
-								<option value="ueberreden_fw_mod" data-i18n="ueberredenfw">Überreden</option>
-								<option value="verkleiden_fw_mod" data-i18n="verkleidenfw">Verkleiden</option>
-								<option value="willenskraft_fw_mod" data-i18n="willenskraftfw">Willenskraft</option>
-							</optgroup>
-							<optgroup label="Naturtalente">
-								<option value="faehrtensuchen_fw_mod" data-i18n="faehrtensuchenfw">Fährtensuchen
-								</option>
-								<option value="fesseln_fw_mod" data-i18n="fesselnfw">Fesseln</option>
-								<option value="fischen_fw_mod" data-i18n="fischenfw">Fischen</option>
-								<option value="orientierung_fw_mod" data-i18n="orientierungfw">orientierung</option>
-								<option value="pflanzenkunde_fw_mod" data-i18n="pflanzenkundefw">pflanzenkunde</option>
-								<option value="tierkunde_fw_mod" data-i18n="tierkundefw">tierkunde</option>
-								<option value="wildnisleben_fw_mod" data-i18n="wildnislebenfw">wildnisleben</option>
-							</optgroup>
-							<optgroup label="Wissenstalente">
-								<option value="glueckspiel_fw_mod" data-i18n="glueckspielfw">glueckspiel</option>
-								<option value="geographie_fw_mod" data-i18n="geographiefw">geographie</option>
-								<option value="geschichtswissen_fw_mod" data-i18n="geschichtswissenfw">geschichtswissen
-								</option>
-								<option value="goetterkulte_fw_mod" data-i18n="goetterkultefw">goetterkulte</option>
-								<option value="kriegskunst_fw_mod" data-i18n="kriegskunstfw">kriegskunst</option>
-								<option value="magiekunde_fw_mod" data-i18n="magiekundefw">magiekunde</option>
-								<option value="mechanik_fw_mod" data-i18n="mechanikfw">mechanik</option>
-								<option value="rechnen_fw_mod" data-i18n="rechnenfw">rechnen</option>
-								<option value="rechtskunde_fw_mod" data-i18n="rechtskundefw">rechtskunde</option>
-								<option value="sagenlegenden_fw_mod" data-i18n="sagenlegendenfw">sagenlegenden</option>
-								<option value="sphaerenkunde_fw_mod" data-i18n="sphaerenkundefw">sphaerenkunde</option>
-								<option value="sternkunde_fw_mod" data-i18n="sternkundefw">sternkunde</option>
-							</optgroup>
-							<optgroup label="Handwerkstalente">
-								<option value="alchemie_fw_mod" data-i18n="alchemiefw">alchemie</option>
-								<option value="boote_fw_mod" data-i18n="bootefw">boote</option>
-								<option value="fahrzeuge_fw_mod" data-i18n="fahrzeugefw">fahrzeuge</option>
-								<option value="handel_fw_mod" data-i18n="handelfw">handel</option>
-								<option value="hkgift_fw_mod" data-i18n="hkgiftfw">hkgift</option>
-								<option value="hkkrankheiten_fw_mod" data-i18n="hkkrankheitenfw">hkkrankheiten</option>
-								<option value="hkseele_fw_mod" data-i18n="hkseelefw">hkseele</option>
-								<option value="hkwunden_fw_mod" data-i18n="hkwundenfw">hkwunden</option>
-								<option value="holzbearbeitung_fw_mod" data-i18n="holzbearbeitungfw">holzbearbeitung
-								</option>
-								<option value="lebensmittelbearbeitung_fw_mod" data-i18n="lebensmittelbearbeitungfw">
-									lebensmittelbearbeitung</option>
-								<option value="lederbearbeitung_fw_mod" data-i18n="lederbearbeitungfw">lederbearbeitung
-								</option>
-								<option value="malenzeichnen_fw_mod" data-i18n="malenzeichnenfw">malenzeichnen</option>
-								<option value="metallbearbeitung_fw_mod" data-i18n="metallbearbeitungfw">
-									metallbearbeitung</option>
-								<option value="musizieren_fw_mod" data-i18n="musizierenfw">musizieren</option>
-								<option value="schloesserknacken_fw_mod" data-i18n="schloesserknackenfw">
-									schloesserknacken</option>
-								<option value="steinbearbeitung_fw_mod" data-i18n="steinbearbeitungfw">steinbearbeitung
-								</option>
-								<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
-								</option>
-							</optgroup>
-						</select>
-						<input class="modifikator modifikator-value2" type="number" name='attr_sonderfertigkeit_mod2' value='0' />
-						<select class="modifikator modifikator-select3" name="attr_sonderfertigkeit_auswahl3">
-							<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
-							</option>
-							<optgroup label="Eigenschaften">
-								<option value="mu_mod" data-i18n="mu_mod">Mut +/-</option>
-								<option value="kl_mod" data-i18n="kl_mod">Klugheit +/-</option>
-								<option value="in_mod" data-i18n="in_mod">Intuition +/-</option>
-								<option value="ch_mod" data-i18n="ch_mod">Charisma +/-</option>
-								<option value="ff_mod" data-i18n="ff_mod">Fingerfertigkeit +/-</option>
-								<option value="ge_mod" data-i18n="ge_mod">Gewandheit +/-</option>
-								<option value="ko_mod" data-i18n="ko_mod">Konstitution +/-</option>
-								<option value="kk_mod" data-i18n="kk_mod">Koerperkraft +/-</option>
-							</optgroup>
-							<optgroup label="abgeleitete Werte">
-								<option value="le_modifikator" data-i18n="le_modifikator">Lebensenergie +/-</option>
-								<option value="ae_modifikator" data-i18n="ae_modifikator">Astralenergie +/-</option>
-								<option value="ke_modifikator" data-i18n="ke_modifikator">Karmalenergie +/-</option>
-								<option value="sk_modifikator" data-i18n="sk_modifikator">Seelenkraft +/-</option>
-								<option value="zk_modifikator" data-i18n="zk_modifikator">Zähigkeit +/-</option>
-								<option value="ini_modifikator" data-i18n="ini_modifikator">Initiative +/-</option>
-								<option value="aw_modifikator" data-i18n="aw_modifikator">Ausweichen +/-</option>
-								<option value="gs_modifikator" data-i18n="gs_modifikator">Geschwindigkeit +/-</option>
-								<option value="schips_modifikator" data-i18n="schips_modifikator">Schicksalspunkte +/-
-								</option>
-								<option value="le_regeneration_mod" data-i18n="le_regeneration_mod">Regeneration LE +/-
-								</option>
-								<option value="ae_regeneration_mod" data-i18n="ae_regeneration_mod">Regeneration AE +/-
-								</option>
-								<option value="ke_regeneration_mod" data-i18n="ke_regeneration_mod">Regeneration KE +/-
-								</option>
-							</optgroup>
-							<optgroup label="Kampfsonderfertigkeiten">
-								<option value="at_sf_mod" data-i18n="at_sf_mod">Attacke +/-</option>
-								<option value="pa_sf_mod" data-i18n="pa_sf_mod">Parade +/-</option>
-								<option value="aw_sf_mod" data-i18n="aw_sf_mod">Ausweichen +/-</option>
-								<option value="tp_sf_mod" data-i18n="tp_sf_mod">Trefferpunkte +/-</option>
-								<option value="fk_sf_mod" data-i18n="fk_sf_mod">Fernkampf +/-</option>
-								<option value="nh_at_sf_mod" data-i18n="nh_at_sf_mod">Nebenhand AT +/-</option>
-								<option value="nh_pa_sf_mod" data-i18n="nh_pa_sf_mod">Nebenhand PA +/-</option>
-								<option value="nh_tp_sf_mod" data-i18n="nh_tp_sf_mod">Nebenhand TP +/-</option>
-								<option value="parade_zweite_mod" data-i18n="parade_zweite_mod">Zusätzliche PA +/-
-								</option>
-								<option value="ausweichen_zweite_mod" data-i18n="ausweichen_zweite_mod">Zusätzliches AW
-									+/-</option>
-								<option value="beidhand_kampf_mod" data-i18n="beidhand_kampf_mod">Beidhändigkeit-Mod.
-									+/-</option>
-								<option value="falsche_hand_mod" data-i18n="falsche_hand_mod">Falsche Hand Mod. +/-
-								</option>
-							</optgroup>
-							<optgroup label="Talente Würfelmodifikator">
-							</optgroup>
-							<optgroup label="Körpertalente">
-								<option value="fliegen_sf_mod" data-i18n="fliegen">Fliegen</option>
-								<option value="gaukeleien_sf_mod" data-i18n="gaukeleien">Gaukeleien</option>
-								<option value="klettern_sf_mod" data-i18n="klettern">Klettern</option>
-								<option value="koerperbeherrschung_sf_mod" data-i18n="koerperbeherrschung">
-									Körperbeherrschung</option>
-								<option value="kraftakt_sf_mod" data-i18n="kraftakt">Kraftakt</option>
-								<option value="reiten_sf_mod" data-i18n="reiten">Reiten</option>
-								<option value="schwimmen_sf_mod" data-i18n="schwimmen">Schwimmen</option>
-								<option value="selbstbeherrschung_sf_mod" data-i18n="selbstbeherrschung">
-									Selbstbeherrschung</option>
-								<option value="singen_sf_mod" data-i18n="singen">Singen</option>
-								<option value="sinnesschaerfe_sf_mod" data-i18n="sinnesschaerfe">Sinnesschärfe</option>
-								<option value="tanzen_sf_mod" data-i18n="tanzen">Tanzen</option>
-								<option value="taschendiebstahl_sf_mod" data-i18n="taschendiebstahl">Taschendiebstahl
-								</option>
-								<option value="verbergen_sf_mod" data-i18n="verbergen">Verbergen</option>
-								<option value="zechen_sf_mod" data-i18n="zechen">Zechen</option>
-							</optgroup>
-							<optgroup label="Gesellschaftstalente">
-								<option value="bekehren_sf_mod" data-i18n="bekehren">Bekehren</option>
-								<option value="betoeren_sf_mod" data-i18n="betoeren">Betören</option>
-								<option value="einschuechtern_sf_mod" data-i18n="einschuechtern">Einschüchtern</option>
-								<option value="etikette_sf_mod" data-i18n="etikette">Etikette</option>
-								<option value="gassenwissen_sf_mod" data-i18n="gassenwissen">Gassenwissen</option>
-								<option value="menschenkenntnis_sf_mod" data-i18n="menschenkenntnis">Menschenkenntnis
-								</option>
-								<option value="ueberreden_sf_mod" data-i18n="ueberreden">Überreden</option>
-								<option value="verkleiden_sf_mod" data-i18n="verkleiden">Verkleiden</option>
-								<option value="willenskraft_sf_mod" data-i18n="willenskraft">Willenskraft</option>
-							</optgroup>
-							<optgroup label="Naturtalente">
-								<option value="faehrtensuchen_sf_mod" data-i18n="faehrtensuchen">Fährtensuchen</option>
-								<option value="fesseln_sf_mod" data-i18n="fesseln">Fesseln</option>
-								<option value="fischen_sf_mod" data-i18n="fischen">Fischen</option>
-								<option value="orientierung_sf_mod" data-i18n="orientierung">orientierung</option>
-								<option value="pflanzenkunde_sf_mod" data-i18n="pflanzenkunde">pflanzenkunde</option>
-								<option value="tierkunde_sf_mod" data-i18n="tierkunde">tierkunde</option>
-								<option value="wildnisleben_sf_mod" data-i18n="wildnisleben">wildnisleben</option>
-							</optgroup>
-							<optgroup label="Wissenstalente">
-								<option value="glueckspiel_sf_mod" data-i18n="glueckspiel">glueckspiel</option>
-								<option value="geographie_sf_mod" data-i18n="geographie">geographie</option>
-								<option value="geschichtswissen_sf_mod" data-i18n="geschichtswissen">geschichtswissen
-								</option>
-								<option value="goetterkulte_sf_mod" data-i18n="goetterkulte">goetterkulte</option>
-								<option value="kriegskunst_sf_mod" data-i18n="kriegskunst">kriegskunst</option>
-								<option value="magiekunde_sf_mod" data-i18n="magiekunde">magiekunde</option>
-								<option value="mechanik_sf_mod" data-i18n="mechanik">mechanik</option>
-								<option value="rechnen_sf_mod" data-i18n="rechnen">rechnen</option>
-								<option value="rechtskunde_sf_mod" data-i18n="rechtskunde">rechtskunde</option>
-								<option value="sagenlegenden_sf_mod" data-i18n="sagenlegenden">sagenlegenden</option>
-								<option value="sphaerenkunde_sf_mod" data-i18n="sphaerenkunde">sphaerenkunde</option>
-								<option value="sternkunde_sf_mod" data-i18n="sternkunde">sternkunde</option>
-							</optgroup>
-							<optgroup label="Handwerkstalente">
-								<option value="alchemie_sf_mod" data-i18n="alchemie">alchemie</option>
-								<option value="boote_sf_mod" data-i18n="boote">boote</option>
-								<option value="fahrzeuge_sf_mod" data-i18n="fahrzeuge">fahrzeuge</option>
-								<option value="handel_sf_mod" data-i18n="handel">handel</option>
-								<option value="hkgift_sf_mod" data-i18n="hkgift">hkgift</option>
-								<option value="hkkrankheiten_sf_mod" data-i18n="hkkrankheiten">hkkrankheiten</option>
-								<option value="hkseele_sf_mod" data-i18n="hkseele">hkseele</option>
-								<option value="hkwunden_sf_mod" data-i18n="hkwunden">hkwunden</option>
-								<option value="holzbearbeitung_sf_mod" data-i18n="holzbearbeitung">holzbearbeitung
-								</option>
-								<option value="lebensmittelbearbeitung_sf_mod" data-i18n="lebensmittelbearbeitung">
-									lebensmittelbearbeitung</option>
-								<option value="lederbearbeitung_sf_mod" data-i18n="lederbearbeitung">lederbearbeitung
-								</option>
-								<option value="malenzeichnen_sf_mod" data-i18n="malenzeichnen">malenzeichnen</option>
-								<option value="metallbearbeitung_sf_mod" data-i18n="metallbearbeitung">metallbearbeitung
-								</option>
-								<option value="musizieren_sf_mod" data-i18n="musizieren">musizieren</option>
-								<option value="schloesserknacken_sf_mod" data-i18n="schloesserknacken">schloesserknacken
-								</option>
-								<option value="steinbearbeitung_sf_mod" data-i18n="steinbearbeitung">steinbearbeitung
-								</option>
-								<option value="stoffbearbeitung_sf_mod" data-i18n="stoffbearbeitung">stoffbearbeitung
-								</option>
-							</optgroup>
-							<optgroup label="Magie und Glaube">
-								<option value="magie_sf_mod" data-i18n="magie-modifikator">Zauberwirken +/-</option>
-								<option value="glaube_sf_mod" data-i18n="glaube-modifikator">Göttliches Wirken +/-
-								</option>
-							</optgroup>
-							<optgroup label="Talente FW-Modifikator">
-							</optgroup>
-							<optgroup label="Körpertalente">
-								<option value="fliegen_fw_mod" data-i18n="fliegenfw">Fliegen</option>
-								<option value="gaukeleien_fw_mod" data-i18n="gaukeleienfw">Gaukeleien</option>
-								<option value="klettern_fw_mod" data-i18n="kletternfw">Klettern</option>
-								<option value="koerperbeherrschung_fw_mod" data-i18n="koerperbeherrschungfw">
-									Körperbeherrschung</option>
-								<option value="kraftakt_fw_mod" data-i18n="kraftaktfw">Kraftakt</option>
-								<option value="reiten_fw_mod" data-i18n="reitenfw">Reiten</option>
-								<option value="schwimmen_fw_mod" data-i18n="schwimmenfw">Schwimmen</option>
-								<option value="selbstbeherrschung_fw_mod" data-i18n="selbstbeherrschungfw">
-									Selbstbeherrschung</option>
-								<option value="singen_fw_mod" data-i18n="singenfw">Singen</option>
-								<option value="sinnesschaerfe_fw_mod" data-i18n="sinnesschaerfefw">Sinnesschärfe
-								</option>
-								<option value="tanzen_fw_mod" data-i18n="tanzenfw">Tanzen</option>
-								<option value="taschendiebstahl_fw_mod" data-i18n="taschendiebstahlfw">Taschendiebstahl
-								</option>
-								<option value="verbergen_fw_mod" data-i18n="verbergenfw">Verbergen</option>
-								<option value="zechen_fw_mod" data-i18n="zechenfw">Zechen</option>
-							</optgroup>
-							<optgroup label="Gesellschaftstalente">
-								<option value="bekehren_fw_mod" data-i18n="bekehrenfw">Bekehren</option>
-								<option value="betoeren_fw_mod" data-i18n="betoerenfw">Betören</option>
-								<option value="einschuechtern_fw_mod" data-i18n="einschuechternfw">Einschüchtern
-								</option>
-								<option value="etikette_fw_mod" data-i18n="etikettefw">Etikette</option>
-								<option value="gassenwissen_fw_mod" data-i18n="gassenwissenfw"></option>
-								<option value="menschenkenntnis_fw_mod" data-i18n="menschenkenntnisfw">Menschenkenntnis
-								</option>
-								<option value="ueberreden_fw_mod" data-i18n="ueberredenfw">Überreden</option>
-								<option value="verkleiden_fw_mod" data-i18n="verkleidenfw">Verkleiden</option>
-								<option value="willenskraft_fw_mod" data-i18n="willenskraftfw">Willenskraft</option>
-							</optgroup>
-							<optgroup label="Naturtalente">
-								<option value="faehrtensuchen_fw_mod" data-i18n="faehrtensuchenfw">Fährtensuchen
-								</option>
-								<option value="fesseln_fw_mod" data-i18n="fesselnfw">Fesseln</option>
-								<option value="fischen_fw_mod" data-i18n="fischenfw">Fischen</option>
-								<option value="orientierung_fw_mod" data-i18n="orientierungfw">orientierung</option>
-								<option value="pflanzenkunde_fw_mod" data-i18n="pflanzenkundefw">pflanzenkunde</option>
-								<option value="tierkunde_fw_mod" data-i18n="tierkundefw">tierkunde</option>
-								<option value="wildnisleben_fw_mod" data-i18n="wildnislebenfw">wildnisleben</option>
-							</optgroup>
-							<optgroup label="Wissenstalente">
-								<option value="glueckspiel_fw_mod" data-i18n="glueckspielfw">glueckspiel</option>
-								<option value="geographie_fw_mod" data-i18n="geographiefw">geographie</option>
-								<option value="geschichtswissen_fw_mod" data-i18n="geschichtswissenfw">geschichtswissen
-								</option>
-								<option value="goetterkulte_fw_mod" data-i18n="goetterkultefw">goetterkulte</option>
-								<option value="kriegskunst_fw_mod" data-i18n="kriegskunstfw">kriegskunst</option>
-								<option value="magiekunde_fw_mod" data-i18n="magiekundefw">magiekunde</option>
-								<option value="mechanik_fw_mod" data-i18n="mechanikfw">mechanik</option>
-								<option value="rechnen_fw_mod" data-i18n="rechnenfw">rechnen</option>
-								<option value="rechtskunde_fw_mod" data-i18n="rechtskundefw">rechtskunde</option>
-								<option value="sagenlegenden_fw_mod" data-i18n="sagenlegendenfw">sagenlegenden</option>
-								<option value="sphaerenkunde_fw_mod" data-i18n="sphaerenkundefw">sphaerenkunde</option>
-								<option value="sternkunde_fw_mod" data-i18n="sternkundefw">sternkunde</option>
-							</optgroup>
-							<optgroup label="Handwerkstalente">
-								<option value="alchemie_fw_mod" data-i18n="alchemiefw">alchemie</option>
-								<option value="boote_fw_mod" data-i18n="bootefw">boote</option>
-								<option value="fahrzeuge_fw_mod" data-i18n="fahrzeugefw">fahrzeuge</option>
-								<option value="handel_fw_mod" data-i18n="handelfw">handel</option>
-								<option value="hkgift_fw_mod" data-i18n="hkgiftfw">hkgift</option>
-								<option value="hkkrankheiten_fw_mod" data-i18n="hkkrankheitenfw">hkkrankheiten</option>
-								<option value="hkseele_fw_mod" data-i18n="hkseelefw">hkseele</option>
-								<option value="hkwunden_fw_mod" data-i18n="hkwundenfw">hkwunden</option>
-								<option value="holzbearbeitung_fw_mod" data-i18n="holzbearbeitungfw">holzbearbeitung
-								</option>
-								<option value="lebensmittelbearbeitung_fw_mod" data-i18n="lebensmittelbearbeitungfw">
-									lebensmittelbearbeitung</option>
-								<option value="lederbearbeitung_fw_mod" data-i18n="lederbearbeitungfw">lederbearbeitung
-								</option>
-								<option value="malenzeichnen_fw_mod" data-i18n="malenzeichnenfw">malenzeichnen</option>
-								<option value="metallbearbeitung_fw_mod" data-i18n="metallbearbeitungfw">
-									metallbearbeitung</option>
-								<option value="musizieren_fw_mod" data-i18n="musizierenfw">musizieren</option>
-								<option value="schloesserknacken_fw_mod" data-i18n="schloesserknackenfw">
-									schloesserknacken</option>
-								<option value="steinbearbeitung_fw_mod" data-i18n="steinbearbeitungfw">steinbearbeitung
-								</option>
-								<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
-								</option>
-							</optgroup>
-						</select>
-						<input class="modifikator modifikator-value3" type="number" name='attr_sonderfertigkeit_mod3' value='0' />
+								<optgroup label="Eigenschaften">
+									<option value="mu_mod" data-i18n="mu_mod">Mut +/-</option>
+									<option value="kl_mod" data-i18n="kl_mod">Klugheit +/-</option>
+									<option value="in_mod" data-i18n="in_mod">Intuition +/-</option>
+									<option value="ch_mod" data-i18n="ch_mod">Charisma +/-</option>
+									<option value="ff_mod" data-i18n="ff_mod">Fingerfertigkeit +/-</option>
+									<option value="ge_mod" data-i18n="ge_mod">Gewandheit +/-</option>
+									<option value="ko_mod" data-i18n="ko_mod">Konstitution +/-</option>
+									<option value="kk_mod" data-i18n="kk_mod">Koerperkraft +/-</option>
+								</optgroup>
+								<optgroup label="abgeleitete Werte">
+									<option value="le_modifikator" data-i18n="le_modifikator">Lebensenergie +/-</option>
+									<option value="ae_modifikator" data-i18n="ae_modifikator">Astralenergie +/-</option>
+									<option value="ke_modifikator" data-i18n="ke_modifikator">Karmalenergie +/-</option>
+									<option value="sk_modifikator" data-i18n="sk_modifikator">Seelenkraft +/-</option>
+									<option value="zk_modifikator" data-i18n="zk_modifikator">Zähigkeit +/-</option>
+									<option value="ini_modifikator" data-i18n="ini_modifikator">Initiative +/-</option>
+									<option value="aw_modifikator" data-i18n="aw_modifikator">Ausweichen +/-</option>
+									<option value="gs_modifikator" data-i18n="gs_modifikator">Geschwindigkeit +/-</option>
+									<option value="schips_modifikator" data-i18n="schips_modifikator">Schicksalspunkte +/-
+									</option>
+									<option value="le_regeneration_mod" data-i18n="le_regeneration_mod">Regeneration LE +/-
+									</option>
+									<option value="ae_regeneration_mod" data-i18n="ae_regeneration_mod">Regeneration AE +/-
+									</option>
+									<option value="ke_regeneration_mod" data-i18n="ke_regeneration_mod">Regeneration KE +/-
+									</option>
+								</optgroup>
+								<optgroup label="Kampfsonderfertigkeiten">
+									<option value="at_sf_mod" data-i18n="at_sf_mod">Attacke +/-</option>
+									<option value="pa_sf_mod" data-i18n="pa_sf_mod">Parade +/-</option>
+									<option value="aw_sf_mod" data-i18n="aw_sf_mod">Ausweichen +/-</option>
+									<option value="tp_sf_mod" data-i18n="tp_sf_mod">Trefferpunkte +/-</option>
+									<option value="fk_sf_mod" data-i18n="fk_sf_mod">Fernkampf +/-</option>
+									<option value="nh_at_sf_mod" data-i18n="nh_at_sf_mod">Nebenhand AT +/-</option>
+									<option value="nh_pa_sf_mod" data-i18n="nh_pa_sf_mod">Nebenhand PA +/-</option>
+									<option value="nh_tp_sf_mod" data-i18n="nh_tp_sf_mod">Nebenhand TP +/-</option>
+									<option value="parade_zweite_mod" data-i18n="parade_zweite_mod">Zusätzliche PA +/-
+									</option>
+									<option value="ausweichen_zweite_mod" data-i18n="ausweichen_zweite_mod">Zusätzliches AW
+										+/-</option>
+									<option value="beidhand_kampf_mod" data-i18n="beidhand_kampf_mod">Beidhändigkeit-Mod.
+										+/-</option>
+									<option value="falsche_hand_mod" data-i18n="falsche_hand_mod">Falsche Hand Mod. +/-
+									</option>
+								</optgroup>
+								<optgroup label="Talente Würfelmodifikator">
+								</optgroup>
+								<optgroup label="Körpertalente">
+									<option value="fliegen_sf_mod" data-i18n="fliegen">Fliegen</option>
+									<option value="gaukeleien_sf_mod" data-i18n="gaukeleien">Gaukeleien</option>
+									<option value="klettern_sf_mod" data-i18n="klettern">Klettern</option>
+									<option value="koerperbeherrschung_sf_mod" data-i18n="koerperbeherrschung">
+										Körperbeherrschung</option>
+									<option value="kraftakt_sf_mod" data-i18n="kraftakt">Kraftakt</option>
+									<option value="reiten_sf_mod" data-i18n="reiten">Reiten</option>
+									<option value="schwimmen_sf_mod" data-i18n="schwimmen">Schwimmen</option>
+									<option value="selbstbeherrschung_sf_mod" data-i18n="selbstbeherrschung">
+										Selbstbeherrschung</option>
+									<option value="singen_sf_mod" data-i18n="singen">Singen</option>
+									<option value="sinnesschaerfe_sf_mod" data-i18n="sinnesschaerfe">Sinnesschärfe</option>
+									<option value="tanzen_sf_mod" data-i18n="tanzen">Tanzen</option>
+									<option value="taschendiebstahl_sf_mod" data-i18n="taschendiebstahl">Taschendiebstahl
+									</option>
+									<option value="verbergen_sf_mod" data-i18n="verbergen">Verbergen</option>
+									<option value="zechen_sf_mod" data-i18n="zechen">Zechen</option>
+								</optgroup>
+								<optgroup label="Gesellschaftstalente">
+									<option value="bekehren_sf_mod" data-i18n="bekehren">Bekehren</option>
+									<option value="betoeren_sf_mod" data-i18n="betoeren">Betören</option>
+									<option value="einschuechtern_sf_mod" data-i18n="einschuechtern">Einschüchtern</option>
+									<option value="etikette_sf_mod" data-i18n="etikette">Etikette</option>
+									<option value="gassenwissen_sf_mod" data-i18n="gassenwissen">Gassenwissen</option>
+									<option value="menschenkenntnis_sf_mod" data-i18n="menschenkenntnis">Menschenkenntnis
+									</option>
+									<option value="ueberreden_sf_mod" data-i18n="ueberreden">Überreden</option>
+									<option value="verkleiden_sf_mod" data-i18n="verkleiden">Verkleiden</option>
+									<option value="willenskraft_sf_mod" data-i18n="willenskraft">Willenskraft</option>
+								</optgroup>
+								<optgroup label="Naturtalente">
+									<option value="faehrtensuchen_sf_mod" data-i18n="faehrtensuchen">Fährtensuchen</option>
+									<option value="fesseln_sf_mod" data-i18n="fesseln">Fesseln</option>
+									<option value="fischen_sf_mod" data-i18n="fischen">Fischen</option>
+									<option value="orientierung_sf_mod" data-i18n="orientierung">orientierung</option>
+									<option value="pflanzenkunde_sf_mod" data-i18n="pflanzenkunde">pflanzenkunde</option>
+									<option value="tierkunde_sf_mod" data-i18n="tierkunde">tierkunde</option>
+									<option value="wildnisleben_sf_mod" data-i18n="wildnisleben">wildnisleben</option>
+								</optgroup>
+								<optgroup label="Wissenstalente">
+									<option value="glueckspiel_sf_mod" data-i18n="glueckspiel">glueckspiel</option>
+									<option value="geographie_sf_mod" data-i18n="geographie">geographie</option>
+									<option value="geschichtswissen_sf_mod" data-i18n="geschichtswissen">geschichtswissen
+									</option>
+									<option value="goetterkulte_sf_mod" data-i18n="goetterkulte">goetterkulte</option>
+									<option value="kriegskunst_sf_mod" data-i18n="kriegskunst">kriegskunst</option>
+									<option value="magiekunde_sf_mod" data-i18n="magiekunde">magiekunde</option>
+									<option value="mechanik_sf_mod" data-i18n="mechanik">mechanik</option>
+									<option value="rechnen_sf_mod" data-i18n="rechnen">rechnen</option>
+									<option value="rechtskunde_sf_mod" data-i18n="rechtskunde">rechtskunde</option>
+									<option value="sagenlegenden_sf_mod" data-i18n="sagenlegenden">sagenlegenden</option>
+									<option value="sphaerenkunde_sf_mod" data-i18n="sphaerenkunde">sphaerenkunde</option>
+									<option value="sternkunde_sf_mod" data-i18n="sternkunde">sternkunde</option>
+								</optgroup>
+								<optgroup label="Handwerkstalente">
+									<option value="alchemie_sf_mod" data-i18n="alchemie">alchemie</option>
+									<option value="boote_sf_mod" data-i18n="boote">boote</option>
+									<option value="fahrzeuge_sf_mod" data-i18n="fahrzeuge">fahrzeuge</option>
+									<option value="handel_sf_mod" data-i18n="handel">handel</option>
+									<option value="hkgift_sf_mod" data-i18n="hkgift">hkgift</option>
+									<option value="hkkrankheiten_sf_mod" data-i18n="hkkrankheiten">hkkrankheiten</option>
+									<option value="hkseele_sf_mod" data-i18n="hkseele">hkseele</option>
+									<option value="hkwunden_sf_mod" data-i18n="hkwunden">hkwunden</option>
+									<option value="holzbearbeitung_sf_mod" data-i18n="holzbearbeitung">holzbearbeitung
+									</option>
+									<option value="lebensmittelbearbeitung_sf_mod" data-i18n="lebensmittelbearbeitung">
+										lebensmittelbearbeitung</option>
+									<option value="lederbearbeitung_sf_mod" data-i18n="lederbearbeitung">lederbearbeitung
+									</option>
+									<option value="malenzeichnen_sf_mod" data-i18n="malenzeichnen">malenzeichnen</option>
+									<option value="metallbearbeitung_sf_mod" data-i18n="metallbearbeitung">metallbearbeitung
+									</option>
+									<option value="musizieren_sf_mod" data-i18n="musizieren">musizieren</option>
+									<option value="schloesserknacken_sf_mod" data-i18n="schloesserknacken">schloesserknacken
+									</option>
+									<option value="steinbearbeitung_sf_mod" data-i18n="steinbearbeitung">steinbearbeitung
+									</option>
+									<option value="stoffbearbeitung_sf_mod" data-i18n="stoffbearbeitung">stoffbearbeitung
+									</option>
+								</optgroup>
+								<optgroup label="Magie und Glaube">
+									<option value="magie_sf_mod" data-i18n="magie-modifikator">Zauberwirken +/-</option>
+									<option value="glaube_sf_mod" data-i18n="glaube-modifikator">Göttliches Wirken +/-
+									</option>
+								</optgroup>
+								<optgroup label="Talente FW-Modifikator">
+								</optgroup>
+								<optgroup label="Körpertalente">
+									<option value="fliegen_fw_mod" data-i18n="fliegenfw">Fliegen</option>
+									<option value="gaukeleien_fw_mod" data-i18n="gaukeleienfw">Gaukeleien</option>
+									<option value="klettern_fw_mod" data-i18n="kletternfw">Klettern</option>
+									<option value="koerperbeherrschung_fw_mod" data-i18n="koerperbeherrschungfw">
+										Körperbeherrschung</option>
+									<option value="kraftakt_fw_mod" data-i18n="kraftaktfw">Kraftakt</option>
+									<option value="reiten_fw_mod" data-i18n="reitenfw">Reiten</option>
+									<option value="schwimmen_fw_mod" data-i18n="schwimmenfw">Schwimmen</option>
+									<option value="selbstbeherrschung_fw_mod" data-i18n="selbstbeherrschungfw">
+										Selbstbeherrschung</option>
+									<option value="singen_fw_mod" data-i18n="singenfw">Singen</option>
+									<option value="sinnesschaerfe_fw_mod" data-i18n="sinnesschaerfefw">Sinnesschärfe
+									</option>
+									<option value="tanzen_fw_mod" data-i18n="tanzenfw">Tanzen</option>
+									<option value="taschendiebstahl_fw_mod" data-i18n="taschendiebstahlfw">Taschendiebstahl
+									</option>
+									<option value="verbergen_fw_mod" data-i18n="verbergenfw">Verbergen</option>
+									<option value="zechen_fw_mod" data-i18n="zechenfw">Zechen</option>
+								</optgroup>
+								<optgroup label="Gesellschaftstalente">
+									<option value="bekehren_fw_mod" data-i18n="bekehrenfw">Bekehren</option>
+									<option value="betoeren_fw_mod" data-i18n="betoerenfw">Betören</option>
+									<option value="einschuechtern_fw_mod" data-i18n="einschuechternfw">Einschüchtern
+									</option>
+									<option value="etikette_fw_mod" data-i18n="etikettefw">Etikette</option>
+									<option value="gassenwissen_fw_mod" data-i18n="gassenwissenfw"></option>
+									<option value="menschenkenntnis_fw_mod" data-i18n="menschenkenntnisfw">Menschenkenntnis
+									</option>
+									<option value="ueberreden_fw_mod" data-i18n="ueberredenfw">Überreden</option>
+									<option value="verkleiden_fw_mod" data-i18n="verkleidenfw">Verkleiden</option>
+									<option value="willenskraft_fw_mod" data-i18n="willenskraftfw">Willenskraft</option>
+								</optgroup>
+								<optgroup label="Naturtalente">
+									<option value="faehrtensuchen_fw_mod" data-i18n="faehrtensuchenfw">Fährtensuchen
+									</option>
+									<option value="fesseln_fw_mod" data-i18n="fesselnfw">Fesseln</option>
+									<option value="fischen_fw_mod" data-i18n="fischenfw">Fischen</option>
+									<option value="orientierung_fw_mod" data-i18n="orientierungfw">orientierung</option>
+									<option value="pflanzenkunde_fw_mod" data-i18n="pflanzenkundefw">pflanzenkunde</option>
+									<option value="tierkunde_fw_mod" data-i18n="tierkundefw">tierkunde</option>
+									<option value="wildnisleben_fw_mod" data-i18n="wildnislebenfw">wildnisleben</option>
+								</optgroup>
+								<optgroup label="Wissenstalente">
+									<option value="glueckspiel_fw_mod" data-i18n="glueckspielfw">glueckspiel</option>
+									<option value="geographie_fw_mod" data-i18n="geographiefw">geographie</option>
+									<option value="geschichtswissen_fw_mod" data-i18n="geschichtswissenfw">geschichtswissen
+									</option>
+									<option value="goetterkulte_fw_mod" data-i18n="goetterkultefw">goetterkulte</option>
+									<option value="kriegskunst_fw_mod" data-i18n="kriegskunstfw">kriegskunst</option>
+									<option value="magiekunde_fw_mod" data-i18n="magiekundefw">magiekunde</option>
+									<option value="mechanik_fw_mod" data-i18n="mechanikfw">mechanik</option>
+									<option value="rechnen_fw_mod" data-i18n="rechnenfw">rechnen</option>
+									<option value="rechtskunde_fw_mod" data-i18n="rechtskundefw">rechtskunde</option>
+									<option value="sagenlegenden_fw_mod" data-i18n="sagenlegendenfw">sagenlegenden</option>
+									<option value="sphaerenkunde_fw_mod" data-i18n="sphaerenkundefw">sphaerenkunde</option>
+									<option value="sternkunde_fw_mod" data-i18n="sternkundefw">sternkunde</option>
+								</optgroup>
+								<optgroup label="Handwerkstalente">
+									<option value="alchemie_fw_mod" data-i18n="alchemiefw">alchemie</option>
+									<option value="boote_fw_mod" data-i18n="bootefw">boote</option>
+									<option value="fahrzeuge_fw_mod" data-i18n="fahrzeugefw">fahrzeuge</option>
+									<option value="handel_fw_mod" data-i18n="handelfw">handel</option>
+									<option value="hkgift_fw_mod" data-i18n="hkgiftfw">hkgift</option>
+									<option value="hkkrankheiten_fw_mod" data-i18n="hkkrankheitenfw">hkkrankheiten</option>
+									<option value="hkseele_fw_mod" data-i18n="hkseelefw">hkseele</option>
+									<option value="hkwunden_fw_mod" data-i18n="hkwundenfw">hkwunden</option>
+									<option value="holzbearbeitung_fw_mod" data-i18n="holzbearbeitungfw">holzbearbeitung
+									</option>
+									<option value="lebensmittelbearbeitung_fw_mod" data-i18n="lebensmittelbearbeitungfw">
+										lebensmittelbearbeitung</option>
+									<option value="lederbearbeitung_fw_mod" data-i18n="lederbearbeitungfw">lederbearbeitung
+									</option>
+									<option value="malenzeichnen_fw_mod" data-i18n="malenzeichnenfw">malenzeichnen</option>
+									<option value="metallbearbeitung_fw_mod" data-i18n="metallbearbeitungfw">
+										metallbearbeitung</option>
+									<option value="musizieren_fw_mod" data-i18n="musizierenfw">musizieren</option>
+									<option value="schloesserknacken_fw_mod" data-i18n="schloesserknackenfw">
+										schloesserknacken</option>
+									<option value="steinbearbeitung_fw_mod" data-i18n="steinbearbeitungfw">steinbearbeitung
+									</option>
+									<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
+									</option>
+								</optgroup>
+							</select>
+							<input class="modifikator modifikator-value3" type="number" name='attr_sonderfertigkeit_mod3' value='0' />
+						</div>
 						<input type="text" name='attr_sonderfertigkeit_auswahl_vorher1' value='Modifikator hinzufuegen' hidden />
 						<input type="number" name='attr_sonderfertigkeit_mod_vorher1' value='0' hidden />
 						<input type="text" name='attr_sonderfertigkeit_auswahl_vorher2' value='Modifikator hinzufuegen' hidden />
@@ -4881,7 +4895,7 @@
 							<option value="bonus" data-i18n="bonus">Bonus</option>
 							<option value="malus" selected data-i18n="malus">Malus</option>
 						</select>
-						<span class="tooltiptext" data-i18n="entrueckung-aktivieren">Bonus/Malus für Entrückung	aktivieren</span>
+						<span class="tooltiptext" data-i18n="entrueckung-aktivieren">Bonus/Malus für Entrückung aktivieren</span>
 					</div>
 					<input class="talent talent-mod" type="number" name="attr_stoffbearbeitung_gesamt_mod" value="0" readonly>
 
@@ -4904,9 +4918,11 @@
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb7-4" value="7"></input>
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb8-4" value="8"></input>
 					<div class="modifikator-grid sonderfertigkeit-filtered">
+						<div>
 						<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
 						<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
-						<input class="modifikator modifikator-description" type="text" name='attr_sonderfertigkeit_anmerkung' value='Anmerkung' />
+						</div>
+						<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung' value='Anmerkung' ></textarea>	
 					</div>
 				</fieldset>
 			</div>
@@ -7375,7 +7391,7 @@
 	<span style="display: none" data-i18n="Geist-tauscht-Körper-mit-Lebewesen">Geist tauscht Körper mit Lebewesen</span>
 	<span style="display: none" data-i18n="gesellschaft">Gesellschaft</span>
 	<span style="display: none" data-i18n="Geweihte-erhält-ein-Stigma">Geweihte erhält ein Stigma</span>
-	<span style="display: none" data-i18n="Geweihte-hat-nachts-seltsame-Visionen">Geweihte hat nachts seltsame Visionen	und Alpträume</span>
+	<span style="display: none" data-i18n="Geweihte-hat-nachts-seltsame-Visionen">Geweihte hat nachts seltsame Visionen und Alpträume</span>
 	<span style="display: none" data-i18n="Geweihte-ist-entrückt">Geweihte ist entrückt</span>
 	<span style="display: none" data-i18n="Geweihte-ist-verwirrt">Geweihte ist verwirrt</span>
 	<span style="display: none" data-i18n="Geweihte-verwurzelt-mit-Boden">Geweihte verwurzelt mit dem Boden</span>

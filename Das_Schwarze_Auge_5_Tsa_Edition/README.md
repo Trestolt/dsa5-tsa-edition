@@ -1,6 +1,9 @@
 # Das Schwarze Auge 5 - Tsa Edition
 
 ## Änderungen
+2019-12-20:
+- Tab Sonderfertigkeiten: Änderung Beschreibung von Text zu einer Textarea, damit dort mehr Platz für Notizen ist. Außerdem können Beschreibung und Modifikatoren gezielt ein- und ausgeblendet werden.
+
 2019-12-03:
 
 - Überarbeitung Design Status Tab

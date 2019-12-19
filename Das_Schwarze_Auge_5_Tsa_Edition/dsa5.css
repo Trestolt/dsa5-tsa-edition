@@ -1004,60 +1004,89 @@ input[type="text"].sheet-allgemein {
 }
 
 
-/* Grid Modifikator */
+/* Sonderfertigkeiten */
+
+div.sheet-sonderfertigkeitliste {
+    visibility: visible;
+    max-height: 999999px;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity 0.5s linear 0s;
+}
+
+
+/* A filterbox should look exactly like a repitem. */
+
+.sheet-sonderfertigkeit-filtered {
+    margin: 5px;
+    padding: 5px 5px 2px 5px;
+    border: 2px solid #CCCCCC;
+    border-radius: 3px;
+}
+
+/*.repcontainer .repitem {
+    overflow: hidden;
+} to_delete*/
+
+.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem {
+    /**
+  * A repitem within a spellslist should functionally not exist, it's place is
+  * taken by a filterbox.
+  */
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+}
+
+.sheet-sonderfertigkeit-filtered {
+    /* By default, display no items of a filter box */
+    display: none;
+}
+
+.sheet-sonderfertigkeit-cb2:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb2:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb3:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb3:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb4:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb4:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb5:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb5:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb6:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb6:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb7:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb7:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb8:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb8:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb9:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb9:checked~.sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem .sheet-sonderfertigkeit-filtered,
+.sheet-sonderfertigkeit-cb1:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb1:checked~.sheet-sonderfertigkeit-filtered,
+input.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeit-filtered {
+    display: block;
+}
+
+.sheet-sonderfertigkeit-cb3-2:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb3-2:checked~.sheet-sonderfertigkeit-filtered {
+    display: block;
+}
+
+.sheet-sonderfertigkeit-cb3-3:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb3-3:checked~.sheet-sonderfertigkeit-filtered {
+    display: block;
+}
+
+.sheet-sonderfertigkeit-cb2-4:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb2-4:checked~.sheet-sonderfertigkeit-filtered {
+    display: block;
+}
+
+.sheet-sonderfertigkeit-cb1-5:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb1-5:checked~.sheet-sonderfertigkeit-filtered {
+    display: block;
+}
+
+
+/* Grid Modifikator, which is no grid any more */
 
 .sheet-modifikator-grid {
-    display: grid;
     margin: 10px;
     padding: 5px;
     border: 1px solid;
-    grid-gap: 5px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
 }
 
-.sheet-modifikator-label {
-    grid-column: 1 /1;
-    grid-row: 1 /1;
-}
-
-.sheet-modifikator-cb {
-    grid-column: 4 /4;
-    grid-row: 1 /1;
-}
-
-.sheet-modifikator-description {
-    grid-column: 1 / 2;
-    grid-row: 2 /2;
-}
-
-.sheet-modifikator-select1 {
-    grid-column: 3 /3;
-    grid-row: 2 /2;
-}
-
-.sheet-modifikator-value1 {
-    grid-column: 4 /4;
-    grid-row: 2 /2;
-}
-
-.sheet-modifikator-select2 {
-    grid-column: 1 /1;
-    grid-row: 3 /3;
-}
-
-.sheet-modifikator-value2 {
-    grid-column: 2 /2;
-    grid-row: 3 /3;
-}
-
-.sheet-modifikator-select3 {
-    grid-column: 3 /3;
-    grid-row: 3 /3;
-}
-
-.sheet-modifikator-value3 {
-    grid-column: 4 /4;
-    grid-row: 3 /3;
+textarea.sheet-modifikator-description {
+    width: 98%;
+    height: 40px;
 }
 
 .sheet-modifikator {
@@ -1071,6 +1100,41 @@ input[type="text"].sheet-allgemein {
 input[type="checkbox"].sheet-modifikator {
     width: 1em;
 }
+
+
+input[type="checkbox"].sheet-show_description_sf~* {
+    --description_sf_display: none;
+    --description_sf_visibility: hidden;
+    
+}
+input[type="checkbox"].sheet-show_description_sf:checked~* {
+    --description_sf_display: block;
+    --description_sf_visibility: visible;
+    
+}
+
+.sheet-sf2 {
+    display: var(--description_sf_display);
+    visibility: var(--description_sf_visibility);
+}
+
+input[type="checkbox"].sheet-show_modifier_sf~* {
+    --modifier_sf_display: none;
+    --modifier_sf_visibility: hidden;
+    
+}
+input[type="checkbox"].sheet-show_modifier_sf:checked~* {
+    --modifier_sf_display: block;
+    --modifier_sf_visibility: visible;
+    
+}
+
+.sheet-sf_modifier {
+    display: var(--modifier_sf_display);
+    visibility: var(--modifier_sf_visibility);
+}
+
+
 
 
 /* Grid Talent */
@@ -2805,10 +2869,8 @@ div.sheet-liturgieliste {
     transition: opacity 0.5s linear 0s;
 }
 
-.repcontainer .repitem,
-
 /* A filterbox should look exactly like a repitem. */
-
+.repcontainer .repitem,
 .sheet-liturgie-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
@@ -2849,76 +2911,6 @@ input.sheet-liturgie-cb0:checked~.sheet-liturgie-filtered {
     display: block;
 }
 
-
-/* Sonderfertigkeiten */
-
-div.sheet-sonderfertigkeitliste {
-    visibility: visible;
-    max-height: 999999px;
-    opacity: 1;
-    overflow: hidden;
-    transition: opacity 0.5s linear 0s;
-}
-
-
-/* A filterbox should look exactly like a repitem. */
-
-.sheet-sonderfertigkeit-filtered {
-    margin: 5px;
-    padding: 5px 5px 2px 5px;
-    border: 2px solid #CCCCCC;
-    border-radius: 3px;
-}
-
-.repcontainer .repitem {
-    overflow: hidden;
-}
-
-.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem {
-    /**
-  * A repitem within a spellslist should functionally not exist, it's place is
-  * taken by a filterbox.
-  */
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    border-radius: 0px;
-}
-
-.sheet-sonderfertigkeit-filtered {
-    /* By default, display no items of a filter box */
-    display: none;
-}
-
-.sheet-sonderfertigkeit-cb2:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb2:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb3:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb3:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb4:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb4:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb5:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb5:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb6:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb6:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb7:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb7:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb8:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb8:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb9:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb9:checked~.sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem .sheet-sonderfertigkeit-filtered,
-.sheet-sonderfertigkeit-cb1:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb1:checked~.sheet-sonderfertigkeit-filtered,
-input.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeit-filtered {
-    display: block;
-}
-
-.sheet-sonderfertigkeit-cb3-2:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb3-2:checked~.sheet-sonderfertigkeit-filtered {
-    display: block;
-}
-
-.sheet-sonderfertigkeit-cb3-3:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb3-3:checked~.sheet-sonderfertigkeit-filtered {
-    display: block;
-}
-
-.sheet-sonderfertigkeit-cb2-4:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb2-4:checked~.sheet-sonderfertigkeit-filtered {
-    display: block;
-}
-
-.sheet-sonderfertigkeit-cb1-5:checked~.sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem input.sheet-sonderfertigkeit-cb1-5:checked~.sheet-sonderfertigkeit-filtered {
-    display: block;
-}
 
 
 /* --- Artefakte --- */

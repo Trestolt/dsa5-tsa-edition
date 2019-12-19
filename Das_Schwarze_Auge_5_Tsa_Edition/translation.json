@@ -632,6 +632,8 @@
  "beidhand_kampf_mod": "Beidhändigkeit-Mod. +/-",
  "falsche_hand_mod": "Falsche Hand Mod. +/-",
  "talente_mod": "Talente Würfelmodifikator",
- "switch_description_status":"Anzeige umschalten"
-
+ "switch_description_status":"Anzeige umschalten",
+ "show_description":"Beschreibung anzeigen",
+ "show_modifier":"Modifikatoren anzeigen",
+ "filter":"Filter:"
 }
