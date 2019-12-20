@@ -635,5 +635,11 @@
  "switch_description_status":"Anzeige umschalten",
  "show_description":"Beschreibung anzeigen",
  "show_modifier":"Modifikatoren anzeigen",
- "filter":"Filter:"
+ "filter":"Filter:",
+ "umgebung":"Umgebung",
+ "combat-situation":"Kampfsituation",
+ "artefakt":"Artefakt",
+ "kraeuter-tinkturen":"Kräuter und Tinkturen",
+ "add_effekt":"Effekt-Modifikator hinzufügen",
+ "quelle-auswaehlen":"Quelle auswählen"
 }

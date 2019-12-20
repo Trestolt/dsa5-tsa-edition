@@ -126,7 +126,7 @@ input {
     border-bottom: 1px solid;
     border-left: 0;
     border-radius: 4px;
-}
+    }
 
 select {
     -webkit-appearance: none;
@@ -1082,11 +1082,12 @@ input.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeit-filtered {
     padding: 5px;
     border: 1px solid;
     
+    
 }
 
 textarea.sheet-modifikator-description {
     width: 98%;
-    height: 40px;
+    height: 60px;
 }
 
 .sheet-modifikator {
@@ -1095,6 +1096,7 @@ textarea.sheet-modifikator-description {
     border-radius: 4px;
     text-align: left;
     vertical-align: middle;
+  
 }
 
 input[type="checkbox"].sheet-modifikator {
@@ -1134,7 +1136,92 @@ input[type="checkbox"].sheet-show_modifier_sf:checked~* {
     visibility: var(--modifier_sf_visibility);
 }
 
+/* Effekte */
 
+div.sheet-effektliste {
+    visibility: visible;
+    max-height: 999999px;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity 0.5s linear 0s;
+}
+
+
+/* A filterbox should look exactly like a repitem. */
+
+.sheet-effekt-filtered {
+    margin: 5px;
+    padding: 5px 5px 2px 5px;
+    border: 2px solid #CCCCCC;
+    border-radius: 3px;
+}
+
+/*.repcontainer .repitem {
+    overflow: hidden;
+} to_delete*/
+
+.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem {
+    /**
+  * A repitem within a spellslist should functionally not exist, it's place is
+  * taken by a filterbox.
+  */
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+}
+
+.sheet-effekt-filtered {
+    /* By default, display no items of a filter box */
+    display: none;
+}
+
+.sheet-effekt-cb2:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb2:checked~.sheet-effekt-filtered,
+.sheet-effekt-cb3:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb3:checked~.sheet-effekt-filtered,
+.sheet-effekt-cb4:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb4:checked~.sheet-effekt-filtered,
+.sheet-effekt-cb5:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb5:checked~.sheet-effekt-filtered,
+.sheet-effekt-cb6:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb6:checked~.sheet-effekt-filtered,
+.sheet-effekt-cb8:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb8:checked~.sheet-effekt-filtered,
+.sheet-effekt-cb0:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem .sheet-effekt-filtered,
+.sheet-effekt-cb1:checked~.sheet-effektliste>fieldset.repeating_effekt+.repcontainer>.repitem input.sheet-effekt-cb1:checked~.sheet-effekt-filtered,
+input.sheet-effekt-cb0:checked~.sheet-effekt-filtered {
+    display: block;
+}
+
+/* Grid Modifikator, which is no grid any more */
+
+
+input[type="checkbox"].sheet-show_description_ef~* {
+    --description_ef_display: none;
+    --description_ef_visibility: hidden;
+    
+}
+input[type="checkbox"].sheet-show_description_ef:checked~* {
+    --description_ef_display: block;
+    --description_ef_visibility: visible;
+    
+}
+
+.sheet-ef2 {
+    display: var(--description_ef_display);
+    visibility: var(--description_ef_visibility);
+}
+
+input[type="checkbox"].sheet-show_modifier_ef~* {
+    --modifier_ef_display: none;
+    --modifier_ef_visibility: hidden;
+    
+}
+input[type="checkbox"].sheet-show_modifier_ef:checked~* {
+    --modifier_ef_display: block;
+    --modifier_ef_visibility: visible;
+    
+}
+
+.sheet-ef_modifier {
+    display: var(--modifier_ef_display);
+    visibility: var(--modifier_ef_visibility);
+}
 
 
 /* Grid Talent */
