@@ -1020,7 +1020,7 @@ div.sheet-sonderfertigkeitliste {
 .sheet-sonderfertigkeit-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid #CCCCCC;
+    border-color: var(--color-border);
     border-radius: 3px;
 }
 
@@ -1152,7 +1152,8 @@ div.sheet-effektliste {
 .sheet-effekt-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid #CCCCCC;
+    border: 2px solid;
+    border-color: var(--color-border);
     border-radius: 3px;
 }
 
@@ -1641,8 +1642,69 @@ button.sheet-kampf-header {
     width: 4em;
 }
 
+/* Kampftechniken */
 
-/* Grid Kampf Header */
+/*
+.sheet-ktw-header {
+    text-align: left;
+    width: 20px;
+}
+*/
+.sheet-ktw-grid-item1 {
+    text-align: left;
+    grid-column: 1 /1;
+}
+
+.sheet-ktw-grid-item2 {
+    grid-column: 2 /2;
+}
+
+.sheet-ktw-grid-item3 {
+    text-align: center;
+    grid-column: 3 /3;
+}
+
+.sheet-ktw-grid-item4 {
+    text-align: center;
+    grid-column: 4 /4;
+}
+
+.sheet-ktw-grid-item5 {
+     grid-column: 5 /5;
+}
+
+.sheet-ktw-grid-item6 {
+    grid-column: 6 /6;
+}
+
+.sheet-ktw-grid-item7 {
+    grid-column: 7 /7;
+}
+
+.sheet-ktw-grid {
+    display: grid;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+}
+
+.sheet-ktw-grid-row {
+    display: grid;
+    padding-top: 5px;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 0.5fr 1.5fr 0.5fr 0.5fr 1fr;
+    align-items: baseline;
+}
+
+.sheet-ktw-grid-select2 {
+    width: 2.5em;
+}
+
+.sheet-ktw-grid-select7 {
+    width: 4em;
+}
+
+/* Grid Kampf Nah */
 
 .sheet-kampf-nah-grid {
     display: grid;
@@ -2660,7 +2722,8 @@ div.sheet-zauberliste {
 .sheet-zauber-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid #CCCCCC;
+    border: 2px solid;
+    border-color: var(--color-border);
     border-radius: 3px;
 }
 
@@ -2961,7 +3024,8 @@ div.sheet-liturgieliste {
 .sheet-liturgie-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid #CCCCCC;
+    border: 2px solid;
+    border-color: var(--color-border);
     border-radius: 3px;
 }
 
@@ -3035,6 +3099,9 @@ textarea.sheet-zm_gegenstand {
     display: table-cell;
     padding: 5px;
 }
+
+
+
 
 
 /**

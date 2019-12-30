@@ -423,7 +423,7 @@
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb9" value="9"></input>
 					<div class="modifikator-grid sonderfertigkeit-filtered">
 						<div class="modifikator sf1">
-						<!--	<span class="sonderfertigkeittyp-span" data-i18n="typ">Typ</span> -->
+							<!--	<span class="sonderfertigkeittyp-span" data-i18n="typ">Typ</span> -->
 							<select class="sonderfertigkeittyp-in" name="attr_sonderfertigkeittyp">
 								<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
 								<option value="1" data-i18n="allgemeine-sonderfertigkeit">Allgemeine Sonderfertigkeit</option>
@@ -5143,10 +5143,10 @@
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb8-4" value="8"></input>
 					<div class="modifikator-grid sonderfertigkeit-filtered">
 						<div>
-						<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
-						<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
+							<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
+							<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
 						</div>
-						<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung' value='Anmerkung' ></textarea>	
+						<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung' value='Anmerkung'></textarea>
 					</div>
 				</fieldset>
 			</div>
@@ -6073,7 +6073,7 @@
 			<span class="effekt-cb6" data-i18n="kraeuter-tinkturen">Kräuter und Tinkturen</span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb8" title="effekt" value="8"></input>
 			<span class="effekt-cb8" data-i18n="sonstiges">Sonstige</span>
-				
+
 			<div class="effektliste">
 				<fieldset class="repeating_effekt">
 					<input name="attr_effekttyp" type="radio" class="hidden effekt-cb0" value="0" checked></input>
@@ -6301,7 +6301,7 @@
 									<option value="stoffbearbeitung_fw_mod" data-i18n="stoffbearbeitungfw">stoffbearbeitung
 									</option>
 								</optgroup>
-		
+
 							</select>
 							<input class="modifikator modifikator-value1" type="number" name='attr_effekt_mod1' value='0' />
 							<select class="modifikator modifikator-select2" name="attr_effekt_auswahl2">
@@ -6993,7 +6993,7 @@
 					</div>
 				</fieldset>
 			</div>
-		
+
 		</div>
 	</div>
 
@@ -7037,290 +7037,253 @@
 
 
 		<div class="section kampftab1">
+
 			<div class="kampftechniken">
 				<!-- Kampftechniken -->
 				<input class="hidden" type="number" name="attr_ktw_change_flag" value="1" />
-				<table border=1>
-					<tr>
-						<th data-i18n="kampftechniken">Kampftechniken</th>
-						<th data-i18n="leiteigenschaft">Leiteigenschaft</th>
-						<th data-i18n="steigerungsfaktor">Steigerungsfaktor</th>
-						<th data-i18n="kampftechnikwert">Kampftechnikwert</th>
-						<th data-i18n="at-fk">AT/FK</th>
-						<th data-i18n="pa">PA</th>
-						<th data-i18n="entrueckung">Entrückung</th>
-					</tr>
-					<tr>
-						<td data-i18n="armbrueste">Armbrüste</td>
-						<td align="center">
-							<select name="attr_armbrueste">
-								<option value="FF" data-i18n="FF" selected>FF</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_armbrueste" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_armbrueste" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_armbrueste_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center">
-					</tr>
-					<tr>
-						<td data-i18n="blasrohre">Blasrohre</td>
-						<td align="center">
-							<select name="attr_blasrohre">
-								<option value="FF" data-i18n="FF" selected>FF</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_blasrohre" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_blasrohre" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_blasrohre_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="boegen">Bögen</td>
-						<td align="center">
-							<select name="attr_boegen">
-								<option value="FF" data-i18n="FF" selected>FF</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_boegen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_boegen" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_boegen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="dolche">Dolche</td>
-						<td align="center">
-							<select name="attr_dolche">
-								<option value="GE" data-i18n="GE" selected>GE</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_dolche" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_dolche" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_dolche" value="0" readonly></td>
-						<td align="center"><select name="attr_dolche_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="fechtwaffen">Fechtwaffen</td>
-						<td align="center">
-							<select name="attr_fechtwaffen">
-								<option value="GE" data-i18n="GE" selected>GE</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_fechtwaffen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_fechtwaffen" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_fechtwaffen" value="0" readonly></td>
-						<td align="center"><select name="attr_fechtwaffen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="feuerspeien">Feuerspeien</td>
-						<td align="center">
-							<select name="attr_feuerspeien">
-								<option value="FF" data-i18n="FF" selected>FF</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_feuerspeien" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_feuerspeien" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_feuerspeien_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="hiebwaffen">Hiebwaffen</td>
-						<td align="center">
-							<select name="attr_hiebwaffen">
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_hiebwaffen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_hiebwaffen" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_hiebwaffen" value="0" readonly></td>
-						<td align="center"><select name="attr_hiebwaffen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="kettenwaffen">Kettenwaffen</td>
-						<td align="center">
-							<select name="attr_kettenwaffen">
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_kettenwaffen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_kettenwaffen" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_kettenwaffen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="lanzen">Lanzen</td>
-						<td align="center">
-							<select name="attr_lanzen">
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_lanzen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_lanzen" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_lanzen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="raufen">Raufen</td>
-						<td align="center">
-							<select name="attr_raufen">
-								<option value="GE" data-i18n="GE">GE</option>
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_raufen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_raufen" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_raufen" value="0" readonly></td>
-						<td align="center"><select name="attr_raufen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="schilde">Schilde</td>
-						<td align="center">
-							<select name="attr_schilde">
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_schilde" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_schilde" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_schilde" value="0" readonly></td>
-						<td align="center"><select name="attr_schilde_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="schleudern">Schleudern</td>
-						<td align="center">
-							<select name="attr_schleudern">
-								<option value="FF" data-i18n="FF" selected>FF</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_schleudern" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_schleudern" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_schleudern_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="schwerter">Schwerter</td>
-						<td align="center">
-							<select name="attr_schwerter">
-								<option value="GE" data-i18n="GE">GE</option>
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_schwerter" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_schwerter" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_schwerter" value="0" readonly></td>
-						<td align="center"><select name="attr_schwerter_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="stangenwaffen">Stangenwaffen</td>
-						<td align="center">
-							<select name="attr_stangenwaffen">
-								<option value="GE" data-i18n="GE">GE</option>
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_stangenwaffen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_stangenwaffen" value="0" readonly></td>
-						<td align="center"><input type="number" name="attr_pa_stangenwaffen" value="0" readonly></td>
-						<td align="center"><select name="attr_stangenwaffen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="wurfwaffen">Wurfwaffen</td>
-						<td align="center">
-							<select name="attr_wurfwaffen">
-								<option value="FF" data-i18n="FF" selected>FF</option>
-							</select></td>
-						<td align="center">B</td>
-						<td align="center"><input type="number" name="attr_ktw_wurfwaffen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_wurfwaffen" value="0" readonly></td>
-						<td><span></span></td>
-						<td align="center"><select name="attr_wurfwaffen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-						<td align="center"></td>
-					</tr>
-					<tr>
-						<td data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen</td>
-						<td align="center">
-							<select name="attr_zweihandhiebwaffen">
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_zweihandhiebwaffen" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_zweihandhiebwaffen" value="0" readonly>
-						</td>
-						<td align="center"><input type="number" name="attr_pa_zweihandhiebwaffen" value="0" readonly>
-						</td>
-						<td align="center"><select name="attr_zweihandhiebwaffen_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-					<tr>
-						<td data-i18n="zweihandschwerter">Zweihandschwerter</td>
-						<td align="center">
-							<select name="attr_zweihandschwerter">
-								<option value="KK" data-i18n="KK" selected>KK</option>
-							</select></td>
-						<td align="center">C</td>
-						<td align="center"><input type="number" name="attr_ktw_zweihandschwerter" value="6"></td>
-						<td align="center"><input type="number" name="attr_at_zweihandschwerter" value="0" readonly>
-						</td>
-						<td align="center"><input type="number" name="attr_pa_zweihandschwerter" value="0" readonly>
-						</td>
-						<td align="center"><select name="attr_zweihandschwerter_entrueckung_akt">
-								<option value="bonus" data-i18n="bonus">Bonus</option>
-								<option value="malus" selected data-i18n="malus">Malus</option>
-							</select></td>
-					</tr>
-				</table>
+				<div class="ktw-grid">
+
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1 ktw-header" data-i18n="kampftechniken">Kampftechniken</span>
+						<span class="ktw-grid-item2 ktw-header" data-i18n="leiteigenschaft">Leiteigenschaft</span>
+						<span class="ktw-grid-item3 ktw-header" data-i18n="steigerungsfaktor">Steigerungsfaktor</span>
+						<span class="ktw-grid-item4 ktw-header" data-i18n="kampftechnikwert">Kampftechnikwert</span>
+						<span class="ktw-grid-item5 ktw-header" data-i18n="at-fk">AT/FK</span>
+						<span class="ktw-grid-item6 ktw-header" data-i18n="pa">PA</span>
+						<span class="ktw-grid-item7 ktw-header" data-i18n="entrueckung">Entrückung</span>
+					</div>
+					<div class="ktw-grid-row">
+
+						<span class="ktw-grid-item1" data-i18n="armbrueste">Armbrüste</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_armbrueste">
+							<option value="FF" data-i18n="FF" selected>FF</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_armbrueste" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_armbrueste" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_armbrueste_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+
+						<span class="ktw-grid-item1" data-i18n="blasrohre">Blasrohre</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_blasrohre">
+							<option value="FF" data-i18n="FF" selected>FF</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_blasrohre" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_blasrohre" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_blasrohre_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="boegen">Bögen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_boegen">
+							<option value="FF" data-i18n="FF" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_boegen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_boegen" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_boegen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1 " data-i18n="dolche">Dolche</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_dolche">
+							<option value="GE" data-i18n="GE" selected>GE</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_dolche" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_dolche" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_dolche" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_dolche_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="fechtwaffen">Fechtwaffen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_fechtwaffen">
+							<option value="GE" data-i18n="GE" selected>GE</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_fechtwaffen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_fechtwaffen" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_fechtwaffen" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_fechtwaffen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="feuerspeien">Feuerspeien</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_feuerspeien">
+							<option value="FF" data-i18n="FF" selected>FF</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_feuerspeien" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_feuerspeien" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_feuerspeien_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="hiebwaffen">Hiebwaffen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_hiebwaffen">
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_hiebwaffen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_hiebwaffen" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_hiebwaffen" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_hiebwaffen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="kettenwaffen">Kettenwaffen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_kettenwaffen">
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_kettenwaffen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_kettenwaffen" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_kettenwaffen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+
+						<span class="ktw-grid-item1" data-i18n="lanzen">Lanzen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_lanzen">
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_lanzen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_lanzen" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_lanzen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="raufen">Raufen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_raufen">
+							<option value="GE" data-i18n="GE">GE</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_raufen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_raufen" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_raufen" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_raufen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="schilde">Schilde</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_schilde">
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_schilde" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_schilde" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_schilde" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_schilde_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="schleudern">Schleudern</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_schleudern">
+							<option value="FF" data-i18n="FF" selected>FF</option>
+						</select>
+						<span class="ktw-grid-item3">B</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_schleudern" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_schleudern" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_schleudern_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="schwerter">Schwerter</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_schwerter">
+							<option value="GE" data-i18n="GE">GE</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_schwerter" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_schwerter" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_schwerter" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_schwerter_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="stangenwaffen">Stangenwaffen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_stangenwaffen">
+							<option value="GE" data-i18n="GE">GE</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_stangenwaffen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_stangenwaffen" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_stangenwaffen" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_stangenwaffen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="wurfwaffen">Wurfwaffen</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_wurfwaffen">
+							<option value="FF" data-i18n="FF" selected>FF</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input type="number" name="attr_ktw_wurfwaffen" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_wurfwaffen" value="0" readonly></input>
+						<span class="ktw-grid-item6"></span>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_wurfwaffen_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+					<div class="ktw-grid-row">
+						<span class="ktw-grid-item1" data-i18n="zweihandschwerter">Zweihandschwerter</span>
+						<select class="ktw-grid-item2 ktw-grid-select2" name="attr_zweihandschwerter">
+							<option value="KK" data-i18n="KK" selected>KK</option>
+						</select>
+						<span class="ktw-grid-item3">C</span>
+						<span class="ktw-grid-item4"><input class="ktw-value" type="number" name="attr_ktw_zweihandschwerter" value="6"></span>
+						<input class="ktw-grid-item5" type="number" name="attr_at_zweihandschwerter" value="0" readonly></input>
+						<input class="ktw-grid-item6" type="number" name="attr_pa_zweihandschwerter" value="0" readonly></input>
+						<select class="ktw-grid-item7 ktw-grid-select7" name="attr_zweihandschwerter_entrueckung_akt">
+							<option value="bonus" data-i18n="bonus">Bonus</option>
+							<option value="malus" selected data-i18n="malus">Malus</option>
+						</select>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="section kampftab2">
@@ -7371,8 +7334,7 @@
 				<button class="default kampf-nah kampf-nah-button9 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
 				<button class="default kampf-nah kampf-nah-button10 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
 
-				<span class="kampf-nah kampf-nah-label9" data-i18n="schildparade-parierwaffe">Schildparade /
-					Parierwaffe</span>
+				<span class="kampf-nah kampf-nah-label9" data-i18n="schildparade-parierwaffe">Schildparade Parierwaffe</span>
 				<input class="kampf-nah kampf-nah-value12" type="number" name="attr_pa_nh_roll" value="0" readonly />
 				<button class="default kampf-nah kampf-nah-button11 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{schildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_nh_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
 				<button class="default kampf-nah kampf-nah-button12 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeSchildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_nh_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
@@ -7391,8 +7353,7 @@
 			</div>
 
 			<div class="kampf-nah2-grid">
-				<span class="kampf-nah kampf-nah2-label2" data-i18n="kampfsituationen-status">Kampfsituationen /
-					Status</span>
+				<span class="kampf-nah kampf-nah2-label2" data-i18n="kampfsituationen-status">Kampfsituationen Status</span>
 
 				<span class="kampf-nah kampf-nah2-label3" data-i18n="at-mod">AT-Mod</span>
 				<input class="kampf-nah kampf-nah2-value1" type="number" name="attr_at_situation_mod" value="0" readonly />
@@ -7619,39 +7580,39 @@
 						</td>
 						<td>
 							<input type="text" name="attr_fkwaffe_name_1" readonly>
-							<input name="attr_fkwaffe_mun_1" type="number" value="0"">
-					    <input type="radio" name="attr_fk_waffe" value="1" checked>
+							<input name="attr_fkwaffe_mun_1" type="number" value="0">
+							<input type="radio" name="attr_fk_waffe" value="1" checked>
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<input type="text" name="attr_fkwaffe_name_2" readonly>
-							<input name="attr_fkwaffe_mun_2" type="number" value="0"">
-                            <input type="radio" name="attr_fk_waffe" value="2">
+							<input name="attr_fkwaffe_mun_2" type="number" value="0">
+							<input type="radio" name="attr_fk_waffe" value="2">
 						</td>
 
 					</tr>
 					<tr>
 						<td>
 							<input type="text" name="attr_fkwaffe_name_3" readonly>
-							<input name="attr_fkwaffe_mun_3" type="number" value="0"">
-				    <input type="radio" name="attr_fk_waffe" value="3">
+							<input name="attr_fkwaffe_mun_3" type="number" value="0">
+							<input type="radio" name="attr_fk_waffe" value="3">
 						</td>
 
 					</tr>
 					<tr>
 						<td>
 							<input type="text" name="attr_fkwaffe_name_4" readonly>
-							<input name="attr_fkwaffe_mun_4" type="number" value="0"">
-                            <input type="radio" name="attr_fk_waffe" value="4">
+							<input name="attr_fkwaffe_mun_4" type="number" value="0">
+							<input type="radio" name="attr_fk_waffe" value="4">
 						</td>
 
 					</tr>
 					<tr>
 						<td>
 							<input type="text" name="attr_fkwaffe_name_5" readonly>
-							<input name="attr_fkwaffe_mun_5" type="number" value="0"">
-						<input type="radio" name="attr_fk_waffe" value="5">
+							<input name="attr_fkwaffe_mun_5" type="number" value="0">
+							<input type="radio" name="attr_fk_waffe" value="5">
 						</td>
 					</tr>
 				</table>
