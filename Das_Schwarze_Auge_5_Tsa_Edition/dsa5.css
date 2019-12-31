@@ -1759,283 +1759,118 @@ button.sheet-kampf-header {
     border-radius: 3px;
     border-color: var(--color-border);
     grid-gap: 5px;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: 0.39fr 0.9fr 0.4fr 1fr;
 }
 
-.sheet-kampf-nah-label1 {
-    text-align: left;
+.sheet-kampf-nah-item1 {
     grid-column: 1 /1;
     grid-row: 1 /1;
 }
 
-.sheet-kampf-nah-value1 {
-    text-align: center;
+
+.sheet-kampf-nah-item2 {
+    display: inline-flex;
     grid-column: 2 /2;
     grid-row: 1 /1;
 }
 
-.sheet-kampf-nah-button1 {
-    text-align: center;
-    grid-column: 3 /3;
-    grid-row: 1 /1;
-}
-
-.sheet-kampf-nah-label2 {
-    text-align: left;
+.sheet-kampf-nah-item3 {
     grid-column: 1 /1;
     grid-row: 2 /2;
 }
 
-.sheet-kampf-nah-value2 {
-    text-align: center;
+.sheet-kampf-nah-item4 {
+    display: inline-flex;
     grid-column: 2 /2;
     grid-row: 2 /2;
 }
 
-.sheet-kampf-nah-label3 {
-    text-align: left;
-    grid-column: 3 /3;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-value3 {
-    text-align: center;
-    grid-column: 4 /4;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-button2 {
-    text-align: center;
-    grid-column: 5 /5;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-button3 {
-    text-align: center;
-    grid-column: 6 /6;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-label4 {
-    text-align: left;
+.sheet-kampf-nah-item5 {
     grid-column: 1 /1;
     grid-row: 3/3;
 }
 
-.sheet-kampf-nah-value4 {
-    text-align: center;
+.sheet-kampf-nah-item6 {
+    display: inline-flex;
     grid-column: 2 /2;
     grid-row: 3 /3;
 }
 
-.sheet-kampf-nah-button4 {
-    text-align: center;
-    grid-column: 3 /3;
-    grid-row: 3 /3;
-}
-
-.sheet-kampf-nah-button5 {
-    text-align: center;
-    grid-column: 4 /4;
-    grid-row: 3 /3;
-}
-
-.sheet-kampf-nah-label5 {
-    text-align: left;
+.sheet-kampf-nah-item7 {
     grid-column: 1 /1;
-    grid-row: 4 /4;
+    grid-row: 4/4;
 }
 
-.sheet-kampf-nah-value5 {
-    text-align: center;
+.sheet-kampf-nah-item8 {
+    display: inline-flex;
     grid-column: 2 /2;
     grid-row: 4 /4;
 }
 
-.sheet-kampf-nah-button6 {
-    text-align: center;
-    grid-column: 3 /3;
-    grid-row: 4 /4;
-}
-
-.sheet-kampf-nah-label6 {
-    text-align: left;
+.sheet-kampf-nah-item9 {
     grid-column: 1 /1;
-    grid-row: 5 /5;
+    grid-row: 5/5;
 }
 
-.sheet-kampf-nah-value6 {
-    text-align: center;
-    grid-column: 2 /2;
-    grid-row: 5 /5;
+.sheet-kampf-nah-item10 {
+    display: inline-flex;
+    grid-column: 2/2;
+    grid-row: 5/5;
 }
 
-.sheet-kampf-nah-label7 {
-    text-align: left;
-    grid-column: 3 /3;
-    grid-row: 5 /5;
+.sheet-kampf-nah-item11 {
+    grid-column: 3/3;
+    grid-row: 1/1;
 }
 
-.sheet-kampf-nah-value7 {
-    text-align: center;
-    grid-column: 4 /4;
-    grid-row: 5 /5;
+.sheet-kampf-nah-item12 {
+    display: inline-flex;
+    grid-column: 4/4;
+    grid-row: 1/1;
 }
 
-.sheet-kampf-nah-button7 {
-    text-align: center;
-    grid-column: 5 /5;
-    grid-row: 5 /5;
+.sheet-kampf-nah-item13 {
+    grid-column: 3/3;
+    grid-row: 2/2;
 }
 
-.sheet-kampf-nah-button8 {
-    text-align: center;
-    grid-column: 6 /6;
-    grid-row: 5 /5;
+.sheet-kampf-nah-item14 {
+    display: inline-flex;
+    grid-column: 4/4;
+    grid-row: 2/2;
 }
 
-.sheet-kampf-nah-select1 {
-    text-align: left;
-    grid-column: 7 /7;
-    grid-row: 4 /4;
+.sheet-kampf-nah-item15 {
+    grid-column: 3/3;
+    grid-row: 3/3;
 }
 
-.sheet-kampf-nah-value8 {
-    text-align: center;
-    grid-column: 8 /8;
-    grid-row: 4 /4;
+.sheet-kampf-nah-item16 {
+    display: inline-flex;
+    grid-column: 4/4;
+    grid-row: 3/3;
 }
 
-.sheet-kampf-nah-value9 {
-    text-align: center;
-    grid-column: 9 /9;
-    grid-row: 4 /4;
+.sheet-kampf-nah-item17 {
+    grid-column: 3/3;
+    grid-row: 4/4;
 }
 
-.sheet-kampf-nah-value10 {
-    text-align: center;
-    grid-column: 10 /10;
-    grid-row: 4 /4;
+.sheet-kampf-nah-item18 {
+    display: inline-flex;
+    grid-column: 4/4;
+    grid-row: 4/4;
 }
 
-.sheet-kampf-nah-label8 {
-    text-align: left;
-    grid-column: 7 /7;
-    grid-row: 1 /1;
+.sheet-kampf-nah-item19 {
+    grid-column: 3/3;
+    grid-row: 5/5;
 }
 
-.sheet-kampf-nah-value11 {
-    text-align: center;
-    grid-column: 8 /8;
-    grid-row: 1 /1;
-}
-
-.sheet-kampf-nah-button9 {
-    text-align: center;
-    grid-column: 9 /9;
-    grid-row: 1 /1;
-}
-
-.sheet-kampf-nah-button10 {
-    text-align: center;
-    grid-column: 10 /10;
-    grid-row: 1 /1;
-}
-
-.sheet-kampf-nah-label9 {
-    text-align: left;
-    grid-column: 7 /7;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-value12 {
-    text-align: center;
-    grid-column: 8 /8;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-button11 {
-    text-align: center;
-    grid-column: 9 /9;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-button12 {
-    text-align: center;
-    grid-column: 10 /10;
-    grid-row: 2 /2;
-}
-
-.sheet-kampf-nah-label10 {
-    text-align: left;
-    grid-column: 7 /7;
-    grid-row: 3 /3;
-}
-
-.sheet-kampf-nah-value14 {
-    text-align: center;
-    grid-column: 8 /8;
-    grid-row: 3 /3;
-}
-
-.sheet-kampf-nah-button13 {
-    text-align: center;
-    grid-column: 9 /9;
-    grid-row: 3 /3;
-}
-
-.sheet-kampf-nah-button14 {
-    text-align: center;
-    grid-column: 10 /10;
-    grid-row: 3 /3;
-}
-
-.sheet-kampf-nah-select1 {
-    text-align: left;
-    grid-column: 7 /7;
-    grid-row: 4 /4;
-}
-
-.sheet-kampf-nah-value8 {
-    text-align: center;
-    grid-column: 8 /8;
-    grid-row: 4 /4;
-}
-
-.sheet-kampf-nah-value9 {
-    text-align: center;
-    grid-column: 9 /9;
-    grid-row: 4 /4;
-}
-
-.sheet-kampf-nah-value10 {
-    text-align: center;
-    grid-column: 10 /10;
-    grid-row: 4 /4;
-}
-
-.sheet-kampf-nah-label11 {
-    text-align: left;
-    grid-column: 7 /7;
-    grid-row: 5 /5;
-}
-
-.sheet-kampf-nah-checkbox1 {
-    text-align: left;
-    grid-column: 8 /8;
-    grid-row: 5 /5;
-}
-
-.sheet-kampf-nah-value15 {
-    text-align: center;
-    grid-column: 9 /9;
-    grid-row: 5 /5;
-}
-
-.sheet-kampf-nah-value16 {
-    text-align: center;
-    grid-column: 10 /10;
-    grid-row: 5 /5;
+.sheet-kampf-nah-item20 {
+    display: inline-flex;
+    grid-column: 4/4;
+    grid-row: 5/5;
 }
 
 select.sheet-kampf-nah {
