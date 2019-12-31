@@ -87,6 +87,7 @@
     border-color: var(--color-border);
     background-color: var(--bg-sheet);
     padding: 5px;
+    border-radius: 3px;
 }
 
 .sheet-charsheet button,
@@ -120,12 +121,19 @@
 
 /* Standard-Settings */
 
+h2, h3, h4 {
+    color: var(--color-font);
+    }
+
+
 input {
     border-top: 0;
     border-right: 0;
     border-bottom: 1px solid;
     border-left: 0;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
+    
     }
 
 select {
@@ -140,6 +148,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+    text-align: center;
 }
 
 .sheet-padding-1 {
@@ -206,11 +215,12 @@ span.sheet-tab {
     height: 24px;
     margin-left: -15.5%;
     border: 1px solid;
-    border-radius: 4px;
+    border-radius: 3px;
     text-align: center;
     vertical-align: middle;
     font-size: 1em;
     font-weight: bold;
+    border-color: var(--color-border);
     /* must match width of input above */
     /* ditto */
     /* change box size: enter same height in input.sheet-tab above */
@@ -272,9 +282,10 @@ input[type="text"].sheet-title_name {
 .sheet-title {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
     text-align: left;
     vertical-align: middle;
+    border-color: var(--color-border);
 }
 
 
@@ -403,9 +414,10 @@ input[type="text"].sheet-common_header {
 .sheet-common_header {
     margin: 2px;
     padding: 4px;
-    border-radius: 4px;
+    border-radius: 3px;
     text-align: center;
     font-size: 75%;
+    border-color: var(--color-border);
 }
 
 
@@ -640,9 +652,10 @@ input[type="text"].sheet-allgemein {
 .sheet-allgemein {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
     text-align: left;
     vertical-align: middle;
+    border-color: var(--color-border);
 }
 
 
@@ -657,9 +670,10 @@ input[type="text"].sheet-allgemein {
 .sheet-eigenschaft {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
     text-align: left;
     vertical-align: middle;
+    border-color: var(--color-border);
 }
 
 
@@ -1036,7 +1050,8 @@ div.sheet-sonderfertigkeitliste {
     margin: 0px;
     padding: 0px;
     border: none;
-    border-radius: 0px;
+    
+    
 }
 
 .sheet-sonderfertigkeit-filtered {
@@ -1081,7 +1096,8 @@ input.sheet-sonderfertigkeit-cb0:checked~.sheet-sonderfertigkeit-filtered {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
-    
+    border-color: var(--color-border);
+    border-radius: 3px;
     
 }
 
@@ -1093,16 +1109,25 @@ textarea.sheet-modifikator-description {
 .sheet-modifikator {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
     text-align: left;
     vertical-align: middle;
+    border-color: var(--color-border);
   
 }
+
+
 
 input[type="checkbox"].sheet-modifikator {
     width: 1em;
 }
 
+.sheet-modifikator-value1, 
+.sheet-modifikator-value2, 
+.sheet-modifikator-value3, 
+.sheet-modifikator-value4 {
+    text-align: center;
+}
 
 input[type="checkbox"].sheet-show_description_sf~* {
     --description_sf_display: none;
@@ -1152,7 +1177,7 @@ div.sheet-effektliste {
 .sheet-effekt-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid;
+    border: 1px solid;
     border-color: var(--color-border);
     border-radius: 3px;
 }
@@ -1169,7 +1194,7 @@ div.sheet-effektliste {
     margin: 0px;
     padding: 0px;
     border: none;
-    border-radius: 0px;
+    
 }
 
 .sheet-effekt-filtered {
@@ -1254,6 +1279,8 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-color: var(--color-border);
+    border-radius: 3px;
 }
 
 .sheet-talent-grid-row {
@@ -1268,6 +1295,8 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-color: var(--color-border);
+    border-radius: 3px;
     grid-gap: 5px;
     grid-template-columns: var(--talent-grid-template);
 }
@@ -1275,36 +1304,43 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
 .sheet-talent-header1 {
     text-align: left;
     grid-column: 1 /1;
+    font-weight: bold;
 }
 
 .sheet-talent-header2 {
     text-align: center;
     grid-column: 2 /4;
+    font-weight: bold;
 }
 
 .sheet-talent-header3 {
     text-align: center;
     grid-column: 5 /5;
+    font-weight: bold;
 }
 
 .sheet-talent-header4 {
     text-align: center;
     grid-column: 6 /6;
+    font-weight: bold;
 }
 
 .sheet-talent-header12 {
     text-align: center;
     grid-column: 7 /8;
+    font-weight: bold;
 }
 
 .sheet-talent-header5 {
     text-align: center;
     grid-column: 9/9;
+    font-weight: bold;
 }
 
 .sheet-talent-header6 {
     text-align: center;
     grid-column: 10 /10;
+    font-weight: bold;
 }
 
 
@@ -1316,6 +1352,7 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
     display: var(--anmerkung_display);
     visibility: var(--anmerkung_visibility);
     grid-column: 11 /11;
+    font-weight: bold;
 }
 
 .sheet-talent-header8 {
@@ -1324,12 +1361,14 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
     grid-column: 12 /12;
     display: var(--status_display);
     visibility: var(--status_visibility);
+    font-weight: bold;
 }
 
 .sheet-talent-header10 {
     display: none;
     text-align: center;
     grid-column: 20 /20;
+    font-weight: bold;
 }
 
 .sheet-talent-label {
@@ -1457,8 +1496,9 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
 .sheet-talent {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
     vertical-align: middle;
+    border-color: var(--color-border);
 }
 
 input[type="select"].sheet-talent {
@@ -1489,6 +1529,8 @@ textarea.sheet-talent {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-color: var(--color-border);
+    border-radius: 3px;
     grid-gap: 5px;
     grid-template-columns: 1fr 2em, 1fr 2em, 1fr 2em, 1fr 2em;
 }
@@ -1633,7 +1675,8 @@ textarea.sheet-talent {
 .sheet-kampf-header {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
     text-align: left;
     vertical-align: middle;
 }
@@ -1644,12 +1687,12 @@ button.sheet-kampf-header {
 
 /* Kampftechniken */
 
-/*
+
 .sheet-ktw-header {
-    text-align: left;
-    width: 20px;
+    font-weight: bold;
+
 }
-*/
+
 .sheet-ktw-grid-item1 {
     text-align: left;
     grid-column: 1 /1;
@@ -1686,6 +1729,8 @@ button.sheet-kampf-header {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
 }
 
 .sheet-ktw-grid-row {
@@ -1711,6 +1756,8 @@ button.sheet-kampf-header {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
     grid-gap: 5px;
     grid-template-columns: repeat(10, 1fr);
 }
@@ -1992,7 +2039,7 @@ button.sheet-kampf-header {
 }
 
 select.sheet-kampf-nah {
-    width: 7em;
+    width: 7em;    
 }
 
 input[type="checkbox"].sheet-kampf-nah {
@@ -2005,6 +2052,8 @@ input[type="checkbox"].sheet-kampf-nah {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -2179,10 +2228,19 @@ input[type="checkbox"].sheet-kampf-nah {
 .sheet-kampf-nah {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
     text-align: left;
     vertical-align: middle;
 }
+
+.sheet-kampf-sf-table-block{
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
+   }
 
 
 /* Grid Fernkampf */
@@ -2192,6 +2250,8 @@ input[type="checkbox"].sheet-kampf-nah {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -2487,7 +2547,8 @@ input[type="checkbox"].sheet-kampf-nah {
 .sheet-kampf-fern {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
     text-align: left;
     vertical-align: middle;
 }
@@ -2509,6 +2570,8 @@ input[type="checkbox"].sheet-kampf-fern {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -2654,7 +2717,8 @@ input[type="checkbox"].sheet-kampf-fern {
 .sheet-magie-header {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
     text-align: left;
     vertical-align: middle;
 }
@@ -2739,7 +2803,7 @@ div.sheet-zauberliste {
     margin: 0px;
     padding: 0px;
     border: none;
-    border-radius: 0px;
+   
 }
 
 .sheet-zauber-filtered {
@@ -2772,6 +2836,8 @@ input.sheet-zauber-cb0:checked~.sheet-zauber-filtered {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -2917,7 +2983,8 @@ input.sheet-zauber-cb0:checked~.sheet-zauber-filtered {
 .sheet-glaube-header {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
     text-align: left;
     vertical-align: middle;
 }
@@ -2934,7 +3001,8 @@ input[type="checkbox"].sheet-glaube-header {
 .sheet-geldbeutel {
     margin: 2px;
     padding: 2px;
-    border-radius: 4px;
+    border-radius: 3px;
+    border-color: var(--color-border);
     text-align: left;
     vertical-align: middle;
 }
@@ -2944,6 +3012,8 @@ input[type="checkbox"].sheet-glaube-header {
     margin: 10px;
     padding: 5px;
     border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
     grid-gap: 5px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -3041,7 +3111,7 @@ div.sheet-liturgieliste {
     margin: 0px;
     padding: 0px;
     border: none;
-    border-radius: 0px;
+    
 }
 
 .sheet-liturgie-filtered {
