@@ -7011,7 +7011,7 @@
 		<div class="kampf-header-grid">
 			<span class="kampf-header kampf-header-ini-label" data-i18n="initiative">Initiative</span>
 			<input class="kampf-header kampf-header-ini-value" type="number" name="attr_ini_gesamt" value="0" readonly />
-			<button class="kampf-header kampf-header-ini-roll roll2w" type="roll" value="&{template:DSA-Initiative} {{Name=@{character_name}}} {{Wert=[[1d6+@{ini_gesamt}+@{mod_option}+@{kampf_modifier}+(@{ini_grundwert}/100)&{tracker}]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}">INI</button>
+			<button class="kampf-header-ini-roll roll2w" type="roll" value="&{template:DSA-Initiative} {{Name=@{character_name}}} {{Wert=[[1d6+@{ini_gesamt}+@{mod_option}+@{kampf_modifier}+(@{ini_grundwert}/100)&{tracker}]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}">INI</button>
 			<span class="kampf-header kampf-header-label1" data-i18n="aktstatus">akt. Status</span>
 			<input class="kampf-header kampf-header-value1" type="number" name="attr_kampfstatus_modifier" value="0" readonly />
 			<span class="kampf-header kampf-header-label1b" data-i18n="ruestungsschutz">Rüstungsschutz (RS)</span>
@@ -7293,7 +7293,7 @@
 				<span class="kampf-nah kampf-nah-item1" data-i18n="attacke">Attacke </span>	
 				<div class="kampf-nah-item2">
 					<input class="kampf-nah" type="number" name="attr_at_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{at_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{at_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item3" data-i18n="schaden">Schaden</span>
@@ -7301,22 +7301,22 @@
 					<input class="kampf-nah" type="number" name="attr_tp_dice_roll" value="0" readonly />
 					<span class="kampf-nah" data-i18n="d6">W6+</span>
 					<input class="kampf-nah" type="number" name="attr_tp_zusatz_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
-					<button class="kampf-nah roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item5" data-i18n="passierschlag">Passierschlag</span>
 				<div class="kampf-nah-item6">
 					<input class="kampf-nah" type="number" name="attr_passierschlag_roll" value="0" readonly />
 					<input class="kampf-nah" type="number" name="attr_passierschlag_tp_zusatz_roll" value="0" readonly hidden />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{nahkampf}}} {{subtags=^{passierschlag}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{passierschlag_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
-					<button class="kampf-nah roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}">TP</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{nahkampf}}} {{subtags=^{passierschlag}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{passierschlag_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}">TP</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item7" data-i18n="2-attacke">2. Attacke</span>
 				<div class="kampf-nah-item8">
 					<input class="kampf-nah" type="number" name="attr_at_nh_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{at_nh_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{at_nh_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item9" data-i18n="schaden">Schaden</span>
@@ -7324,22 +7324,22 @@
 					<input class="kampf-nah" type="number" name="attr_tp_nh_dice_roll" value="0" readonly />
 					<span class="kampf-nah" data-i18n="d6">W6+</span>
 					<input class="kampf-nah" type="number" name="attr_tp_nh_zusatz_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_nh_dice_roll})]]d6+@{tp_nh_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
-					<button class="kampf-nah roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_nh_dice_roll})]]d6+@{tp_nh_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_nh_dice_roll})]]d6+@{tp_nh_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_nh_dice_roll})]]d6+@{tp_nh_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item11" data-i18n="parade">Parade</span>
 				<div class="kampf-nah-item12">
 					<input class="kampf-nah" type="number" name="attr_pa_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
-					<button class="kampf-nah roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@pf_modifier})]]}}" data-i18n="1/2">1/2</but	ton>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@pf_modifier})]]}}" data-i18n="1/2">1/2</but	ton>
 				</div>
 				
 				<span class="kampf-nah kampf-nah-item13" data-i18n="schildparade-parierwaffe">Schildparade Parierwaffe</span>
 				<div class="kampf-nah-item14">
 					<input class="kampf-nah" type="number" name="attr_pa_nh_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{schildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_nh_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
-					<button class="kampf-nah roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeSchildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_nh_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{schildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_nh_roll}+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeSchildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_nh_roll}/2)+@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{parade_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
 				</div>
 				
 				
@@ -7347,8 +7347,8 @@
 				<div class="kampf-nah-item16">
 					<input class="kampf-nah" type="number" name="attr_ausweichen_zweite_mod" value="0" readonly hidden />
 					<input class="kampf-nah" type="number" name="attr_aw_roll" value="0" readonly />
-					<button class="kampf-nah roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
-					<button class="kampf-nah roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{ausweichen_malus}+@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
 				</div>
 
 				<select class="kampf-nah kampf-nah-item17" name="attr_parade_malus_select">
@@ -7415,8 +7415,7 @@
 					<option value="-6" data-i18n="kampf-unter-wasser">Kampf unter Wasser</option>
 				</select>
 
-				<span class="kampf-nah kampf-nah2-label10" data-i18n="vorteilhafte-position">Vorteilhafte
-					Position</span>
+				<span class="kampf-nah kampf-nah2-label10" data-i18n="vorteilhafte-position">Vorteilhafte Position</span>
 				<input class="kampf-nah kampf-nah2-value8" name="attr_vorteilhafte_position" type="checkbox" value="1" />
 
 				<span class="kampf-nah kampf-nah2-label11" data-i18n="gegner-von-hinten">Gegner von Hinten</span>
@@ -7487,92 +7486,101 @@
 		</div>
 
 		<div class="section kampftab3">
-
-			<div class="kampf-fern kampf-fern-grid">
-
-				<span class="kampf-fern kampf-fern-cell1" data-i18n="attacke">Attacke</span>
-				<input class="kampf-fern kampf-fern-cell2" type="number" name="attr_fk_roll" value="0" readonly>
-				<button class="kampf-fern kampf-fern-cell3 default roll1w" type="roll" value="@{output_option} &{template:DSA-Fernkampf-AT} {{name=^{attacke}}} {{subtags=^{fernkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{fk_roll}+@{gesamt_fk_mod}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{gesamt_fk_mod}+@{mod_option}+@{kampf_modifier})]]}}"></button>
-				<span class="kampf-fern kampf-fern-cell46" data-i18n="freier-modifikator">freier Kampf-Mod.</span>
-				<input class="kampf-fern kampf-fern-cell47" type="number" name="attr_kampf_modifier" value="0" />
-				<span class="kampf-fern kampf-fern-cell4" data-i18n="schaden">Schaden</span>
-				<div class="kampf-fern kampf-fern-cell5">
+			<div class="kampf-fern-grid1">
+				<span class="kampf-fern kampf-fern-item1" data-i18n="attacke">Attacke</span>
+				<div class="kampf-fern-item2">
+					<input class="kampf-fern" type="number" name="attr_fk_roll" value="0" readonly>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Fernkampf-AT} {{name=^{attacke}}} {{subtags=^{fernkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{fk_roll}+@{gesamt_fk_mod}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{gesamt_fk_mod}+@{mod_option}+@{kampf_modifier})]]}}"></button>
+				</div>
+				<span class="kampf-fern kampf-fern-item3" data-i18n="freier-modifikator">freier Kampf-Mod.</span>
+				<input class="kampf-fern kampf-fern-item4" type="number" name="attr_kampf_modifier" value="0" />
+				<span class="kampf-fern kampf-fern-item5" data-i18n="schaden">Schaden</span>
+				<div class="kampf-fern-item6">
 					<input type="number" name="attr_fk_tp_dice_roll" value="0" readonly />
 					<span data-i18n="d6">W6+</span>
 					<input type="number" name="attr_fk_tp_zusatz_roll" value="0" readonly />
+					<button class="kampf-fern-cell8 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{fk_tp_dice_roll})]]d6+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option}]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" />
+					<button class="kampf-fern-cell9 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{fk_tp_dice_roll})]]d6+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option})*2]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
-				<button class="kampf-fern kampf-fern-cell8 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{fk_tp_dice_roll})]]d6+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option}]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" />
-				<button class="kampf-fern kampf-fern-cell9 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{fk_tp_dice_roll})]]d6+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option})*2]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" data-i18n="x2">x2</button>
-				<span class="kampf-fern kampf-fern-cell10" data-i18n="reichweite">Reichweite</span>
-				<input class="kampf-fern kampf-fern-cell11" type="text" name="attr_fk_reichweite" readonly>
-				<span class="kampf-fern kampf-fern-cell12" data-i18n="ladezeit">Ladezeit in KR</span>
-				<input class="kampf-fern kampf-fern-cell13" type="number" name="attr_fk_ladezeit" value="0" readonly>
-				<input class="kampf-fern kampf-fern-cell14" type="number" name="attr_fk_ladezeit_mod" value="0" readonly>
-				<span class="kampf-fern kampf-fern-cell15" data-i18n="modifikatoren">Modifikatoren</span>
-				<span class="kampf-fern kampf-fern-cell16" data-i18n="fk-mod">FK-Mod</span>
-				<span class="kampf-fern kampf-fern-cell17" data-i18n="tp-mod">TP-Mod</span>
-				<span class="kampf-fern kampf-fern-cell18" data-i18n="distanz">Distanz</span>
-				<select class="kampf-fern kampf-fern-cell19" name="attr_distanz_mod">
+				<span class="kampf-fern kampf-fern-item7" data-i18n="reichweite">Reichweite</span>
+				<input class="kampf-fern kampf-fern-item8" type="text" name="attr_fk_reichweite" readonly>
+				<span class="kampf-fern kampf-fern-item9" data-i18n="ladezeit">Ladezeit in KR</span>
+				<div class="kampf-fern-item10">
+					<input class="kampf-fern" type="number" name="attr_fk_ladezeit" value="0" readonly>
+					<input class="kampf-fern" type="number" name="attr_fk_ladezeit_mod" value="0" readonly>
+				</div>
+			</div>
+
+			<div class="kampf-fern-grid2">
+				<span class="kampf-fern kampf-fern-item11" data-i18n="modifikatoren">Modifikatoren</span>
+				<span class="kampf-fern kampf-fern-item12" data-i18n="fk-mod">FK-Mod</span>
+				<span class="kampf-fern kampf-fern-item13" data-i18n="tp-mod">TP-Mod</span>
+				
+				<span class="kampf-fern kampf-fern-item14" data-i18n="distanz">Distanz</span>
+				<select class="kampf-fern kampf-fern-item15" name="attr_distanz_mod">
 					<option value="1" data-i18n="nah">Nah</option>
 					<option value="0" selected data-i18n="mittel">Mittel</option>
 					<option value="-1" data-i18n="weit">Weit</option>
 				</select>
-				<input class="kampf-fern kampf-fern-cell20" name="attr_distanz_fk_mod" type="number" value="0" readonly>
-				<input class="kampf-fern kampf-fern-cell21" name="attr_distanz_tp_mod" type="number" value="0" readonly>
-				<span class="kampf-fern kampf-fern-cell22" data-i18n="groesse">Größe</span>
-				<select class="kampf-fern kampf-fern-cell22b" name="attr_groesse_mod">
+				<input class="kampf-fern kampf-fern-item16" name="attr_distanz_fk_mod" type="number" value="0" readonly>
+				<input class="kampf-fern kampf-fern-item17" name="attr_distanz_tp_mod" type="number" value="0" readonly>
+				
+				<span class="kampf-fern kampf-fern-item18" data-i18n="groesse">Größe</span>
+				<select class="kampf-fern kampf-fern-item19" name="attr_groesse_mod">
 					<option value="-2" data-i18n="winzig">winzig</option>
 					<option value="-1" data-i18n="klein">klein</option>
 					<option value="0" data-i18n="mittel" selected>mittel</option>
 					<option value="1" data-i18n="gross">groß</option>
 					<option value="2" data-i18n="riesig">riesig</option>
 				</select>
-				<input class="kampf-fern kampf-fern-cell23" name="attr_groesse_fk_mod" type="number" value="0" readonly>
-				<input class="kampf-fern kampf-fern-cell24" name="attr_groesse_tp_mod" type="number" value="0" readonly>
-				<span class="kampf-fern kampf-fern-cell25" data-i18n="sichtmodifikator">Sichtmodifikator</span>
-				<select class="kampf-fern kampf-fern-cell26" name="attr_sicht_mod">
+				<input class="kampf-fern kampf-fern-item20" name="attr_groesse_fk_mod" type="number" value="0" readonly>
+				<input class="kampf-fern kampf-fern-item21" name="attr_groesse_tp_mod" type="number" value="0" readonly>
+				
+				<span class="kampf-fern kampf-fern-item22" data-i18n="sichtmodifikator">Sichtmodifikator</span>
+				<select class="kampf-fern kampf-fern-item23" name="attr_sicht_mod">
 					<option value="0" selected>---</option>
 					<option value="-1">I</option>
 					<option value="-2">II</option>
 					<option value="-3">III</option>
 					<option value="-3" data-i18n="sicht-iv">IV - Treffer auf 1</option>
 				</select>
-				<input class="kampf-fern kampf-fern-cell27" name="attr_sicht_fk_mod" type="number" value="0" readonly>
-				<input class="kampf-fern kampf-fern-cell28" name="attr_sicht_tp_mod" type="number" value="0" readonly>
+				<input class="kampf-fern kampf-fern-item24" name="attr_sicht_fk_mod" type="number" value="0" readonly>
+				<input class="kampf-fern kampf-fern-item25" name="attr_sicht_tp_mod" type="number" value="0" readonly>
 
-				<span class="kampf-fern kampf-fern-cell29" data-i18n="zielbewegung">Zielbewegung</span>
-				<select class="kampf-fern kampf-fern-cell30" name="attr_ziel_bewegung_mod">
+				<span class="kampf-fern kampf-fern-item26" data-i18n="zielbewegung">Zielbewegung</span>
+				<select class="kampf-fern kampf-fern-item27" name="attr_ziel_bewegung_mod">
 					<option value="1" data-i18n="still">still</option>
 					<option value="0" data-i18n="leicht" selected>leicht</option>
 					<option value="-1" data-i18n="schnell">schnell</option>
 					<option value="-2" data-i18n="hakenschlagend">hakenschlagend</option>
 				</select>
-				<input class="kampf-fern kampf-fern-cell31" name="attr_ziel_bewegung_fk_mod" type="number" value="0" readonly">
-				<input class="kampf-fern kampf-fern-cell32" name="attr_ziel_bewegung_tp_mod" type="number" value="0" readonly">
+				<input class="kampf-fern kampf-fern-item28" name="attr_ziel_bewegung_fk_mod" type="number" value="0" readonly">
+				<input class="kampf-fern kampf-fern-item29" name="attr_ziel_bewegung_tp_mod" type="number" value="0" readonly">
 
-				<span class="kampf-fern kampf-fern-cell33" data-i18n="schuetzenbewegung">Schützenbewegung</span>
-				<select class="kampf-fern kampf-fern-cell34" name="attr_schuetze_bewegung_mod">
+				<span class="kampf-fern kampf-fern-item30" data-i18n="schuetzenbewegung">Schützenbewegung</span>
+				<select class="kampf-fern kampf-fern-item31" name="attr_schuetze_bewegung_mod">
 					<option value="0" data-i18n="stehend">stehend</option>
 					<option value="-1" data-i18n="gehend">gehend</option>
 					<option value="-2" data-i18n="rennend">rennend</option>
 				</select>
-				<input class="kampf-fern kampf-fern-cell35" name="attr_schuetze_bewegung_fk_mod" type="number" value="0*2" readonly">
-				<input class="kampf-fern kampf-fern-cell36" name="attr_schuetze_bewegung_tp_mod" type="number" value="0*2" readonly">
+				<input class="kampf-fern kampf-fern-item32" name="attr_schuetze_bewegung_fk_mod" type="number" value="0*2" readonly">
+				<input class="kampf-fern kampf-fern-item33" name="attr_schuetze_bewegung_tp_mod" type="number" value="0*2" readonly">
 
-				<span class="kampf-fern kampf-fern-cell37" data-i18n="schuss-ins-kampfgetuemmel">Schuss ins Kampfgetümmel</span>
-				<input class="kampf-fern kampf-fern-cell38" type="checkbox" name="attr_kampfgetuemmel_mod" value="1">
-				<input class="kampf-fern kampf-fern-cell39" name="attr_kampfgetuemmel_fk_mod" type="number" value="0" readonly>
+				<span class="kampf-fern kampf-fern-item34" data-i18n="schuss-ins-kampfgetuemmel">Schuss ins Kampfgetümmel</span>
+				<input class="kampf-fern kampf-fern-item35" type="checkbox" name="attr_kampfgetuemmel_mod" value="1">
+				<input class="kampf-fern-item36" name="attr_kampfgetuemmel_fk_mod" type="number" value="0" readonly>
 
-				<span class="kampf-fern kampf-fern-cell40" data-i18n="sf-modifikatoren">SF-Modifikatoren</span>
-				<input class="kampf-fern kampf-fern-cell41" name="attr_fk_sf_mod" type="number" value="0" readonly">
-				<input class="kampf-fern kampf-fern-cell42" name="attr_tp_sf_mod" type="number" value="0" readonly">
+				<span class="kampf-fern kampf-fern-item37" data-i18n="sf-modifikatoren">SF-Modifikatoren</span>
+				<input class="kampf-fern kampf-fern-item38" name="attr_fk_sf_mod" type="number" value="0" readonly">
+				<input class="kampf-fern kampf-fern-item39" name="attr_tp_sf_mod" type="number" value="0" readonly">
 
-				<span class="kampf-fern kampf-fern-cell43" data-i18n="gesamt">Gesamt</span>
-				<input class="kampf-fern kampf-fern-cell44" name="attr_gesamt_fk_mod" type="number" value="0" readonly>
-				<input class="kampf-fern kampf-fern-cell45" name="attr_gesamt_tp_mod" type="number" value="0" readonly>
+				<span class="kampf-fern kampf-fern-item40" data-i18n="gesamt">Gesamt</span>
+				<input class="kampf-fern kampf-fern-item41" name="attr_gesamt_fk_mod" type="number" value="0" readonly>
+				<input class="kampf-fern kampf-fern-item42" name="attr_gesamt_tp_mod" type="number" value="0" readonly>
+
 			</div>
 
-			<div class="kampf-fern">
+			<div class="kampf-sf-table-block">
 				<table>
 					<tr>
 						<th><span data-i18n="sonderfertigkeiten">Sonderfertigkeiten</span></th>
@@ -7644,7 +7652,7 @@
 
 
 		<div class="section kampftab4">
-			<div class="Patzer">
+			<div class="patzer kampf-sf-table-block">
 				<h3 data-i18n="patzer">Patzer</h3>
 				<button class="roll1w" type="roll" value="@{character_name} @{erleidet} [[1d6+2]] @{SPdurchPatzer}."></button><span data-i18n="schaden-durch-patzer">Schaden durch Patzer</span>
 				<span style="display: none" data-i18n="erleidet">erleidet</span>
