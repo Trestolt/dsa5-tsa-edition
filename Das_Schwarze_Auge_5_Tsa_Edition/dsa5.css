@@ -81,6 +81,17 @@
     --color-border: #ba842b;
 }
 
+.charsheet .sheet-sheet_color[value="6"]~* {
+    --color-font-tab-checked: #edc9a5;
+    --bg-tab-unchecked: #838eaa99;
+    --bg-tab-checked: #5675a1b0;
+    --bg-sheet: #edc9a547;
+    --bg-input: #838eaa99;
+    --bg-input-readonly: #838eaa;
+    --color-font: #6b6361;
+    --color-border: #838eaa99;
+}
+
 .sheet-charsheet {
     min-width: 800px;
     color: var(--color-font);
@@ -90,12 +101,18 @@
     border-radius: 3px;
 }
 
+
 .sheet-charsheet button,
 .sheet-charsheet input,
 .sheet-charsheet select,
 .sheet-charsheet textarea {
     color: var(--color-font);
     background-color: var(--bg-input);
+ 
+}
+
+.sheet-charsheet textarea {
+    width:  97%;
 }
 
 .sheet-charsheet input[disabled],
@@ -110,7 +127,7 @@
 
 .sheet-charsheet span.sheet-tab {
     background: var(--bg-tab-unchecked);
-}
+    }
 
 .sheet-charsheet input.sheet-tab[type="radio"]:checked+span.sheet-tab {
     /* reverse color of selected tab */
@@ -123,6 +140,7 @@
 
 h2, h3, h4 {
     color: var(--color-font);
+    margin: 10px;
     }
 
 
@@ -172,6 +190,9 @@ input.sheet-hidden {
 
 /* sections */
 
+div.sheet-middle-tab {
+    margin: 10px;
+}
 div.sheet-section {
     display: none;
 }
@@ -228,10 +249,11 @@ span.sheet-tab {
     /* add a nice border */
 }
 
+/*
 .sheet-subsection {
-    margin: 10px;
-    padding: 5px;
-}
+     margin: 10px;
+    padding: 5px; 
+} */
 
 .sheet-header-label {
     display: flex;
@@ -256,6 +278,7 @@ span.sheet-tab {
     grid-gap: 5px;
     grid-auto-flow: column;
     grid-template-rows: repeat(1, 1fr);
+    margin: 10px 10px 0px 10px;
 }
 
 input[type="text"].sheet-title_name {
@@ -296,6 +319,7 @@ input[type="text"].sheet-title_name {
     grid-gap: 5px;
     grid-auto-flow: column;
     grid-template-rows: repeat(2, 1fr);
+    margin: 0px 10px 0px 10px;
 }
 
 .sheet-common_header1 {
@@ -435,6 +459,11 @@ input[type="text"].sheet-common_header {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 1fr 3fr 1fr 3fr;
+    border-radius: 3px;
+    border: 1px solid;
+    margin: 10px;
+    padding: 5px;
+    border-color: var(--color-border);
 }
 
 .sheet-allgemein-label {
@@ -652,12 +681,13 @@ input[type="text"].sheet-allgemein {
 }
 
 .sheet-allgemein {
-    margin: 2px;
+    /* margin: 2px;
     padding: 2px;
     border-radius: 3px;
+    border-color: var(--color-border);*/
     text-align: left;
     vertical-align: middle;
-    border-color: var(--color-border);
+    
 }
 
 
@@ -667,15 +697,18 @@ input[type="text"].sheet-allgemein {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: 10em 6em 6em 6em 4em auto;
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
 }
 
 .sheet-eigenschaft {
     margin: 2px;
     padding: 2px;
-    border-radius: 3px;
     text-align: left;
     vertical-align: middle;
-    border-color: var(--color-border);
 }
 
 
@@ -685,6 +718,11 @@ input[type="text"].sheet-allgemein {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(5, 1fr);
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
 }
 
 
@@ -694,6 +732,11 @@ input[type="text"].sheet-allgemein {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
+    margin: 10px;
+    padding: 5px;
+    border-color: var(--color-border);
+    border-radius: 3px;
+    border: 1px solid;
 }
 
 .sheet-grid-le1 {
@@ -814,6 +857,12 @@ input[type="text"].sheet-allgemein {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+    
 }
 
 .sheet-grid-ae1 {
@@ -920,6 +969,11 @@ input[type="text"].sheet-allgemein {
     display: grid;
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
 }
 
 .sheet-grid-ke1 {
@@ -2592,7 +2646,7 @@ div.sheet-zauberliste {
 .sheet-zauber-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid;
+    border: 1px solid;
     border-color: var(--color-border);
     border-radius: 3px;
 }
@@ -2900,7 +2954,7 @@ div.sheet-liturgieliste {
 .sheet-liturgie-filtered {
     margin: 5px;
     padding: 5px 5px 2px 5px;
-    border: 2px solid;
+    border: 1px solid;
     border-color: var(--color-border);
     border-radius: 3px;
 }
@@ -2938,13 +2992,35 @@ input.sheet-liturgie-cb0:checked~.sheet-liturgie-filtered {
     display: block;
 }
 
+/* Optionen */
+
+.sheet-design-schema, .sheet-info {
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+.sheet-disclaimer {
+    font-weight: bold;
+}
+
+.sheet-notizen {
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+
+}
+
 
 
 /* --- Artefakte --- */
 
 textarea.sheet-zm_gegenstand {
-    width: 64em;
-    height: 4em;
+        height: 4em;
 }
 
 
@@ -2962,9 +3038,20 @@ textarea.sheet-zm_gegenstand {
     background-color: var(--bg-sheet);
 }
 
+.sheet-status {
+    display: table;
+    border-collapse: collapse;
+    border-color: var(--color-border);
+}
 .sheet-t1 {
     display: table;
     border-collapse: collapse;
+    border-color: var(--color-border);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid;
+    
 }
 
 .sheet-tr1 {
@@ -2974,9 +3061,8 @@ textarea.sheet-zm_gegenstand {
 .sheet-td1 {
     display: table-cell;
     padding: 5px;
+    margin: 5px;
 }
-
-
 
 
 
