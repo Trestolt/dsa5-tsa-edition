@@ -92,6 +92,7 @@
 
 	<!-- Navigation der Tabs -->
 	<hr />
+	<span class="filter-text"></span>
 	<input type="radio" name="attr_tab" class="tab tab1" value="1" checked />
 	<span class="tab" data-i18n="grundwerte">Grundwerte</span>
 	<input type="radio" name="attr_tab" class="tab tab2" value="2" />
@@ -105,6 +106,7 @@
 	<input type="radio" name="attr_tab" class="tab tab6" value="6" />
 	<span class="tab" data-i18n="optionen">Optionen</span>
 	<br>
+	<span class="filter-text"></span>
 	<input type="radio" name="attr_tab" class="tab tab7" value="7" />
 	<span class="tab" data-i18n="status">Status</span>
 	<input type="radio" name="attr_tab" class="tab tab8" value="8" />
@@ -177,8 +179,7 @@
 		<div class="subsection eigenschaften">
 			<h3 data-i18n="eigenschaften">Eigenschaften</h3>
 			<div class="eigenschaften-grid">
-
-				<span class='dee'></span>
+ 				<span class='dee'></span>
 				<span data-i18n="grundwert">Grundwert</span>
 				<span data-i18n="modifikator">Modifikator</span>
 				<span data-i18n="gesamtwert">Gesamtwert</span>
@@ -381,32 +382,44 @@
 	<div class="section tab2">
 		<div class="Sonderfertigkeiten">
 			<h2 data-i18n="sonderfertigkeiten">Sonderfertigkeiten</h2>
-			<span class="modifikator" data-i18n="show_modifier">Modifikatoren anzeigen</span>
+			<span class="filter-text" data-i18n="show_modifier">Modifikatoren anzeigen</span>
 			<input type="checkbox" name="attr_show_modifier_sf" class="show_modifier_sf" value="1" checked />
-			<span class="modifikator" data-i18n="show_description">Beschreibung anzeigen</span>
+			<span class="filter-text" data-i18n="show_description">Beschreibung anzeigen</span>
 			<input type="checkbox" name="attr_show_description_sf" class="show_description_sf" value="1" checked />
 			<br>
-			<span data-i18n="filter">Filter:</span>
+			<span class="filter-text" data-i18n="filter">Filter:</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb0" title="all" value="0" checked></input>
 			<span class="sonderfertigkeit-cb0" data-i18n="alle">Alle</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb1" title="sonderfertigkeit" value="1"></input>
 			<span class="sonderfertigkeit-cb1" data-i18n="allgemeine-sonderfertigkeit">Allgemeine Sonderfertigkeit</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb2" title="sonderfertigkeit" value="2"></input>
 			<span class="sonderfertigkeit-cb2" data-i18n="talent-sonderfertigkeit">Talentsonderfertigkeit</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb3" title="sonderfertigkeit" value="3"></input>
 			<span class="sonderfertigkeit-cb3" data-i18n="kampfsonderfertigkeit">Kampfsonderfertigkeit</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb4" title="sonderfertigkeit" value="4"></input>
 			<span class="sonderfertigkeit-cb4" data-i18n="magiesonderfertigkeit">Magiesonderfertigkeit</span>
+			<br>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb5" title="sonderfertigkeit" value="5"></input>
 			<span class="sonderfertigkeit-cb5" data-i18n="karmale-sonderfertigkeit">Karmale Sonderfertigkeit</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb6" title="sonderfertigkeit" value="6"></input>
 			<span class="sonderfertigkeit-cb6" data-i18n="vorteil">Vorteil</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb7" title="sonderfertigkeit" value="7"></input>
 			<span class="sonderfertigkeit-cb7" data-i18n="nachteil">Nachteile</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb9" title="sonderfertigkeit" value="9"></input>
 			<span class="sonderfertigkeit-cb9" data-i18n="schipsf">SchiP-Sonderfertigkeit</span>
+			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb8" title="sonderfertigkeit" value="8"></input>
 			<span class="sonderfertigkeit-cb8" data-i18n="sonstiges">Sonstige</span>
+		
 			<div class="sonderfertigkeitliste">
 				<fieldset class="repeating_sonderfertigkeit">
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb0" value="0" checked></input>
@@ -1364,7 +1377,7 @@
 	<div class="section tab3">
 		<div class="talente">
 			<h2 data-i18n="talente">Talente</h2>
-			<span class="title" data-i18n="switch_description_status">Anzeige umschalten</span>
+			<span class="filter-text" data-i18n="switch_description_status">Anzeige umschalten</span>
 			<input type="checkbox" name="attr_show_status_mod" class="show_status_mod" value="1" checked />
 
 			<h3 data-i18n="koerpertalente">Koerpertalente</h3>
@@ -5254,34 +5267,46 @@
 				</div>
 			</div>
 
-			<hr />
-
 			<div class="magie-section zauber">
-				<h3 data-i18n="zauber">Zauber</h3>
+				<span class="filter-text" data-i18n="filter">Filter:</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb0" title="all" value="0" checked></input>
 				<span class="zauber-cb0" data-i18n="alle">Alle</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb1" title="Zauberspruch" value="1"></input>
 				<span class="zauber-cb1" data-i18n="zauberspruch">Zauberspruch</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb2" title="Zauberspruch" value="2"></input>
 				<span class="zauber-cb2" data-i18n="ritual">Ritual</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb3" title="Zauberspruch" value="3"></input>
 				<span class="zauber-cb3" data-i18n="elfenlied">Elfenlied</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb4" title="Zauberspruch" value="4"></input>
 				<span class="zauber-cb4" data-i18n="fluch">Fluch</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb5" title="Zauberspruch" value="5"></input>
 				<span class="zauber-cb5" data-i18n="streich">Streich</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb6" title="Zauberspruch" value="6"></input>
 				<span class="zauber-cb6" data-i18n="animistenkraft">Animistenkraft</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb7" title="Zauberspruch" value="7"></input>
 				<span class="zauber-cb7" data-i18n="zaubermelodie">Zaubermelodie</span>
+				<br>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb8" title="Zauberspruch" value="8"></input>
 				<span class="zauber-cb8" data-i18n="zaubertanz">Zaubertanz</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb9" title="Zauberspruch" value="9"></input>
 				<span class="zauber-cb9" data-i18n="zaubertrick">Zaubertrick</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb10" title="Zauberspruch" value="10"></input>
 				<span class="zauber-cb10" data-i18n="herrschaftsritual">Herrschaftsritual</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb11" title="Zauberspruch" value="11"></input>
 				<span class="zauber-cb11" data-i18n="vertrautentrick">Vertrautentrick</span>
+				<span class="filter-text"></span>
 				<input name="attr_zauber_selector" type="radio" class="zauber-cb12" title="Zauberspruch" value="12"></input>
 				<span class="zauber-cb12" data-i18n="sonstiges">Sonstiges</span>
 
@@ -5515,17 +5540,22 @@
 				</div>
 			</div>
 
-			<hr />
-
 			<div class="glaube-section liturgie">
+				<span class="filter-text" data-i18n="filter">Filter:</span>
+				<span class="filter-text"></span>
+				<span class="filter-text"></span>
 				<input name="attr_liturgie_selector" type="radio" class="liturgie-cb0" title="all" value="0" checked></input>
 				<span class="liturgie-cb0" data-i18n="alle">Alle</span>
+				<span class="filter-text"></span>
 				<input name="attr_liturgie_selector" type="radio" class="liturgie-cb1" title="liturgiespruch" value="1"></input>
 				<span class="liturgie-cb1" data-i18n="segen">Segen</span>
+				<span class="filter-text"></span>
 				<input name="attr_liturgie_selector" type="radio" class="liturgie-cb2" title="liturgiespruch" value="2"></input>
 				<span class="liturgie-cb2" data-i18n="liturgie">Liturgie</span>
+				<span class="filter-text"></span>
 				<input name="attr_liturgie_selector" type="radio" class="liturgie-cb3" title="liturgiespruch" value="3"></input>
 				<span class="liturgie-cb3" data-i18n="zeremonie">Zeremonie</span>
+				<span class="filter-text"></span>
 				<input name="attr_liturgie_selector" type="radio" class="liturgie-cb4" title="liturgiespruch" value="4"></input>
 				<span class="liturgie-cb4" data-i18n="sonstiges">Sonstiges</span>
 
@@ -5660,6 +5690,7 @@
 				<option value="4">Perceval Grey</option>
 				<option value="5">Gerasim Green</option>
 				<option value="6">Havena Blue</option>
+				<option value="7">Farmerlor Fire</option>
 			</select>
 		</div>
 		<h2 data-i18n="info">Info</h2>
@@ -6050,26 +6081,35 @@
 	<div class="section tab8">
 		<div class="effekte">
 			<h2 data-i18n="effekte">Effekte</h2>
-			<span class="modifikator" data-i18n="show_modifier">Modifikatoren anzeigen</span>
+			<span class="filter-text" data-i18n="show_modifier">Modifikatoren anzeigen</span>
 			<input type="checkbox" name="attr_show_modifier_ef" class="show_modifier_ef" value="1" checked />
-			<span class="modifikator" data-i18n="show_description">Beschreibung anzeigen</span>
+			<span class="filter-text" data-i18n="show_description">Beschreibung anzeigen</span>
 			<input type="checkbox" name="attr_show_description_ef" class="show_description_ef" value="1" checked />
 			<br>
-			<span data-i18n="filter">Filter:</span>
+			<span class="filter-text" data-i18n="filter">Filter:</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb0" title="all" value="0" checked></input>
 			<span class="effekt-cb0" data-i18n="alle">Alle</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb1" title="effekt" value="1"></input>
 			<span class="effekt-cb1" data-i18n="magie">Magie</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb2" title="effekt" value="2"></input>
 			<span class="effekt-cb2" data-i18n="goetterwirken">Götterwirken</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb3" title="effekt" value="3"></input>
 			<span class="effekt-cb3" data-i18n="umgebung">Umgebung</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb4" title="effekt" value="4"></input>
 			<span class="effekt-cb4" data-i18n="combat-situation">Kampfsituation</span>
+			<br>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb5" title="effekt" value="5"></input>
 			<span class="effekt-cb5" data-i18n="artefakt">Artefakt</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb6" title="effekt" value="6"></input>
 			<span class="effekt-cb6" data-i18n="kraeuter-tinkturen">Kräuter und Tinkturen</span>
+			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb8" title="effekt" value="8"></input>
 			<span class="effekt-cb8" data-i18n="sonstiges">Sonstige</span>
 
@@ -6998,6 +7038,7 @@
 
 	<!-- Kampf -->
 	<div class="section tab9">
+		<span class="filter-text"></span>
 		<input type="radio" name="attr_kampf_tab" class="tab kampftab1" value="1" checked />
 		<span class="tab" data-i18n="kampftechniken">Kampftechniken</span>
 		<input type="radio" name="attr_kampf_tab" class="tab kampftab2" value="2" />
@@ -7032,8 +7073,6 @@
 			<span class="kampf-header kampf-header-label9" data-i18n="effekt-modtp">Effekt-Mod. TP</span>
 			<input class="kampf-header kampf-header-value9" type="number" name="attr_tp_effekt_mod" value="0" readonly />
 		</div>
-
-
 
 		<div class="section kampftab1">
 
