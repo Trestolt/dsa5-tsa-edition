@@ -179,7 +179,7 @@
 		<div class="subsection eigenschaften">
 			<h3 data-i18n="eigenschaften">Eigenschaften</h3>
 			<div class="eigenschaften-grid">
- 				<span class='dee'></span>
+				<span class='dee'></span>
 				<span data-i18n="grundwert">Grundwert</span>
 				<span data-i18n="modifikator">Modifikator</span>
 				<span data-i18n="gesamtwert">Gesamtwert</span>
@@ -382,11 +382,6 @@
 	<div class="section tab2">
 		<div class="Sonderfertigkeiten">
 			<h2 data-i18n="sonderfertigkeiten">Sonderfertigkeiten</h2>
-			<span class="filter-text" data-i18n="show_modifier">Modifikatoren anzeigen</span>
-			<input type="checkbox" name="attr_show_modifier_sf" class="show_modifier_sf" value="1" checked />
-			<span class="filter-text" data-i18n="show_description">Beschreibung anzeigen</span>
-			<input type="checkbox" name="attr_show_description_sf" class="show_description_sf" value="1" checked />
-			<br>
 			<span class="filter-text" data-i18n="filter">Filter:</span>
 			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb0" title="all" value="0" checked></input>
@@ -419,7 +414,7 @@
 			<span class="filter-text"></span>
 			<input name="attr_sonderfertigkeit_selector" type="radio" class="sonderfertigkeit-cb8" title="sonderfertigkeit" value="8"></input>
 			<span class="sonderfertigkeit-cb8" data-i18n="sonstiges">Sonstige</span>
-		
+
 			<div class="sonderfertigkeitliste">
 				<fieldset class="repeating_sonderfertigkeit">
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb0" value="0" checked></input>
@@ -434,7 +429,6 @@
 					<input name="attr_sonderfertigkeittyp" type="radio" class="hidden sonderfertigkeit-cb9" value="9"></input>
 					<div class="modifikator-grid sonderfertigkeit-filtered">
 						<div class="modifikator sf1">
-							<!--	<span class="sonderfertigkeittyp-span" data-i18n="typ">Typ</span> -->
 							<select class="sonderfertigkeittyp-in" name="attr_sonderfertigkeittyp">
 								<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
 								<option value="1" data-i18n="allgemeine-sonderfertigkeit">Allgemeine Sonderfertigkeit</option>
@@ -450,6 +444,9 @@
 							<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
 							<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
 						</div>
+						<span data-i18n="show_modifier" class="margin-right-2">Modifikatoren anzeigen</span>
+						<input type="checkbox" class="sf-cb1" name="attr_sfklappbox1" value="1" checked><span></span>
+
 						<div class="modifikator sf3 sf_modifier">
 							<select class="modifikator modifikator-select1" name="attr_sonderfertigkeit_auswahl1">
 								<option value="add_modifikator" data-i18n="add_modifikator" selected>Modifikator hinzufügen
@@ -1355,6 +1352,8 @@
 							</select>
 							<input class="modifikator modifikator-value4" type="number" name='attr_sonderfertigkeit_mod4' value='0' />
 						</div>
+						<span data-i18n="show_description" class="margin-right-2">Beschreibung anzeigen</span>
+						<input type="checkbox" class="sf-cb2" name="attr_sfklappbox2" value="1" checked><span></span>
 						<div class="modifikator sf2">
 							<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung'>Beschreibung</textarea>
 						</div>
@@ -4507,8 +4506,7 @@
 							aktivieren</span></div>
 					<div class="tooltip talent-tooltip"><input class="talent talent-cb4" type="checkbox" name="attr_hkseele_paralyse_akt" value="1" checked> <span class="tooltiptext" data-i18n="paralyse-aktivieren">Malus für Paralyse aktivieren</span></div>
 					<div class="tooltip talent-tooltip"><input class="talent talent-cb5" type="checkbox" name="attr_hkseele_schmerz_akt" value="1" checked> <span class="tooltiptext" data-i18n="schmerz-aktivieren">Malus für Schmerz aktivieren</span></div>
-					<div class="tooltip talent-tooltip"><input class="talent talent-cb6" type="checkbox" name="attr_hkseele_trance_akt" value="1" checked> <span class="tooltiptext" data-i18n="trance-aktivieren">Malus für Trance
-							aktivieren</span></div>
+					<div class="tooltip talent-tooltip"><input class="talent talent-cb6" type="checkbox" name="attr_hkseele_trance_akt" value="1" checked> <span class="tooltiptext" data-i18n="trance-aktivieren">Malus für Trance aktivieren</span></div>
 					<div class="tooltip talent-tooltip"><input class="talent talent-cb7" type="checkbox" name="attr_hkseele_verwirrung_akt" value="1" checked> <span class="tooltiptext" data-i18n="verwirrung-aktivieren">Malus für Verwirrung aktivieren</span></div>
 					<div class="tooltip talent-tooltip">
 						<select class="talent talent-select1 entrueckung-show" name="attr_hkseele_entrueckung_akt">
@@ -5327,105 +5325,126 @@
 						<input name="attr_zaubertyp" type="radio" class="hidden zauber-cb11" value="11"></input>
 						<input name="attr_zaubertyp" type="radio" class="hidden zauber-cb12" value="12"></input>
 						<div class="zauber-filtered">
-							<span data-i18n="typ">Typ</span>
-							<select class="zaubertyp-in" style="width: 8em;" name="attr_zaubertyp">
-								<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
-								<option value="1" data-i18n="zauberspruch">Zauberspruch</option>
-								<option value="2" data-i18n="ritual">Ritual</option>
-								<option value="3" data-i18n="elfenlied">Elfenlied</option>
-								<option value="4" data-i18n="fluch">Fluch</option>
-								<option value="5" data-i18n="streich">Streich</option>
-								<option value="6" data-i18n="animistenkraft">Animistenkraft</option>
-								<option value="7" data-i18n="zaubermelodie">Zaubermelodie</option>
-								<option value="8" data-i18n="zaubertanz">Zaubertanz</option>
-								<option value="9" data-i18n="zaubertrick">Zaubertrick</option>
-								<option value="10" data-i18n="herrschaftsritual">Herrschaftsritual</option>
-								<option value="11" data-i18n="vertrautentrick">Vertrautentrick</option>
-								<option value="12" data-i18n="sonstiges">Sonstiges</option>
-							</select>
-							<span data-i18n="name">Name</span>
-							<input type="text" name="attr_zaubername">
-							<br>
-							<span data-i18n="probe">Probe</span>
-							<select class="zauber-eigenschaft" style="width: 3em;" name="attr_zaubereigenschaft1">
-								<option selected>---</option>
-								<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
-								<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
-								<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
-								<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
-								<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
-								<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
-								<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
-								<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
-							</select>
-							<select class="zauber-eigenschaft" style="width: 3em;" name="attr_zaubereigenschaft2">
-								<option selected>---</option>
-								<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
-								<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
-								<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
-								<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
-								<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
-								<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
-								<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
-								<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
-							</select>
-							<select class="zauber-eigenschaft" style="width: 3em;" name="attr_zaubereigenschaft3">
-								<option selected>---</option>
-								<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
-								<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
-								<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
-								<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
-								<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
-								<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
-								<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
-								<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
-							</select>
-							<span data-i18n="steigerung">Steigerung</span>
-							<select class="zauber-eigenschaft" style="width: 2em;" name="attr_zauberstg">
-								<option selected>--</option>
-								<option>A</option>
-								<option>B</option>
-								<option>C</option>
-								<option>D</option>
-								<option>E</option>
-							</select>
-							<span data-i18n="fw">FW</span>
-							<input type="number" name="attr_zauberfw" value="0">
-							<span data-i18n="modifikatorplus">Modifikator(+/-):</span>
-							<input type="number" name="attr_zaubermodifikator" value="0">
-							<button type="roll" class="roll1w" value="@{output_option} &{template:DSA-Talente} {{name=@{zaubername}}} {{subtags=^{zauber}}} {{Talent=[[ [[{0d1+@{zauberfw},0d1}kh1]] - {1d20cs1cf20 +[[{0d1 - @{zauberfw} ,0d1}kh1]] - (@{zaubereigenschaft1}+@{zaubermodifikator}+@{magie_mod_gesamt}+@{mod_option}) , 0d1}kh1 - {1d20cs1cf20 + [[{0d1 - @{zauberfW} ,0d1}kh1]] - (@{zauberEigenschaft2}+@{magie_mod_gesamt}+@{zaubermodifikator}+@{mod_option}) , 0d1}kh1- {1d20cs1cf20 + [[{0d1 - @{zauberfW} ,0d1}kh1]] - (@{zaubereigenschaft3}+@{magie_mod_gesamt}+@{zaubermodifikator}+@{mod_option}) , 0d1}kh1]]}}"></button>
-							<br>
-							<span data-i18n="reichweite">Reichweite</span>
-							<input type="text" name="attr_reichweite">
-							<span data-i18n="dauer">Dauer</span>
-							<input type="text" name="attr_dauer">
-							<span data-i18n="merkmal">Merkmal</span>
-							<input type="text" name="attr_merkmal">
-							<span data-i18n="verbreitung">Verbreitung</span>
-							<input type="text" name="attr_verbreitung">
-							<span data-i18n="kosten">Kosten</span>
-							<input type="text" name="attr_kosten">
-							<span data-i18n="wirkungsdauer">Wirkungsdauer</span>
-							<input type="text" name="attr_wirkungsdauer">
-							<span data-i18n="zielkategorie">Zielkategorie</span>
-							<input type="text" name="attr_zielkategorie">
-							<span data-i18n="wirkung">Wirkung</span>
-							<input type="text" name="attr_wirkung">
-							<span data-i18n="zielmodifikator">Zielmodifikator</span>
-							<input type="text" name="attr_zielmodifikator">
-							<br>
+							<div>
+								<span data-i18n="typ">Typ</span>
+								<select class="zaubertyp-in" style="width: 8em;" name="attr_zaubertyp">
+									<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
+									<option value="1" data-i18n="zauberspruch">Zauberspruch</option>
+									<option value="2" data-i18n="ritual">Ritual</option>
+									<option value="3" data-i18n="elfenlied">Elfenlied</option>
+									<option value="4" data-i18n="fluch">Fluch</option>
+									<option value="5" data-i18n="streich">Streich</option>
+									<option value="6" data-i18n="animistenkraft">Animistenkraft</option>
+									<option value="7" data-i18n="zaubermelodie">Zaubermelodie</option>
+									<option value="8" data-i18n="zaubertanz">Zaubertanz</option>
+									<option value="9" data-i18n="zaubertrick">Zaubertrick</option>
+									<option value="10" data-i18n="herrschaftsritual">Herrschaftsritual</option>
+									<option value="11" data-i18n="vertrautentrick">Vertrautentrick</option>
+									<option value="12" data-i18n="sonstiges">Sonstiges</option>
+								</select>
+								<span data-i18n="name">Name</span>
+								<input type="text" name="attr_zaubername">
+							</div>
+							<div>
+								<span data-i18n="probe">Probe</span>
+								<select class="zauber-eigenschaft" style="width: 3em;" name="attr_zaubereigenschaft1">
+									<option selected>---</option>
+									<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
+									<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
+									<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
+									<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
+									<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
+									<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
+									<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
+									<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
+								</select>
+								<select class="zauber-eigenschaft" style="width: 3em;" name="attr_zaubereigenschaft2">
+									<option selected>---</option>
+									<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
+									<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
+									<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
+									<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
+									<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
+									<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
+									<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
+									<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
+								</select>
+								<select class="zauber-eigenschaft" style="width: 3em;" name="attr_zaubereigenschaft3">
+									<option selected>---</option>
+									<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
+									<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
+									<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
+									<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
+									<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
+									<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
+									<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
+									<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
+								</select>
+								<span class="filter-text"></span>
+								<span data-i18n="steigerung">Steigerung</span>
+								<select class="zauber-eigenschaft" style="width: 2em;" name="attr_zauberstg">
+									<option selected>--</option>
+									<option>A</option>
+									<option>B</option>
+									<option>C</option>
+									<option>D</option>
+									<option>E</option>
+								</select>
+								<span class="filter-text"></span>
+								<span data-i18n="fw">FW</span>
+								<input type="number" name="attr_zauberfw" value="0">
+								<span class="filter-text"></span>
+								<span data-i18n="modifikatorplus">Modifikator(+/-):</span>
+								<input type="number" name="attr_zaubermodifikator" value="0">
+								<span class="filter-text"></span>
+								<button type="roll" class="roll1w" value="@{output_option} &{template:DSA-Talente} {{name=@{zaubername}}} {{subtags=^{zauber}}} {{Talent=[[ [[{0d1+@{zauberfw},0d1}kh1]] - {1d20cs1cf20 +[[{0d1 - @{zauberfw} ,0d1}kh1]] - (@{zaubereigenschaft1}+@{zaubermodifikator}+@{magie_mod_gesamt}+@{mod_option}) , 0d1}kh1 - {1d20cs1cf20 + [[{0d1 - @{zauberfW} ,0d1}kh1]] - (@{zauberEigenschaft2}+@{magie_mod_gesamt}+@{zaubermodifikator}+@{mod_option}) , 0d1}kh1- {1d20cs1cf20 + [[{0d1 - @{zauberfW} ,0d1}kh1]] - (@{zaubereigenschaft3}+@{magie_mod_gesamt}+@{zaubermodifikator}+@{mod_option}) , 0d1}kh1]]}}"></button>
+							</div>
+							<span data-i18n="weitere-merkmale" class="margin-right-2">weitere Merkmale</span>
+							<input type="checkbox" class="magie-cb3" name="attr_zauberklappbox3" value="1" checked><span></span>
+							<div class="magie-merkmale">
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="reichweite">Reichweite</span>
+									<input class="magie-merkmale-item" type="text" name="attr_reichweite">
+									<span class="magie-merkmale-item" data-i18n="dauer">Dauer</span>
+									<input class="magie-merkmale-item" type="text" name="attr_dauer">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="merkmal">Merkmal</span>
+									<input class="magie-merkmale-item" type="text" name="attr_merkmal">
+									<span class="magie-merkmale-item" data-i18n="verbreitung">Verbreitung</span>
+									<input class="magie-merkmale-item" type="text" name="attr_verbreitung">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="kosten">Kosten</span>
+									<input class="magie-merkmale-item" type="text" name="attr_kosten">
+									<span class="magie-merkmale-item" data-i18n="wirkungsdauer">Wirkungsdauer</span>
+									<input class="magie-merkmale-item" type="text" name="attr_wirkungsdauer">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="zielkategorie">Zielkategorie</span>
+									<input class="magie-merkmale-item" type="text" name="attr_zielkategorie">
+									<span class="magie-merkmale-item" data-i18n="zielmodifikator">Zielmodifikator</span>
+									<input class="magie-merkmale-item" type="text" name="attr_zielmodifikator">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="wirkung">Wirkung</span>
+									<textarea class="magie-merkmale-item" name="attr_wirkung"></textarea>
+								</div>
+							</div>
+							<span data-i18n="erweiterungen" class="margin-right-2">Erweiterungen</span>
 							<input type="checkbox" class="magie-cb" name="attr_zauberklappbox" value="1" checked><span></span>
 							<div class="magie-erweiterung">
-								<span data-i18n="erweiterung1">1. Erweiterung</span>
-								<input type="text" name="attr_erweiterung1">
-								<span data-i18n="erweiterung2">2. Erweiterung</span>
-								<input type="text" name="attr_erweiterung2">
-								<span data-i18n="erweiterung3">3. Erweiterung</span>
-								<input type="text" name="attr_erweiterung3">
-								<span data-i18n="anmerkung">Anmerkung</span>
-								<input type="text" name="attr_anmerkung">
-								<span data-i18n="referenz">Referenz</span>
-								<input type="text" name="attr_reference">
+								<textarea class="magie-description" name="attr_erweiterung1" data-i18n="erweiterung1">1. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung2" data-i18n="erweiterung2">2. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung3" data-i18n="erweiterung3">3. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung4" data-i18n="erweiterung4">4. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung5" data-i18n="erweiterung5">5. Erweiterung</textarea>
+							</div>
+							<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
+							<input type="checkbox" class="magie-cb2" name="attr_zauberklappbox2" value="1" checked><span></span>
+							<div class="magie-anmerkung">
+								<textarea class="magie-description" name="attr_anmerkung" data-i18n="anmerkung">Anmerkung</textarea>
+								<textarea class="magie-description" name="attr_reference" data-i18n="referenz">Referenz</textarea>
 							</div>
 							<!-- Ende magie erweiterung -->
 						</div>
@@ -5571,97 +5590,117 @@
 						<input name="attr_liturgietyp" type="radio" class="hidden liturgie-cb7" value="7"></input>
 						<input name="attr_liturgietyp" type="radio" class="hidden liturgie-cb8" value="8"></input>
 						<div class="liturgie-filtered">
-							<span data-i18n="typ">Typ</span>
-							<select class="liturgietyp-in" style="width: 8em;" name="attr_liturgietyp">
-								<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
-								<option value="1" data-i18n="segen">Segen</option>
-								<option value="2" data-i18n="liturgie">Litgurie</option>
-								<option value="3" data-i18n="zeremonie">Zeremonie</option>
-								<option value="4" data-i18n="sonstiges">Sonstiges</option>
-							</select>
-							<span data-i18n="name">Name</span>
-							<input type="text" name="attr_liturgiename">
-							<br>
-							<span data-i18n="probe">Probe</span>
-							<select class="liturgie-eigenschaft" style="width: 3em;" name="attr_liturgieeigenschaft1">
-								<option selected>---</option>
-								<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
-								<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
-								<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
-								<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
-								<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
-								<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
-								<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
-								<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
-							</select>
-							<select class="liturgie-eigenschaft" style="width: 3em;" name="attr_liturgieeigenschaft2">
-								<option selected>---</option>
-								<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
-								<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
-								<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
-								<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
-								<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
-								<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
-								<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
-								<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
-							</select>
-							<select class="liturgie-eigenschaft" style="width: 3em;" name="attr_liturgieeigenschaft3">
-								<option selected>---</option>
-								<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
-								<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
-								<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
-								<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
-								<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
-								<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
-								<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
-								<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
-							</select>
-							<span data-i18n="steigerung">Steigerung</span>
-							<select class="liturgie-eigenschaft" style="width: 2em;" name="attr_liturgiestg">
-								<option selected>--</option>
-								<option>A</option>
-								<option>B</option>
-								<option>C</option>
-								<option>D</option>
-								<option>E</option>
-							</select>
-							<span data-i18n="fw">FW</span>
-							<input type="number" name="attr_liturgiefw" value="0">
-							<span data-i18n="modifikatorplus">Modifikator(+/-):</span>
-							<input type="number" name="attr_liturgiemodifikator" value="0">
-							<button type="roll" value="@{output_option} &{template:DSA-Talente} {{name=@{liturgiename}}} {{subtags=^{goetterwirken}}} {{Talent=[[ [[{0d1+@{liturgiefw},0d1}kh1]] - {1d20cs1cf20 +[[{0d1 - @{liturgiefw} ,0d1}kh1]] - (@{liturgieeigenschaft1}+@{liturgiemodifikator}+@{glaube_mod_gesamt}+@{mod_option}) , 0d1}kh1 - {1d20cs1cf20 + [[{0d1 - @{liturgiefW} ,0d1}kh1]] - (@{liturgieEigenschaft2}+@{glaube_mod_gesamt}+@{liturgiemodifikator}+@{mod_option}) , 0d1}kh1- {1d20cs1cf20 + [[{0d1 - @{liturgiefW} ,0d1}kh1]] - (@{liturgieeigenschaft3}+@{glaube_mod_gesamt}+@{liturgiemodifikator}+@{mod_option}) , 0d1}kh1]]}}"></button>
-							<br>
-							<span data-i18n="reichweite">Reichweite</span>
-							<input type="text" name="attr_reichweite">
-							<span data-i18n="dauer">Dauer</span>
-							<input type="text" name="attr_dauer">
-							<span data-i18n="merkmal">Merkmal</span>
-							<input type="text" name="attr_merkmal">
-							<span data-i18n="verbreitung">Verbreitung</span>
-							<input type="text" name="attr_verbreitung">
-							<span data-i18n="kosten">Kosten</span>
-							<input type="text" name="attr_kosten">
-							<span data-i18n="wirkungsdauer">Wirkungsdauer</span>
-							<input type="text" name="attr_wirkungsdauer">
-							<span data-i18n="zielkategorie">Zielkategorie</span>
-							<input type="text" name="attr_zielkategorie">
-							<span data-i18n="wirkung">Wirkung</span>
-							<input type="text" name="attr_wirkung">
-							<span data-i18n="zielmodifikator">Zielmodifikator</span>
-							<input type="text" name="attr_zielmodifikator">
-							<br>
-							<input type="checkbox" class="glaube-cb" name="attr_liturgieklappbox" value="1" checked><span></span>
-							<div class="glaube-erweiterung">
-								<span data-i18n="erweiterung1">1. Erweiterung</span>
-								<input type="text" name="attr_erweiterung1">
-								<span data-i18n="erweiterung2">2. Erweiterung</span>
-								<input type="text" name="attr_erweiterung2">
-								<span data-i18n="erweiterung3">3. Erweiterung</span>
-								<input type="text" name="attr_erweiterung3">
-								<span data-i18n="anmerkung">Anmerkung</span>
-								<input type="text" name="attr_anmerkung">
-								<span data-i18n="referenz">Referenz</span>
-								<input type="text" name="attr_reference">
+							<div>
+								<span data-i18n="typ">Typ</span>
+								<select class="liturgietyp-in" style="width: 8em;" name="attr_liturgietyp">
+									<option value="0" selected data-i18n="typ-auswaehlen">Typ auswählen</option>
+									<option value="1" data-i18n="segen">Segen</option>
+									<option value="2" data-i18n="liturgie">Litgurie</option>
+									<option value="3" data-i18n="zeremonie">Zeremonie</option>
+									<option value="4" data-i18n="sonstiges">Sonstiges</option>
+								</select>
+								<span data-i18n="name">Name</span>
+								<input type="text" name="attr_liturgiename">
+							</div>
+							<div>
+								<span data-i18n="probe">Probe</span>
+								<select class="liturgie-eigenschaft" style="width: 3em;" name="attr_liturgieeigenschaft1">
+									<option selected>---</option>
+									<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
+									<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
+									<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
+									<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
+									<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
+									<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
+									<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
+									<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
+								</select>
+								<select class="liturgie-eigenschaft" style="width: 3em;" name="attr_liturgieeigenschaft2">
+									<option selected>---</option>
+									<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
+									<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
+									<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
+									<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
+									<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
+									<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
+									<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
+									<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
+								</select>
+								<select class="liturgie-eigenschaft" style="width: 3em;" name="attr_liturgieeigenschaft3">
+									<option selected>---</option>
+									<option value="@{mut_gesamt}" data-i18n="MU">MU</option>
+									<option value="@{klugheit_gesamt}" data-i18n="KL">KL</option>
+									<option value="@{intuition_gesamt}" data-i18n="IN">IN</option>
+									<option value="@{charisma_gesamt}" data-i18n="CH">CH</option>
+									<option value="@{fingerfertigkeit_gesamt}" data-i18n="FF">FF</option>
+									<option value="@{gewandheit_gesamt}" data-i18n="GE">GE</option>
+									<option value="@{konstitution_gesamt}" data-i18n="KO">KO</option>
+									<option value="@{koerperkraft_gesamt}" data-i18n="KK">KK</option>
+								</select>
+								<span data-i18n="steigerung">Steigerung</span>
+								<select class="liturgie-eigenschaft" style="width: 2em;" name="attr_liturgiestg">
+									<option selected>--</option>
+									<option>A</option>
+									<option>B</option>
+									<option>C</option>
+									<option>D</option>
+									<option>E</option>
+								</select>
+								<span class="filter-text"></span>
+								<span data-i18n="fw">FW</span>
+								<input type="number" name="attr_liturgiefw" value="0">
+								<span class="filter-text"></span>
+								<span data-i18n="modifikatorplus">Modifikator(+/-):</span>
+								<input type="number" name="attr_liturgiemodifikator" value="0">
+								<span class="filter-text"></span>
+								<button type="roll" value="@{output_option} &{template:DSA-Talente} {{name=@{liturgiename}}} {{subtags=^{goetterwirken}}} {{Talent=[[ [[{0d1+@{liturgiefw},0d1}kh1]] - {1d20cs1cf20 +[[{0d1 - @{liturgiefw} ,0d1}kh1]] - (@{liturgieeigenschaft1}+@{liturgiemodifikator}+@{glaube_mod_gesamt}+@{mod_option}) , 0d1}kh1 - {1d20cs1cf20 + [[{0d1 - @{liturgiefW} ,0d1}kh1]] - (@{liturgieEigenschaft2}+@{glaube_mod_gesamt}+@{liturgiemodifikator}+@{mod_option}) , 0d1}kh1- {1d20cs1cf20 + [[{0d1 - @{liturgiefW} ,0d1}kh1]] - (@{liturgieeigenschaft3}+@{glaube_mod_gesamt}+@{liturgiemodifikator}+@{mod_option}) , 0d1}kh1]]}}"></button>
+							</div>
+							<span data-i18n="weitere-merkmale" class="margin-right-2">weitere Merkmale</span>
+							<input type="checkbox" class="magie-cb3" name="attr_zauberklappbox3" value="1" checked><span></span>
+							<div class="magie-merkmale">
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="reichweite">Reichweite</span>
+									<input class="magie-merkmale-item" type="text" name="attr_reichweite">
+									<span class="magie-merkmale-item" data-i18n="dauer">Dauer</span>
+									<input class="magie-merkmale-item" type="text" name="attr_dauer">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="merkmal">Merkmal</span>
+									<input class="magie-merkmale-item" type="text" name="attr_merkmal">
+									<span class="magie-merkmale-item" data-i18n="verbreitung">Verbreitung</span>
+									<input class="magie-merkmale-item" type="text" name="attr_verbreitung">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="kosten">Kosten</span>
+									<input class="magie-merkmale-item" type="text" name="attr_kosten">
+									<span class="magie-merkmale-item" data-i18n="wirkungsdauer">Wirkungsdauer</span>
+									<input class="magie-merkmale-item" type="text" name="attr_wirkungsdauer">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="zielkategorie">Zielkategorie</span>
+									<input class="magie-merkmale-item" type="text" name="attr_zielkategorie">
+									<span class="magie-merkmale-item" data-i18n="zielmodifikator">Zielmodifikator</span>
+									<input class="magie-merkmale-item" type="text" name="attr_zielmodifikator">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="wirkung">Wirkung</span>
+									<textarea class="magie-merkmale-item" name="attr_wirkung"></textarea>
+								</div>
+							</div>
+							<span data-i18n="erweiterungen" class="margin-right-2">Erweiterungen</span>
+							<input type="checkbox" class="magie-cb" name="attr_zauberklappbox" value="1" checked><span></span>
+							<div class="magie-erweiterung">
+								<textarea class="magie-description" name="attr_erweiterung1" data-i18n="erweiterung1">1. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung2" data-i18n="erweiterung2">2. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung3" data-i18n="erweiterung3">3. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung4" data-i18n="erweiterung4">4. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung5" data-i18n="erweiterung5">5. Erweiterung</textarea>
+							</div>
+							<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
+							<input type="checkbox" class="magie-cb2" name="attr_zauberklappbox2" value="1" checked><span></span>
+							<div class="magie-anmerkung">
+								<textarea class="magie-description" name="attr_anmerkung" data-i18n="anmerkung">Anmerkung</textarea>
+								<textarea class="magie-description" name="attr_reference" data-i18n="referenz">Referenz</textarea>
 							</div>
 							<!-- Ende glaube erweiterung -->
 						</div>
@@ -5706,8 +5745,8 @@
 			<span class="disclaimer" data-i18n="disclaimer">© 2019 Ulisses Spiele. DAS SCHWARZE AUGE, AVENTURIEN, DERE,
 				MYRANOR, THARUN, UTHURIA, RIESLAND und THE DARK EYE sind eingetragene Marken der Ulisses Spiele GmbH,
 				Waldems.</span>
-		
-			</div>
+
+		</div>
 	</div>
 
 	<!-- Status -->
@@ -6081,11 +6120,6 @@
 	<div class="section tab8">
 		<div class="effekte">
 			<h2 data-i18n="effekte">Effekte</h2>
-			<span class="filter-text" data-i18n="show_modifier">Modifikatoren anzeigen</span>
-			<input type="checkbox" name="attr_show_modifier_ef" class="show_modifier_ef" value="1" checked />
-			<span class="filter-text" data-i18n="show_description">Beschreibung anzeigen</span>
-			<input type="checkbox" name="attr_show_description_ef" class="show_description_ef" value="1" checked />
-			<br>
 			<span class="filter-text" data-i18n="filter">Filter:</span>
 			<span class="filter-text"></span>
 			<input name="attr_effekt_selector" type="radio" class="effekt-cb0" title="all" value="0" checked></input>
@@ -6138,6 +6172,8 @@
 							<input class="modifikator modifikator-label" type="text" name='attr_effekt_name' value='Name' />
 							<input class="modifikator modifikator-cb" type="checkbox" name='attr_effekt_aktiviert' value='1' />
 						</div>
+						<span data-i18n="show_modifier" class="margin-right-2">Modifikatoren anzeigen</span>
+						<input type="checkbox" class="ef-cb1" name="attr_efklappbox1" value="1" checked><span></span>
 						<div class="modifikator ef3 effekt_modifier">
 							<select class="modifikator modifikator-select1" name="attr_effekt_auswahl1">
 								<option value="add_modifikator" data-i18n="add_effekt" selected>Effekt-Modifikator hinzufügen</option>
@@ -7018,6 +7054,8 @@
 							</select>
 							<input class="modifikator modifikator-value4" type="number" name='attr_effekt_mod4' value='0' />
 						</div>
+						<span data-i18n="show_description" class="margin-right-2">Beschreibung anzeigen</span>
+						<input type="checkbox" class="ef-cb2" name="attr_efklappbox2" value="1" checked><span></span>
 						<div class="modifikator ef2">
 							<textarea class="modifikator modifikator-description" name='attr_effekt_anmerkung'>Beschreibung</textarea>
 						</div>
@@ -7327,8 +7365,8 @@
 		<div class="section kampftab2">
 
 			<div class="kampf-nah-grid">
-				
-				<span class="kampf-nah kampf-nah-item1" data-i18n="attacke">Attacke </span>	
+
+				<span class="kampf-nah kampf-nah-item1" data-i18n="attacke">Attacke </span>
 				<div class="kampf-nah-item2">
 					<input class="kampf-nah" type="number" name="attr_at_roll" value="0" readonly />
 					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{at_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}"></button>
@@ -7370,17 +7408,17 @@
 				<div class="kampf-nah-item12">
 					<input class="kampf-nah" type="number" name="attr_pa_roll" value="0" readonly />
 					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_roll}++@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
-					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@kampf_modifier})]]}}" data-i18n="1/2">1/2</but	ton>
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@kampf_modifier})]]}}" data-i18n="1/2">1/2</but ton>
 				</div>
-				
+
 				<span class="kampf-nah kampf-nah-item13" data-i18n="schildparade-parierwaffe">Schildparade Parierwaffe</span>
 				<div class="kampf-nah-item14">
 					<input class="kampf-nah" type="number" name="attr_pa_nh_roll" value="0" readonly />
 					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{schildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_nh_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
 					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeSchildparade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_nh_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
 				</div>
-				
-				
+
+
 				<span class="kampf-nah kampf-nah-label15" data-i18n="ausweichen">Ausweichen</span>
 				<div class="kampf-nah-item16">
 					<input class="kampf-nah" type="number" name="attr_ausweichen_zweite_mod" value="0" readonly hidden />
@@ -7553,7 +7591,7 @@
 				<span class="kampf-fern kampf-fern-item11" data-i18n="modifikatoren">Modifikatoren</span>
 				<span class="kampf-fern kampf-fern-item12" data-i18n="fk-mod">FK-Mod</span>
 				<span class="kampf-fern kampf-fern-item13" data-i18n="tp-mod">TP-Mod</span>
-				
+
 				<span class="kampf-fern kampf-fern-item14" data-i18n="distanz">Distanz</span>
 				<select class="kampf-fern kampf-fern-item15" name="attr_distanz_mod">
 					<option value="1" data-i18n="nah">Nah</option>
@@ -7562,7 +7600,7 @@
 				</select>
 				<input class="kampf-fern kampf-fern-item16" name="attr_distanz_fk_mod" type="number" value="0" readonly>
 				<input class="kampf-fern kampf-fern-item17" name="attr_distanz_tp_mod" type="number" value="0" readonly>
-				
+
 				<span class="kampf-fern kampf-fern-item18" data-i18n="groesse">Größe</span>
 				<select class="kampf-fern kampf-fern-item19" name="attr_groesse_mod">
 					<option value="-2" data-i18n="winzig">winzig</option>
@@ -7573,7 +7611,7 @@
 				</select>
 				<input class="kampf-fern kampf-fern-item20" name="attr_groesse_fk_mod" type="number" value="0" readonly>
 				<input class="kampf-fern kampf-fern-item21" name="attr_groesse_tp_mod" type="number" value="0" readonly>
-				
+
 				<span class="kampf-fern kampf-fern-item22" data-i18n="sichtmodifikator">Sichtmodifikator</span>
 				<select class="kampf-fern kampf-fern-item23" name="attr_sicht_mod">
 					<option value="0" selected>---</option>
@@ -7708,7 +7746,7 @@
 
 				<!-- Schaden / Kleine Liste / Makro hiereintragen -->
 
-			
+
 			</div>
 		</div>
 	</div>
@@ -8549,9 +8587,9 @@
 	<div class="section tab12">
 		<h2 data-i18n="notizen">Notizen</h2>
 		<div class="notizen">
-			
+
 			<textarea name="attr_notizen"></textarea>
-		
+
 		</div>
 	</div>
 

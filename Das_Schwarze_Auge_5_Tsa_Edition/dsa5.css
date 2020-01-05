@@ -184,6 +184,10 @@ input[type="number"] {
     padding: 1px;
 }
 
+.sheet-margin-right-2 {
+    margin-right: 2px;
+}
+
 .sheet-filter-text {
     margin-left: 10px;
 }
@@ -1107,9 +1111,6 @@ div.sheet-sonderfertigkeitliste {
     border-radius: 3px;
 }
 
-/*.repcontainer .repitem {
-    overflow: hidden;
-} to_delete*/
 
 .sheet-sonderfertigkeitliste>fieldset.repeating_sonderfertigkeit+.repcontainer>.repitem {
     /**
@@ -1198,37 +1199,94 @@ input[type="checkbox"].sheet-modifikator {
     text-align: center;
 }
 
-input[type="checkbox"].sheet-show_description_sf~* {
-    --description_sf_display: none;
-    --description_sf_visibility: hidden;
-    
-}
-input[type="checkbox"].sheet-show_description_sf:checked~* {
-    --description_sf_display: block;
-    --description_sf_visibility: visible;
-    
+
+
+/* Fake checkbox */
+input[type="checkbox"].sheet-sf-cb1 {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
 }
 
-.sheet-sf2 {
-    display: var(--description_sf_display);
-    visibility: var(--description_sf_visibility);
+input[type="checkbox"].sheet-sf-cb1+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
 }
 
-input[type="checkbox"].sheet-show_modifier_sf~* {
-    --modifier_sf_display: none;
-    --modifier_sf_visibility: hidden;
-    
-}
-input[type="checkbox"].sheet-show_modifier_sf:checked~* {
-    --modifier_sf_display: block;
-    --modifier_sf_visibility: visible;
-    
+input[type="checkbox"].sheet-sf-cb1:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
 }
 
-.sheet-sf_modifier {
-    display: var(--modifier_sf_display);
-    visibility: var(--modifier_sf_visibility);
+div.sheet-sf3, div.sheet-sf5 {
+    display: block;
 }
+
+input[type="checkbox"].sheet-sf-cb1:checked~div.sheet-sf3 {
+    display: none;
+}
+
+input[type="checkbox"].sheet-sf-cb1:checked~div.sheet-sf5 {
+    display: none;
+}
+
+
+input[type="checkbox"].sheet-sf-cb2 {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-sf-cb2+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-sf-cb2:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.sheet-sf2 {
+    display: block;
+}
+
+input[type="checkbox"].sheet-sf-cb2:checked~div.sheet-sf2 {
+    display: none;
+}
+
+
+
+
+
 
 /* Effekte */
 
@@ -1286,36 +1344,86 @@ input.sheet-effekt-cb0:checked~.sheet-effekt-filtered {
 /* Grid Modifikator, which is no grid any more */
 
 
-input[type="checkbox"].sheet-show_description_ef~* {
-    --description_ef_display: none;
-    --description_ef_visibility: hidden;
-    
-}
-input[type="checkbox"].sheet-show_description_ef:checked~* {
-    --description_ef_display: block;
-    --description_ef_visibility: visible;
-    
-}
-
-.sheet-ef2 {
-    display: var(--description_ef_display);
-    visibility: var(--description_ef_visibility);
+/* Fake checkbox */
+input[type="checkbox"].sheet-ef-cb1 {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
 }
 
-input[type="checkbox"].sheet-show_modifier_ef~* {
-    --modifier_ef_display: none;
-    --modifier_ef_visibility: hidden;
-    
-}
-input[type="checkbox"].sheet-show_modifier_ef:checked~* {
-    --modifier_ef_display: block;
-    --modifier_ef_visibility: visible;
-    
+input[type="checkbox"].sheet-ef-cb1+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
 }
 
-.sheet-effekt_modifier {
-    display: var(--modifier_ef_display);
-    visibility: var(--modifier_ef_visibility);
+input[type="checkbox"].sheet-ef-cb1:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.sheet-ef3, div.sheet-ef5 {
+    display: block;
+}
+
+input[type="checkbox"].sheet-ef-cb1:checked~div.sheet-ef3 {
+    display: none;
+}
+
+input[type="checkbox"].sheet-ef-cb1:checked~div.sheet-ef5 {
+    display: none;
+}
+
+
+input[type="checkbox"].sheet-ef-cb2 {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-ef-cb2+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-ef-cb2:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.sheet-ef2 {
+    display: block;
+}
+
+input[type="checkbox"].sheet-ef-cb2:checked~div.sheet-ef2 {
+    display: none;
 }
 
 
@@ -2628,7 +2736,8 @@ input[type="checkbox"].sheet-magie-cb {
 }
 
 input[type="checkbox"].sheet-magie-cb+span::before {
-    content: "▼";
+    content: "(-)";
+    font-weight: bold;
     display: inline-block;
     width: 14px;
     height: 14px;
@@ -2640,16 +2749,125 @@ input[type="checkbox"].sheet-magie-cb+span::before {
 }
 
 input[type="checkbox"].sheet-magie-cb:checked+span::before {
-    content: "►";
+    content: "(+)";
+    font-weight: bold;
 }
 
 div.magie-erweiterung {
-    display: inline-flex;
+    display: block;
 }
 
 input[type="checkbox"].sheet-magie-cb:checked~div.sheet-magie-erweiterung {
     display: none;
 }
+
+
+input[type="checkbox"].sheet-magie-cb2 {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-magie-cb2+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-magie-cb2:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.sheet-magie-anmerkung {
+    display: block;
+}
+
+input[type="checkbox"].sheet-magie-cb2:checked~div.sheet-magie-anmerkung{
+    display: none;
+}
+
+
+textarea.sheet-magie-description {
+    width: 89%;
+    height: 18px;
+}
+
+input[type="checkbox"].sheet-magie-cb3 {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-magie-cb3+span::before {
+    /* content: "▼";*/
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-magie-cb3:checked+span::before {
+    /*content: "►";*/
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.magie-merkmale {
+    display: block;
+    }
+
+div.sheet-magie-merkmale-item {
+    display:inline-flex;
+}
+
+span.sheet-magie-merkmale-item {
+    width: 10em;
+    margin: 5px;
+}
+
+input.sheet-magie-merkmale-item {
+     margin: 5px;
+}
+
+textarea.sheet-magie-merkmale-item {
+    margin: 5px;
+    width: 43em;
+    height: 15px;
+}
+
+
+input[type="checkbox"].sheet-magie-cb3:checked~div.sheet-magie-merkmale {
+    display: none;
+}
+
+
+
 
 div.sheet-zauberliste {
     visibility: visible;
@@ -2707,6 +2925,9 @@ div.sheet-zauberliste {
 input.sheet-zauber-cb0:checked~.sheet-zauber-filtered {
     display: block;
 }
+
+
+
 
 
 /* glaube */
@@ -2932,41 +3153,7 @@ input[type="checkbox"].sheet-glaube-header {
 
 /* Fake checkbox */
 
-input[type="checkbox"].sheet-glaube-cb {
-    z-index: 1;
-    position: relative;
-    top: 5px;
-    left: 6px;
-    width: 16px;
-    height: 16px;
-    margin: -10px;
-    opacity: 0;
-    cursor: pointer;
-}
-
-input[type="checkbox"].sheet-glaube-cb+span::before {
-    content: "▼";
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin-right: 4px;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 12px;
-    line-height: 14px;
-}
-
-input[type="checkbox"].sheet-glaube-cb:checked+span::before {
-    content: "►";
-}
-
-div.sheet-glaube-erweiterung {
-    display: inline-flex;
-}
-
-input[type="checkbox"].sheet-glaube-cb:checked~div.sheet-glaube-erweiterung {
-    display: none;
-}
+/* use same css as magie */
 
 div.sheet-liturgieliste {
     visibility: visible;
