@@ -1,6 +1,10 @@
 # Das Schwarze Auge 5 - Tsa Edition
 
 ## Änderungen
+2019-12-20:
+- Tab Sonderfertigkeiten: Änderung Beschreibung von Text zu einer Textarea, damit dort mehr Platz für Notizen ist. Außerdem können Beschreibung und Modifikatoren gezielt ein- und ausgeblendet werden. Außerdem wurde ein vierter Modifikator hinzugefügt
+- Tab Effekte: Es könne jetzt Effekte hinzugefügt werden. Im wesentlichen ist die Funktionalität ähnlich zu den Sonderfertigkeiten. Bei Talenten, Magie, Götterwirken und Kampfwerten werden statt des Sonderfertigkeitsmodifikators ein Effektmodifikator angegeben.
+
 2019-12-03:
 
 - Überarbeitung Design Status Tab
