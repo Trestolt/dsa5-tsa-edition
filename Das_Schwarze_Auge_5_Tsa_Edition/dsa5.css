@@ -3099,12 +3099,97 @@ input.sheet-zauber-cb0:checked~.sheet-zauber-filtered {
     vertical-align: middle;
 }
 
-
-
 input[type="checkbox"].sheet-glaube-header {
     width: 100%;
     height: 100%;
 }
+
+/* inventar */
+
+
+.sheet-waffe {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
+    display: grid;
+   
+}
+    
+
+.sheet-waffe-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 3px;
+    border-color: var(--color-border);
+   
+}
+
+select.sheet-waffe-item {
+    width: max-content;
+    min-width: 3.4em;
+}
+
+textarea.sheet-waffe-item {
+    width: 97%;
+    height: 36px;
+}
+
+
+input[type="checkbox"].sheet-waffe-cb {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-waffe-cb+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-waffe-cb:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.waffe-erweiterung {
+    display: block;
+}
+
+input[type="checkbox"].sheet-waffe-cb:checked~div.sheet-waffe-erweiterung {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .sheet-geldbeutel {
     margin: 2px;

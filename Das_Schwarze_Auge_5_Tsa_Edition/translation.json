@@ -149,7 +149,7 @@
  "leicht": "leicht",
  "legendaer": "Legendär (2100 AP)",
  "leiteigenschaft": "Leiteigenschaft",
- "leiteigschadensb": "Leiteig. + Schadensb.",
+ "leiteigschadensb": "TP-Bonus",
  "liegend": "Liegend",
  "magie": "Magie",
  "malus": "Malus",
@@ -646,5 +646,11 @@
  "kraeuter-tinkturen":"Kräuter und Tinkturen",
  "add_effekt":"Effekt-Modifikator hinzufügen",
  "quelle-auswaehlen":"Quelle auswählen",
- "weitere-merkmale":"Weitere Merkmale"
+ "weitere-merkmale":"Weitere Merkmale",
+ "bruchfaktor":"Bruchfaktor",
+ "strukturpunkte":"Strukturpunkte",
+ "temp-modifikatoren":"temp. Mod.:",
+ "AT":"AT",
+ "PA":"PA",
+ "TP":"TP"
 }
