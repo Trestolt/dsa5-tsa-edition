@@ -8588,23 +8588,15 @@
 
 			</div>
 
-			<h3 data-i18n="fernkampf">Fernkampfwaffen</h3>
-			<div>
-				<div>
-					<span data-i18n="waffe">Waffe</span>
-					<span data-i18n="kt">KT</span>
-					<span colspan="3" data-i18n="leiteigschadensb">Leiteig. + Schadensb.</span>
-					<span colspan="2" data-i18n="trefferpunkte">Trefferpunkte</span>
-					<span colspan="2" data-i18n="munition">Munition</span>
-					<span colspan="2" data-i18n="ladezeit">Ladezeit</span>
-					<span data-i18n="reichweite">Reichweite</span>
-					<span data-i18n="verschleiss">Verschleiß</span>
-					<span colspan="2" data-i18n="waffen-mod">TP/FK-Mod.</span>
-					<span data-i18n="anmerkung">Anmerkung</span>
-				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_name_1"></span>
-					<span class="padding-1"><select name="attr_fkwaffe_typ_1">
+			<h3 data-i18n="fernkampfwaffen">Fernkampfwaffen</h3>
+			<div class="fernkampfwaffen">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_fkwaffe_name_1" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_fkwaffe_typ_1">
 							<option value="0" selected>---</option>
 							<option value="armbrueste" data-i18n="armbrueste">Armbrust</option>
 							<option value="blasrohre" data-i18n="blasrohre">Blasrohr</option>
@@ -8613,68 +8605,63 @@
 							<option value="feuerspeien" data-i18n="feuerspeien">Feuerspeien</option>
 							<option value="schleudern" data-i18n="schleudern">Schleuder</option>
 							<option value="wurfwaffen" data-i18n="wurfwaffen">Wurfwaffe</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_fkwaffe_leiteigenschaft_1">
-							<option value="0">--</option>
-							<option value="FF" data-i18n="FF" selected>FF</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_leiteigenschaft_input_1" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_fkwaffe_tp_bonus_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_anz_wuerfel_1" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_wert_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_mun_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_ladezeit_1" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_rw_1"> </span>
-					<span class="padding-1"><select name="attr_fkwaffe_verschleiss_1">
-							<option value="0" selected>---</option>
-							<option value="1" data-i18n="stufe-i">I</option>
-							<option value="2" data-i18n="stufe-ii">II</option>
-							<option value="3" data-i18n="stufe-iii">III</option>
-							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_mod_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_fk_mod_1" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_anmerkung_1"></span>
-				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_name_2"></span>
-					<span class="padding-1"><select name="attr_fkwaffe_typ_2">
-							<option value="0" selected>---</option>
-							<option value="armbrueste" data-i18n="armbrueste">Armbrust</option>
-							<option value="blasrohre" data-i18n="blasrohre">Blasrohr</option>
-							<option value="boegen" data-i18n="boegen">Bogen</option>
-							<option value="diskusse" data-i18n="diskusse">Diskus</option>
-							<option value="feuerspeien" data-i18n="feuerspeien">Feuerspeien</option>
-							<option value="schleudern" data-i18n="schleudern">Schleuder</option>
-							<option value="wurfwaffen" data-i18n="wurfwaffen">Wurfwaffe</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_fkwaffe_leiteigenschaft_2">
-							<option value="0">--</option>
-							<option value="FF" data-i18n="FF" selected>FF</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_leiteigenschaft_input_2" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_fkwaffe_tp_bonus_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_anz_wuerfel_2" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_wert_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_mun_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_ladezeit_2" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_rw_2"> </span>
-					<span class="padding-1"><select name="attr_fkwaffe_verschleiss_2">
+						</select>
+						<span class="filter-text"></span>
+						<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_1" value="0">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_1" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_1" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<input class="waffe-item waffe-item-em" type="text" name="attr_fkwaffe_rw_1">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="ladezeit">Ladezeit</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_ladezeit_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="munition">Munition</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_mun_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_fkwaffe_verschleiss_1">
 							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_mod_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_fk_mod_2" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_anmerkung_2"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_bruchfaktor_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_strukturpunkte_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="FK">FK</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_fk_mod_1" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_mod_1" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_1" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_name_3"></span>
-					<span class="padding-1"><select name="attr_fkwaffe_typ_3">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_fkwaffe_name_2" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_fkwaffe_typ_2">
 							<option value="0" selected>---</option>
 							<option value="armbrueste" data-i18n="armbrueste">Armbrust</option>
 							<option value="blasrohre" data-i18n="blasrohre">Blasrohr</option>
@@ -8683,33 +8670,63 @@
 							<option value="feuerspeien" data-i18n="feuerspeien">Feuerspeien</option>
 							<option value="schleudern" data-i18n="schleudern">Schleuder</option>
 							<option value="wurfwaffen" data-i18n="wurfwaffen">Wurfwaffe</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_fkwaffe_leiteigenschaft_3">
-							<option value="0">--</option>
-							<option value="FF" data-i18n="FF" selected>FF</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_leiteigenschaft_input_3" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_fkwaffe_tp_bonus_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_anz_wuerfel_3" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_wert_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_mun_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_ladezeit_3" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_rw_3"> </span>
-					<span class="padding-1"><select name="attr_fkwaffe_verschleiss_3">
-							<option value="0" selected>---</option>
+						</select>
+						<span class="filter-text"></span>
+						<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_2" value="0">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_2" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_2" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<input class="waffe-item waffe-item-em" type="text" name="attr_fkwaffe_rw_2">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="ladezeit">Ladezeit</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_ladezeit_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="munition">Munition</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_mun_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_fkwaffe_verschleiss_2">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_mod_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_fk_mod_3" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_anmerkung_3"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_bruchfaktor_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_strukturpunkte_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="FK">FK</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_fk_mod_2" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_mod_2" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_2" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_2" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_vorteil_2" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_nachteil_2" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_name_4"></span>
-					<span class="padding-1"><select name="attr_fkwaffe_typ_4">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_fkwaffe_name_3" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_fkwaffe_typ_3">
 							<option value="0" selected>---</option>
 							<option value="armbrueste" data-i18n="armbrueste">Armbrust</option>
 							<option value="blasrohre" data-i18n="blasrohre">Blasrohr</option>
@@ -8718,33 +8735,63 @@
 							<option value="feuerspeien" data-i18n="feuerspeien">Feuerspeien</option>
 							<option value="schleudern" data-i18n="schleudern">Schleuder</option>
 							<option value="wurfwaffen" data-i18n="wurfwaffen">Wurfwaffe</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_fkwaffe_leiteigenschaft_4">
-							<option value="0">--</option>
-							<option value="FF" data-i18n="FF" selected>FF</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_leiteigenschaft_input_4" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_fkwaffe_tp_bonus_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_anz_wuerfel_4" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_wert_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_mun_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_ladezeit_4" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_rw_4"> </span>
-					<span class="padding-1"><select name="attr_fkwaffe_verschleiss_4">
-							<option value="0" selected>---</option>
+						</select>
+						<span class="filter-text"></span>
+						<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_3" value="0">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_3" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_3" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<input class="waffe-item waffe-item-em" type="text" name="attr_fkwaffe_rw_3">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="ladezeit">Ladezeit</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_ladezeit_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="munition">Munition</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_mun_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_fkwaffe_verschleiss_3">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_mod_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_fk_mod_4" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_anmerkung_4"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_bruchfaktor_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_strukturpunkte_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="FK">FK</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_fk_mod_3" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_mod_3" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_3" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_3" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_vorteil_3" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_nachteil_3" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_name_5"></span>
-					<span class="padding-1"><select name="attr_fkwaffe_typ_5">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_fkwaffe_name_4" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_fkwaffe_typ_4">
 							<option value="0" selected>---</option>
 							<option value="armbrueste" data-i18n="armbrueste">Armbrust</option>
 							<option value="blasrohre" data-i18n="blasrohre">Blasrohr</option>
@@ -8753,31 +8800,124 @@
 							<option value="feuerspeien" data-i18n="feuerspeien">Feuerspeien</option>
 							<option value="schleudern" data-i18n="schleudern">Schleuder</option>
 							<option value="wurfwaffen" data-i18n="wurfwaffen">Wurfwaffe</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_fkwaffe_leiteigenschaft_5">
-							<option value="0">--</option>
-							<option value="FF" data-i18n="FF" selected>FF</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_leiteigenschaft_input_5" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_fkwaffe_tp_bonus_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_anz_wuerfel_5" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_wert_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_mun_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_ladezeit_5" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_rw_5"> </span>
-					<span class="padding-1"><select name="attr_fkwaffe_verschleiss_5">
-							<option value="0" selected>---</option>
+						</select>
+						<span class="filter-text"></span>
+						<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_4" value="0">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_4" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_4" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<input class="waffe-item waffe-item-em" type="text" name="attr_fkwaffe_rw_4">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="ladezeit">Ladezeit</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_ladezeit_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="munition">Munition</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_mun_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_fkwaffe_verschleiss_4">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_tp_mod_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_fkwaffe_fk_mod_5" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_fkwaffe_anmerkung_5"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_bruchfaktor_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_strukturpunkte_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="FK">FK</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_fk_mod_4" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_mod_4" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_4" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_4" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_vorteil_4" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_nachteil_4" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_fkwaffe_name_5" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_fkwaffe_typ_5">
+							<option value="0" selected>---</option>
+							<option value="armbrueste" data-i18n="armbrueste">Armbrust</option>
+							<option value="blasrohre" data-i18n="blasrohre">Blasrohr</option>
+							<option value="boegen" data-i18n="boegen">Bogen</option>
+							<option value="diskusse" data-i18n="diskusse">Diskus</option>
+							<option value="feuerspeien" data-i18n="feuerspeien">Feuerspeien</option>
+							<option value="schleudern" data-i18n="schleudern">Schleuder</option>
+							<option value="wurfwaffen" data-i18n="wurfwaffen">Wurfwaffe</option>
+						</select>
+						<span class="filter-text"></span>
+						<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_5" value="0">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_5" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_5" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<input class="waffe-item waffe-item-em" type="text" name="attr_fkwaffe_rw_5">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="ladezeit">Ladezeit</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_ladezeit_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="munition">Munition</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_mun_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_fkwaffe_verschleiss_5">
+							<option value="0">---</option>
+							<option value="1" data-i18n="stufe-i">I</option>
+							<option value="2" data-i18n="stufe-ii">II</option>
+							<option value="3" data-i18n="stufe-iii">III</option>
+							<option value="4" data-i18n="stufe-iv">IV</option>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_bruchfaktor_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_strukturpunkte_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="FK">FK</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_fk_mod_5" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_fkwaffe_tp_mod_5" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_5" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_5" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_vorteil_5" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_fkwaffe_nachteil_5" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
+				</div>
+
 			</div>
+
 			<h3 data-i18n="ruestungen">Rüstungen</h3>
 			<div>
 				<div>
@@ -10488,7 +10628,7 @@
 			case "gs_mod":
 				getAttrs(["gs_modifikator"], function (target_value) { setAttrs({ gs_modifikator: parseInt(target_value.gs_modifikator) - oldvalue + modifier_value }); });
 				break;
-				case "fliegen_effekt_mod":
+			case "fliegen_effekt_mod":
 				getAttrs(["fliegen_effekt_mod"], function (target_value) { setAttrs({ fliegen_effekt_mod: parseInt(target_value.fliegen_effekt_mod) - oldvalue + modifier_value }); });
 				break;
 			case "gaukeleien_effekt_mod":
@@ -13256,86 +13396,7 @@
 	
 	
 	
-	on("change:fkwaffe_leiteigenschaft_1 change:fkwaffe_leiteigenschaft_input_1 change:fingerfertigkeit_gesamt sheet:opened", function () {
-		getAttrs(["fkwaffe_leiteigenschaft_1", "fkwaffe_leiteigenschaft_input_1", "fingerfertigkeit_gesamt"], function (values) {
-			switch (values.fkwaffe_leiteigenschaft_1) {
-				case "FF":
-					var tp_leitwert = parseInt(values.fingerfertigkeit_gesamt) || 0;
-					break;
-				default:
-					var tp_leitwert = 0;
-					break;
-			}
-			var fkwaffe_tp_bonus_1 = tp_leitwert - parseInt(values.fkwaffe_leiteigenschaft_input_1) || 0;
-			if (fkwaffe_tp_bonus_1 < 0) { fkwaffe_tp_bonus_1 = 0 };
-			setAttrs({ fkwaffe_tp_bonus_1: fkwaffe_tp_bonus_1 });
-		});
-	});
-	
-	
-	on("change:fkwaffe_leiteigenschaft_2 change:fkwaffe_leiteigenschaft_input_2 change:fingerfertigkeit_gesamt sheet:opened", function () {
-		getAttrs(["fkwaffe_leiteigenschaft_2", "fkwaffe_leiteigenschaft_input_2", "fingerfertigkeit_gesamt"], function (values) {
-			switch (values.fkwaffe_leiteigenschaft_2) {
-				case "FF":
-					var tp_leitwert = parseInt(values.fingerfertigkeit_gesamt) || 0;
-					break;
-				default:
-					var tp_leitwert = 0;
-					break;
-			}
-			var fkwaffe_tp_bonus_2 = tp_leitwert - parseInt(values.fkwaffe_leiteigenschaft_input_2) || 0;
-			if (fkwaffe_tp_bonus_2 < 0) { fkwaffe_tp_bonus_2 = 0 };
-			setAttrs({ fkwaffe_tp_bonus_2: fkwaffe_tp_bonus_2 });
-		});
-	});
-	
-	on("change:fkwaffe_leiteigenschaft_3 change:fkwaffe_leiteigenschaft_input_3 change:fingerfertigkeit_gesamt sheet:opened", function () {
-		getAttrs(["fkwaffe_leiteigenschaft_3", "fkwaffe_leiteigenschaft_input_3", "fingerfertigkeit_gesamt"], function (values) {
-			switch (values.fkwaffe_leiteigenschaft_3) {
-				case "FF":
-					var tp_leitwert = parseInt(values.fingerfertigkeit_gesamt) || 0;
-					break;
-				default:
-					var tp_leitwert = 0;
-					break;
-			}
-			var fkwaffe_tp_bonus_3 = tp_leitwert - parseInt(values.fkwaffe_leiteigenschaft_input_3) || 0;
-			if (fkwaffe_tp_bonus_3 < 0) { fkwaffe_tp_bonus_3 = 0 };
-			setAttrs({ fkwaffe_tp_bonus_3: fkwaffe_tp_bonus_3 });
-		});
-	});
-	
-	on("change:fkwaffe_leiteigenschaft_4 change:fkwaffe_leiteigenschaft_input_4 change:fingerfertigkeit_gesamt sheet:opened", function () {
-		getAttrs(["fkwaffe_leiteigenschaft_4", "fkwaffe_leiteigenschaft_input_4", "fingerfertigkeit_gesamt"], function (values) {
-			switch (values.fkwaffe_leiteigenschaft_4) {
-				case "FF":
-					var tp_leitwert = parseInt(values.fingerfertigkeit_gesamt) || 0;
-					break;
-				default:
-					var tp_leitwert = 0;
-					break;
-			}
-			var fkwaffe_tp_bonus_4 = tp_leitwert - parseInt(values.fkwaffe_leiteigenschaft_input_4) || 0;
-			if (fkwaffe_tp_bonus_4 < 0) { fkwaffe_tp_bonus_4 = 0 };
-			setAttrs({ fkwaffe_tp_bonus_4: fkwaffe_tp_bonus_4 });
-		});
-	});
-	
-	on("change:fkwaffe_leiteigenschaft_5 change:fkwaffe_leiteigenschaft_input_5 change:fingerfertigkeit_gesamt sheet:opened", function () {
-		getAttrs(["fkwaffe_leiteigenschaft_5", "fkwaffe_leiteigenschaft_input_5", "fingerfertigkeit_gesamt"], function (values) {
-			switch (values.fkwaffe_leiteigenschaft_5) {
-				case "FF":
-					var tp_leitwert = parseInt(values.fingerfertigkeit_gesamt) || 0;
-					break;
-				default:
-					var tp_leitwert = 0;
-					break;
-			}
-			var fkwaffe_tp_bonus_5 = tp_leitwert - parseInt(values.fkwaffe_leiteigenschaft_input_5) || 0;
-			if (fkwaffe_tp_bonus_5 < 0) { fkwaffe_tp_bonus_5 = 0 };
-			setAttrs({ fkwaffe_tp_bonus_5: fkwaffe_tp_bonus_5 });
-		});
-	});
+
 	
 	
 	
@@ -13383,8 +13444,8 @@
 	});
 	
 	
-	on("sheet:opened change:status_gesamt change:ktw_change_flag change:fk_waffe change:gesamt_fk_mod change:gesamt_tp_mod change:fk_ladezeit_mod change:belastung_gesamt change:betaeubung_gesamt change:furcht_gesamt change:paralyse_gesamt change:schmerz_gesamt change:trance_gesamt change:verwirrung_gesamt change:entrueckung_gesamt change:at_armbrueste change:armbrueste_entrueckung_akt change:at_blasrohre change:blasrohre_entrueckung_akt change:at_boegen change:boegen_entrueckung_akt change:at_diskusse change:diskusse_entrueckung_akt change:at_feuerspeien change:feuerspeien_entrueckung_akt change:at_schleudern change:schleudern_entrueckung_akt change:at_wurfwaffen change:wurfwaffen_entrueckung_akt change:fkwaffe_typ_1 change:fkwaffe_tp_bonus_1 change:fkwaffe_tp_anz_wuerfel_1 change:fkwaffe_tp_wert_1 change:fkwaffe_mun_1 change:fkwaffe_ladezeit_1 change:fkwaffe_rw_1 change:fkwaffe_tp_mod_1 change:fkwaffe_fk_mod_1 change:fkwaffe_typ_2 change:fkwaffe_tp_bonus_2 change:fkwaffe_tp_anz_wuerfel_2 change:fkwaffe_tp_wert_2 change:fkwaffe_mun_2 change:fkwaffe_ladezeit_2 change:fkwaffe_rw_2 change:fkwaffe_tp_mod_2 change:fkwaffe_fk_mod_2 change:fkwaffe_typ_3 change:fkwaffe_tp_bonus_3 change:fkwaffe_tp_anz_wuerfel_3 change:fkwaffe_tp_wert_3 change:fkwaffe_mun_3 change:fkwaffe_ladezeit_3 change:fkwaffe_rw_3 change:fkwaffe_tp_mod_3 change:fkwaffe_fk_mod_3 change:fkwaffe_typ_4 change:fkwaffe_tp_bonus_4 change:fkwaffe_tp_anz_wuerfel_4 change:fkwaffe_tp_wert_4 change:fkwaffe_mun_4 change:fkwaffe_ladezeit_4 change:fkwaffe_rw_4 change:fkwaffe_tp_mod_4 change:fkwaffe_fk_mod_4 change:fkwaffe_typ_5 change:fkwaffe_tp_bonus_5 change:fkwaffe_tp_anz_wuerfel_5 change:fkwaffe_tp_wert_5 change:fkwaffe_mun_5 change:fkwaffe_ladezeit_5 change:fkwaffe_rw_5 change:fkwaffe_tp_mod_5 change:fkwaffe_fk_mod_5", function () {
-		getAttrs(["fk_waffe", "gesamt_fk_mod", "gesamt_tp_mod", "fk_ladezeit_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_armbrueste", "armbrueste_entrueckung_akt", "at_blasrohre", "blasrohre_entrueckung_akt", "at_boegen", "boegen_entrueckung_akt", "at_diskusse", "diskusse_entrueckung_akt", "at_feuerspeien", "feuerspeien_entrueckung_akt", "at_schleudern", "schleudern_entrueckung_akt", "at_wurfwaffen", "wurfwaffen_entrueckung_akt", "fkwaffe_typ_1", "fkwaffe_tp_bonus_1", "fkwaffe_tp_anz_wuerfel_1", "fkwaffe_tp_wert_1", "fkwaffe_mun_1", "fkwaffe_ladezeit_1", "fkwaffe_rw_1", "fkwaffe_tp_mod_1", "fkwaffe_fk_mod_1", "fkwaffe_typ_2", "fkwaffe_tp_bonus_2", "fkwaffe_tp_anz_wuerfel_2", "fkwaffe_tp_wert_2", "fkwaffe_mun_2", "fkwaffe_ladezeit_2", "fkwaffe_rw_2", "fkwaffe_tp_mod_2", "fkwaffe_fk_mod_2", "fkwaffe_typ_3", "fkwaffe_tp_bonus_3", "fkwaffe_tp_anz_wuerfel_3", "fkwaffe_tp_wert_3", "fkwaffe_mun_3", "fkwaffe_ladezeit_3", "fkwaffe_rw_3", "fkwaffe_tp_mod_3", "fkwaffe_fk_mod_3", "fkwaffe_typ_4", "fkwaffe_leiteigenschaft_4", "fkwaffe_leiteigenschaft_input_4", "fkwaffe_tp_bonus_4", "fkwaffe_tp_anz_wuerfel_4", "fkwaffe_tp_wert_4", "fkwaffe_mun_4", "fkwaffe_ladezeit_4", "fkwaffe_rw_4", "fkwaffe_tp_mod_4", "fkwaffe_fk_mod_4", "fkwaffe_typ_5", "fkwaffe_tp_bonus_5", "fkwaffe_tp_anz_wuerfel_5", "fkwaffe_tp_wert_5", "fkwaffe_mun_5", "fkwaffe_ladezeit_5", "fkwaffe_rw_5", "fkwaffe_tp_mod_5", "fkwaffe_fk_mod_5"], function (values) {
+	on("sheet:opened change:status_gesamt change:ktw_change_flag change:fk_waffe change:gesamt_fk_mod change:gesamt_tp_mod change:fk_ladezeit_mod change:belastung_gesamt change:betaeubung_gesamt change:furcht_gesamt change:paralyse_gesamt change:schmerz_gesamt change:trance_gesamt change:verwirrung_gesamt change:entrueckung_gesamt change:at_armbrueste change:armbrueste_entrueckung_akt change:at_blasrohre change:blasrohre_entrueckung_akt change:at_boegen change:boegen_entrueckung_akt change:at_diskusse change:diskusse_entrueckung_akt change:at_feuerspeien change:feuerspeien_entrueckung_akt change:at_schleudern change:schleudern_entrueckung_akt change:at_wurfwaffen change:wurfwaffen_entrueckung_akt change:fkwaffe_typ_1 change:fkwaffe_tp_anz_wuerfel_1 change:fkwaffe_tp_wert_1 change:fkwaffe_mun_1 change:fkwaffe_ladezeit_1 change:fkwaffe_rw_1 change:fkwaffe_tp_mod_1 change:fkwaffe_fk_mod_1 change:fkwaffe_typ_2 change:fkwaffe_tp_anz_wuerfel_2 change:fkwaffe_tp_wert_2 change:fkwaffe_mun_2 change:fkwaffe_ladezeit_2 change:fkwaffe_rw_2 change:fkwaffe_tp_mod_2 change:fkwaffe_fk_mod_2 change:fkwaffe_typ_3 change:fkwaffe_tp_anz_wuerfel_3 change:fkwaffe_tp_wert_3 change:fkwaffe_mun_3 change:fkwaffe_ladezeit_3 change:fkwaffe_rw_3 change:fkwaffe_tp_mod_3 change:fkwaffe_fk_mod_3 change:fkwaffe_typ_4 change:fkwaffe_tp_anz_wuerfel_4 change:fkwaffe_tp_wert_4 change:fkwaffe_mun_4 change:fkwaffe_ladezeit_4 change:fkwaffe_rw_4 change:fkwaffe_tp_mod_4 change:fkwaffe_fk_mod_4 change:fkwaffe_typ_5 change:fkwaffe_tp_anz_wuerfel_5 change:fkwaffe_tp_wert_5 change:fkwaffe_mun_5 change:fkwaffe_ladezeit_5 change:fkwaffe_rw_5 change:fkwaffe_tp_mod_5 change:fkwaffe_fk_mod_5", function () {
+		getAttrs(["fk_waffe", "gesamt_fk_mod", "gesamt_tp_mod", "fk_ladezeit_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_armbrueste", "armbrueste_entrueckung_akt", "at_blasrohre", "blasrohre_entrueckung_akt", "at_boegen", "boegen_entrueckung_akt", "at_diskusse", "diskusse_entrueckung_akt", "at_feuerspeien", "feuerspeien_entrueckung_akt", "at_schleudern", "schleudern_entrueckung_akt", "at_wurfwaffen", "wurfwaffen_entrueckung_akt", "fkwaffe_typ_1", "fkwaffe_tp_anz_wuerfel_1", "fkwaffe_tp_wert_1", "fkwaffe_mun_1", "fkwaffe_ladezeit_1", "fkwaffe_rw_1", "fkwaffe_tp_mod_1", "fkwaffe_fk_mod_1", "fkwaffe_typ_2", "fkwaffe_tp_anz_wuerfel_2", "fkwaffe_tp_wert_2", "fkwaffe_mun_2", "fkwaffe_ladezeit_2", "fkwaffe_rw_2", "fkwaffe_tp_mod_2", "fkwaffe_fk_mod_2", "fkwaffe_typ_3", "fkwaffe_tp_anz_wuerfel_3", "fkwaffe_tp_wert_3", "fkwaffe_mun_3", "fkwaffe_ladezeit_3", "fkwaffe_rw_3", "fkwaffe_tp_mod_3", "fkwaffe_fk_mod_3", "fkwaffe_typ_4", "fkwaffe_leiteigenschaft_4", "fkwaffe_leiteigenschaft_input_4", "fkwaffe_tp_anz_wuerfel_4", "fkwaffe_tp_wert_4", "fkwaffe_mun_4", "fkwaffe_ladezeit_4", "fkwaffe_rw_4", "fkwaffe_tp_mod_4", "fkwaffe_fk_mod_4", "fkwaffe_typ_5", "fkwaffe_tp_anz_wuerfel_5", "fkwaffe_tp_wert_5", "fkwaffe_mun_5", "fkwaffe_ladezeit_5", "fkwaffe_rw_5", "fkwaffe_tp_mod_5", "fkwaffe_fk_mod_5"], function (values) {
 			var fk_waffe = parseInt(values.fk_waffe) || 0;
 			var belastung_gesamt = parseInt(values.belastung_gesamt) || 0;
 			var betaeubung_gesamt = parseInt(values.betaeubung_gesamt) || 0;
@@ -13397,7 +13458,6 @@
 			switch (fk_waffe) {
 				case 1:
 					var fkwaffe_typ = values.fkwaffe_typ_1;
-					var fkwaffe_tp_bonus = parseInt(values.fkwaffe_tp_bonus_1) || 0;
 					var fkwaffe_tp_anz_wuerfel = parseInt(values.fkwaffe_tp_anz_wuerfel_1) || 1;
 					var fkwaffe_tp_wert = parseInt(values.fkwaffe_tp_wert_1) || 0;
 					var fkwaffe_mun = parseInt(values.fkwaffe_mun_1) || 0;
@@ -13408,7 +13468,6 @@
 					break;
 				case 2:
 					var fkwaffe_typ = values.fkwaffe_typ_2;
-					var fkwaffe_tp_bonus = parseInt(values.fkwaffe_tp_bonus_2) || 0;
 					var fkwaffe_tp_anz_wuerfel = parseInt(values.fkwaffe_tp_anz_wuerfel_2) || 1;
 					var fkwaffe_tp_wert = parseInt(values.fkwaffe_tp_wert_2) || 0;
 					var fkwaffe_mun = parseInt(values.fkwaffe_mun_2) || 0;
@@ -13419,7 +13478,6 @@
 					break;
 				case 3:
 					var fkwaffe_typ = values.fkwaffe_typ_3;
-					var fkwaffe_tp_bonus = parseInt(values.fkwaffe_tp_bonus_3) || 0;
 					var fkwaffe_tp_anz_wuerfel = parseInt(values.fkwaffe_tp_anz_wuerfel_3) || 1;
 					var fkwaffe_tp_wert = parseInt(values.fkwaffe_tp_wert_3) || 0;
 					var fkwaffe_mun = parseInt(values.fkwaffe_mun_3) || 0;
@@ -13430,7 +13488,6 @@
 					break;
 				case 4:
 					var fkwaffe_typ = values.fkwaffe_typ_4;
-					var fkwaffe_tp_bonus = parseInt(values.fkwaffe_tp_bonus_4) || 0;
 					var fkwaffe_tp_anz_wuerfel = parseInt(values.fkwaffe_tp_anz_wuerfel_4) || 1;
 					var fkwaffe_tp_wert = parseInt(values.fkwaffe_tp_wert_4) || 0;
 					var fkwaffe_mun = parseInt(values.fkwaffe_mun_4) || 0;
@@ -13441,7 +13498,6 @@
 					break;
 				case 5:
 					var fkwaffe_typ = values.fkwaffe_typ_5;
-					var fkwaffe_tp_bonus = parseInt(values.fkwaffe_tp_bonus_5) || 0;
 					var fkwaffe_tp_anz_wuerfel = parseInt(values.fkwaffe_tp_anz_wuerfel_5) || 1;
 					var fkwaffe_tp_wert = parseInt(values.fkwaffe_tp_wert_5) || 0;
 					var fkwaffe_mun = parseInt(values.fkwaffe_mun_5) || 0;
@@ -13452,7 +13508,6 @@
 					break;
 				default:
 					var fkwaffe_typ = '';
-					var fkwaffe_tp_bonus = 0;
 					var fkwaffe_tp_anz_wuerfel = 1;
 					var fkwaffe_tp_wert = 0;
 					var fkwaffe_mun = 0;
@@ -13502,7 +13557,7 @@
 			var gesamt_tp_mod = parseInt(values.gesamt_tp_mod) || 0;
 			var fk_roll = fk + fkwaffe_fk_mod + status_modifier;
 			var fk_tp_dice_roll = fkwaffe_tp_anz_wuerfel;
-			var fk_tp_zusatz_roll = fkwaffe_tp_wert + fkwaffe_tp_bonus;
+			var fk_tp_zusatz_roll = fkwaffe_tp_wert;
 			var fk_reichweite = fkwaffe_rw;
 			var fk_ladezeit = fkwaffe_ladezeit + parseInt(values.fk_ladezeit_mod);
 			setAttrs({

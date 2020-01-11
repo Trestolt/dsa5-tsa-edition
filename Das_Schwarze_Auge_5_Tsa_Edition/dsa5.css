@@ -3128,6 +3128,11 @@ input[type="checkbox"].sheet-glaube-header {
    
 }
 
+.sheet-waffe-item-em
+{
+    width: 6em;
+}
+
 select.sheet-waffe-item {
     width: max-content;
     min-width: 3.4em;

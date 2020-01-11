@@ -652,5 +652,6 @@
  "temp-modifikatoren":"temp. Mod.:",
  "AT":"AT",
  "PA":"PA",
- "TP":"TP"
+ "TP":"TP",
+ "FK":"FK"
 }
