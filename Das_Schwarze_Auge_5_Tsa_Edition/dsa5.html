@@ -7845,7 +7845,7 @@
 						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 						<input type="checkbox" class="waffe-cb" name="attr_waffe_cb_1" value="1" checked><span></span>
 						<div class="waffe-item waffe-erweiterung">
-							<textarea class="waffe-item" name="attr_waffe_anmerkung_1" data-i18n="Anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_waffe_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
 							<textarea class="waffe-item" name="attr_waffe_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
 							<textarea class="waffe-item" name="attr_waffe_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
 						</div>
@@ -8172,23 +8172,16 @@
 					</div>
 				</div>
 			</div>
-			
+
 			<h3 data-i18n="schilde-und-nebenhandwaffen">Schilde und Nebenhandwaffen</h3>
-			<div>
-				<div>
-					<span data-i18n="schild-waffe">Waffe</span>
-					<span data-i18n="kt">KT</span>
-					<span colspan="3" data-i18n="leiteigschadensb">Leiteig. + Schadensb.</span>
-					<span colspan="2" data-i18n="trefferpunkte">Trefferpunkte</span>
-					<span colspan="2" data-i18n="at-pa">AT / PA</span>
-					<span data-i18n="reichweite">Reichweite</span>
-					<span data-i18n="verschleiss">Verschleiß</span>
-					<span colspan="3" data-i18n="waffen-mod">TP/AT/PA-Mod.</span>
-					<span data-i18n="anmerkung">anmerkung</span>
-				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_schild_name_1" value="Waffenlos"></span>
-					<span class="padding-1"><select name="attr_schild_typ_1">
+			<div class="nebenhandwaffen">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_schild_name_1" value="Waffenlos" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_schild_typ_1">
 							<option value="0">---</option>
 							<option value="schilde" data-i18n="schilde">Schilde</option>
 							<option value="parierwaffe" data-i18n="parierwaffe">Parierwaffe</option>
@@ -8200,42 +8193,77 @@
 							<option value="raufen" data-i18n="raufen" selected>Raufen</option>
 							<option value="schwerter" data-i18n="schwerter">Schwerter</option>
 							<option value="stangenwaffen" data-i18n="stangenwaffen">Stangenwaffen</option>
-							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen
-							</option>
+							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen </option>
 							<option value="zweihandschwerter" data-i18n="zweihandschwerter">Zweihandschwerter</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_leiteigenschaft_1">
-							<option value="0">--</option>
-							<option value="KK" data-i18n="KK" selected>KK</option>
-							<option value="GE" data-i18n="GE">GE</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_leiteigenschaft_input_1" value="14">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_schild_tp_bonus_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_anz_wuerfel_1" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_wert_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_1" value="0"></span>
-					<span class="padding-1"><select name="attr_schild_rw_1">
+						</select>
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="at-pa">AT / PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_1" value="0">
+						<input class="waffe-item" type="number" name="attr_schild_pa_1" value="0">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<select class="waffe-item" name="attr_schild_rw_1">
 							<option value="1" data-i18n="kurz" selected>kurz</option>
 							<option value="2" data-i18n="mittel">mittel</option>
 							<option value="3" data-i18n="lang">lang</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_verschleiss_1">
-							<option value="0" selected>---</option>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_1" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_wert_1" value="0">
+						<span>+</span>
+						<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
+						<select class="waffe-item" name="attr_schild_leiteigenschaft_1">
+							<option value="0">--</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+							<option value="GE" data-i18n="GE">GE</option>
+						</select>
+						<input class="waffe-item" type="number" name="attr_schild_leiteigenschaft_input_1" value="14">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_schild_verschleiss_1">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_mod_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_mod_1" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_mod_1" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_schild_anmerkung_1"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_schild_bruchfaktor_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_strukturpunkte_1" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="AT">AT</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_mod_1" value="0">
+						<span class="waffe-item" data-i18n="PA">PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_pa_mod_1" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_mod_1" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_schild_cb_1" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_schild_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_schild_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_schild_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_schild_name_2"></span>
-					<span class="padding-1"><select name="attr_schild_typ_2">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_schild_name_2" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_schild_typ_2">
 							<option value="0" selected>---</option>
 							<option value="schilde" data-i18n="schilde">Schilde</option>
 							<option value="parierwaffe" data-i18n="parierwaffe">Parierwaffe</option>
@@ -8247,42 +8275,77 @@
 							<option value="raufen" data-i18n="raufen">Raufen</option>
 							<option value="schwerter" data-i18n="schwerter">Schwerter</option>
 							<option value="stangenwaffen" data-i18n="stangenwaffen">Stangenwaffen</option>
-							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen
-							</option>
+							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen </option>
 							<option value="zweihandschwerter" data-i18n="zweihandschwerter">Zweihandschwerter</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_leiteigenschaft_2">
-							<option value="0">--</option>
-							<option value="KK" data-i18n="KK">KK</option>
-							<option value="GE" data-i18n="GE">GE</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_leiteigenschaft_input_2" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_schild_tp_bonus_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_anz_wuerfel_2" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_wert_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_2" value="0"></span>
-					<span class="padding-1"><select name="attr_schild_rw_2">
-							<option value="1" data-i18n="kurz">kurz</option>
+						</select>
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="at-pa">AT / PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_2" value="0">
+						<input class="waffe-item" type="number" name="attr_schild_pa_2" value="0">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<select class="waffe-item" name="attr_schild_rw_2">
+							<option value="1" data-i18n="kurz" selected>kurz</option>
 							<option value="2" data-i18n="mittel">mittel</option>
 							<option value="3" data-i18n="lang">lang</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_verschleiss_2">
-							<option value="0" selected>---</option>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_2" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_wert_2" value="0">
+						<span>+</span>
+						<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
+						<select class="waffe-item" name="attr_schild_leiteigenschaft_2">
+							<option value="0">--</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+							<option value="GE" data-i18n="GE">GE</option>
+						</select>
+						<input class="waffe-item" type="number" name="attr_schild_leiteigenschaft_input_2" value="14">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_schild_verschleiss_2">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_mod_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_mod_2" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_mod_2" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_schild_anmerkung_2"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_schild_bruchfaktor_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_strukturpunkte_2" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="AT">AT</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_mod_2" value="0">
+						<span class="waffe-item" data-i18n="PA">PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_pa_mod_2" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_mod_2" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_schild_cb_2" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_schild_anmerkung_2" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_schild_vorteil_2" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_schild_nachteil_2" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_schild_name_3"></span>
-					<span class="padding-1"><select name="attr_schild_typ_3">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_schild_name_3" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_schild_typ_3">
 							<option value="0" selected>---</option>
 							<option value="schilde" data-i18n="schilde">Schilde</option>
 							<option value="parierwaffe" data-i18n="parierwaffe">Parierwaffe</option>
@@ -8294,42 +8357,77 @@
 							<option value="raufen" data-i18n="raufen">Raufen</option>
 							<option value="schwerter" data-i18n="schwerter">Schwerter</option>
 							<option value="stangenwaffen" data-i18n="stangenwaffen">Stangenwaffen</option>
-							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen
-							</option>
+							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen </option>
 							<option value="zweihandschwerter" data-i18n="zweihandschwerter">Zweihandschwerter</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_leiteigenschaft_3">
-							<option value="0">--</option>
-							<option value="KK" data-i18n="KK">KK</option>
-							<option value="GE" data-i18n="GE">GE</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_leiteigenschaft_input_3" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_schild_tp_bonus_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_anz_wuerfel_3" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_wert_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_3" value="0"></span>
-					<span class="padding-1"><select name="attr_schild_rw_3">
-							<option value="1" data-i18n="kurz">kurz</option>
+						</select>
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="at-pa">AT / PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_3" value="0">
+						<input class="waffe-item" type="number" name="attr_schild_pa_3" value="0">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<select class="waffe-item" name="attr_schild_rw_3">
+							<option value="1" data-i18n="kurz" selected>kurz</option>
 							<option value="2" data-i18n="mittel">mittel</option>
 							<option value="3" data-i18n="lang">lang</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_verschleiss_3">
-							<option value="0" selected>---</option>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_3" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_wert_3" value="0">
+						<span>+</span>
+						<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
+						<select class="waffe-item" name="attr_schild_leiteigenschaft_3">
+							<option value="0">--</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+							<option value="GE" data-i18n="GE">GE</option>
+						</select>
+						<input class="waffe-item" type="number" name="attr_schild_leiteigenschaft_input_3" value="14">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_schild_verschleiss_3">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_mod_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_mod_3" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_mod_3" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_schild_anmerkung_3"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_schild_bruchfaktor_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_strukturpunkte_3" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="AT">AT</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_mod_3" value="0">
+						<span class="waffe-item" data-i18n="PA">PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_pa_mod_3" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_mod_3" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_schild_cb_3" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_schild_anmerkung_3" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_schild_vorteil_3" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_schild_nachteil_3" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_schild_name_4"></span>
-					<span class="padding-1"><select name="attr_schild_typ_4">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_schild_name_4" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_schild_typ_4">
 							<option value="0" selected>---</option>
 							<option value="schilde" data-i18n="schilde">Schilde</option>
 							<option value="parierwaffe" data-i18n="parierwaffe">Parierwaffe</option>
@@ -8341,42 +8439,77 @@
 							<option value="raufen" data-i18n="raufen">Raufen</option>
 							<option value="schwerter" data-i18n="schwerter">Schwerter</option>
 							<option value="stangenwaffen" data-i18n="stangenwaffen">Stangenwaffen</option>
-							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen
-							</option>
+							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen </option>
 							<option value="zweihandschwerter" data-i18n="zweihandschwerter">Zweihandschwerter</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_leiteigenschaft_4">
-							<option value="0">--</option>
-							<option value="KK" data-i18n="KK">KK</option>
-							<option value="GE" data-i18n="GE">GE</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_leiteigenschaft_input_4" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_schild_tp_bonus_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_anz_wuerfel_4" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_wert_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_4" value="0"></span>
-					<span class="padding-1"><select name="attr_schild_rw_4">
-							<option value="1" data-i18n="kurz">kurz</option>
+						</select>
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="at-pa">AT / PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_4" value="0">
+						<input class="waffe-item" type="number" name="attr_schild_pa_4" value="0">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<select class="waffe-item" name="attr_schild_rw_4">
+							<option value="1" data-i18n="kurz" selected>kurz</option>
 							<option value="2" data-i18n="mittel">mittel</option>
 							<option value="3" data-i18n="lang">lang</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_verschleiss_4">
-							<option value="0" selected>---</option>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_4" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_wert_4" value="0">
+						<span>+</span>
+						<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
+						<select class="waffe-item" name="attr_schild_leiteigenschaft_4">
+							<option value="0">--</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+							<option value="GE" data-i18n="GE">GE</option>
+						</select>
+						<input class="waffe-item" type="number" name="attr_schild_leiteigenschaft_input_4" value="14">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_schild_verschleiss_4">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_mod_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_mod_4" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_mod_4" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_schild_anmerkung_4"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_schild_bruchfaktor_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_strukturpunkte_4" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="AT">AT</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_mod_4" value="0">
+						<span class="waffe-item" data-i18n="PA">PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_pa_mod_4" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_mod_4" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_schild_cb_4" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_schild_anmerkung_4" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_schild_vorteil_4" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_schild_nachteil_4" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
-				<div>
-					<span class="padding-1"><input type="text" name="attr_schild_name_5"></span>
-					<span class="padding-1"><select name="attr_schild_typ_5">
+				<div class="waffe">
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="waffe">Waffe</span>
+						<input class="waffe-item" type="text" name="attr_schild_name_5" value="" />
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="kt">KT</span>
+						<select class="waffe-item" name="attr_schild_typ_5">
 							<option value="0" selected>---</option>
 							<option value="schilde" data-i18n="schilde">Schilde</option>
 							<option value="parierwaffe" data-i18n="parierwaffe">Parierwaffe</option>
@@ -8388,40 +8521,73 @@
 							<option value="raufen" data-i18n="raufen">Raufen</option>
 							<option value="schwerter" data-i18n="schwerter">Schwerter</option>
 							<option value="stangenwaffen" data-i18n="stangenwaffen">Stangenwaffen</option>
-							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen
-							</option>
+							<option value="zweihandhiebwaffen" data-i18n="zweihandhiebwaffen">Zweihandhiebwaffen </option>
 							<option value="zweihandschwerter" data-i18n="zweihandschwerter">Zweihandschwerter</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_leiteigenschaft_5">
-							<option value="0">--</option>
-							<option value="KK" data-i18n="KK">KK</option>
-							<option value="GE" data-i18n="GE">GE</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_leiteigenschaft_input_5" value="0">
-					</span>
-					<span class="padding-1"><input type="number" readonly name="attr_schild_tp_bonus_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_anz_wuerfel_5" value="1"><span data-i18n="d6">W6+</span></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_wert_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_5" value="0"></span>
-					<span class="padding-1"><select name="attr_schild_rw_5">
-							<option value="1" data-i18n="kurz">kurz</option>
+						</select>
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="at-pa">AT / PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_5" value="0">
+						<input class="waffe-item" type="number" name="attr_schild_pa_5" value="0">
+						<span class="waffe-item" data-i18n="reichweite">Reichweite</span>
+						<select class="waffe-item" name="attr_schild_rw_5">
+							<option value="1" data-i18n="kurz" selected>kurz</option>
 							<option value="2" data-i18n="mittel">mittel</option>
 							<option value="3" data-i18n="lang">lang</option>
-						</select></span>
-					<span class="padding-1"><select name="attr_schild_verschleiss_5">
-							<option value="0" selected>---</option>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_5" value="1">
+						<span data-i18n="d6">W6+</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_wert_5" value="0">
+						<span>+</span>
+						<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
+						<select class="waffe-item" name="attr_schild_leiteigenschaft_5">
+							<option value="0">--</option>
+							<option value="KK" data-i18n="KK" selected>KK</option>
+							<option value="GE" data-i18n="GE">GE</option>
+						</select>
+						<input class="waffe-item" type="number" name="attr_schild_leiteigenschaft_input_5" value="14">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="verschleiss">Verschleiß</span>
+						<select class="waffe-item" name="attr_schild_verschleiss_5">
+							<option value="0">---</option>
 							<option value="1" data-i18n="stufe-i">I</option>
 							<option value="2" data-i18n="stufe-ii">II</option>
 							<option value="3" data-i18n="stufe-iii">III</option>
 							<option value="4" data-i18n="stufe-iv">IV</option>
-						</select></span>
-					<span class="padding-1"><input type="number" name="attr_schild_tp_mod_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_at_mod_5" value="0"></span>
-					<span class="padding-1"><input type="number" name="attr_schild_pa_mod_5" value="0"></span>
-					<span class="padding-1"><input type="text" name="attr_schild_anmerkung_5"></span>
+						</select>
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="bruchfaktor">Bruchfaktor</span>
+						<input class="waffe-item" type="number" name="attr_schild_bruchfaktor_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="strukturpunkte">Strukturpunkte</span>
+						<input class="waffe-item" type="number" name="attr_schild_strukturpunkte_5" value="0">
+						<span class="filter-text"></span>
+						<span class="waffe-item" data-i18n="temp-modifikatoren">temp. Mod.:</span>
+						<span class="waffe-item" data-i18n="AT">AT</span>
+						<input class="waffe-item" type="number" name="attr_schild_at_mod_5" value="0">
+						<span class="waffe-item" data-i18n="PA">PA</span>
+						<input class="waffe-item" type="number" name="attr_schild_pa_mod_5" value="0">
+						<span class="waffe-item" data-i18n="TP">TP</span>
+						<input class="waffe-item" type="number" name="attr_schild_tp_mod_5" value="0">
+					</div>
+					<div class="waffe-item">
+						<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
+						<input type="checkbox" class="waffe-cb" name="attr_schild_cb_5" value="1" checked><span></span>
+						<div class="waffe-item waffe-erweiterung">
+							<textarea class="waffe-item" name="attr_schild_anmerkung_5" data-i18n="anmerkung">Anmerkung</textarea>
+							<textarea class="waffe-item" name="attr_schild_vorteil_5" data-i18n="vorteil">Vorteil</textarea>
+							<textarea class="waffe-item" name="attr_schild_nachteil_5" data-i18n="nachteil">Nachteil</textarea>
+						</div>
+					</div>
 				</div>
+
 			</div>
+
 			<h3 data-i18n="fernkampf">Fernkampfwaffen</h3>
 			<div>
 				<div>
