@@ -212,6 +212,7 @@
  "schicksalspunkte": "Schicksalspunkte",
  "schilde": "Schilde",
  "schild-waffe": "Schild/Waffe",
+ "schilde-waffen": "Schilde/Zweitwaffen",
  "schilde-und-nebenhandwaffen": "Schilde und Nebenhandwaffen",
  "schildparade-parierwaffe": "Schildparade",
  "schips": "SchiPs",
@@ -653,5 +654,6 @@
  "AT":"AT",
  "PA":"PA",
  "TP":"TP",
- "FK":"FK"
+ "FK":"FK",
+ "rucksack":"Rucksack"
 }
