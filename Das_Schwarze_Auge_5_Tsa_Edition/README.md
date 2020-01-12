@@ -13,6 +13,7 @@ Features:
 Bugfixes:
 - Die Kampftechnik Zweihandhiebwaffen wird wieder angezeigt.
 - Bei Fernkampfwaffen wurde der Schadenbonus durch eine Leiteigenschaft entfernt.
+- Berechnung des Fernkampfmodifikators korrigiert.
 
 2020-01-05:
 
