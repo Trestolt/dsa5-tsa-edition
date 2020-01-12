@@ -3332,10 +3332,38 @@ input.sheet-liturgie-cb0:checked~.sheet-liturgie-filtered {
 
 /* --- Artefakte --- */
 
+.sheet-artefakt {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
+    display: grid;
+   
+}
+    
+
+.sheet-artefakt-item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 3px;
+    border-color: var(--color-border);
+   
+}
+
+/*
+textarea.sheet-waffe-item {
+    width: 97%;
+    height: 36px;
+}
+
+
 textarea.sheet-zm_gegenstand {
         height: 4em;
 }
-
+*/
 
 /**** Status Table */
 
