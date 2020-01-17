@@ -691,6 +691,7 @@ input[type="text"].sheet-common_header {
 .sheet-charfeats-input {
     grid-column: 2 / span 5;
     grid-row: 12 /12;
+    height: 36px;
 }
 
 .sheet-sonstiges-label {
@@ -701,6 +702,7 @@ input[type="text"].sheet-common_header {
 .sheet-sonstiges-input {
     grid-column: 2 / span 5;
     grid-row: 13 /13;
+    height: 36px;
 }
 
 input[type="text"].sheet-allgemein {
