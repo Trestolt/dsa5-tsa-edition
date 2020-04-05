@@ -28,11 +28,8 @@
 .sheet-toggle_npc[value="character"]~* {
     --display-allgemein-grid: grid;
     --display-allgemein-npc-grid: none;
-}
-
-.sheet-toggle_npc[value="npc"]~* {
-    --display-allgemein-grid: none;
-    --display-allgemein-npc-grid: grid;
+    --display-grundwerte-npc-grid-header: none;
+    --display-grundwerte-npc-grid: none;
 }
 
 .sheet-toggle_header[value="on"]~* {
@@ -67,7 +64,50 @@
     --grid-zeile: 2;
 }
 
+.sheet-toggle_le[value="on"]~* {
+    --display-grundwerte-le-grid: grid;
+    --display-grundwerte-le-grid-header: inline;
+}
 
+.sheet-toggle_le[value="off"]~* {
+    --display-grundwerte-le-grid: none;
+    --display-grundwerte-le-grid-header: none;
+}
+
+
+.sheet-toggle_ae[value="on"]~* {
+    --display-grundwerte-ae-grid: grid;
+    --display-grundwerte-ae-grid-header: inline;
+}
+
+.sheet-toggle_ae[value="off"]~* {
+    --display-grundwerte-ae-grid: none;
+    --display-grundwerte-ae-grid-header: none;
+}
+
+.sheet-toggle_ke[value="on"]~* {
+    --display-grundwerte-ke-grid: grid;
+    --display-grundwerte-ke-grid-header: inline;
+}
+
+.sheet-toggle_ke[value="off"]~* {
+    --display-grundwerte-ke-grid: none;
+    --display-grundwerte-ke-grid-header: none;
+}
+
+
+.sheet-toggle_npc[value="npc"]~* {
+    --display-allgemein-grid: none;
+    --display-allgemein-npc-grid: grid;
+    --display-grundwerte-npc-grid-header: inline;
+    --display-grundwerte-npc-grid: grid;
+    --display-grundwerte-le-grid: none;
+    --display-grundwerte-le-grid-header: none;
+    --display-grundwerte-ae-grid: none;
+    --display-grundwerte-ae-grid-header: none;
+    --display-grundwerte-ke-grid: none;
+    --display-grundwerte-ke-grid-header: none;
+}
 
 /* color schemes */
 
@@ -570,218 +610,223 @@ input[type="text"].sheet-common_header {
     border-color: var(--color-border);
 }
 
-.sheet-allgemein-label {
+.sheet-allgemein-label1 {
     grid-column: 1 /1;
     grid-row: 1 /1;
 }
 
-.sheet-allgemein-input {
+.sheet-allgemein-input1 {
     grid-column: 2 /4;
     grid-row: 1 /1;
 }
 
-.sheet-familie-label {
+.sheet-allgemein-label2 {
     grid-column: 1 /1;
     grid-row: 2 /2;
 }
 
-.sheet-familie-input {
+.sheet-allgemein-input2 {
     grid-column: 2 /2;
     grid-row: 2 /2;
 }
 
-.sheet-titel-label {
+.sheet-allgemein-label3 {
     grid-column: 3 /3;
     grid-row: 2 /2;
 }
 
-.sheet-titel-input {
+.sheet-allgemein-input3 {
     grid-column: 4 /4;
     grid-row: 2 /2;
 }
 
-.sheet-sozial-label {
+.sheet-allgemein-label4 {
     grid-column: 1 /1;
     grid-row: 3 /3;
 }
 
-.sheet-sozial-input {
+.sheet-allgemein-input4 {
     grid-column: 2 /2;
     grid-row: 3 /3;
 }
 
-.sheet-geburtsort-label {
+.sheet-allgemein-label5 {
     grid-column: 3 /3;
     grid-row: 3 /3;
 }
 
-.sheet-geburtsort-input {
+.sheet-allgemein-input5 {
     grid-column: 4 /4;
     grid-row: 3 /3;
 }
 
-.sheet-geburtstag-label {
+.sheet-allgemein-label6 {
     grid-column: 1 /1;
     grid-row: 4 /4;
 }
 
-.sheet-geburtstag-input {
+.sheet-allgemein-input6 {
     grid-column: 2 /2;
     grid-row: 4 /4;
 }
 
-.sheet-alter-label {
+.sheet-allgemein-label7 {
     grid-column: 3 /3;
     grid-row: 4 /4;
 }
 
-.sheet-alter-input {
+.sheet-allgemein-input7 {
     grid-column: 4 /4;
     grid-row: 4 /4;
 }
 
-.sheet-spezies-label {
+.sheet-allgemein-label8 {
     grid-column: 1 /1;
     grid-row: 5 /5;
 }
 
-.sheet-spezies-input {
+.sheet-allgemein-input8 {
     grid-column: 2 /2;
     grid-row: 5 /5;
 }
 
-.sheet-geschlecht-label {
+.sheet-allgemein-label9 {
     grid-column: 3 /3;
     grid-row: 5 /5;
 }
 
-.sheet-geschlecht-input {
+.sheet-allgemein-input9 {
     grid-column: 4 /4;
     grid-row: 5 /5;
 }
 
-.sheet-groesse-label {
+.sheet-allgemein-label10 {
     grid-column: 1 /1;
     grid-row: 6 /6;
 }
 
-.sheet-groesse-input {
+.sheet-allgemein-input10 {
     grid-column: 2 /2;
     grid-row: 6 /6;
 }
 
-.sheet-gewicht-label {
+.sheet-allgemein-label11 {
     grid-column: 3 /3;
     grid-row: 6 /6;
 }
 
-.sheet-gewicht-input {
+.sheet-allgemein-input11 {
     grid-column: 4 /4;
     grid-row: 6 /6;
 }
 
-.sheet-haarfarbe-label {
+.sheet-allgemein-label12{
     grid-column: 1 /1;
     grid-row: 7 /7;
 }
 
-.sheet-haarfarbe-input {
+.sheet-allgemein-input12 {
     grid-column: 2 /2;
     grid-row: 7 /7;
 }
 
-.sheet-augenfarbe-label {
+.sheet-allgemein-label13 {
     grid-column: 3 /3;
     grid-row: 7 /7;
 }
 
-.sheet-augenfarbe-input {
+.sheet-allgemein-input13 {
     grid-column: 4 /4;
     grid-row: 7 /7;
 }
 
-.sheet-kultur-label {
+.sheet-allgemein-label14 {
     grid-column: 1 /1;
     grid-row: 8 /8;
 }
 
-.sheet-kultur-input {
+.sheet-allgemein-input14 {
     grid-column: 2 /2;
     grid-row: 8 /8;
 }
 
-.sheet-profession-label {
+.sheet-allgemein-label15 {
     grid-column: 3 /3;
     grid-row: 8 /8;
 }
 
-.sheet-profession-input {
+.sheet-allgemein-input15 {
     grid-column: 4 /4;
     grid-row: 8 /8;
 }
 
-.sheet-erfahrungsgrad-label {
+.sheet-allgemein-label16 {
     grid-column: 1 /1;
     grid-row: 9 /9;
 }
 
-.sheet-erfahrungsgrad-input {
+.sheet-allgemein-input16 {
     grid-column: 2 /2;
     grid-row: 9 /9;
 }
 
-.sheet-ap-gesamt-label {
+.sheet-allgemein-label17 {
     grid-column: 3 /3;
     grid-row: 9 /9;
 }
 
-.sheet-ap-gesamt-input {
+.sheet-allgemein-input17 {
     grid-column: 4 /4;
     grid-row: 9 /9;
 }
 
-.sheet-ap-verfuegbar-label {
+.sheet-allgemein-label18 {
     grid-column: 3 /3;
     grid-row: 10 /10;
 }
 
-.sheet-ap-verfuegbar-input {
+.sheet-allgemein-input18 {
     grid-column: 4 /4;
     grid-row: 10 /10;
 }
 
-.sheet-ap-ausgegeben-label {
+.sheet-allgemein-label19 {
     grid-column: 3 /3;
     grid-row: 11 /11;
 }
 
-.sheet-ap-ausgegeben-input {
+.sheet-allgemein-input19 {
     grid-column: 4 /4;
     grid-row: 11 /11;
 }
 
-.sheet-charfeats-label {
+.sheet-allgemein-label20 {
     grid-column: 1 /1;
     grid-row: 12 /12;
 }
 
-.sheet-charfeats-input {
+.sheet-allgemein-input20 {
     grid-column: 2 / span 5;
     grid-row: 12 /12;
 }
 
-.sheet-sonstiges-label {
+.sheet-allgemein-label21 {
     grid-column: 1 /1;
     grid-row: 13 /13;
 }
 
-.sheet-sonstiges-input {
+.sheet-allgemein-input21 {
     grid-column: 2 / span 5;
     grid-row: 13 /13;
 }
 
 input[type="text"].sheet-allgemein {
     width: 95%;
+}
+
+textarea.sheet-allgemein {
+    width: 92%;
+    height: 79%;
 }
 
 .sheet-allgemein {
@@ -825,11 +870,144 @@ input[type="text"].sheet-allgemein {
     border: 1px solid;
 }
 
+/* Grundwerte NPC Sheet */
+.sheet-grundwerte-npc-grid-header {
+    display: var(--display-grundwerte-npc-grid-header);
+}
+
+.sheet-grundwerte-npc-grid {
+    display: var(--display-grundwerte-npc-grid);
+    grid-gap: 5px;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 10px;
+    padding: 5px;
+    border-color: var(--color-border);
+    border-radius: 3px;
+    border: 1px solid;
+}
+
+.sheet-grid-npc11 {
+    grid-column: 1 /1;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc12 {
+    grid-column: 2 /2;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc13 {
+    grid-column: 3 /3;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc14 {
+    grid-column: 4 /4;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc15 {
+    grid-column: 5 /5;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc16 {
+    grid-column: 6 /6;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc17 {
+    grid-column: 7 /7;
+    grid-row: 1 /1;
+}
+
+.sheet-grid-npc21 {
+    grid-column: 1 /1;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc22 {
+    grid-column: 2 /2;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc23 {
+    grid-column: 3 /3;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc24 {
+    grid-column: 4 /4;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc25 {
+    grid-column: 5 /5;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc26 {
+    grid-column: 6 /6;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc27 {
+    grid-column: 7 /7;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc28 {
+    grid-column: 8 /8;
+    grid-row: 2 /2;
+}
+
+.sheet-grid-npc31 {
+    grid-column: 1 /1;
+    grid-row: 3 /3;
+}
+
+.sheet-grid-npc32 {
+    grid-column: 2 /2;
+    grid-row: 3 /3;
+}
+
+.sheet-grid-npc33 {
+    grid-column: 3 /3;
+    grid-row: 3 /3;
+}
+
+.sheet-grid-npc34 {
+    grid-column: 4 /4;
+    grid-row: 3 /3;
+}
+
+.sheet-grid-npc41 {
+    grid-column: 1 /1;
+    grid-row: 4 /4;
+}
+
+.sheet-grid-npc42 {
+    grid-column: 2 /2;
+    grid-row: 4 /4;
+}
+
+.sheet-grid-npc43 {
+    grid-column: 3 /3;
+    grid-row: 4 /4;
+}
+
+.sheet-grid-npc44 {
+    grid-column: 4 /4;
+    grid-row: 4 /4;
+}
 
 /* Sub Grundwerte Grid LE */
+.sheet-grundwerte-le-grid-header {
+    display: var(--display-grundwerte-le-grid-header);
+}
 
 .sheet-grundwerte-le-grid {
-    display: grid;
+    display: var(--display-grundwerte-le-grid);
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
     margin: 10px;
@@ -952,9 +1130,12 @@ input[type="text"].sheet-allgemein {
 
 
 /* Sub Grundwerte Grid AE */
+.sheet-grundwerte-ae-grid-header {
+    display: var(--display-grundwerte-ae-grid-header);
+}
 
 .sheet-grundwerte-ae-grid {
-    display: grid;
+    display: var(--display-grundwerte-ae-grid);
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
     border-color: var(--color-border);
@@ -1066,8 +1247,12 @@ input[type="text"].sheet-allgemein {
 
 /* Sub Grundwerte Grid KE */
 
+ .sheet-grundwerte-ke-grid-header {
+     display: var(--display-grundwerte-ke-grid-header);
+ }
+
 .sheet-grundwerte-ke-grid {
-    display: grid;
+    display: var(--display-grundwerte-ke-grid);
     grid-gap: 5px;
     grid-template-columns: repeat(8, 1fr);
     border-color: var(--color-border);
