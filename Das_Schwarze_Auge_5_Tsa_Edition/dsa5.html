@@ -1,4 +1,8 @@
 <input type="hidden" name="attr_favcolor" class="sheet_color" value="1" />
+<input type='hidden' name='attr_toggle_npc' class='toggle_npc'  value='character' />
+<input type="hidden" name="attr_toggle_header" class="toggle_header"  value="on" />
+<input type="hidden" name="attr_toggle_ae" class="toggle_ae" value="on" />
+<input type="hidden" name="attr_toggle_ke" class="toggle_ke" value="on" />
 
 <div class="charsheet">
 	<!-- Header Definition -->
@@ -87,11 +91,11 @@
 			<span data-i18n="KK">KK</span>
 			<input type="number" name='attr_koerperkraft_gesamt' readonly />
 		</div>
-
+		
 	</div>
 
 	<!-- Navigation der Tabs -->
-	<hr />
+	<hr class="header-trenner" />
 	<span class="filter-text"></span>
 	<input type="radio" name="attr_tab" class="tab tab1" value="1" checked />
 	<span class="tab" data-i18n="grundwerte">Grundwerte</span>
@@ -171,10 +175,55 @@
 			<span class="allgemein ap-ausgegeben-label" data-i18n="ap-ausgegeben">AP ausgegeben</span>
 			<input class="allgemein ap-ausgegeben-input" type="number" name="attr_ap_ausgegeben" />
 			<span class="allgemein charfeats-label" data-i18n="charakteristika">Charakteristika</span>
-			<textarea class="allgemein charfeats-input" name='attr_charakteristika'></textarea>
+			<input class="allgemein charfeats-input" type="text" name="attr_charakteristika" />
+			<span class="allgemein sonstiges-label" data-i18n="sonstiges">Sonstiges</span>
+			<input class="allgemein sonstiges-input" type="text" name="attr_sonstiges" />
+		</div>
+
+		<div class="subsection allgemein-npc-grid">
+			<span class="allgemein allgemein-label" data-i18n="name">Name</span>
+			<input class="allgemein allgemein-input" type="text" name="attr_character_name" />
+			
+			<span class="allgemein typus-label" data-i18n="typus">Typus</span>
+			<input class="allgemein typus-input" type="text" name="attr_typus" />
+			
+			<span class="allgemein spezies-label" data-i18n="spezies">Spezies</span>
+			<input class="allgemein spezies-input" type="text" name="attr_spezies" />
+			
+			<span class="allgemein groesse-kat-label" data-i18n="gkategorie">Größenkategorie</span>
+			<input class="allgemein groesse-kat-input" type="text" name="attr_groessekategorie" />
+			
+			<span class="allgemein groesse-label" data-i18n="groesse">Größe</span>
+			<input class="allgemein groesse-input" type="text" name="attr_groesse" />
+			
+			<span class="allgemein gewicht-label" data-i18n="gewicht">Gewicht</span>
+			<input class="allgemein gewicht-input" type="text" name="atticht" />
+			
+			<span class="allgemein schwierigkeit-label" data-i18n="schwierigkeit">Erschaffungsschwierigkeit</span>
+			<input class="allgemein schwierigkeit-input" type="text" name="attr_schwierigkeit" />
+			
+			<span class="allgemein beute-label" data-i18n="beute">Beute</span>
+			<textarea class="allgemein beute-input" name='attr_beute'></textarea>
+			
+			<span class="allgemein beute-label" data-i18n="kampfverhalten">Kampfverhalten</span>
+			<textarea class="allgemein beute-input" name='attr_kampfverhalten'></textarea>
+			
+			<span class="allgemein beute-label" data-i18n="Flucht">Flucht</span>
+			<textarea class="allgemein beute-input" name='attr_flucht'></textarea>
+			
+			<span class="allgemein beute-label" data-i18n="jagd">Jagd</span>
+			<textarea class="allgemein beute-input" name='attr_jagd'></textarea>
+			
+			<span class="allgemein beute-label" data-i18n="sonderregeln">Sonderregeln</span>
+			<textarea class="allgemein beute-input" name='attr_sonderregeln'></textarea>
+			
+			<span class="allgemein beute-label" data-i18n="informationen">Informationen</span>
+			<textarea class="allgemein beute-input" name='attr_informationen'></textarea>
+			
 			<span class="allgemein sonstiges-label" data-i18n="sonstiges">Sonstiges</span>
 			<textarea class="allgemein sonstiges-input" name='attr_sonstiges'></textarea>
 		</div>
+
 
 		<div class="subsection eigenschaften">
 			<h3 data-i18n="eigenschaften">Eigenschaften</h3>
@@ -377,6 +426,8 @@
 		</div>
 	</div>
 	<!--  Ende section tab1 -->
+
+
 
 	<!-- Sonderfertigkeiten -->
 	<div class="section tab2">
@@ -1355,7 +1406,7 @@
 						<span data-i18n="show_description" class="margin-right-2">Beschreibung anzeigen</span>
 						<input type="checkbox" class="sf-cb2" name="attr_sfklappbox2" value="1" checked><span></span>
 						<div class="modifikator sf2">
-							<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung' data-i18n-placeholder="beschreibung" placeholder="Beschreibung"></textarea>
+							<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung'>Beschreibung</textarea>
 						</div>
 						<input type="text" name='attr_sonderfertigkeit_auswahl_vorher1' value='Modifikator hinzufuegen' hidden />
 						<input type="number" name='attr_sonderfertigkeit_mod_vorher1' value='0' hidden />
@@ -5155,7 +5206,7 @@
 							<input class="modifikator modifikator-label" type="text" name='attr_sonderfertigkeit_name' value='Name' />
 							<input class="modifikator modifikator-cb" type="checkbox" name='attr_sonderfertigkeit_aktiviert' value='1' />
 						</div>
-						<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung' data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
+						<textarea class="modifikator modifikator-description" name='attr_sonderfertigkeit_anmerkung' value='Anmerkung'></textarea>
 					</div>
 				</fieldset>
 			</div>
@@ -5172,7 +5223,7 @@
 		<div class="magie">
 			<h2 data-i18n="magie">Magie</h2>
 			<div class="magie-header-grid">
-				<input class="magie-header magie-header-1" type="text" name='attr_magie_tradition' data-i18n-placeholder="tradition" placeholder="Tradition" />
+				<input class="magie-header magie-header-1" type="text" name='attr_magie_tradition' value='Tradition' />
 				<select class="magie-header magie-header-2" name="attr_leiteigenschaft_ae">
 					<option selected>---</option>
 					<option value="MU" data-i18n="MU">MU</option>
@@ -5434,17 +5485,17 @@
 							<span data-i18n="erweiterungen" class="margin-right-2">Erweiterungen</span>
 							<input type="checkbox" class="magie-cb" name="attr_zauberklappbox" value="1" checked><span></span>
 							<div class="magie-erweiterung">
-								<textarea class="magie-description" name="attr_erweiterung1" data-i18n-placeholder="erweiterung1" placeholder="1. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung2" data-i18n-placeholder="erweiterung2" placeholder="2. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung3" data-i18n-placeholder="erweiterung3" placeholder="3. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung4" data-i18n-placeholder="erweiterung4" placeholder="4. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung5" data-i18n-placeholder="erweiterung5" placeholder="5. Erweiterung"></textarea>
+								<textarea class="magie-description" name="attr_erweiterung1" data-i18n="erweiterung1">1. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung2" data-i18n="erweiterung2">2. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung3" data-i18n="erweiterung3">3. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung4" data-i18n="erweiterung4">4. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung5" data-i18n="erweiterung5">5. Erweiterung</textarea>
 							</div>
 							<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
 							<input type="checkbox" class="magie-cb2" name="attr_zauberklappbox2" value="1" checked><span></span>
 							<div class="magie-anmerkung">
-								<textarea class="magie-description" name="attr_anmerkung" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-								<textarea class="magie-description" name="attr_reference" data-i18n-placeholder="referenz" placeholder="Referenz"></textarea>
+								<textarea class="magie-description" name="attr_anmerkung" data-i18n="anmerkung">Anmerkung</textarea>
+								<textarea class="magie-description" name="attr_reference" data-i18n="referenz">Referenz</textarea>
 							</div>
 							<!-- Ende magie erweiterung -->
 						</div>
@@ -5466,7 +5517,7 @@
 		<div class="glaube">
 			<h2 data-i18n="goetterwirken">Götterwirken</h2>
 			<div class="glaube-header-grid">
-				<input class="glaube-header glaube-header-1" type="text" name='attr_glaube_tradition' data-i18n-placeholder="tradition" placeholder="Tradition" />
+				<input class="glaube-header glaube-header-1" type="text" name='attr_glaube_tradition' value='Tradition' />
 				<select class="glaube-header glaube-header-2" name="attr_leiteigenschaft_ke" class="eigenschaft">
 					<option selected>---</option>
 					<option value="MU" data-i18n="MU">MU</option>
@@ -5690,17 +5741,17 @@
 							<span data-i18n="erweiterungen" class="margin-right-2">Erweiterungen</span>
 							<input type="checkbox" class="magie-cb" name="attr_zauberklappbox" value="1" checked><span></span>
 							<div class="magie-erweiterung">
-								<textarea class="magie-description" name="attr_erweiterung1" data-i18n-placeholder="erweiterung1" placeholder="1. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung2" data-i18n-placeholder="erweiterung2" placeholder="2. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung3" data-i18n-placeholder="erweiterung3" placeholder="3. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung4" data-i18n-placeholder="erweiterung4" placeholder="4. Erweiterung"></textarea>
-								<textarea class="magie-description" name="attr_erweiterung5" data-i18n-placeholder="erweiterung5" placeholder="5. Erweiterung"></textarea>
+								<textarea class="magie-description" name="attr_erweiterung1" data-i18n="erweiterung1">1. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung2" data-i18n="erweiterung2">2. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung3" data-i18n="erweiterung3">3. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung4" data-i18n="erweiterung4">4. Erweiterung</textarea>
+								<textarea class="magie-description" name="attr_erweiterung5" data-i18n="erweiterung5">5. Erweiterung</textarea>
 							</div>
 							<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
 							<input type="checkbox" class="magie-cb2" name="attr_zauberklappbox2" value="1" checked><span></span>
 							<div class="magie-anmerkung">
-								<textarea class="magie-description" name="attr_anmerkung" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-								<textarea class="magie-description" name="attr_reference" data-i18n-placeholder="referenz" placeholder="Referenz"></textarea>
+								<textarea class="magie-description" name="attr_anmerkung" data-i18n="anmerkung">Anmerkung</textarea>
+								<textarea class="magie-description" name="attr_reference" data-i18n="referenz">Referenz</textarea>
 							</div>
 							<!-- Ende glaube erweiterung -->
 						</div>
@@ -5717,10 +5768,44 @@
 
 	<!-- Optionen -->
 	<div class="section tab6">
+		<h2 data-i18n="optionen">Optionen</h2>
 		<div class="optionen">
-			<h2 data-i18n="optionen">Optionen</h2>
-		</div>
-		<div class="design-schema">
+			<h4 data-i18n="allgemein"></h4>
+			<div>
+				<span data-i18n="header-anzeigen">Sheet Header anzeigen:</span>
+				<span data-i18n="an">an</span>
+				<input type="radio" class="toggle_header" name="attr_toggle_header" value="on" checked>
+				<span data-i18n="eigenschaften-aus">Eigenschaften aus</span>
+				<input type="radio" class="toggle_header" name="attr_toggle_header" value="firstline">
+				<span data-i18n="attribute-aus">Attribute aus</span>
+				<input type="radio" class="toggle_header" name="attr_toggle_header" value="secondline">
+				<span data-i18n="aus">aus</span>
+				<input type="radio" class="toggle_header" name="attr_toggle_header" value="off">
+			</div>
+			
+			<div>
+				<span data-i18n="npc-bogen">NPC-Bogen aktiviert:</span>
+				<span data-i18n="an">an</span>
+				<input type="radio" class="toggle_npc" name="attr_toggle_npc" value="npc">
+				<span data-i18n="aus">aus</span>
+				<input type="radio" class="toggle_npc" name="attr_toggle_npc" value="character" checked>
+			</div>
+			<h4 data-i18n="grundwerte"></h4>
+			<div>
+				<span data-i18n="show-ae">Astralenergie anzeigen:</span>
+				<span data-i18n="an">an</span>
+				<input type="radio" class="toggle_ae" name="attr_toggle_ae" value="on" checked>
+				<span data-i18n="aus">aus</span>
+				<input type="radio" class="toggle_ae" name="attr_toggle_ae" value="off">
+			</div>
+			<div>
+				<span data-i18n="show-ke">Karmaenergie anzeigen:</span>
+				<span data-i18n="an">an</span>
+				<input type="radio" class="toggle_ke" name="attr_toggle_ke" value="on" checked>
+				<span data-i18n="aus">aus</span>
+				<input type="radio" class="toggle_ke" name="attr_toggle_ke" value="off">
+			</div>
+			<h4 data-i18n="sonstiges"></h4>
 			<span data-i18n="farbschema">Farbschema</span>
 			<select name="attr_favcolor">
 				<option value="1" selected>Yrn White</option>
@@ -7057,7 +7142,7 @@
 						<span data-i18n="show_description" class="margin-right-2">Beschreibung anzeigen</span>
 						<input type="checkbox" class="ef-cb2" name="attr_efklappbox2" value="1" checked><span></span>
 						<div class="modifikator ef2">
-							<textarea class="modifikator modifikator-description" name='attr_effekt_anmerkung' data-i18n-placeholder="beschreibung" placeholder="Beschreibung"></textarea>
+							<textarea class="modifikator modifikator-description" name='attr_effekt_anmerkung'>Beschreibung</textarea>
 						</div>
 						<input type="text" name='attr_effekt_auswahl_vorher1' value='Modifikator hinzufuegen' hidden />
 						<input type="number" name='attr_effekt_mod_vorher1' value='0' hidden />
@@ -7422,7 +7507,7 @@
 				<div class="kampf-nah-item12">
 					<input class="kampf-nah" type="number" name="attr_pa_roll" value="0" readonly />
 					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{pa_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
-					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@kampf_modifier})]]}}" data-i18n="1/2">1/2</but ton>
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{pa_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item13" data-i18n="schildparade-parierwaffe">Schildparade Parierwaffe</span>
@@ -7452,7 +7537,7 @@
 					<input class="kampf-nah" type="number" name="attr_parade_malus" value="0" readonly />
 					<input class="hidden" type="number" name="attr_ausweichen_malus" value="0" readonly />
 					<input class="kampf-nah" type="number" name="attr_parade_zweite_mod" value="0" readonly />
-					<input class="kampf-nah" type="number" name="attr_pa_schildpassiv_bonus" value="0" readonly />
+					<input class="kampf-nah" type="number" name="attr_pa_scpassiv_bonus" value="0" readonly />
 				</div>
 
 				<span class="kampf-nah kampf-nah-item19" data-i18n="beidhaendigerkampf">Beidhändiger Kampf</span>
@@ -7552,8 +7637,8 @@
 								</fieldset>
 							</div>
 						</td>
-						<td><input type="text" name="attr_waffe_name_1" data-i18n-placeholder="waffenlos" placeholder="Waffenlos" readonly><input type="radio" name="attr_nk_waffe" value="1" checked></td>
-						<td><input type="text" name="attr_schild_name_1" data-i18n-placeholder="waffenlos" placeholder="Waffenlos" readonly><input type="radio" name="attr_nh_waffe" value="1" checked></td>
+						<td><input type="text" name="attr_waffe_name_1" value="Waffenlos" readonly><input type="radio" name="attr_nk_waffe" value="1" checked></td>
+						<td><input type="text" name="attr_schild_name_1" value="Waffenlos" readonly><input type="radio" name="attr_nh_waffe" value="1" checked></td>
 					</tr>
 					<tr>
 						<td><input type="text" name="attr_waffe_name_2" readonly><input type="radio" name="attr_nk_waffe" value="2"></td>
@@ -7784,7 +7869,7 @@
 			<div class="waffe">
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="waffe">Waffe</span>
-					<input class="waffe-item" type="text" name="attr_waffe_name_1" data-i18n-placeholder="waffenlos" placeholder="Waffenlos" />
+					<input class="waffe-item" type="text" name="attr_waffe_name_1" value="Waffenlos" />
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="kt">KT</span>
 					<select class="waffe-item" name="attr_waffe_typ_1">
@@ -7855,9 +7940,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_waffe_cb_1" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_waffe_anmerkung_1" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_vorteil_1" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_nachteil_1" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_waffe_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_waffe_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_waffe_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -7935,9 +8020,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_waffe_cb_2" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_waffe_anmerkung_2" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_vorteil_2" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_nachteil_2" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_waffe_anmerkung_2" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_waffe_vorteil_2" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_waffe_nachteil_2" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8015,9 +8100,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_waffe_cb_3" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_waffe_anmerkung_3" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_vorteil_3" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_nachteil_3" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_waffe_anmerkung_3" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_waffe_vorteil_3" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_waffe_nachteil_3" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8095,9 +8180,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_waffe_cb_4" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_waffe_anmerkung_4" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_vorteil_4" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_nachteil_4" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_waffe_anmerkung_4" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_waffe_vorteil_4" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_waffe_nachteil_4" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8175,9 +8260,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_waffe_cb_5" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_waffe_anmerkung_5" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_vorteil_5" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_waffe_nachteil_5" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_waffe_anmerkung_5" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_waffe_vorteil_5" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_waffe_nachteil_5" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8186,7 +8271,7 @@
 			<div class="waffe">
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="waffe">Waffe</span>
-					<input class="waffe-item" type="text" name="attr_schild_name_1"  data-i18n-placeholder="waffenlos" placeholder="Waffenlos" />
+					<input class="waffe-item" type="text" name="attr_schild_name_1" value="Waffenlos" />
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="kt">KT</span>
 					<select class="waffe-item" name="attr_schild_typ_1">
@@ -8259,9 +8344,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_schild_cb_1" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_schild_anmerkung_1" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_schild_vorteil_1" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_schild_nachteil_1" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_schild_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_schild_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_schild_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8341,9 +8426,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_schild_cb_2" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_schild_anmerkung_2" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_schild_vorteil_2" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_schild_nachteil_2" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_schild_anmerkung_2" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_schild_vorteil_2" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_schild_nachteil_2" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8423,9 +8508,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_schild_cb_3" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_schild_anmerkung_3" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_schild_vorteil_3" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_schild_nachteil_3" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_schild_anmerkung_3" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_schild_vorteil_3" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_schild_nachteil_3" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8505,9 +8590,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_schild_cb_4" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_schild_anmerkung_4" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_schild_vorteil_4" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_schild_nachteil_4" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_schild_anmerkung_4" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_schild_vorteil_4" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_schild_nachteil_4" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8587,9 +8672,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_schild_cb_5" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_schild_anmerkung_5" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_schild_vorteil_5" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_schild_nachteil_5" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_schild_anmerkung_5" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_schild_vorteil_5" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_schild_nachteil_5" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8655,9 +8740,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_1" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_1" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_1" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_1" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8720,9 +8805,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_2" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_2" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_2" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_2" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_2" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_2" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_2" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8785,9 +8870,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_3" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_3" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_3" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_3" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_3" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_3" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_3" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8850,9 +8935,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_4" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_4" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_4" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_4" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_4" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_4" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_4" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8915,9 +9000,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_fkwaffe_cb_5" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_5" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_5" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_5" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_anmerkung_5" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_vorteil_5" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_fkwaffe_nachteil_5" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -8966,9 +9051,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_ruestung_cb_1" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_ruestung_anmerkung_1" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_vorteil_1" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_nachteil_1" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_ruestung_anmerkung_1" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_vorteil_1" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_nachteil_1" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -9014,9 +9099,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_ruestung_cb_2" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_ruestung_anmerkung_2" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_vorteil_2" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_nachteil_2" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_ruestung_anmerkung_2" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_vorteil_2" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_nachteil_2" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -9062,9 +9147,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_ruestung_cb_3" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_ruestung_anmerkung_3" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_vorteil_3" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_nachteil_3" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_ruestung_anmerkung_3" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_vorteil_3" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_nachteil_3" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -9110,9 +9195,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_ruestung_cb_4" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_ruestung_anmerkung_4" data-i18n-placeholder="anmerkung" placeholder="Anmerkung"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_vorteil_4" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_nachteil_4" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_ruestung_anmerkung_4" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_vorteil_4" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_nachteil_4" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -9158,9 +9243,9 @@
 					<span class="waffe-item" data-i18n="erweiterungen">Erweiterungen</span>
 					<input type="checkbox" class="waffe-cb" name="attr_ruestung_cb_5" value="1" checked><span></span>
 					<div class="waffe-item waffe-erweiterung">
-						<textarea class="waffe-item" name="attr_ruestung_anmerkung_5" data-i18n-placeholder="anmerkung" placeholder="Anmerkung">Anmerkung</textarea>
-						<textarea class="waffe-item" name="attr_ruestung_vorteil_5" data-i18n-placeholder="vorteil" placeholder="Vorteil"></textarea>
-						<textarea class="waffe-item" name="attr_ruestung_nachteil_5" data-i18n-placeholder="nachteil" placeholder="Nachteil"></textarea>
+						<textarea class="waffe-item" name="attr_ruestung_anmerkung_5" data-i18n="anmerkung">Anmerkung</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_vorteil_5" data-i18n="vorteil">Vorteil</textarea>
+						<textarea class="waffe-item" name="attr_ruestung_nachteil_5" data-i18n="nachteil">Nachteil</textarea>
 					</div>
 				</div>
 			</div>
@@ -9200,8 +9285,8 @@
 			<h3 data-i18n="zeremonial-gegenstand">Zeremonialgegenstand</h3>
 			<div class="artefakt">
 				<div class="artefakt-item">
-					<input class="artefakt-item" type="text" name="attr_zm_gegenstand_name" data-i18n-placeholder="name" placeholder="Name" />
-					<input class="artefakt-item" type="text" name="attr_zm_gegenstand_aspekt" data-i18n-placeholder="aspekt" placeholder="Aspekt" />
+					<input class="artefakt-item" type="text" name="attr_zm_gegenstand_name" value="Name" />
+					<input class="artefakt-item" type="text" name="attr_zm_gegenstand_aspekt" value="Aspekt" />
 				</div>
 				<div class="artefakt-item">
 					<span class="artefakt-item" data-i18n="beschreibung">Beschreibung</span>
