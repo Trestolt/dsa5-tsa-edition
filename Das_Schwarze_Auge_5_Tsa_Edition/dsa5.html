@@ -450,6 +450,16 @@
 				<input type="number" name='attr_aw_modifikator' class='short' value='0'>
 				<input type="number" name='attr_aw_gesamt' class='short' value='0' readonly>
 				<span class='dee'></span>
+				<span class="npc-element" data-i18n="verteidigungswert">Verteidigungswert</span>
+				<input type="number" name='attr_vw_grundwert' class='short npc-element' value='0'>
+				<input type="number" name='attr_vw_modifikator' class='short npc-element' value='0'>
+				<input type="number" name='attr_vw_gesamt' class='short npc-element' value='0' readonly>
+				<span class='dee npc-element'></span>
+				<span class="npc-element" data-i18n="ruestungsschutz">RS</span>
+				<input type="number" name='attr_rs_grundwert' class='short npc-element' value='0'>
+				<input type="number" name='attr_rs_modifikator' class='short npc-element' value='0'>
+				<input type="number" name='attr_rs' class='short npc-element' value='0' readonly>
+				<span class='dee npc-element'></span>
 				<span data-i18n="geschwindigkeit">Geschwindigkeit</span>
 				<input type="number" name='attr_gs_grundwert' class='short' value='0'>
 				<input type="number" name='attr_gs_modifikator' class='short' value='0'>
@@ -11390,7 +11400,8 @@
 	
 	on("sheet:opened change:le_grundwert change:le_modifikator change:le_verlust_perm change:konstitution_gesamt", function () {
 		//init and change lebensenergie
-		getAttrs(["le_grundwert", "le_ausgangswert", "le_modifikator", "le_verlust_perm", "le_max", "le", "wundschwelle", "schmerzstufe1", "schmerzstufe2", "schmerzstufe3", "schmerzstufe4", "konstitution_gesamt"], function (v) {
+		getAttrs(["toggle_npc", "le_grundwert", "le_ausgangswert", "le_modifikator", "le_verlust_perm", "le_max", "le", "wundschwelle", "schmerzstufe1", "schmerzstufe2", "schmerzstufe3", "schmerzstufe4", "konstitution_gesamt"], function (v) {
+			var toggle_npc = v.toggle_npc;
 			var le_grundwert = parseInt(v.le_grundwert) || 8;
 			var le_modifikator = parseInt(v.le_modifikator) || 0;
 			var le_verlust_perm = parseInt(v.le_verlust_perm) || 0;
@@ -11403,8 +11414,8 @@
 			var le_ausgangswert = le_grundwert + konstitution_gesamt + konstitution_gesamt;
 			var le_max = le_ausgangswert + le_modifikator - le_verlust_perm;
 			var wundschwelle = Math.round(konstitution_gesamt / 2);
-	
-			setAttrs({
+	        if (toggle_npc == 'character') {
+			 setAttrs({
 				le_grundwert: le_grundwert,
 				le_ausgangswert: le_ausgangswert,
 				le_modifikator: le_modifikator,
@@ -11416,14 +11427,15 @@
 				schmerzstufe2: Math.round(le_max / 4 * 2),
 				schmerzstufe3: Math.round(le_max / 4),
 				schmerzstufe4: 5
-			});
+			 });
+			}	
 		});
 	});
 	
 	
 	on("sheet:opened change:leiteigenschaft_ae change:mut_gesamt change:klugheit_gesamt change:charisma_gesamt change:intuition_gesamt change:fingerfertigkeit_gesamt change:gewandheit_gesamt change:konstitution_gesamt change koerperkraft_gesamt change:ae_ausgangswert change:ae_modifikator change:ae_verlust_perm change:ae_rueckkauf change:ae_faktor", function () {
 		//init and change astralenergie
-		getAttrs(["leiteigenschaft_ae", "mut_gesamt", "klugheit_gesamt", "charisma_gesamt", "intuition_gesamt", "fingerfertigkeit_gesamt", "gewandheit_gesamt", "konstitution_gesamt", "koerperkraft_gesamt", "ae_modifikator", "ae_verlust_perm", "ae_rueckkauf", "ae", "ae_regeneration", "ae_faktor"],
+		getAttrs(["toggle_npc", "leiteigenschaft_ae", "mut_gesamt", "klugheit_gesamt", "charisma_gesamt", "intuition_gesamt", "fingerfertigkeit_gesamt", "gewandheit_gesamt", "konstitution_gesamt", "koerperkraft_gesamt", "ae_modifikator", "ae_verlust_perm", "ae_rueckkauf", "ae", "ae_regeneration", "ae_faktor"],
 			function (v) {
 				var leiteigenschaft_ae = v.leiteigenschaft_ae;
 				var mut_gesamt = parseInt(v.mut_gesamt) || 0;
@@ -11440,7 +11452,8 @@
 				var ae = parseInt(v.ae) || 0;
 				var ae_regeneration = parseInt(v.ae_regeneration) || 0;
 				var ae_faktor = parseFloat(v.ae_faktor) || 1;
-	
+				var toggle_npc = v.toggle_npc;
+				if (toggle_npc == 'character') {
 				switch (leiteigenschaft_ae) {
 					case "MU":
 						var ae_ausgangswert = 20 + Math.ceil(mut_gesamt * ae_faktor);
@@ -11482,13 +11495,13 @@
 					ae_regeneration: ae_regeneration,
 					ae_rueckkauf: ae_rueckkauf
 				});
-	
+			   }
 			});
 	});
 	
 	on("sheet:opened change:leiteigenschaft_ke change:mut_gesamt change:klugheit_gesamt change:charisma_gesamt change:intuition_gesamt change:fingerfertigkeit_gesamt change:gewandheit_gesamt change:konstitution_gesamt change:koerperkraft_gesamt change:ke_ausgangswert change:ke_modifikator change:ke_verlust_perm change:ke_rueckkauf change:ke_faktor", function () {
 		//init and change astralenerige
-		getAttrs(["leiteigenschaft_ke", "mut_gesamt", "klugheit_gesamt", "charisma_gesamt", "intuition_gesamt", "fingerfertigkeit_gesamt", "gewandheit_gesamt", "konstitution_gesamt", "koerperkraft_gesamt", "ke_modifikator", "ke_verlust_perm", "ke_rueckkauf", "ke", "ke_regeneration", "ke_faktor"],
+		getAttrs(["toggle_npc", "leiteigenschaft_ke", "mut_gesamt", "klugheit_gesamt", "charisma_gesamt", "intuition_gesamt", "fingerfertigkeit_gesamt", "gewandheit_gesamt", "konstitution_gesamt", "koerperkraft_gesamt", "ke_modifikator", "ke_verlust_perm", "ke_rueckkauf", "ke", "ke_regeneration", "ke_faktor"],
 			function (v) {
 				var leiteigenschaft_ke = v.leiteigenschaft_ke;
 				var mut_gesamt = parseInt(v.mut_gesamt) || 0;
@@ -11505,8 +11518,10 @@
 				var ke = parseInt(v.ke) || 0;
 				var ke_regeneration = parseInt(v.ke_regeneration) || 0;
 				var ke_faktor = parseFloat(v.ke_faktor) || 1;
-	
-				switch (leiteigenschaft_ke) {
+				var toggle_npc = v.toggle_npc;
+
+				if (toggle_npc == 'character') {
+				 switch (leiteigenschaft_ke) {
 					case "MU":
 						var ke_ausgangswert = 20 + Math.ceil(mut_gesamt * ke_faktor);
 						break;
@@ -11535,10 +11550,10 @@
 					default:
 						var ke_ausgangswert = 0;
 						break;
-				}  // Ende switch
-				var ke_max = ke_ausgangswert + ke_modifikator - ke_verlust_perm + ke_rueckkauf;
+				 }  // Ende switch
+				 var ke_max = ke_ausgangswert + ke_modifikator - ke_verlust_perm + ke_rueckkauf;
 	
-				setAttrs({
+				 setAttrs({
 					ke_ausgangswert: ke_ausgangswert,
 					ke_modifikator: ke_modifikator,
 					ke_verlust_perm: ke_verlust_perm,
@@ -11546,18 +11561,25 @@
 					ke: ke,
 					ke_regeneration: ke_regeneration,
 					ke_rueckkauf: ke_rueckkauf
-				});
-	
+				 });
+				}
 			});
 	});
+
 	// Seelenkraft
 	
 	on("sheet:opened change:mut_gesamt change:klugheit_gesamt change:intuition_gesamt change:sk_grundwert change:sk_modifikator", function () {
-		getAttrs(["mut_gesamt", "klugheit_gesamt", "intuition_gesamt", "sk_grundwert", "sk_modifikator"], function (values) {
+		getAttrs(["toogle_npc", "mut_gesamt", "klugheit_gesamt", "intuition_gesamt", "sk_grundwert", "sk_modifikator"], function (values) {
+			var toggle_npc = values.toggle_npc;
 			var sk_modifikator = parseInt(values.sk_modifikator) || 0;
 			var sk_grundwert = parseInt(values.sk_grundwert) || -5;
 			var sk_basiswert = sk_grundwert + Math.round((parseInt(values.mut_gesamt) + parseInt(values.klugheit_gesamt) + parseInt(values.intuition_gesamt)) / 6);
-			var sk_gesamt = sk_basiswert + sk_modifikator;
+			if (toggle_npc == 'character') {
+				var sk_gesamt = sk_basiswert + sk_modifikator;
+			} else
+			{
+			   var sk_gesamt = sk_grundwert + sk_modifikator;
+			}
 			setAttrs({
 				sk_gesamt: sk_gesamt,
 				sk_grundwert: sk_grundwert,
@@ -11569,11 +11591,19 @@
 	// Zähigkeit
 	
 	on("sheet:opened change:konstitution_gesamt change:koerperkraft_gesamt change:zk_grundwert change:zk_modifikator", function () {
-		getAttrs(["konstitution_gesamt", "koerperkraft_gesamt", "zk_grundwert", "zk_modifikator"], function (values) {
+		getAttrs(["toggle_npc", "konstitution_gesamt", "koerperkraft_gesamt", "zk_grundwert", "zk_modifikator"], function (values) {
+			var toggle_npc = values.toggle_npc;
 			var zk_modifikator = parseInt(values.zk_modifikator) || 0;
 			var zk_grundwert = parseInt(values.zk_grundwert) || -5;
 			var zk_basiswert = zk_grundwert + Math.round((parseInt(values.konstitution_gesamt) + parseInt(values.konstitution_gesamt) + parseInt(values.koerperkraft_gesamt)) / 6);
-			var zk_gesamt = zk_basiswert + zk_modifikator;
+			
+			if (toggle_npc == 'character') {
+				var zk_gesamt = zk_basiswert + zk_modifikator;
+			} else
+			{
+			   var zk_gesamt = zk_grundwert + zk_modifikator;
+			}	
+
 			setAttrs({
 				zk_gesamt: zk_gesamt,
 				zk_grundwert: zk_grundwert,
@@ -11586,11 +11616,20 @@
 	
 	// Initiative
 	
-	on("sheet:opened change:mut_gesamt change:gewandheit_gesamt change:ini_modifikator", function () {
-		getAttrs(["mut_gesamt", "gewandheit_gesamt", "ini_grundwert", "ini_modifikator"], function (values) {
+	on("sheet:opened change:ini_grundwert change:mut_gesamt change:gewandheit_gesamt change:ini_modifikator", function () {
+		getAttrs(["toggle_npc", "mut_gesamt", "gewandheit_gesamt", "ini_grundwert", "ini_modifikator"], function (values) {
+			var toggle_npc = values.toggle_npc;
 			var ini_modifikator = parseInt(values.ini_modifikator) || 0;
-			var ini_grundwert = Math.round((parseInt(values.mut_gesamt) + parseInt(values.gewandheit_gesamt)) / 2);
-			var ini_gesamt = ini_grundwert + ini_modifikator;
+			var ini_grundwert = parseInt(values.ini_grundwert) || 0;
+			var ini_basiswert = Math.round((parseInt(values.mut_gesamt) + parseInt(values.gewandheit_gesamt)) / 2);
+			
+			if (toggle_npc == 'character') {
+				var ini_gesamt = ini_basiswert + ini_modifikator;
+				ini_grundwert = ini_basiswert;
+			} else
+			{
+			   var ini_gesamt = ini_grundwert + ini_modifikator;
+			}
 			setAttrs({
 				ini_gesamt: ini_gesamt,
 				ini_grundwert: ini_grundwert,
@@ -11601,11 +11640,20 @@
 	
 	// Ausweichen
 	
-	on("sheet:opened change:gewandheit_gesamt change:aw_modifikator", function () {
-		getAttrs(["gewandheit_gesamt", "aw_grundwert", "aw_modifikator"], function (values) {
+	on("sheet:opened change:aw_grundwert change:gewandheit_gesamt change:aw_modifikator", function () {
+		getAttrs(["toggle_npc", "gewandheit_gesamt", "aw_grundwert", "aw_modifikator"], function (values) {
+			var toggle_npc = values.toggle_npc;
 			var aw_modifikator = parseInt(values.aw_modifikator) || 0;
-			var aw_grundwert = Math.round(parseInt(values.gewandheit_gesamt) / 2);
-			var aw_gesamt = aw_grundwert + aw_modifikator;
+			var aw_grundwert = parseInt(values.aw_grundwert) || 0;
+			var aw_basiswert = Math.round(parseInt(values.gewandheit_gesamt) / 2);
+			
+			if (toggle_npc == 'character') {
+				var aw_gesamt = aw_basiswert + aw_modifikator;
+				aw_grundwert = aw_basiswert;
+			} else
+			{
+			   var aw_gesamt = aw_grundwert + aw_modifikator;
+			}
 			setAttrs({
 				aw_gesamt: aw_gesamt,
 				aw_grundwert: aw_grundwert,
@@ -11630,7 +11678,20 @@
 		});
 	});
 	
-	
+	// Rüstungsschutz
+
+	on("sheet:opened change:rs_grundwert change:rs_modifikator", function () {
+		getAttrs(["rs_grundwert", "rs_modifikator"], function (values) {
+			var rs_modifikator = parseInt(values.rs_modifikator) || 0;
+			var rs_grundwert = parseInt(values.rs_grundwert) || 0;
+			var rs = rs_grundwert + rs_modifikator;
+			setAttrs({
+				rs: rs,
+				rs_grundwert: rs_grundwert,
+				rs_modifikator: rs_modifikator
+			});
+		});
+	});
 	
 	// Schips
 	
@@ -11649,6 +11710,20 @@
 		});
 	});
 	
+	// Verteidigungswert
+	
+	on("sheet:opened change:vw_grundwert change:vw_modifikator", function () {
+		getAttrs(["vw_grundwert", "vw_modifikator"], function (values) {
+			var vw_modifikator = parseInt(values.vw_modifikator) || 0;
+			var vw_grundwert = parseInt(values.vw_grundwert) || 0;
+			var vw_gesamt = vw_grundwert + vw_modifikator;
+			setAttrs({
+				vw_gesamt: vw_gesamt,
+				vw_grundwert: vw_grundwert,
+				vw_modifikator: vw_modifikator
+			});
+		});
+	});
 	
 	
 	// Status und Zustände

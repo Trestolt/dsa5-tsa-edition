@@ -675,5 +675,6 @@
  "jagd":"Jagd",
  "sonderregeln":"Sonderregeln",
  "informationen":"Informationen",
- "npcattribute":"NSC-Attribute"
+ "npcattribute":"NSC-Attribute",
+ "verteidigungswert":"Verteidigungswert (VW)"
 }
