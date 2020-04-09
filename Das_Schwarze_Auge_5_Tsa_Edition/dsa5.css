@@ -2309,6 +2309,25 @@ button.sheet-kampf-header {
     border: none;
 }
 
+.sheet-kampf-fk-npc-grid2 {
+    display: var( --display-kampf-nah-npc-grid);
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
+    grid-gap: 5px;
+    /* grid-template-columns: 0.39fr 0.9fr 0.4fr 1fr;*/
+}
+
+.sheet-kampf-fk-npc-grid2>fieldset.repeating_npcfkkampf+.repcontainer>.repitem
+{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+
 .sheet-kampf-nah-item1 {
     grid-column: 1 /1;
     grid-row: 1 /1;
@@ -2464,6 +2483,51 @@ input[type="checkbox"].sheet-npc-nk-cb:checked~div.sheet-npc-nk-anmerkung{
 
 
 textarea.sheet-npc-nk-description {
+    width: 89%;
+    height: 18px;
+}
+
+
+input[type="checkbox"].sheet-npc-fk-cb {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-npc-fk-cb+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-npc-fk-cb:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.sheet-npc-fk-anmerkung {
+    display: block;
+}
+
+input[type="checkbox"].sheet-npc-fk-cb:checked~div.sheet-npc-fk-anmerkung{
+    display: none;
+}
+
+
+textarea.sheet-npc-fk-description {
     width: 89%;
     height: 18px;
 }
@@ -2678,7 +2742,7 @@ input[type="checkbox"].sheet-kampf-nah {
 /* Grid Fernkampf */
 
 .sheet-kampf-fern-grid1 {
-    display: grid;
+    display: var( --display-kampf-nah-grid);
     margin: 10px;
     padding: 5px;
     border: 1px solid;

@@ -7675,7 +7675,6 @@
 						</div>
 					</div>
 					<br>
-					
 				</fieldset>
 			</div>
 
@@ -7815,6 +7814,51 @@
 					<input class="kampf-fern" type="number" name="attr_fk_ladezeit_mod" value="0" readonly>
 				</div>
 			</div>
+
+			<div class="kampf-fk-npc-grid2">
+				<fieldset class="repeating_npcfkkampf">
+					<div>
+						<div>
+							<span data-i18n="angriff">Angriff</span>
+							<input type="text" name="attr_npc_fk_angriff">
+							<span class="filter-text"></span>
+							<span data-i18n="reichweite">Reichweite</span>
+							<select class="waffe-item" name="attr_npc_fk_rw">
+								<option value="1" data-i18n="kurz" >kurz</option>
+								<option value="2" data-i18n="mittel" selected>mittel</option>
+								<option value="3" data-i18n="lang">lang</option>
+							</select>
+							<span class="filter-text"></span>
+							<span data-i18n="ladezeit">Ladezeit in KR</span>
+							<input type="number" name="attr_npc_fk_ladezeit" value="0">
+						</div>
+						<div>
+							<span data-i18n="at">FK</span>
+							<input type="number" name="attr_npc_fk_at" value = "8">
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Fernkampf-AT} {{name=^{attacke}}} {{subtags=^{fernkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{npc_fk_at}+@{mod_option}+@{kampf_modifier}+@{kampfstatus_modifier}+@{gesamt_fk_mod})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier}+@{kampfstatus_modifier}+@{gesamt_fk_mod})]]}}"></button>
+							<span class="filter-text"></span>
+							<span data-i18n="tp">TP</span>
+							<input type="number" name="attr_npc_fk_tp_dice" value="1">
+							<span data-i18n="d6">W6+</span>
+							<input type="number" name="attr_npc_fk_tp_bonus" value="0">
+							<span class="filter-text"></span>
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{npc_fk_tp_dice})]]d6+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod}]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" ></button>
+							<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{npc_fk_tp_dice})]]d6+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod})*2]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" data-i18n="x2">x2</button>		
+							<span class="filter-text"></span>
+							<span data-i18n="munition">Munition</span>
+							<input type="text" class="waffe-item" name="attr_npc_munition">
+						</div>
+						<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
+						<input type="checkbox" class="npc-fk-cb" name="attr_npc_fk_klappbox" value="1" checked><span></span>
+						<div class="npc-fk-anmerkung">
+							<textarea class="npc-fk-description" name="attr_npc_fk_anmerkung" ></textarea>
+						</div>
+					</div>
+					<br>
+				</fieldset>
+			</div>
+
+
 
 			<div class="kampf-fern-grid2">
 				<span class="kampf-fern kampf-fern-item11" data-i18n="modifikatoren">Modifikatoren</span>
@@ -10654,7 +10698,7 @@
 			case "falsche_hand_mod":
 				getAttrs(["falsche_hand_mod"], function (target_value) { setAttrs({ falsche_hand_mod: parseInt(target_value.falsche_hand_mod) - oldvalue + modifier_value }); });
 				break;
-			case "fk_effekt_mod":
+			case "kt_mod":
 				getAttrs(["fk_effekt_mod"], function (target_value) { setAttrs({ fk_effekt_mod: parseInt(target_value.fk_effekt_mod) - oldvalue + modifier_value }); });
 				break;
 			case "fk_tp_effekt_mod":
