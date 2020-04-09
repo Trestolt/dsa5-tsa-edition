@@ -28,9 +28,14 @@
 .sheet-toggle_npc[value="character"]~* {
     --display-allgemein-grid: grid;
     --display-allgemein-npc-grid: none;
+    --display-ktw-grid: grid;
+    --display-kampf-nah-grid: grid;
+    --display-kampf-nah-npc-grid: none;
     --display-grundwerte-npc-grid-header: none;
     --display-grundwerte-npc-grid: none;
     --display-npc-element: none;
+    --display-pc-element: inline;
+    --display-pc-inline: inline;
 }
 
 .sheet-toggle_header[value="on"]~* {
@@ -99,8 +104,12 @@
 
 .sheet-toggle_npc[value="npc"]~* {
     --display-npc-element: block;
+    --display-pc-element: none;
     --display-allgemein-grid: none;
     --display-allgemein-npc-grid: grid;
+    --display-ktw-grid: none;
+    --display-kampf-nah-grid: none;
+    --display-kampf-nah-npc-grid: grid;
     --display-grundwerte-npc-grid-header: inline;
     --display-grundwerte-npc-grid: grid;
     --display-grundwerte-le-grid: none;
@@ -109,12 +118,17 @@
     --display-grundwerte-ae-grid-header: none;
     --display-grundwerte-ke-grid: none;
     --display-grundwerte-ke-grid-header: none;
+    --display-pc-inline: none;
 }
 
 
 .sheet-npc-element {
  display: var(--display-npc-element);
 }
+
+.sheet-pc-element {
+    display: var(--display-pc-element);
+   }
 
 /* color schemes */
 
@@ -229,16 +243,6 @@
     background-color: var(--bg-input-readonly);
 }
 
-.sheet-charsheet span.sheet-tab {
-    background: var(--bg-tab-unchecked);
-    }
-
-.sheet-charsheet input.sheet-tab[type="radio"]:checked+span.sheet-tab {
-    /* reverse color of selected tab */
-    color: var(--color-font-tab-checked);
-    background: var(--bg-tab-checked);
-}
-
 
 /* Standard-Settings */
 
@@ -339,6 +343,18 @@ input.sheet-tab12:checked~div.sheet-tab12 {
     display: inline;
 }
 
+
+.sheet-charsheet span.sheet-tab {
+    background: var(--bg-tab-unchecked);
+    }
+
+.sheet-charsheet input.sheet-tab[type="radio"]:checked+span.sheet-tab {
+    /* reverse color of selected tab */
+    color: var(--color-font-tab-checked);
+    background: var(--bg-tab-checked);
+}
+
+
 input.sheet-tab {
     z-index: 9999;
     position: relative;
@@ -368,6 +384,53 @@ span.sheet-tab {
     /* make text centred */
     /* add a nice border */
 }
+
+
+
+/* Kampftabs */
+
+
+.sheet-charsheet span.sheet-ktab {
+    background: var(--bg-tab-unchecked);
+    }
+
+.sheet-charsheet input.sheet-ktab[type="radio"]:checked+span.sheet-ktab {
+    /* reverse color of selected tab */
+    color: var(--color-font-tab-checked);
+    background: var(--bg-tab-checked);
+}
+
+
+input.sheet-ktab {
+    z-index: 9999;
+    position: relative;
+    width: 15.5%;
+    height: 24px;
+    opacity: 0;
+    /* 15% ist auch cool 125 must match span.sheet-ktab below */
+    /* change height to match span.sheet-ktab below */
+}
+
+span.sheet-ktab {
+    /* essential elements */
+    display: inline-block;
+    width: 15.5%;
+    height: 24px;
+    margin-left: -15.5%;
+    border: 1px solid;
+    border-radius: 3px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1em;
+    font-weight: bold;
+    border-color: var(--color-border);
+    /* must match width of input above */
+    /* ditto */
+    /* change box size: enter same height in input.sheet-tab above */
+    /* make text centred */
+    /* add a nice border */
+}
+
 
 /*
 .sheet-subsection {
@@ -2180,7 +2243,7 @@ button.sheet-kampf-header {
 }
 
 .sheet-ktw-grid {
-    display: grid;
+    display: var(--display-ktw-grid);
     margin: 10px;
     padding: 5px;
     border: 1px solid;
@@ -2207,7 +2270,18 @@ button.sheet-kampf-header {
 /* Grid Kampf Nah */
 
 .sheet-kampf-nah-grid {
-    display: grid;
+    display: var( --display-kampf-nah-grid);
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
+    grid-gap: 5px;
+    grid-template-columns: 0.39fr 0.9fr 0.4fr 1fr;
+}
+
+.sheet-kampf-nah-npc-grid {
+    display: var( --display-kampf-nah-npc-grid);
     margin: 10px;
     padding: 5px;
     border: 1px solid;

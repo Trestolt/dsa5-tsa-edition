@@ -347,11 +347,7 @@
 				<input type="number" name='attr_ke' class='grid-npc42' value='0'>
 				<span data-i18n="maximal" class='grid-npc43'>Maximal</span>
 				<input type="number" name='attr_ke_max' class='grid-npc44' value='0'>
-
-
-
 			</div>
-
 
 
 			<br />
@@ -7217,14 +7213,14 @@
 	<!-- Kampf -->
 	<div class="section tab9">
 		<span class="filter-text"></span>
-		<input type="radio" name="attr_kampf_tab" class="tab kampftab1" value="1" checked />
-		<span class="tab" data-i18n="kampftechniken">Kampftechniken</span>
-		<input type="radio" name="attr_kampf_tab" class="tab kampftab2" value="2" />
-		<span class="tab" data-i18n="nahkampf">Nahkampf</span>
-		<input type="radio" name="attr_kampf_tab" class="tab kampftab3" value="3" />
-		<span class="tab" data-i18n="fernkampf">Fernkampf</span>
-		<input type="radio" name="attr_kampf_tab" class="tab kampftab4" value="4" />
-		<span class="tab" data-i18n="patzer">Patzer</span>
+		<input type="radio" name="attr_kampf_tab" class="ktab kampftab1" value="1" />
+		<span class="ktab" data-i18n="kampftechniken">Kampftechniken</span>
+		<input type="radio" name="attr_kampf_tab" class="ktab kampftab2" value="2" checked />
+		<span class="ktab" data-i18n="nahkampf">Nahkampf</span>
+		<input type="radio" name="attr_kampf_tab" class="ktab kampftab3" value="3" />
+		<span class="ktab" data-i18n="fernkampf">Fernkampf</span>
+		<input type="radio" name="attr_kampf_tab" class="ktab kampftab4" value="4" />
+		<span class="ktab" data-i18n="patzer">Patzer</span>
 		<br>
 		<div class="kampf-header-grid">
 			<span class="kampf-header kampf-header-ini-label" data-i18n="initiative">Initiative</span>
@@ -7251,6 +7247,8 @@
 			<span class="kampf-header kampf-header-label9" data-i18n="effekt-modtp">Effekt-Mod. TP</span>
 			<input class="kampf-header kampf-header-value9" type="number" name="attr_tp_effekt_mod" value="0" readonly />
 		</div>
+
+		
 
 		<div class="section kampftab1">
 
@@ -7603,6 +7601,43 @@
 				</div>
 
 			</div>
+			<div class="kampf-nah-npc-grid">
+				<span class="kampf-nah kampf-nah-item1" data-i18n="verteidigungswert">VW</span>
+				<div class="kampf-nah-item2">
+					<input class="kampf-nah" type="number" name="attr_vw_grundwert" value="0" />
+					<input class="kampf-nah" type="number" name="attr_vw_roll" value="0" readonly />
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{vw_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{vw_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+				</div>
+
+				<span class="kampf-nah kampf-nah-item11" data-i18n="ausweichen">Ausweichen</span>
+				<div class="kampf-nah-item12">
+					<input class="kampf-nah" type="number" name="attr_aw_grundwert" value="0"  />
+					<input class="kampf-nah" type="number" name="attr_ausweichen_zweite_mod" value="0" readonly hidden />
+					<input class="kampf-nah" type="number" name="attr_aw_roll" value="0" readonly />
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+				</div>
+
+				<span class="kampf-nah kampf-nah-item3" data-i18n="anzahlaktionen">Anzahl Aktionen</span>
+				<div class="kampf-nah-item4">
+					<input class="kampf-nah" type="number" name="attr_anz_angriffe" value="1"  />
+					<input class="kampf-nah" type="text" name='attr_angriffe_notiz' value='' />
+
+				</div>
+
+				<select class="kampf-nah kampf-nah-item13" name="attr_parade_malus_select">
+					<option value="0" selected data-i18n="1-parade">1. Parade</option>
+					<option value="1" data-i18n="2-parade">2. Parade</option>
+					<option value="2" data-i18n="3-parade">3. Parade</option>
+					<option value="3" data-i18n="4-parade">4. Parade</option>
+					<option value="4" data-i18n="5-parade">5. Parade</option>
+				</select>
+			</div>
+			<div class="kampf-nah-npc-grid2">
+				
+
+			</div>
 
 			<div class="kampf-nah2-grid">
 				<span class="kampf-nah kampf-nah2-label2" data-i18n="kampfsituationen-status">Kampfsituationen Status</span>
@@ -7668,8 +7703,8 @@
 				<table>
 					<tr>
 						<th><span data-i18n="sonderfertigkeiten">Sonderfertigkeiten</span></th>
-						<th><span data-i18n="nahkampfwaffe">Nahkampfwaffe</span></th>
-						<th><span data-i18n="nebenhandwaffe">Nebenhandwaffe</span> </th>
+						<th><span class="pc-element" data-i18n="nahkampfwaffe">Nahkampfwaffe</span></th>
+						<th><span class="pc-element" data-i18n="nebenhandwaffe">Nebenhandwaffe</span> </th>
 					</tr>
 					<tr>
 						<td rowspan="0">
@@ -7692,24 +7727,24 @@
 								</fieldset>
 							</div>
 						</td>
-						<td><input type="text" name="attr_waffe_name_1" value="Waffenlos" readonly><input type="radio" name="attr_nk_waffe" value="1" checked></td>
-						<td><input type="text" name="attr_schild_name_1" value="Waffenlos" readonly><input type="radio" name="attr_nh_waffe" value="1" checked></td>
+						<td><input class="pc-element" type="text" name="attr_waffe_name_1" value="Waffenlos" readonly><input class="pc-element" type="radio" name="attr_nk_waffe" value="1" checked></td>
+						<td><input class="pc-element" type="text" name="attr_schild_name_1" value="Waffenlos" readonly><input class="pc-element" type="radio" name="attr_nh_waffe" value="1" checked></td>
 					</tr>
 					<tr>
-						<td><input type="text" name="attr_waffe_name_2" readonly><input type="radio" name="attr_nk_waffe" value="2"></td>
-						<td><input type="text" name="attr_schild_name_2" readonly><input type="radio" name="attr_nh_waffe" value="2"></td>
+						<td><input class="pc-element" type="text" name="attr_waffe_name_2" readonly><input class="pc-element" type="radio" name="attr_nk_waffe" value="2"></td>
+						<td><input class="pc-element" type="text" name="attr_schild_name_2" readonly><input class="pc-element" type="radio" name="attr_nh_waffe" value="2"></td>
 					</tr>
 					<tr>
-						<td><input type="text" name="attr_waffe_name_3" readonly><input type="radio" name="attr_nk_waffe" value="3"></td>
-						<td><input type="text" name="attr_schild_name_3" readonly><input type="radio" name="attr_nh_waffe" value="3"></td>
+						<td><input class="pc-element" type="text" name="attr_waffe_name_3" readonly><input class="pc-element" type="radio" name="attr_nk_waffe" value="3"></td>
+						<td><input class="pc-element" type="text" name="attr_schild_name_3" readonly><input class="pc-element" type="radio" name="attr_nh_waffe" value="3"></td>
 					</tr>
 					<tr>
-						<td><input type="text" name="attr_waffe_name_4" readonly><input type="radio" name="attr_nk_waffe" value="4"></td>
-						<td><input type="text" name="attr_schild_name_4" readonly><input type="radio" name="attr_nh_waffe" value="4"></td>
+						<td><input class="pc-element" type="text" name="attr_waffe_name_4" readonly><input class="pc-element" type="radio" name="attr_nk_waffe" value="4"></td>
+						<td><input class="pc-element" type="text" name="attr_schild_name_4" readonly><input class="pc-element" type="radio" name="attr_nh_waffe" value="4"></td>
 					</tr>
 					<tr>
-						<td><input type="text" name="attr_waffe_name_5" readonly><input type="radio" name="attr_nk_waffe" value="5"></td>
-						<td><input type="text" name="attr_schild_name_5" readonly><input type="radio" name="attr_nh_waffe" value="5"></td>
+						<td><input class="pc-element" type="text" name="attr_waffe_name_5" readonly><input class="pc-element" class="pc-element" type="radio" name="attr_nk_waffe" value="5"></td>
+						<td><input class="pc-element" type="text" name="attr_schild_name_5" readonly><input class="pc-element" class="pc-element" type="radio" name="attr_nh_waffe" value="5"></td>
 					</tr>
 				</table>
 			</div>
@@ -7815,7 +7850,7 @@
 					<tr>
 						<th><span data-i18n="sonderfertigkeiten">Sonderfertigkeiten</span></th>
 
-						<th><span data-i18n="fernkampfwaffe">Fernkampfwaffe</span></th>
+						<th><span class="pc-element" data-i18n="fernkampfwaffe">Fernkampfwaffe</span></th>
 					</tr>
 					<tr>
 						<td rowspan="0">
@@ -7839,40 +7874,40 @@
 							</div>
 						</td>
 						<td>
-							<input type="text" name="attr_fkwaffe_name_1" readonly>
-							<input name="attr_fkwaffe_mun_1" type="number" value="0">
-							<input type="radio" name="attr_fk_waffe" value="1" checked>
+							<input class="pc-element"  type="text" name="attr_fkwaffe_name_1" readonly>
+							<input class="pc-element"  name="attr_fkwaffe_mun_1" type="number" value="0">
+							<input class="pc-element"  type="radio" name="attr_fk_waffe" value="1" checked>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="attr_fkwaffe_name_2" readonly>
-							<input name="attr_fkwaffe_mun_2" type="number" value="0">
-							<input type="radio" name="attr_fk_waffe" value="2">
-						</td>
-
-					</tr>
-					<tr>
-						<td>
-							<input type="text" name="attr_fkwaffe_name_3" readonly>
-							<input name="attr_fkwaffe_mun_3" type="number" value="0">
-							<input type="radio" name="attr_fk_waffe" value="3">
+							<input class="pc-element" type="text" name="attr_fkwaffe_name_2" readonly>
+							<input class="pc-element" name="attr_fkwaffe_mun_2" type="number" value="0">
+							<input class="pc-element" type="radio" name="attr_fk_waffe" value="2">
 						</td>
 
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="attr_fkwaffe_name_4" readonly>
-							<input name="attr_fkwaffe_mun_4" type="number" value="0">
-							<input type="radio" name="attr_fk_waffe" value="4">
+							<input class="pc-element" type="text" name="attr_fkwaffe_name_3" readonly>
+							<input class="pc-element" name="attr_fkwaffe_mun_3" type="number" value="0">
+							<input class="pc-element" type="radio" name="attr_fk_waffe" value="3">
 						</td>
 
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="attr_fkwaffe_name_5" readonly>
-							<input name="attr_fkwaffe_mun_5" type="number" value="0">
-							<input type="radio" name="attr_fk_waffe" value="5">
+							<input class="pc-element" type="text" name="attr_fkwaffe_name_4" readonly>
+							<input class="pc-element" name="attr_fkwaffe_mun_4" type="number" value="0">
+							<input class="pc-element" type="radio" name="attr_fk_waffe" value="4">
+						</td>
+
+					</tr>
+					<tr>
+						<td>
+							<input class="pc-element" type="text" name="attr_fkwaffe_name_5" readonly>
+							<input class="pc-element" name="attr_fkwaffe_mun_5" type="number" value="0">
+							<input class="pc-element" type="radio" name="attr_fk_waffe" value="5">
 						</td>
 					</tr>
 				</table>
@@ -9480,8 +9515,6 @@
 
 	<!-- Ende character sheet -->
 </div>
-
-
 
 <rolltemplate class="sheet-rolltemplate-DSA-Talente">
 	<table>
@@ -13584,8 +13617,8 @@
 	
 	
 	
-	on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe change:nh_waffe change:koerperkraft_gesamt change:gewandheit_gesamt change:aw_gesamt change:waffe_typ_1 change:waffe_leiteigenschaft_1 change:waffe_leiteigenschaft_input_1 change:waffe_tp_bonus_1 change:waffe_tp_anz_wuerfel_1 change:waffe_tp_wert_1 change:waffe_at_1 change:waffe_pa_1 change:waffe_tp_mod_1 change:waffe_at_mod_1 change:waffe_pa_mod_1 change:waffe_typ_2 change:waffe_leiteigenschaft_2 change:waffe_leiteigenschaft_input_2 change:waffe_tp_bonus_2 change:waffe_tp_anz_wuerfel_2 change:waffe_tp_wert_2 change:waffe_at_2 change:waffe_pa_2 change:waffe_tp_mod_2 change:waffe_at_mod_2 change:waffe_pa_mod_2 change:waffe_typ_3 change:waffe_leiteigenschaft_3 change:waffe_leiteigenschaft_input_3 change:waffe_tp_bonus_3 change:waffe_tp_anz_wuerfel_3 change:waffe_tp_wert_3 change:waffe_at_3 change:waffe_pa_3 change:waffe_tp_mod_3 change:waffe_at_mod_3 change:waffe_pa_mod_3 change:waffe_typ_4 change:waffe_leiteigenschaft_4 change:waffe_leiteigenschaft_input_4 change:waffe_tp_bonus_4 change:waffe_tp_anz_wuerfel_4 change:waffe_tp_wert_4 change:waffe_at_4 change:waffe_pa_4 change:waffe_tp_mod_4 change:waffe_at_mod_4 change:waffe_pa_mod_4 change:waffe_typ_5 change:waffe_leiteigenschaft_5 change:waffe_leiteigenschaft_input_5 change:waffe_tp_bonus_5 change:waffe_tp_anz_wuerfel_5 change:waffe_tp_wert_5 change:waffe_at_5 change:waffe_pa_5 change:waffe_tp_mod_5 change:waffe_at_mod_5 change:waffe_pa_mod_5 change:at_sf_mod change:pa_sf_mod change:aw_sf_mod change:tp_sf_mod change:at_effekt_mod change:pa_effekt_mod change:aw_effekt_mod change:tp_effekt_mod change:at_situation_mod change:pa_situation_mod change:parade_malus_select change:parade_zweite_mod change:ausweichen_zweite_mod change:beidhand_kampf change:beidhand_kampf_mod change:falsche_hand_mod change:pa_schildpassiv_bonus", function () {
-		getAttrs(["nk_waffe", "nh_waffe", "waffe_typ_1", "waffe_leiteigenschaft_1", "waffe_leiteigenschaft_input_1", "waffe_tp_bonus_1", "waffe_tp_anz_wuerfel_1", "waffe_tp_wert_1", "waffe_at_1", "waffe_pa_1", "waffe_tp_mod_1", "waffe_at_mod_1", "waffe_pa_mod_1", "waffe_typ_2", "waffe_leiteigenschaft_2", "waffe_leiteigenschaft_input_2", "waffe_tp_bonus_2", "waffe_tp_anz_wuerfel_2", "waffe_tp_wert_2", "waffe_at_2", "waffe_pa_2", "waffe_tp_mod_2", "waffe_at_mod_2", "waffe_pa_mod_2", "waffe_typ_3", "waffe_leiteigenschaft_3", "waffe_leiteigenschaft_input_3", "waffe_tp_bonus_3", "waffe_tp_anz_wuerfel_3", "waffe_tp_wert_3", "waffe_at_3", "waffe_pa_3", "waffe_tp_mod_3", "waffe_at_mod_3", "waffe_pa_mod_3", "waffe_typ_4", "waffe_leiteigenschaft_4", "waffe_leiteigenschaft_input_4", "waffe_tp_bonus_4", "waffe_tp_anz_wuerfel_4", "waffe_tp_wert_4", "waffe_at_4", "waffe_pa_4", "waffe_tp_mod_4", "waffe_at_mod_4", "waffe_pa_mod_4", "waffe_typ_5", "waffe_leiteigenschaft_5", "waffe_leiteigenschaft_input_5", "waffe_tp_bonus_5", "waffe_tp_anz_wuerfel_5", "waffe_tp_wert_5", "waffe_at_5", "waffe_pa_5", "waffe_tp_mod_5", "waffe_at_mod_5", "waffe_pa_mod_5", "at_sf_mod", "pa_sf_mod", "aw_sf_mod", "tp_sf_mod", "at_effekt_mod", "pa_effekt_mod", "aw_effekt_mod", "tp_effekt_mod", "at_situation_mod", "pa_situation_mod", "tp_situation_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_dolche", "pa_dolche", "dolche_entrueckung_akt", "at_fechtwaffen", "pa_fechtwaffen", "fechtwaffen_entrueckung_akt", "at_hiebwaffen", "pa_hiebwaffen", "hiebwaffen_entrueckung_akt", "at_kettenwaffen", "kettenwaffen_entrueckung_akt", "at_lanzen", "lanzen_entrueckung_akt", "at_raufen", "pa_raufen", "raufen_entrueckung_akt", "at_schwerter", "pa_schwerter", "schwerter_entrueckung_akt", "at_stangenwaffen", "pa_stangenwaffen", "stangenwaffen_entrueckung_akt", "at_zweihandhiebwaffen", "pa_zweihandhiebwaffen", "zweihandhiebwaffen_entrueckung_akt", "at_zweihandschwerter", "pa_zweihandschwerter", "zweihandhiebwaffen_entrueckung_akt", "at_schilde", "pa_schilde", "schilde_entrueckung_akt", "at_parierwaffe", "pa_parierwaffe", "parierwaffe_entrueckung_akt", "parade_malus_select", "parade_zweite_mod", "ausweichen_zweite_mod", "aw_gesamt", "beidhand_kampf", "beidhand_kampf_mod", "pa_schildpassiv_bonus"], function (values) {
+	on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe change:nh_waffe change:koerperkraft_gesamt change:gewandheit_gesamt change:aw_gesamt change:waffe_typ_1 change:waffe_leiteigenschaft_1 change:waffe_leiteigenschaft_input_1 change:waffe_tp_bonus_1 change:waffe_tp_anz_wuerfel_1 change:waffe_tp_wert_1 change:waffe_at_1 change:waffe_pa_1 change:waffe_tp_mod_1 change:waffe_at_mod_1 change:waffe_pa_mod_1 change:waffe_typ_2 change:waffe_leiteigenschaft_2 change:waffe_leiteigenschaft_input_2 change:waffe_tp_bonus_2 change:waffe_tp_anz_wuerfel_2 change:waffe_tp_wert_2 change:waffe_at_2 change:waffe_pa_2 change:waffe_tp_mod_2 change:waffe_at_mod_2 change:waffe_pa_mod_2 change:waffe_typ_3 change:waffe_leiteigenschaft_3 change:waffe_leiteigenschaft_input_3 change:waffe_tp_bonus_3 change:waffe_tp_anz_wuerfel_3 change:waffe_tp_wert_3 change:waffe_at_3 change:waffe_pa_3 change:waffe_tp_mod_3 change:waffe_at_mod_3 change:waffe_pa_mod_3 change:waffe_typ_4 change:waffe_leiteigenschaft_4 change:waffe_leiteigenschaft_input_4 change:waffe_tp_bonus_4 change:waffe_tp_anz_wuerfel_4 change:waffe_tp_wert_4 change:waffe_at_4 change:waffe_pa_4 change:waffe_tp_mod_4 change:waffe_at_mod_4 change:waffe_pa_mod_4 change:waffe_typ_5 change:waffe_leiteigenschaft_5 change:waffe_leiteigenschaft_input_5 change:waffe_tp_bonus_5 change:waffe_tp_anz_wuerfel_5 change:waffe_tp_wert_5 change:waffe_at_5 change:waffe_pa_5 change:waffe_tp_mod_5 change:waffe_at_mod_5 change:waffe_pa_mod_5 change:at_sf_mod change:pa_sf_mod change:aw_sf_mod change:tp_sf_mod change:at_effekt_mod change:pa_effekt_mod change:aw_effekt_mod change:tp_effekt_mod change:at_situation_mod change:pa_situation_mod change:parade_malus_select change:parade_zweite_mod change:ausweichen_zweite_mod change:beidhand_kampf change:beidhand_kampf_mod change:falsche_hand_mod change:pa_schildpassiv_bonus change:vw_grundwert change:vw_modifikator", function () {
+		getAttrs(["nk_waffe", "nh_waffe", "waffe_typ_1", "waffe_leiteigenschaft_1", "waffe_leiteigenschaft_input_1", "waffe_tp_bonus_1", "waffe_tp_anz_wuerfel_1", "waffe_tp_wert_1", "waffe_at_1", "waffe_pa_1", "waffe_tp_mod_1", "waffe_at_mod_1", "waffe_pa_mod_1", "waffe_typ_2", "waffe_leiteigenschaft_2", "waffe_leiteigenschaft_input_2", "waffe_tp_bonus_2", "waffe_tp_anz_wuerfel_2", "waffe_tp_wert_2", "waffe_at_2", "waffe_pa_2", "waffe_tp_mod_2", "waffe_at_mod_2", "waffe_pa_mod_2", "waffe_typ_3", "waffe_leiteigenschaft_3", "waffe_leiteigenschaft_input_3", "waffe_tp_bonus_3", "waffe_tp_anz_wuerfel_3", "waffe_tp_wert_3", "waffe_at_3", "waffe_pa_3", "waffe_tp_mod_3", "waffe_at_mod_3", "waffe_pa_mod_3", "waffe_typ_4", "waffe_leiteigenschaft_4", "waffe_leiteigenschaft_input_4", "waffe_tp_bonus_4", "waffe_tp_anz_wuerfel_4", "waffe_tp_wert_4", "waffe_at_4", "waffe_pa_4", "waffe_tp_mod_4", "waffe_at_mod_4", "waffe_pa_mod_4", "waffe_typ_5", "waffe_leiteigenschaft_5", "waffe_leiteigenschaft_input_5", "waffe_tp_bonus_5", "waffe_tp_anz_wuerfel_5", "waffe_tp_wert_5", "waffe_at_5", "waffe_pa_5", "waffe_tp_mod_5", "waffe_at_mod_5", "waffe_pa_mod_5", "at_sf_mod", "pa_sf_mod", "aw_sf_mod", "tp_sf_mod", "at_effekt_mod", "pa_effekt_mod", "aw_effekt_mod", "tp_effekt_mod", "at_situation_mod", "pa_situation_mod", "tp_situation_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_dolche", "pa_dolche", "dolche_entrueckung_akt", "at_fechtwaffen", "pa_fechtwaffen", "fechtwaffen_entrueckung_akt", "at_hiebwaffen", "pa_hiebwaffen", "hiebwaffen_entrueckung_akt", "at_kettenwaffen", "kettenwaffen_entrueckung_akt", "at_lanzen", "lanzen_entrueckung_akt", "at_raufen", "pa_raufen", "raufen_entrueckung_akt", "at_schwerter", "pa_schwerter", "schwerter_entrueckung_akt", "at_stangenwaffen", "pa_stangenwaffen", "stangenwaffen_entrueckung_akt", "at_zweihandhiebwaffen", "pa_zweihandhiebwaffen", "zweihandhiebwaffen_entrueckung_akt", "at_zweihandschwerter", "pa_zweihandschwerter", "zweihandhiebwaffen_entrueckung_akt", "at_schilde", "pa_schilde", "schilde_entrueckung_akt", "at_parierwaffe", "pa_parierwaffe", "parierwaffe_entrueckung_akt", "parade_malus_select", "parade_zweite_mod", "ausweichen_zweite_mod", "aw_gesamt", "beidhand_kampf", "beidhand_kampf_mod", "pa_schildpassiv_bonus", "vw_grundwert", "vw_modifikator"], function (values) {
 			var nk_waffe = parseInt(values.nk_waffe) || 0;
 			switch (nk_waffe) {
 				case 1:
@@ -13668,7 +13701,9 @@
 			var at_situation_mod = parseInt(values.at_situation_mod) || 0;
 			var pa_situation_mod = parseInt(values.pa_situation_mod) || 0;
 			var tp_situation_mod = parseInt(values.tp_situation_mod) || 0;
-	
+			var vw_grundwert = parseInt(values.vw_grundwert) || 0;
+			var vw_modifikator = parseInt(values.vw_modifikator) || 0;
+			
 			switch (waffe_typ) {
 				case "dolche":
 					var at = parseInt(values.at_dolche);
@@ -13750,10 +13785,11 @@
 			var tp_dice_roll = waffe_tp_anz_wuerfel;
 			var tp_zusatz_roll = waffe_tp_wert + waffe_tp_bonus + waffe_tp_mod + (parseInt(values.tp_sf_mod) || 0) + (parseInt(values.tp_effekt_mod) || 0) + tp_situation_mod;
 			var passierschlag_tp_zusatz_roll = waffe_tp_wert + waffe_tp_bonus + waffe_tp_mod + (parseInt(values.tp_effekt_mod) || 0) + tp_situation_mod;
-	
+            var vw_roll = vw_grundwert + vw_modifikator + status_modifier + pa_situation_mod + parade_malus + (parseInt(values.pa_sf_mod) || 0) + (parseInt(values.pa_effekt_mod) || 0);	
 			setAttrs({
 				at_roll: at_roll,
 				pa_roll: pa_roll,
+				vw_roll: vw_roll,
 				//pa_nh_roll: 0,
 				aw_roll: aw_roll,
 				passierschlag_roll: passierschlag_roll,
@@ -13767,13 +13803,6 @@
 			});
 		});
 	});
-	
-	
-	
-	
-
-	
-	
 	
 	
 	on("sheet:opened change:distanz_mod change:groesse_mod change:sicht_mod change:ziel_bewegung_mod change:schuetze_bewegung_mod change:kampfgetuemmel_mod change:fk_sf_mod change:tp_sf_mod", function () {

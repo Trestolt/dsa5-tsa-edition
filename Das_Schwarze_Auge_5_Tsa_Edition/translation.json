@@ -676,5 +676,7 @@
  "sonderregeln":"Sonderregeln",
  "informationen":"Informationen",
  "npcattribute":"NSC-Attribute",
- "verteidigungswert":"Verteidigungswert (VW)"
+ "verteidigungswert":"Verteidigung (VW)",
+ "anzahlaktionen":"Anzahl Aktionen"
+ 
 }
