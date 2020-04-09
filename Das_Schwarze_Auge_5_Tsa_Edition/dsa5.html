@@ -7635,8 +7635,48 @@
 				</select>
 			</div>
 			<div class="kampf-nah-npc-grid2">
-				
-
+				<fieldset class="repeating_npcnahkampf">
+					<div>
+						<div>
+							<span data-i18n="angriff">Angriff</span>
+							<input type="text" name="attr_npc_nk_angriff">
+							<span class="filter-text"></span>
+							<span data-i18n="reichweite">Reichweite</span>
+							<select class="waffe-item" name="attr_npc_nk_rw">
+								<option value="1" data-i18n="kurz" >kurz</option>
+								<option value="2" data-i18n="mittel" selected>mittel</option>
+								<option value="3" data-i18n="lang">lang</option>
+							</select>
+						</div>
+						<div>
+							<span data-i18n="at">AT</span>
+							<input type="number" name="attr_npc_nk_at" value = "8">
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{npc_nk_at}+@{mod_option}+@{kampf_modifier}+@{kampfstatus_modifier}+@{at_situation_mod}+@{at_sf_mod}+@{at_effekt_mod})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier}+@{kampfstatus_modifier}+@{at_situation_mod}+@{at_sf_mod}+@{at_effekt_mod})]]}}"></button>
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-AT} {{name=^{attacke}}} {{subtags=^{passierschlag}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{npc_nk_at}+@{mod_option}+@{kampf_modifier}+@{kampfstatus_modifier}+@{at_situation_mod}+@{at_sf_mod}+@{at_effekt_mod}-4)]]}} {{mod=[[(@{mod_option}+@{kampf_modifier}+@{kampfstatus_modifier}+@{at_situation_mod}+@{at_sf_mod}+@{at_effekt_mod}-4)]]}}">P</button>
+							<span class="filter-text"></span>
+							<span data-i18n="pa">PA</span>
+							<input type="number" name="attr_npc_nk_pa" value = "0" >
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(@{npc_nk_pa}+@{mod_option}+@{kampf_modifier}+@{parade_malus}+@{kampfstatus_modifier}+@{pa_situation_mod}+@{pa_sf_mod}+@{pa_effekt_mod})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier}+@{parade_malus}+@{kampfstatus_modifier}+@{pa_situation_mod}+@{pa_sf_mod}+@{pa_effekt_mod})]]}}" />
+			        		<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{npc_nk_pa}/2)+@{mod_option}+@{kampf_modifier}+@{parade_malus}+@{kampfstatus_modifier}+@{pa_situation_mod}+@{pa_sf_mod}+@{pa_effekt_mod})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier}+@{parade_malus}+@{kampfstatus_modifier}+@{pa_situation_mod}+@{pa_sf_mod}+@{pa_effekt_mod})" data-i18n="1/2">1/2</button>
+						    <span class="filter-text"></span>
+							<span data-i18n="tp">TP</span>
+							<input type="number" name="attr_npc_nk_tp_dice" value="1">
+							<span data-i18n="d6">W6+</span>
+							<input type="number" name="attr_npc_nk_tp_bonus" value="0">
+							<span class="filter-text"></span>
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{npc_nk_tp_dice})]]d6+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod}]]}} {{mod=[[(@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" ></button>
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{npc_nk_tp_dice})]]d6+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_effekt_mod}+@{tp_situation_mod}]]}} {{mod=[[(@{mod_option}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" >P</button>
+					        <button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{npc_nk_tp_dice})]]d6+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})*2]]}} {{mod=[[(@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" data-i18n="x2">x2</button>		
+						</div>
+						<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
+						<input type="checkbox" class="npc-nk-cb" name="attr_npc_nk_klappbox" value="1" checked><span></span>
+						<div class="npc-nk-anmerkung">
+							<textarea class="npc-nk-description" name="attr_npc_nk_anmerkung" ></textarea>
+						</div>
+					</div>
+					<br>
+					
+				</fieldset>
 			</div>
 
 			<div class="kampf-nah2-grid">
@@ -8637,7 +8677,7 @@
 					</select>
 				</div>
 				<div class="waffe-item">
-					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+					<<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_4" value="1">
 					<span data-i18n="d6">W6+</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_wert_4" value="0">

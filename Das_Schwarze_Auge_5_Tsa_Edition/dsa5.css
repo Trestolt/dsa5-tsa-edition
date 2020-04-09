@@ -2291,6 +2291,24 @@ button.sheet-kampf-header {
     grid-template-columns: 0.39fr 0.9fr 0.4fr 1fr;
 }
 
+.sheet-kampf-nah-npc-grid2 {
+    display: var( --display-kampf-nah-npc-grid);
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 3px;
+    border-color: var(--color-border);
+    grid-gap: 5px;
+    /* grid-template-columns: 0.39fr 0.9fr 0.4fr 1fr;*/
+}
+
+.sheet-kampf-nah-npc-grid2>fieldset.repeating_npcnahkampf+.repcontainer>.repitem
+{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
 .sheet-kampf-nah-item1 {
     grid-column: 1 /1;
     grid-row: 1 /1;
@@ -2405,6 +2423,52 @@ button.sheet-kampf-header {
 select.sheet-kampf-nah {
     width: 7em;    
 }
+
+input[type="checkbox"].sheet-npc-nk-cb {
+    z-index: 1;
+    position: relative;
+    top: 5px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    margin: -10px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"].sheet-npc-nk-cb+span::before {
+    content: "(-)";
+    font-weight: bold;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+input[type="checkbox"].sheet-npc-nk-cb:checked+span::before {
+    content: "(+)";
+    font-weight: bold;
+}
+
+div.sheet-npc-nk-anmerkung {
+    display: block;
+}
+
+input[type="checkbox"].sheet-npc-nk-cb:checked~div.sheet-npc-nk-anmerkung{
+    display: none;
+}
+
+
+textarea.sheet-npc-nk-description {
+    width: 89%;
+    height: 18px;
+}
+
+
 
 input[type="checkbox"].sheet-kampf-nah {
     width: 100%;
@@ -3254,6 +3318,8 @@ div.sheet-zauberliste {
     border: none;
    
 }
+
+
 
 .sheet-zauber-filtered {
     /* By default, display no items of a filter box */
