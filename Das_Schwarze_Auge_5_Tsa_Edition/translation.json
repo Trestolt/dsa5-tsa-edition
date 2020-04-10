@@ -680,6 +680,8 @@
  "anzahlaktionen":"Anzahl Aktionen",
  "tp":"TP",
  "at":"AT",
- "angriff":"Angriff"
+ "angriff":"Angriff",
+ "domaene":"Domäne",
+ "anzahl":"Anzahl"
  
 }
