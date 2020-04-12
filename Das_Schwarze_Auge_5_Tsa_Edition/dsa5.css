@@ -36,6 +36,7 @@
     --display-npc-element: none;
     --display-pc-element: inline;
     --display-pc-inline: inline;
+    --display-waffe: grid;
 }
 
 .sheet-toggle_header[value="on"]~* {
@@ -119,6 +120,7 @@
     --display-grundwerte-ke-grid: none;
     --display-grundwerte-ke-grid-header: none;
     --display-pc-inline: none;
+    --display-waffe: none;
 }
 
 
@@ -3594,7 +3596,7 @@ input[type="checkbox"].sheet-glaube-header {
     border: 1px solid;
     border-radius: 3px;
     border-color: var(--color-border);
-    display: grid;
+    display: var(--display-waffe);
    
 }
     
