@@ -5499,7 +5499,9 @@
 								<input type="number" name="attr_zaubermodifikator" value="0">
 								<span class="filter-text"></span>
 								<button type="roll" class="roll1w" value="@{output_option} &{template:DSA-Talente} {{name=@{zaubername}}} {{subtags=^{zauber}}} {{Talent=[[ [[{0d1+@{zauberfw},0d1}kh1]] - {1d20cs1cf20 +[[{0d1 - @{zauberfw} ,0d1}kh1]] - (@{zaubereigenschaft1}+@{zaubermodifikator}+@{magie_mod_gesamt}+@{mod_option}) , 0d1}kh1 - {1d20cs1cf20 + [[{0d1 - @{zauberfW} ,0d1}kh1]] - (@{zauberEigenschaft2}+@{magie_mod_gesamt}+@{zaubermodifikator}+@{mod_option}) , 0d1}kh1- {1d20cs1cf20 + [[{0d1 - @{zauberfW} ,0d1}kh1]] - (@{zaubereigenschaft3}+@{magie_mod_gesamt}+@{zaubermodifikator}+@{mod_option}) , 0d1}kh1]]}}"></button>
+								<span class="filter-text"></span>
 							</div>
+							
 							<span data-i18n="weitere-merkmale" class="margin-right-2">weitere Merkmale</span>
 							<input type="checkbox" class="magie-cb3" name="attr_zauberklappbox3" value="1" checked><span></span>
 							<div class="magie-merkmale">
@@ -5526,6 +5528,13 @@
 									<input class="magie-merkmale-item" type="text" name="attr_zielkategorie">
 									<span class="magie-merkmale-item" data-i18n="zielmodifikator">Zielmodifikator</span>
 									<input class="magie-merkmale-item" type="text" name="attr_zielmodifikator">
+								</div>
+								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="schaden">Schaden</span>
+									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_dice" value="1">
+									<span data-i18n="d6">W6+</span>
+									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_bonus" value="0">
+									<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Magie-TP}}} {{subtags=^{zauber}}} {{damage=[[[[(@{magie_tp_dice})]]d6+@{magie_tp_bonus}+@{mod_option}]]}} {{mod=[[(@{magie_tp_bonus}+@{mod_option})]]}}" />
 								</div>
 								<div class="magie-merkmale-item">
 									<span class="magie-merkmale-item" data-i18n="wirkung">Wirkung</span>
@@ -5784,9 +5793,16 @@
 									<input class="magie-merkmale-item" type="text" name="attr_zielmodifikator">
 								</div>
 								<div class="magie-merkmale-item">
+									<span class="magie-merkmale-item" data-i18n="schaden">Schaden</span>
+									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_dice" value="1"/>
+									<span data-i18n="d6">W6+</span>
+									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_bonus" value="0"/>
+									<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Glaube-TP}}} {{subtags=^{goetterwirken}}} {{damage=[[[[(@{magie_tp_dice})]]d6+@{magie_tp_bonus}+@{mod_option}]]}} {{mod=[[(@{magie_tp_bonus}+@{mod_option})]]}}" />
+								</div>
+								<div class="magie-merkmale-item">
 									<span class="magie-merkmale-item" data-i18n="wirkung">Wirkung</span>
 									<textarea class="magie-merkmale-item" name="attr_wirkung"></textarea>
-								</div>
+								</div>								
 							</div>
 							<span data-i18n="erweiterungen" class="margin-right-2">Erweiterungen</span>
 							<input type="checkbox" class="magie-cb" name="attr_zauberklappbox" value="1" checked><span></span>
@@ -11692,7 +11708,7 @@
 	// Seelenkraft
 	
 	on("sheet:opened change:mut_gesamt change:klugheit_gesamt change:intuition_gesamt change:sk_grundwert change:sk_modifikator", function () {
-		getAttrs(["toogle_npc", "mut_gesamt", "klugheit_gesamt", "intuition_gesamt", "sk_grundwert", "sk_modifikator"], function (values) {
+		getAttrs(["toggle_npc", "mut_gesamt", "klugheit_gesamt", "intuition_gesamt", "sk_grundwert", "sk_modifikator"], function (values) {
 			var toggle_npc = values.toggle_npc;
 			var sk_modifikator = parseInt(values.sk_modifikator) || 0;
 			var sk_grundwert = parseInt(values.sk_grundwert) || -5;

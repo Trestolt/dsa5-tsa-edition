@@ -682,6 +682,8 @@
  "at":"AT",
  "angriff":"Angriff",
  "domaene":"Domäne",
- "anzahl":"Anzahl"
+ "anzahl":"Anzahl",
+ "Magie-TP": "Schaden aus Magie",
+ "Glaube-TP": "Schaden aus Götterwirken"
  
 }
