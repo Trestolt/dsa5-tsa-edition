@@ -306,6 +306,14 @@ input.sheet-hidden {
 }
 
 
+select.sheet-diceselect {
+    width: max-content;
+    min-width: 3em;
+}
+span.sheet-diceselect {
+    margin: 5px;
+}
+
 /* sections */
 
 div.sheet-middle-tab {
@@ -2446,7 +2454,8 @@ button.sheet-kampf-header {
 }
 
 select.sheet-kampf-nah {
-    width: 7em;    
+    width: max-content;
+    min-width: 3em;    
 }
 
 input[type="checkbox"].sheet-npc-nk-cb {

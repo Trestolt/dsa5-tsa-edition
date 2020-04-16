@@ -5591,9 +5591,16 @@
 								<div class="magie-merkmale-item">
 									<span class="magie-merkmale-item" data-i18n="schaden">Schaden</span>
 									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_dice" value="1">
-									<span data-i18n="d6">W6+</span>
+									<select class="magie-merkmale-item diceselect" name="attr_magie_dice_selector" readonly>
+										<option value="d2" data-i18n="d2">W2</option>
+										<option value="d3" data-i18n="d3">W3</option>
+										<option value="d4" data-i18n="d4">W4</option>
+										<option value="d6" data-i18n="d6"selected >W6</option>
+										<option value="d20" data-i18n="d20">W20</option>
+									</select>
+									<span class="diceselect">+</span>
 									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_bonus" value="0">
-									<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Magie-TP}}} {{subtags=^{zauber}}} {{damage=[[[[(@{magie_tp_dice})]]d6+@{magie_tp_bonus}+@{mod_option}]]}} {{mod=[[(@{magie_tp_bonus}+@{mod_option})]]}}" />
+									<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Magie-TP}}} {{subtags=^{zauber}}} {{damage=[[[[(@{magie_tp_dice})]]@{magie_dice_selector}+@{magie_tp_bonus}+@{mod_option}]]}} {{mod=[[(@{magie_tp_bonus}+@{mod_option})]]}}" />
 								</div>
 								<div class="magie-merkmale-item">
 									<span class="magie-merkmale-item" data-i18n="wirkung">Wirkung</span>
@@ -5854,9 +5861,16 @@
 								<div class="magie-merkmale-item">
 									<span class="magie-merkmale-item" data-i18n="schaden">Schaden</span>
 									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_dice" value="1"/>
-									<span data-i18n="d6">W6+</span>
+									<select class="magie-merkmale-item diceselect" name="attr_magie_dice_selector" readonly>
+										<option value="d2" data-i18n="d2">W2</option>
+										<option value="d3" data-i18n="d3">W3</option>
+										<option value="d4" data-i18n="d4">W4</option>
+										<option value="d6" data-i18n="d6"selected >W6</option>
+										<option value="d20" data-i18n="d20">W20</option>
+									</select>
+									<span class="diceselect">+</span>
 									<input class="magie-merkmale-item" type="number" name="attr_magie_tp_bonus" value="0"/>
-									<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Glaube-TP}}} {{subtags=^{goetterwirken}}} {{damage=[[[[(@{magie_tp_dice})]]d6+@{magie_tp_bonus}+@{mod_option}]]}} {{mod=[[(@{magie_tp_bonus}+@{mod_option})]]}}" />
+									<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Glaube-TP}}} {{subtags=^{goetterwirken}}} {{damage=[[[[(@{magie_tp_dice})]]@{magie_dice_selector}+@{magie_tp_bonus}+@{mod_option}]]}} {{mod=[[(@{magie_tp_bonus}+@{mod_option})]]}}" />
 								</div>
 								<div class="magie-merkmale-item">
 									<span class="magie-merkmale-item" data-i18n="wirkung">Wirkung</span>
@@ -7607,11 +7621,18 @@
 
 				<span class="kampf-nah kampf-nah-item3" data-i18n="schaden">Schaden</span>
 				<div class="kampf-nah-item4">
-					<input class="kampf-nah" type="number" name="attr_tp_dice_roll" value="0" readonly />
-					<span class="kampf-nah" data-i18n="d6">W6+</span>
+					<input class="kampf-nah" type="number" name="attr_tp_dice_roll" value="0" readonly/>
+					<select class="diceselect kampf-nah" name="attr_tp_dice_selector" readonly>
+						<option disabled value="d2" data-i18n="d2">W2</option>
+						<option disabled value="d3" data-i18n="d3">W3</option>
+						<option disabled value="d4" data-i18n="d4">W4</option>
+						<option disabled value="d6" data-i18n="d6"selected >W6</option>
+						<option disabled value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="kampf-nah">+</span>
 					<input class="kampf-nah" type="number" name="attr_tp_zusatz_roll" value="0" readonly />
-					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
-					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_dice_roll})]]d6+@{tp_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]@{tp_dice_selector}+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_dice_roll})]]@{tp_dice_selector}+@{tp_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item5" data-i18n="passierschlag">Passierschlag</span>
@@ -7631,10 +7652,17 @@
 				<span class="kampf-nah kampf-nah-item9" data-i18n="schaden">Schaden</span>
 				<div class="kampf-nah-item10">
 					<input class="kampf-nah" type="number" name="attr_tp_nh_dice_roll" value="0" readonly />
-					<span class="kampf-nah" data-i18n="d6">W6+</span>
+					<select class="diceselect kampf-nah" name="attr_tp_nh_dice_selector">
+						<option disabled value="d2" data-i18n="d2">W2</option>
+						<option disabled value="d3" data-i18n="d3">W3</option>
+						<option disabled value="d4" data-i18n="d4">W4</option>
+						<option disabled value="d6" data-i18n="d6"selected >W6</option>
+						<option disabled value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="kampf-nah">+</span>
 					<input class="kampf-nah" type="number" name="attr_tp_nh_zusatz_roll" value="0" readonly />
-					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_nh_dice_roll})]]d6+@{tp_nh_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
-					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_nh_dice_roll})]]d6+@{tp_nh_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_nh_dice_roll})]]@{tp_nh_dice_selector}+@{tp_nh_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_nh_dice_roll})]]@{tp_nh_dice_selector}+@{tp_nh_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item11" data-i18n="parade">Parade</span>
@@ -7742,12 +7770,19 @@
 						    <span class="filter-text"></span>
 							<span data-i18n="tp">TP</span>
 							<input type="number" name="attr_npc_nk_tp_dice" value="1">
-							<span data-i18n="d6">W6+</span>
+							<select class="diceselect" name="attr_npc_tp_dice_select">
+								<option value="d2" data-i18n="d2">W2</option>
+								<option value="d3" data-i18n="d3">W3</option>
+								<option value="d4" data-i18n="d4">W4</option>
+								<option value="d6" data-i18n="d6"selected >W6</option>
+								<option value="d20" data-i18n="d20">W20</option>
+							</select>
+							<span class="diceselect">+</span>
 							<input type="number" name="attr_npc_nk_tp_bonus" value="0">
 							<span class="filter-text"></span>
-							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{npc_nk_tp_dice})]]d6+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod}]]}} {{mod=[[(@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" ></button>
-							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{npc_nk_tp_dice})]]d6+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_effekt_mod}+@{tp_situation_mod}]]}} {{mod=[[(@{mod_option}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" >P</button>
-					        <button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{npc_nk_tp_dice})]]d6+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})*2]]}} {{mod=[[(@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" data-i18n="x2">x2</button>		
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{npc_nk_tp_dice})]]@{npc_tp_dice_select}+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod}]]}} {{mod=[[(@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" ></button>
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{npc_nk_tp_dice})]]@{npc_tp_dice_select}+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_effekt_mod}+@{tp_situation_mod}]]}} {{mod=[[(@{mod_option}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" >P</button>
+					        <button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{npc_nk_tp_dice})]]@{npc_tp_dice_select}+@{npc_nk_tp_bonus}+@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})*2]]}} {{mod=[[(@{mod_option}+@{tp_sf_mod}+@{tp_effekt_mod}+@{tp_situation_mod})]]}}" data-i18n="x2">x2</button>		
 						</div>
 						<span data-i18n="anmerkungen" class="margin-right-2">Anmerkungen</span>
 						<input type="checkbox" class="npc-nk-cb" name="attr_npc_nk_klappbox" value="1" checked><span></span>
@@ -7882,10 +7917,17 @@
 				<span class="kampf-fern kampf-fern-item5" data-i18n="schaden">Schaden</span>
 				<div class="kampf-fern-item6">
 					<input type="number" name="attr_fk_tp_dice_roll" value="0" readonly />
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_fk_tp_dice_selector" >
+						<option disabled value="d2" data-i18n="d2">W2</option>
+						<option disabled value="d3" data-i18n="d3">W3</option>
+						<option disabled value="d4" data-i18n="d4">W4</option>
+						<option disabled value="d6" data-i18n="d6"selected >W6</option>
+						<option disabled value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input type="number" name="attr_fk_tp_zusatz_roll" value="0" readonly />
-					<button class="kampf-fern-cell8 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{fk_tp_dice_roll})]]d6+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option}]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" />
-					<button class="kampf-fern-cell9 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{fk_tp_dice_roll})]]d6+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option})*2]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="kampf-fern-cell8 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{fk_tp_dice_roll})]]@{fk_tp_dice_selector}+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option}]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" />
+					<button class="kampf-fern-cell9 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{fk_tp_dice_roll})]]@{fk_tp_dice_selector}+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option})*2]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 				<span class="kampf-fern kampf-fern-item7" data-i18n="reichweite">Reichweite</span>
 				<input class="kampf-fern kampf-fern-item8" type="text" name="attr_fk_reichweite" readonly>
@@ -7916,11 +7958,18 @@
 							<span class="filter-text"></span>
 							<span data-i18n="tp">TP</span>
 							<input type="number" name="attr_npc_fk_tp_dice" value="1">
-							<span data-i18n="d6">W6+</span>
+							<select class="diceselect" name="attr_npc_fk_tp_selector">
+								<option value="d2" data-i18n="d2">W2</option>
+								<option value="d3" data-i18n="d3">W3</option>
+								<option value="d4" data-i18n="d4">W4</option>
+								<option value="d6" data-i18n="d6"selected >W6</option>
+								<option value="d20" data-i18n="d20">W20</option>
+							</select>
+							<span class="diceselect">+</span>
 							<input type="number" name="attr_npc_fk_tp_bonus" value="0">
 							<span class="filter-text"></span>
-							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{npc_fk_tp_dice})]]d6+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod}]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" ></button>
-							<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{npc_fk_tp_dice})]]d6+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod})*2]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" data-i18n="x2">x2</button>		
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{npc_fk_tp_dice})]]@{npc_fk_tp_selector}+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod}]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" ></button>
+							<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{npc_fk_tp_dice})]]@{npc_fk_tp_selector}+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod})*2]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" data-i18n="x2">x2</button>		
 							<span class="filter-text"></span>
 							<span data-i18n="munition">Munition</span>
 							<input type="text" class="waffe-item" name="attr_npc_munition">
@@ -8150,9 +8199,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_anz_wuerfel_1" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_waffe_tp_wuerfel_1">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_wert_1" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_waffe_tp_bonus_1" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8230,9 +8286,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_anz_wuerfel_2" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_waffe_tp_wuerfel_2">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_wert_2" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_waffe_tp_bonus_2" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8310,9 +8373,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_anz_wuerfel_3" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_waffe_tp_wuerfel_3">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_wert_3" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_waffe_tp_bonus_3" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8390,9 +8460,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_anz_wuerfel_4" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_waffe_tp_wuerfel_4">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_wert_4" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_waffe_tp_bonus_4" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8470,9 +8547,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_anz_wuerfel_5" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_waffe_tp_wuerfel_5">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_waffe_tp_wert_5" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_waffe_tp_bonus_5" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8554,9 +8638,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_1" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_schild_tp_wuerfel_1">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_wert_1" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_1" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8636,9 +8727,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_2" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_schild_tp_wuerfel_2">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_wert_2" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_2" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8718,9 +8816,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_3" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_schild_tp_wuerfel_3">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_wert_3" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_3" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8798,11 +8903,18 @@
 					</select>
 				</div>
 				<div class="waffe-item">
-					<<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
+					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_4" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_schild_tp_wuerfel_4">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_wert_4" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_4" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8882,9 +8994,16 @@
 				<div class="waffe-item">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_anz_wuerfel_5" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_schild_tp_wuerfel_5">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_schild_tp_wert_5" value="0">
-					<span>+</span>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" readonly name="attr_schild_tp_bonus_5" value="0">
 					<span class="filter-text"></span>
 					<span class="waffe-item" data-i18n="leiteigschadensb">Schadensbonus</span>
@@ -8952,7 +9071,14 @@
 					<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_1" value="0">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_1" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_fkwaffe_tp_wuerfel_1">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_1" value="0">
 				</div>
 				<div class="waffe-item">
@@ -9017,7 +9143,14 @@
 					<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_2" value="0">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_2" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_fkwaffe_tp_wuerfel_2">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_2" value="0">
 				</div>
 				<div class="waffe-item">
@@ -9082,7 +9215,14 @@
 					<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_3" value="0">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_3" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_fkwaffe_tp_wuerfel_3">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_3" value="0">
 				</div>
 				<div class="waffe-item">
@@ -9147,7 +9287,14 @@
 					<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_4" value="0">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_4" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_fkwaffe_tp_wuerfel_4">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_4" value="0">
 				</div>
 				<div class="waffe-item">
@@ -9212,7 +9359,14 @@
 					<input class="hidden" type="number" readonly name="attr_fkwaffe_tp_bonus_5" value="0">
 					<span class="waffe-item" data-i18n="trefferpunkte">Trefferpunkte</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_anz_wuerfel_5" value="1">
-					<span data-i18n="d6">W6+</span>
+					<select class="diceselect" name="attr_fkwaffe_tp_wuerfel_5">
+						<option value="d2" data-i18n="d2">W2</option>
+						<option value="d3" data-i18n="d3">W3</option>
+						<option value="d4" data-i18n="d4">W4</option>
+						<option value="d6" data-i18n="d6"selected >W6</option>
+						<option value="d20" data-i18n="d20">W20</option>
+					</select>
+					<span class="diceselect">+</span>
 					<input class="waffe-item" type="number" name="attr_fkwaffe_tp_wert_5" value="0">
 				</div>
 				<div class="waffe-item">
@@ -13779,8 +13933,8 @@
 	
 	
 	
-	on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe change:nh_waffe change:koerperkraft_gesamt change:gewandheit_gesamt change:aw_gesamt change:waffe_typ_1 change:waffe_leiteigenschaft_1 change:waffe_leiteigenschaft_input_1 change:waffe_tp_bonus_1 change:waffe_tp_anz_wuerfel_1 change:waffe_tp_wert_1 change:waffe_at_1 change:waffe_pa_1 change:waffe_tp_mod_1 change:waffe_at_mod_1 change:waffe_pa_mod_1 change:waffe_typ_2 change:waffe_leiteigenschaft_2 change:waffe_leiteigenschaft_input_2 change:waffe_tp_bonus_2 change:waffe_tp_anz_wuerfel_2 change:waffe_tp_wert_2 change:waffe_at_2 change:waffe_pa_2 change:waffe_tp_mod_2 change:waffe_at_mod_2 change:waffe_pa_mod_2 change:waffe_typ_3 change:waffe_leiteigenschaft_3 change:waffe_leiteigenschaft_input_3 change:waffe_tp_bonus_3 change:waffe_tp_anz_wuerfel_3 change:waffe_tp_wert_3 change:waffe_at_3 change:waffe_pa_3 change:waffe_tp_mod_3 change:waffe_at_mod_3 change:waffe_pa_mod_3 change:waffe_typ_4 change:waffe_leiteigenschaft_4 change:waffe_leiteigenschaft_input_4 change:waffe_tp_bonus_4 change:waffe_tp_anz_wuerfel_4 change:waffe_tp_wert_4 change:waffe_at_4 change:waffe_pa_4 change:waffe_tp_mod_4 change:waffe_at_mod_4 change:waffe_pa_mod_4 change:waffe_typ_5 change:waffe_leiteigenschaft_5 change:waffe_leiteigenschaft_input_5 change:waffe_tp_bonus_5 change:waffe_tp_anz_wuerfel_5 change:waffe_tp_wert_5 change:waffe_at_5 change:waffe_pa_5 change:waffe_tp_mod_5 change:waffe_at_mod_5 change:waffe_pa_mod_5 change:at_sf_mod change:pa_sf_mod change:aw_sf_mod change:tp_sf_mod change:at_effekt_mod change:pa_effekt_mod change:aw_effekt_mod change:tp_effekt_mod change:at_situation_mod change:pa_situation_mod change:parade_malus_select change:parade_zweite_mod change:ausweichen_zweite_mod change:beidhand_kampf change:beidhand_kampf_mod change:falsche_hand_mod change:pa_schildpassiv_bonus change:vw_grundwert change:vw_modifikator", function () {
-		getAttrs(["nk_waffe", "nh_waffe", "waffe_typ_1", "waffe_leiteigenschaft_1", "waffe_leiteigenschaft_input_1", "waffe_tp_bonus_1", "waffe_tp_anz_wuerfel_1", "waffe_tp_wert_1", "waffe_at_1", "waffe_pa_1", "waffe_tp_mod_1", "waffe_at_mod_1", "waffe_pa_mod_1", "waffe_typ_2", "waffe_leiteigenschaft_2", "waffe_leiteigenschaft_input_2", "waffe_tp_bonus_2", "waffe_tp_anz_wuerfel_2", "waffe_tp_wert_2", "waffe_at_2", "waffe_pa_2", "waffe_tp_mod_2", "waffe_at_mod_2", "waffe_pa_mod_2", "waffe_typ_3", "waffe_leiteigenschaft_3", "waffe_leiteigenschaft_input_3", "waffe_tp_bonus_3", "waffe_tp_anz_wuerfel_3", "waffe_tp_wert_3", "waffe_at_3", "waffe_pa_3", "waffe_tp_mod_3", "waffe_at_mod_3", "waffe_pa_mod_3", "waffe_typ_4", "waffe_leiteigenschaft_4", "waffe_leiteigenschaft_input_4", "waffe_tp_bonus_4", "waffe_tp_anz_wuerfel_4", "waffe_tp_wert_4", "waffe_at_4", "waffe_pa_4", "waffe_tp_mod_4", "waffe_at_mod_4", "waffe_pa_mod_4", "waffe_typ_5", "waffe_leiteigenschaft_5", "waffe_leiteigenschaft_input_5", "waffe_tp_bonus_5", "waffe_tp_anz_wuerfel_5", "waffe_tp_wert_5", "waffe_at_5", "waffe_pa_5", "waffe_tp_mod_5", "waffe_at_mod_5", "waffe_pa_mod_5", "at_sf_mod", "pa_sf_mod", "aw_sf_mod", "tp_sf_mod", "at_effekt_mod", "pa_effekt_mod", "aw_effekt_mod", "tp_effekt_mod", "at_situation_mod", "pa_situation_mod", "tp_situation_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_dolche", "pa_dolche", "dolche_entrueckung_akt", "at_fechtwaffen", "pa_fechtwaffen", "fechtwaffen_entrueckung_akt", "at_hiebwaffen", "pa_hiebwaffen", "hiebwaffen_entrueckung_akt", "at_kettenwaffen", "kettenwaffen_entrueckung_akt", "at_lanzen", "lanzen_entrueckung_akt", "at_raufen", "pa_raufen", "raufen_entrueckung_akt", "at_schwerter", "pa_schwerter", "schwerter_entrueckung_akt", "at_stangenwaffen", "pa_stangenwaffen", "stangenwaffen_entrueckung_akt", "at_zweihandhiebwaffen", "pa_zweihandhiebwaffen", "zweihandhiebwaffen_entrueckung_akt", "at_zweihandschwerter", "pa_zweihandschwerter", "zweihandhiebwaffen_entrueckung_akt", "at_schilde", "pa_schilde", "schilde_entrueckung_akt", "at_parierwaffe", "pa_parierwaffe", "parierwaffe_entrueckung_akt", "parade_malus_select", "parade_zweite_mod", "ausweichen_zweite_mod", "aw_gesamt", "beidhand_kampf", "beidhand_kampf_mod", "pa_schildpassiv_bonus", "vw_grundwert", "vw_modifikator"], function (values) {
+	on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe change:nh_waffe change:koerperkraft_gesamt change:gewandheit_gesamt change:aw_gesamt change:waffe_typ_1 change:waffe_leiteigenschaft_1 change:waffe_leiteigenschaft_input_1 change:waffe_tp_bonus_1 change:waffe_tp_anz_wuerfel_1 change:waffe_tp_wert_1 change:waffe_at_1 change:waffe_pa_1 change:waffe_tp_mod_1 change:waffe_at_mod_1 change:waffe_pa_mod_1 change:waffe_typ_2 change:waffe_leiteigenschaft_2 change:waffe_leiteigenschaft_input_2 change:waffe_tp_bonus_2 change:waffe_tp_anz_wuerfel_2 change:waffe_tp_wert_2 change:waffe_at_2 change:waffe_pa_2 change:waffe_tp_mod_2 change:waffe_at_mod_2 change:waffe_pa_mod_2 change:waffe_typ_3 change:waffe_leiteigenschaft_3 change:waffe_leiteigenschaft_input_3 change:waffe_tp_bonus_3 change:waffe_tp_anz_wuerfel_3 change:waffe_tp_wert_3 change:waffe_at_3 change:waffe_pa_3 change:waffe_tp_mod_3 change:waffe_at_mod_3 change:waffe_pa_mod_3 change:waffe_typ_4 change:waffe_leiteigenschaft_4 change:waffe_leiteigenschaft_input_4 change:waffe_tp_bonus_4 change:waffe_tp_anz_wuerfel_4 change:waffe_tp_wert_4 change:waffe_at_4 change:waffe_pa_4 change:waffe_tp_mod_4 change:waffe_at_mod_4 change:waffe_pa_mod_4 change:waffe_typ_5 change:waffe_leiteigenschaft_5 change:waffe_leiteigenschaft_input_5 change:waffe_tp_bonus_5 change:waffe_tp_anz_wuerfel_5 change:waffe_tp_wert_5 change:waffe_at_5 change:waffe_pa_5 change:waffe_tp_mod_5 change:waffe_at_mod_5 change:waffe_pa_mod_5 change:at_sf_mod change:pa_sf_mod change:aw_sf_mod change:tp_sf_mod change:at_effekt_mod change:pa_effekt_mod change:aw_effekt_mod change:tp_effekt_mod change:at_situation_mod change:pa_situation_mod change:parade_malus_select change:parade_zweite_mod change:ausweichen_zweite_mod change:beidhand_kampf change:beidhand_kampf_mod change:falsche_hand_mod change:pa_schildpassiv_bonus change:vw_grundwert change:vw_modifikator change:waffe_tp_wuerfel_1 change:waffe_tp_wuerfel_2 change:waffe_tp_wuerfel_3 change:waffe_tp_wuerfel_4 change:waffe_tp_wuerfel_5", function () {
+		getAttrs(["nk_waffe", "nh_waffe", "waffe_typ_1", "waffe_leiteigenschaft_1", "waffe_leiteigenschaft_input_1", "waffe_tp_bonus_1", "waffe_tp_anz_wuerfel_1", "waffe_tp_wert_1", "waffe_at_1", "waffe_pa_1", "waffe_tp_mod_1", "waffe_at_mod_1", "waffe_pa_mod_1", "waffe_typ_2", "waffe_leiteigenschaft_2", "waffe_leiteigenschaft_input_2", "waffe_tp_bonus_2", "waffe_tp_anz_wuerfel_2", "waffe_tp_wert_2", "waffe_at_2", "waffe_pa_2", "waffe_tp_mod_2", "waffe_at_mod_2", "waffe_pa_mod_2", "waffe_typ_3", "waffe_leiteigenschaft_3", "waffe_leiteigenschaft_input_3", "waffe_tp_bonus_3", "waffe_tp_anz_wuerfel_3", "waffe_tp_wert_3", "waffe_at_3", "waffe_pa_3", "waffe_tp_mod_3", "waffe_at_mod_3", "waffe_pa_mod_3", "waffe_typ_4", "waffe_leiteigenschaft_4", "waffe_leiteigenschaft_input_4", "waffe_tp_bonus_4", "waffe_tp_anz_wuerfel_4", "waffe_tp_wert_4", "waffe_at_4", "waffe_pa_4", "waffe_tp_mod_4", "waffe_at_mod_4", "waffe_pa_mod_4", "waffe_typ_5", "waffe_leiteigenschaft_5", "waffe_leiteigenschaft_input_5", "waffe_tp_bonus_5", "waffe_tp_anz_wuerfel_5", "waffe_tp_wert_5", "waffe_at_5", "waffe_pa_5", "waffe_tp_mod_5", "waffe_at_mod_5", "waffe_pa_mod_5", "at_sf_mod", "pa_sf_mod", "aw_sf_mod", "tp_sf_mod", "at_effekt_mod", "pa_effekt_mod", "aw_effekt_mod", "tp_effekt_mod", "at_situation_mod", "pa_situation_mod", "tp_situation_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_dolche", "pa_dolche", "dolche_entrueckung_akt", "at_fechtwaffen", "pa_fechtwaffen", "fechtwaffen_entrueckung_akt", "at_hiebwaffen", "pa_hiebwaffen", "hiebwaffen_entrueckung_akt", "at_kettenwaffen", "kettenwaffen_entrueckung_akt", "at_lanzen", "lanzen_entrueckung_akt", "at_raufen", "pa_raufen", "raufen_entrueckung_akt", "at_schwerter", "pa_schwerter", "schwerter_entrueckung_akt", "at_stangenwaffen", "pa_stangenwaffen", "stangenwaffen_entrueckung_akt", "at_zweihandhiebwaffen", "pa_zweihandhiebwaffen", "zweihandhiebwaffen_entrueckung_akt", "at_zweihandschwerter", "pa_zweihandschwerter", "zweihandhiebwaffen_entrueckung_akt", "at_schilde", "pa_schilde", "schilde_entrueckung_akt", "at_parierwaffe", "pa_parierwaffe", "parierwaffe_entrueckung_akt", "parade_malus_select", "parade_zweite_mod", "ausweichen_zweite_mod", "aw_gesamt", "beidhand_kampf", "beidhand_kampf_mod", "pa_schildpassiv_bonus", "vw_grundwert", "vw_modifikator", "waffe_tp_wuerfel_1", "waffe_tp_wuerfel_2", "waffe_tp_wuerfel_3", "waffe_tp_wuerfel_4", "waffe_tp_wuerfel_5"], function (values) {
 			var nk_waffe = parseInt(values.nk_waffe) || 0;
 			switch (nk_waffe) {
 				case 1:
@@ -13795,6 +13949,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_1) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_1) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_1) || 0;
+					var tp_dice_selector = values.waffe_tp_wuerfel_1;
 					break;
 				case 2:
 					var waffe_typ = values.waffe_typ_2;
@@ -13808,6 +13963,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_2) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_2) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_2) || 0;
+					var tp_dice_selector = values.waffe_tp_wuerfel_2;
 					break;
 				case 3:
 					var waffe_typ = values.waffe_typ_3;
@@ -13821,6 +13977,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_3) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_3) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_3) || 0;
+					var tp_dice_selector = values.waffe_tp_wuerfel_3;
 					break;
 				case 4:
 					var waffe_typ = values.waffe_typ_4;
@@ -13834,6 +13991,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_4) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_4) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_4) || 0;
+					var tp_dice_selector = values.waffe_tp_wuerfel_4;
 					break;
 				case 5:
 					var waffe_typ = values.waffe_typ_5;
@@ -13847,6 +14005,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_5) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_5) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_5) || 0;
+					var tp_dice_selector = values.waffe_tp_wuerfel_5;
 					break;
 				default:
 					break;
@@ -13960,7 +14119,8 @@
 				passierschlag_tp_zusatz_roll: passierschlag_tp_zusatz_roll,
 				kampfstatus_modifier: status_modifier,
 				parade_malus: parade_malus,
-				ausweichen_malus: ausweichen_malus
+				ausweichen_malus: ausweichen_malus,
+				tp_dice_selector: tp_dice_selector
 	
 			});
 		});
@@ -14010,8 +14170,8 @@
 	});
 	
 	
-	on("sheet:opened change:status_gesamt change:ktw_change_flag change:fk_waffe change:gesamt_fk_mod change:gesamt_tp_mod change:fk_ladezeit_mod change:belastung_gesamt change:betaeubung_gesamt change:furcht_gesamt change:paralyse_gesamt change:schmerz_gesamt change:trance_gesamt change:verwirrung_gesamt change:entrueckung_gesamt change:at_armbrueste change:armbrueste_entrueckung_akt change:at_blasrohre change:blasrohre_entrueckung_akt change:at_boegen change:boegen_entrueckung_akt change:at_diskusse change:diskusse_entrueckung_akt change:at_feuerspeien change:feuerspeien_entrueckung_akt change:at_schleudern change:schleudern_entrueckung_akt change:at_wurfwaffen change:wurfwaffen_entrueckung_akt change:fkwaffe_typ_1 change:fkwaffe_tp_anz_wuerfel_1 change:fkwaffe_tp_wert_1 change:fkwaffe_mun_1 change:fkwaffe_ladezeit_1 change:fkwaffe_rw_1 change:fkwaffe_tp_mod_1 change:fkwaffe_fk_mod_1 change:fkwaffe_typ_2 change:fkwaffe_tp_anz_wuerfel_2 change:fkwaffe_tp_wert_2 change:fkwaffe_mun_2 change:fkwaffe_ladezeit_2 change:fkwaffe_rw_2 change:fkwaffe_tp_mod_2 change:fkwaffe_fk_mod_2 change:fkwaffe_typ_3 change:fkwaffe_tp_anz_wuerfel_3 change:fkwaffe_tp_wert_3 change:fkwaffe_mun_3 change:fkwaffe_ladezeit_3 change:fkwaffe_rw_3 change:fkwaffe_tp_mod_3 change:fkwaffe_fk_mod_3 change:fkwaffe_typ_4 change:fkwaffe_tp_anz_wuerfel_4 change:fkwaffe_tp_wert_4 change:fkwaffe_mun_4 change:fkwaffe_ladezeit_4 change:fkwaffe_rw_4 change:fkwaffe_tp_mod_4 change:fkwaffe_fk_mod_4 change:fkwaffe_typ_5 change:fkwaffe_tp_anz_wuerfel_5 change:fkwaffe_tp_wert_5 change:fkwaffe_mun_5 change:fkwaffe_ladezeit_5 change:fkwaffe_rw_5 change:fkwaffe_tp_mod_5 change:fkwaffe_fk_mod_5", function () {
-		getAttrs(["fk_waffe", "gesamt_fk_mod", "gesamt_tp_mod", "fk_ladezeit_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_armbrueste", "armbrueste_entrueckung_akt", "at_blasrohre", "blasrohre_entrueckung_akt", "at_boegen", "boegen_entrueckung_akt", "at_diskusse", "diskusse_entrueckung_akt", "at_feuerspeien", "feuerspeien_entrueckung_akt", "at_schleudern", "schleudern_entrueckung_akt", "at_wurfwaffen", "wurfwaffen_entrueckung_akt", "fkwaffe_typ_1", "fkwaffe_tp_anz_wuerfel_1", "fkwaffe_tp_wert_1", "fkwaffe_mun_1", "fkwaffe_ladezeit_1", "fkwaffe_rw_1", "fkwaffe_tp_mod_1", "fkwaffe_fk_mod_1", "fkwaffe_typ_2", "fkwaffe_tp_anz_wuerfel_2", "fkwaffe_tp_wert_2", "fkwaffe_mun_2", "fkwaffe_ladezeit_2", "fkwaffe_rw_2", "fkwaffe_tp_mod_2", "fkwaffe_fk_mod_2", "fkwaffe_typ_3", "fkwaffe_tp_anz_wuerfel_3", "fkwaffe_tp_wert_3", "fkwaffe_mun_3", "fkwaffe_ladezeit_3", "fkwaffe_rw_3", "fkwaffe_tp_mod_3", "fkwaffe_fk_mod_3", "fkwaffe_typ_4", "fkwaffe_leiteigenschaft_4", "fkwaffe_leiteigenschaft_input_4", "fkwaffe_tp_anz_wuerfel_4", "fkwaffe_tp_wert_4", "fkwaffe_mun_4", "fkwaffe_ladezeit_4", "fkwaffe_rw_4", "fkwaffe_tp_mod_4", "fkwaffe_fk_mod_4", "fkwaffe_typ_5", "fkwaffe_tp_anz_wuerfel_5", "fkwaffe_tp_wert_5", "fkwaffe_mun_5", "fkwaffe_ladezeit_5", "fkwaffe_rw_5", "fkwaffe_tp_mod_5", "fkwaffe_fk_mod_5"], function (values) {
+	on("sheet:opened change:status_gesamt change:ktw_change_flag change:fk_waffe change:gesamt_fk_mod change:gesamt_tp_mod change:fk_ladezeit_mod change:belastung_gesamt change:betaeubung_gesamt change:furcht_gesamt change:paralyse_gesamt change:schmerz_gesamt change:trance_gesamt change:verwirrung_gesamt change:entrueckung_gesamt change:at_armbrueste change:armbrueste_entrueckung_akt change:at_blasrohre change:blasrohre_entrueckung_akt change:at_boegen change:boegen_entrueckung_akt change:at_diskusse change:diskusse_entrueckung_akt change:at_feuerspeien change:feuerspeien_entrueckung_akt change:at_schleudern change:schleudern_entrueckung_akt change:at_wurfwaffen change:wurfwaffen_entrueckung_akt change:fkwaffe_typ_1 change:fkwaffe_tp_anz_wuerfel_1 change:fkwaffe_tp_wert_1 change:fkwaffe_mun_1 change:fkwaffe_ladezeit_1 change:fkwaffe_rw_1 change:fkwaffe_tp_mod_1 change:fkwaffe_fk_mod_1 change:fkwaffe_typ_2 change:fkwaffe_tp_anz_wuerfel_2 change:fkwaffe_tp_wert_2 change:fkwaffe_mun_2 change:fkwaffe_ladezeit_2 change:fkwaffe_rw_2 change:fkwaffe_tp_mod_2 change:fkwaffe_fk_mod_2 change:fkwaffe_typ_3 change:fkwaffe_tp_anz_wuerfel_3 change:fkwaffe_tp_wert_3 change:fkwaffe_mun_3 change:fkwaffe_ladezeit_3 change:fkwaffe_rw_3 change:fkwaffe_tp_mod_3 change:fkwaffe_fk_mod_3 change:fkwaffe_typ_4 change:fkwaffe_tp_anz_wuerfel_4 change:fkwaffe_tp_wert_4 change:fkwaffe_mun_4 change:fkwaffe_ladezeit_4 change:fkwaffe_rw_4 change:fkwaffe_tp_mod_4 change:fkwaffe_fk_mod_4 change:fkwaffe_typ_5 change:fkwaffe_tp_anz_wuerfel_5 change:fkwaffe_tp_wert_5 change:fkwaffe_mun_5 change:fkwaffe_ladezeit_5 change:fkwaffe_rw_5 change:fkwaffe_tp_mod_5 change:fkwaffe_fk_mod_5 change:fkwaffe_tp_wuerfel_1 change:fkwaffe_tp_wuerfel_2 change:fkwaffe_tp_wuerfel_3 change:fkwaffe_tp_wuerfel_4 change:fkwaffe_tp_wuerfel_5", function () {
+		getAttrs(["fk_waffe", "gesamt_fk_mod", "gesamt_tp_mod", "fk_ladezeit_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_armbrueste", "armbrueste_entrueckung_akt", "at_blasrohre", "blasrohre_entrueckung_akt", "at_boegen", "boegen_entrueckung_akt", "at_diskusse", "diskusse_entrueckung_akt", "at_feuerspeien", "feuerspeien_entrueckung_akt", "at_schleudern", "schleudern_entrueckung_akt", "at_wurfwaffen", "wurfwaffen_entrueckung_akt", "fkwaffe_typ_1", "fkwaffe_tp_anz_wuerfel_1", "fkwaffe_tp_wert_1", "fkwaffe_mun_1", "fkwaffe_ladezeit_1", "fkwaffe_rw_1", "fkwaffe_tp_mod_1", "fkwaffe_fk_mod_1", "fkwaffe_typ_2", "fkwaffe_tp_anz_wuerfel_2", "fkwaffe_tp_wert_2", "fkwaffe_mun_2", "fkwaffe_ladezeit_2", "fkwaffe_rw_2", "fkwaffe_tp_mod_2", "fkwaffe_fk_mod_2", "fkwaffe_typ_3", "fkwaffe_tp_anz_wuerfel_3", "fkwaffe_tp_wert_3", "fkwaffe_mun_3", "fkwaffe_ladezeit_3", "fkwaffe_rw_3", "fkwaffe_tp_mod_3", "fkwaffe_fk_mod_3", "fkwaffe_typ_4", "fkwaffe_leiteigenschaft_4", "fkwaffe_leiteigenschaft_input_4", "fkwaffe_tp_anz_wuerfel_4", "fkwaffe_tp_wert_4", "fkwaffe_mun_4", "fkwaffe_ladezeit_4", "fkwaffe_rw_4", "fkwaffe_tp_mod_4", "fkwaffe_fk_mod_4", "fkwaffe_typ_5", "fkwaffe_tp_anz_wuerfel_5", "fkwaffe_tp_wert_5", "fkwaffe_mun_5", "fkwaffe_ladezeit_5", "fkwaffe_rw_5", "fkwaffe_tp_mod_5", "fkwaffe_fk_mod_5", "fkwaffe_tp_wuerfel_1", "fkwaffe_tp_wuerfel_2", "fkwaffe_tp_wuerfel_3", "fkwaffe_tp_wuerfel_4", "fkwaffe_tp_wuerfel_5"], function (values) {
 			var fk_waffe = parseInt(values.fk_waffe) || 0;
 			var belastung_gesamt = parseInt(values.belastung_gesamt) || 0;
 			var betaeubung_gesamt = parseInt(values.betaeubung_gesamt) || 0;
@@ -14031,6 +14191,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_1;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_1) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_1) || 0;
+					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_1;
 					break;
 				case 2:
 					var fkwaffe_typ = values.fkwaffe_typ_2;
@@ -14041,6 +14202,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_2;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_2) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_2) || 0;
+					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_2;
 					break;
 				case 3:
 					var fkwaffe_typ = values.fkwaffe_typ_3;
@@ -14051,6 +14213,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_3;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_3) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_3) || 0;
+					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_3;
 					break;
 				case 4:
 					var fkwaffe_typ = values.fkwaffe_typ_4;
@@ -14061,6 +14224,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_4;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_4) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_4) || 0;
+					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_4;
 					break;
 				case 5:
 					var fkwaffe_typ = values.fkwaffe_typ_5;
@@ -14071,6 +14235,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_5;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_5) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_5) || 0;
+					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_1;
 					break;
 				default:
 					var fkwaffe_typ = '';
@@ -14081,6 +14246,7 @@
 					var fkwaffe_rw = '';
 					var fkwaffe_tp_mod = 0;
 					var fkwaffe_fk_mod = 0;
+					var fk_tp_dice_selector = 'd6';
 					break;
 			};
 			switch (fkwaffe_typ) {
@@ -14131,7 +14297,8 @@
 				fk_tp_dice_roll: fk_tp_dice_roll,
 				fk_tp_zusatz_roll: fk_tp_zusatz_roll,
 				fk_reichweite: fk_reichweite,
-				fk_ladezeit: fk_ladezeit
+				fk_ladezeit: fk_ladezeit,
+				fk_tp_dice_selector: fk_tp_dice_selector
 			});
 		});
 	});
@@ -14237,8 +14404,8 @@
 	
 	
 	
-	on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe change:nh_waffe change:koerperkraft_gesamt change:gewandheit_gesamt change:aw_gesamt change:schild_typ_1 change:schild_leiteigenschaft_1 change:schild_leiteigenschaft_input_1 change:schild_tp_bonus_1 change:schild_tp_anz_wuerfel_1 change:schild_tp_wert_1 change:schild_at_1 change:schild_pa_1 change:schild_tp_mod_1 change:schild_at_mod_1 change:schild_pa_mod_1 change:schild_typ_2 change:schild_leiteigenschaft_2                                change:schild_leiteigenschaft_input_2 change:schild_tp_bonus_2 change:schild_tp_anz_wuerfel_2 change:schild_tp_wert_2 change:schild_at_2 change:schild_pa_2 change:schild_tp_mod_2 change:schild_at_mod_2 change:schild_pa_mod_2                                change:schild_typ_3 change:schild_leiteigenschaft_3 change:schild_leiteigenschaft_input_3 change:schild_tp_bonus_3 change:schild_tp_anz_wuerfel_3 change:schild_tp_wert_3 change:schild_at_3 change:schild_pa_3 change:schild_tp_mod_3                                change:schild_at_mod_3 change:schild_pa_mod_3 change:schild_typ_4 change:schild_leiteigenschaft_4 change:schild_leiteigenschaft_input_4 change:schild_tp_bonus_4 change:schild_tp_anz_wuerfel_4 change:schild_tp_wert_4 change:schild_at_4 change:schild_pa_4 change:schild_tp_mod_4 change:schild_at_mod_4 change:schild_pa_mod_4 change:schild_typ_5 change:schild_leiteigenschaft_5change: schild_leiteigenschaft_input_5 change:schild_tp_bonus_5 change:schild_tp_anz_wuerfel_5 change:schild_tp_wert_5 change:schild_at_5 change:schild_pa_5 change:schild_tp_mod_5 change:schild_at_mod_5 change:schild_pa_mod_5 change:at_sf_mod change:pa_sf_mod change:aw_sf_mod change:tp_sf_mod change:at_effekt_mod change:pa_effekt_mod change:aw_effekt_mod change:tp_effekt_mod change:at_situation_mod change:pa_situation_mod change:parade_malus_select change:parade_zweite_mod change:ausweichen_zweite_mod change:beidhand_kampf change:beidhand_kampf_mod change:falsche_hand_mod", function () {
-		getAttrs(["nk_waffe", "nh_waffe", "schild_typ_1", "schild_leiteigenschaft_1", "schild_leiteigenschaft_input_1", "schild_tp_bonus_1", "schild_tp_anz_wuerfel_1", "schild_tp_wert_1", "schild_at_1", "schild_pa_1", "schild_tp_mod_1", "schild_at_mod_1", "schild_pa_mod_1", "schild_typ_2", "schild_leiteigenschaft_2", "schild_leiteigenschaft_input_2", "schild_tp_bonus_2", "schild_tp_anz_wuerfel_2", "schild_tp_wert_2", "schild_at_2", "schild_pa_2", "schild_tp_mod_2", "schild_at_mod_2", "schild_pa_mod_2", "schild_typ_3", "schild_leiteigenschaft_3", "schild_leiteigenschaft_input_3", "schild_tp_bonus_3", "schild_tp_anz_wuerfel_3", "schild_tp_wert_3", "schild_at_3", "schild_pa_3", "schild_tp_mod_3", "schild_at_mod_3", "schild_pa_mod_3", "schild_typ_4", "schild_leiteigenschaft_4", "schild_leiteigenschaft_input_4", "schild_tp_bonus_4", "schild_tp_anz_wuerfel_4", "schild_tp_wert_4", "schild_at_4", "schild_pa_4", "schild_tp_mod_4", "schild_at_mod_4", "schild_pa_mod_4", "schild_typ_5", "schild_leiteigenschaft_5", "schild_leiteigenschaft_input_5", "schild_tp_bonus_5", "schild_tp_anz_wuerfel_5", "schild_tp_wert_5", "schild_at_5", "schild_pa_5", "schild_tp_mod_5", "schild_at_mod_5", "schild_pa_mod_5", "at_sf_mod", "pa_sf_mod", "aw_sf_mod", "tp_sf_mod", "at_effekt_mod", "pa_effekt_mod", "aw_effekt_mod", "tp_effekt_mod", "at_situation_mod", "pa_situation_mod", "tp_situation_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_dolche", "pa_dolche", "dolche_entrueckung_akt", "at_fechtwaffen", "pa_fechtwaffen", "fechtwaffen_entrueckung_akt", "at_hiebwaffen", "pa_hiebwaffen", "hiebwaffen_entrueckung_akt", "at_kettenwaffen", "kettenwaffen_entrueckung_akt", "at_lanzen", "lanzen_entrueckung_akt", "at_raufen", "pa_raufen", "raufen_entrueckung_akt", "at_schwerter", "pa_schwerter", "schwerter_entrueckung_akt", "at_stangenwaffen", "pa_stangenwaffen", "stangenwaffen_entrueckung_akt", "at_zweihandhiebwaffen", "pa_zweihandhiebwaffen", "zweihandhiebwaffen_entrueckung_akt", "at_zweihandschwerter", "pa_zweihandschwerter", "zweihandhiebwaffen_entrueckung_akt", "at_schilde", "pa_schilde", "schilde_entrueckung_akt", "at_parierwaffe", "pa_parierwaffe", "parierwaffe_entrueckung_akt", "parade_malus_select", "parade_zweite_mod", "ausweichen_zweite_mod", "aw_gesamt", "beidhand_kampf", "beidhand_kampf_mod", "falsche_hand_mod"], function (values) {
+	on("sheet:opened change:status_gesamt change:ktw_change_flag change:nk_waffe change:nh_waffe change:koerperkraft_gesamt change:gewandheit_gesamt change:aw_gesamt change:schild_typ_1 change:schild_leiteigenschaft_1 change:schild_leiteigenschaft_input_1 change:schild_tp_bonus_1 change:schild_tp_anz_wuerfel_1 change:schild_tp_wert_1 change:schild_at_1 change:schild_pa_1 change:schild_tp_mod_1 change:schild_at_mod_1 change:schild_pa_mod_1 change:schild_typ_2 change:schild_leiteigenschaft_2                                change:schild_leiteigenschaft_input_2 change:schild_tp_bonus_2 change:schild_tp_anz_wuerfel_2 change:schild_tp_wert_2 change:schild_at_2 change:schild_pa_2 change:schild_tp_mod_2 change:schild_at_mod_2 change:schild_pa_mod_2                                change:schild_typ_3 change:schild_leiteigenschaft_3 change:schild_leiteigenschaft_input_3 change:schild_tp_bonus_3 change:schild_tp_anz_wuerfel_3 change:schild_tp_wert_3 change:schild_at_3 change:schild_pa_3 change:schild_tp_mod_3                                change:schild_at_mod_3 change:schild_pa_mod_3 change:schild_typ_4 change:schild_leiteigenschaft_4 change:schild_leiteigenschaft_input_4 change:schild_tp_bonus_4 change:schild_tp_anz_wuerfel_4 change:schild_tp_wert_4 change:schild_at_4 change:schild_pa_4 change:schild_tp_mod_4 change:schild_at_mod_4 change:schild_pa_mod_4 change:schild_typ_5 change:schild_leiteigenschaft_5change: schild_leiteigenschaft_input_5 change:schild_tp_bonus_5 change:schild_tp_anz_wuerfel_5 change:schild_tp_wert_5 change:schild_at_5 change:schild_pa_5 change:schild_tp_mod_5 change:schild_at_mod_5 change:schild_pa_mod_5 change:at_sf_mod change:pa_sf_mod change:aw_sf_mod change:tp_sf_mod change:at_effekt_mod change:pa_effekt_mod change:aw_effekt_mod change:tp_effekt_mod change:at_situation_mod change:pa_situation_mod change:parade_malus_select change:parade_zweite_mod change:ausweichen_zweite_mod change:beidhand_kampf change:beidhand_kampf_mod change:falsche_hand_mod change:schild_tp_wuerfel_1 change:schild_tp_wuerfel_2 change:schild_tp_wuerfel_3 change:schild_tp_wuerfel_4 change:schild_tp_wuerfel_5", function () {
+		getAttrs(["nk_waffe", "nh_waffe", "schild_typ_1", "schild_leiteigenschaft_1", "schild_leiteigenschaft_input_1", "schild_tp_bonus_1", "schild_tp_anz_wuerfel_1", "schild_tp_wert_1", "schild_at_1", "schild_pa_1", "schild_tp_mod_1", "schild_at_mod_1", "schild_pa_mod_1", "schild_typ_2", "schild_leiteigenschaft_2", "schild_leiteigenschaft_input_2", "schild_tp_bonus_2", "schild_tp_anz_wuerfel_2", "schild_tp_wert_2", "schild_at_2", "schild_pa_2", "schild_tp_mod_2", "schild_at_mod_2", "schild_pa_mod_2", "schild_typ_3", "schild_leiteigenschaft_3", "schild_leiteigenschaft_input_3", "schild_tp_bonus_3", "schild_tp_anz_wuerfel_3", "schild_tp_wert_3", "schild_at_3", "schild_pa_3", "schild_tp_mod_3", "schild_at_mod_3", "schild_pa_mod_3", "schild_typ_4", "schild_leiteigenschaft_4", "schild_leiteigenschaft_input_4", "schild_tp_bonus_4", "schild_tp_anz_wuerfel_4", "schild_tp_wert_4", "schild_at_4", "schild_pa_4", "schild_tp_mod_4", "schild_at_mod_4", "schild_pa_mod_4", "schild_typ_5", "schild_leiteigenschaft_5", "schild_leiteigenschaft_input_5", "schild_tp_bonus_5", "schild_tp_anz_wuerfel_5", "schild_tp_wert_5", "schild_at_5", "schild_pa_5", "schild_tp_mod_5", "schild_at_mod_5", "schild_pa_mod_5", "at_sf_mod", "pa_sf_mod", "aw_sf_mod", "tp_sf_mod", "at_effekt_mod", "pa_effekt_mod", "aw_effekt_mod", "tp_effekt_mod", "at_situation_mod", "pa_situation_mod", "tp_situation_mod", "belastung_gesamt", "betaeubung_gesamt", "furcht_gesamt", "paralyse_gesamt", "schmerz_gesamt", "trance_gesamt", "verwirrung_gesamt", "entrueckung_gesamt", "at_dolche", "pa_dolche", "dolche_entrueckung_akt", "at_fechtwaffen", "pa_fechtwaffen", "fechtwaffen_entrueckung_akt", "at_hiebwaffen", "pa_hiebwaffen", "hiebwaffen_entrueckung_akt", "at_kettenwaffen", "kettenwaffen_entrueckung_akt", "at_lanzen", "lanzen_entrueckung_akt", "at_raufen", "pa_raufen", "raufen_entrueckung_akt", "at_schwerter", "pa_schwerter", "schwerter_entrueckung_akt", "at_stangenwaffen", "pa_stangenwaffen", "stangenwaffen_entrueckung_akt", "at_zweihandhiebwaffen", "pa_zweihandhiebwaffen", "zweihandhiebwaffen_entrueckung_akt", "at_zweihandschwerter", "pa_zweihandschwerter", "zweihandhiebwaffen_entrueckung_akt", "at_schilde", "pa_schilde", "schilde_entrueckung_akt", "at_parierwaffe", "pa_parierwaffe", "parierwaffe_entrueckung_akt", "parade_malus_select", "parade_zweite_mod", "ausweichen_zweite_mod", "aw_gesamt", "beidhand_kampf", "beidhand_kampf_mod", "falsche_hand_mod","schild_tp_wuerfel_1", "schild_tp_wuerfel_2", "schild_tp_wuerfel_3", "schild_tp_wuerfel_4", "schild_tp_wuerfel_5"], function (values) {
 	
 			var nh_waffe = parseInt(values.nh_waffe) || 0;
 			switch (nh_waffe) {
@@ -14254,6 +14421,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_1) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_1) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_1) || 0;
+					var tp_nh_dice_selector = values.schild_tp_wuerfel_1;
 					break;
 				case 2:
 					var schild_typ = values.schild_typ_2;
@@ -14267,6 +14435,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_2) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_2) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_2) || 0;
+					var tp_nh_dice_selector = values.schild_tp_wuerfel_2;
 					break;
 				case 3:
 					var schild_typ = values.schild_typ_3;
@@ -14280,6 +14449,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_3) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_3) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_3) || 0;
+					var tp_nh_dice_selector = values.schild_tp_wuerfel_3;
 					break;
 				case 4:
 					var schild_typ = values.schild_typ_4;
@@ -14293,6 +14463,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_4) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_4) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_4) || 0;
+					var tp_nh_dice_selector = values.schild_tp_wuerfel_4;
 					break;
 				case 5:
 					var schild_typ = values.schild_typ_5;
@@ -14306,6 +14477,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_5) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_5) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_5) || 0;
+					var tp_nh_dice_selector = values.schild_tp_wuerfel_5;
 					break;
 				default:
 					break;
@@ -14414,7 +14586,8 @@
 				pa_nh_roll: pa_nh_roll,
 				tp_nh_dice_roll: tp_nh_dice_roll,
 				tp_nh_zusatz_roll: tp_nh_zusatz_roll,
-				pa_schildpassiv_bonus: pa_schildpassiv_bonus
+				pa_schildpassiv_bonus: pa_schildpassiv_bonus,
+				tp_nh_dice_selector: tp_nh_dice_selector
 			});
 		});
 	});
