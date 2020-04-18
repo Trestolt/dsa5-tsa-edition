@@ -1784,7 +1784,7 @@ input[type="checkbox"].sheet-show_status_mod~* {
     --status_visibility: visible;
     --anmerkung_display: none;
     --anmerkung_visibility: hidden;
-    --talent-grid-template: 20fr repeat(3, 3em) 2em 4em repeat(2, 3em) repeat(3, 4em)  repeat(7, 1em) 5em 1em 1fr; 
+    --talent-grid-template: 20fr repeat(3, 3em) 2em 4em repeat(2, 3em) repeat(3, 4em)  repeat(8, 1em) 5em 1em 1fr; 
     
 }
 
@@ -2009,10 +2009,16 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
     visibility: var(--status_visibility);
 }
 
+.sheet-talent-cb8 {
+    grid-column: 20 /20;
+    display: var(--status_display);
+    visibility: var(--status_visibility);
+}
+
 .sheet-talent-select1 {
     width: 75%;
     height: 75%;
-    grid-column: 20 /20;
+    grid-column: 21 /21;
     display: var(--status_display);
     visibility: var(--status_visibility);
 }
@@ -2020,7 +2026,7 @@ input[type="checkbox"].sheet-show_status_mod:checked~* {
 .sheet-talent-mod {
     display: none;
     width: 1em;
-    grid-column: 21 /21;
+    grid-column: 22 /22;
     
 }
 
