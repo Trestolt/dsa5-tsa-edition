@@ -1479,7 +1479,6 @@
 			<h2 data-i18n="talente">Talente</h2>
 			<span class="filter-text" data-i18n="switch_description_status">Anzeige umschalten</span>
 			<input type="checkbox" name="attr_show_status_mod" class="show_status_mod" value="1" checked />
-
 			<h3 data-i18n="koerpertalente">Koerpertalente</h3>
 			<div class="talent-grid-over" data-i18n-list="koerpertalente-liste">
 
@@ -3458,9 +3457,8 @@
 				</div>
 			</div>
 
-			<h3 data-i18n="wissenstalente">Wissenstalente</h3>
+			<h3 data-i18n="wissenstalente">Wissenstalente</h3>	
 			<div class="talent-grid-over" data-i18n-list="wissenstalente-liste">
-
 
 				<div class="talent-grid-row">
 					<span class="talent talent-header1" data-i18n="talent">Talent</span>
@@ -7702,7 +7700,7 @@
 				<span class="kampf-nah kampf-nah-item3" data-i18n="schaden">Schaden</span>
 				<div class="kampf-nah-item4">
 					<input class="kampf-nah" type="number" name="attr_tp_dice_roll" value="0" readonly/>
-					<select class="diceselect kampf-nah" name="attr_tp_dice_selector" readonly>
+					<select class="diceselect kampf-nah" name="attr_nk_tp_dice_select" readonly>
 						<option disabled value="d2" data-i18n="d2">W2</option>
 						<option disabled value="d3" data-i18n="d3">W3</option>
 						<option disabled value="d4" data-i18n="d4">W4</option>
@@ -7711,8 +7709,8 @@
 					</select>
 					<span class="kampf-nah">+</span>
 					<input class="kampf-nah" type="number" name="attr_tp_zusatz_roll" value="0" readonly />
-					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]@{tp_dice_selector}+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
-					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_dice_roll})]]@{tp_dice_selector}+@{tp_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_dice_roll})]]@{nk_tp_dice_select}+@{tp_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_dice_roll})]]@{nk_tp_dice_select}+@{tp_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item5" data-i18n="passierschlag">Passierschlag</span>
@@ -7732,7 +7730,7 @@
 				<span class="kampf-nah kampf-nah-item9" data-i18n="schaden">Schaden</span>
 				<div class="kampf-nah-item10">
 					<input class="kampf-nah" type="number" name="attr_tp_nh_dice_roll" value="0" readonly />
-					<select class="diceselect kampf-nah" name="attr_tp_nh_dice_selector">
+					<select class="diceselect kampf-nah" name="attr_nh_tp_dice_select">
 						<option disabled value="d2" data-i18n="d2">W2</option>
 						<option disabled value="d3" data-i18n="d3">W3</option>
 						<option disabled value="d4" data-i18n="d4">W4</option>
@@ -7741,8 +7739,8 @@
 					</select>
 					<span class="kampf-nah">+</span>
 					<input class="kampf-nah" type="number" name="attr_tp_nh_zusatz_roll" value="0" readonly />
-					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_nh_dice_roll})]]@{tp_nh_dice_selector}+@{tp_nh_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
-					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_nh_dice_roll})]]@{tp_nh_dice_selector}+@{tp_nh_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf}}} {{damage=[[[[(@{tp_nh_dice_roll})]]@{nh_tp_dice_select}+@{tp_nh_zusatz_roll}+@{mod_option}]]}} {{mod=[[(@{mod_option})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Nahkampf-TP}}} {{subtags=^{nahkampf_doppelt}}} {{damage=[[([[(@{tp_nh_dice_roll})]]@{nh_tp_dice_select}+@{tp_nh_zusatz_roll}+@{mod_option})*2]]}} {{mod=[[(@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 
 				<span class="kampf-nah kampf-nah-item11" data-i18n="parade">Parade</span>
@@ -7997,7 +7995,7 @@
 				<span class="kampf-fern kampf-fern-item5" data-i18n="schaden">Schaden</span>
 				<div class="kampf-fern-item6">
 					<input type="number" name="attr_fk_tp_dice_roll" value="0" readonly />
-					<select class="diceselect" name="attr_fk_tp_dice_selector" >
+					<select class="diceselect" name="attr_fk_tp_dice_select" >
 						<option disabled value="d2" data-i18n="d2">W2</option>
 						<option disabled value="d3" data-i18n="d3">W3</option>
 						<option disabled value="d4" data-i18n="d4">W4</option>
@@ -8006,8 +8004,8 @@
 					</select>
 					<span class="diceselect">+</span>
 					<input type="number" name="attr_fk_tp_zusatz_roll" value="0" readonly />
-					<button class="kampf-fern-cell8 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{fk_tp_dice_roll})]]@{fk_tp_dice_selector}+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option}]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" />
-					<button class="kampf-fern-cell9 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{fk_tp_dice_roll})]]@{fk_tp_dice_selector}+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option})*2]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" data-i18n="x2">x2</button>
+					<button class="kampf-fern-cell8 roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{fk_tp_dice_roll})]]@{fk_tp_dice_select}+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option}]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" />
+					<button class="kampf-fern-cell9 roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{fk_tp_dice_roll})]]@{fk_tp_dice_select}+@{fk_tp_zusatz_roll}+@{gesamt_tp_mod}+@{mod_option})*2]]}} {{mod=[[(@{gesamt_tp_mod}+@{mod_option})]]}}" data-i18n="x2">x2</button>
 				</div>
 				<span class="kampf-fern kampf-fern-item7" data-i18n="reichweite">Reichweite</span>
 				<input class="kampf-fern kampf-fern-item8" type="text" name="attr_fk_reichweite" readonly>
@@ -8038,7 +8036,7 @@
 							<span class="filter-text"></span>
 							<span data-i18n="tp">TP</span>
 							<input type="number" name="attr_npc_fk_tp_dice" value="1">
-							<select class="diceselect" name="attr_npc_fk_tp_selector">
+							<select class="diceselect" name="attr_npc_fk_tp_dice_select">
 								<option value="d2" data-i18n="d2">W2</option>
 								<option value="d3" data-i18n="d3">W3</option>
 								<option value="d4" data-i18n="d4">W4</option>
@@ -8048,8 +8046,8 @@
 							<span class="diceselect">+</span>
 							<input type="number" name="attr_npc_fk_tp_bonus" value="0">
 							<span class="filter-text"></span>
-							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{npc_fk_tp_dice})]]@{npc_fk_tp_selector}+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod}]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" ></button>
-							<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{npc_fk_tp_dice})]]@{npc_fk_tp_selector}+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod})*2]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" data-i18n="x2">x2</button>		
+							<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf}}} {{damage=[[[[(@{npc_fk_tp_dice})]]@{npc_fk_tp_dice_select}+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod}]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" ></button>
+							<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-TP} {{name=^{Fernkampf-TP}}} {{subtags=^{fernkampf_doppelt}}} {{damage=[[([[(@{npc_fk_tp_dice})]]@{npc_fk_tp_dice_select}+@{npc_fk_tp_bonus}+@{mod_option}+@{gesamt_tp_mod})*2]]}} {{mod=[[(@{mod_option}+@{gesamt_tp_mod})]]}}" data-i18n="x2">x2</button>		
 							<span class="filter-text"></span>
 							<span data-i18n="munition">Munition</span>
 							<input type="text" class="waffe-item" name="attr_npc_munition">
@@ -14089,7 +14087,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_1) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_1) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_1) || 0;
-					var tp_dice_selector = values.waffe_tp_wuerfel_1;
+					var nk_tp_dice_select = values.waffe_tp_wuerfel_1;
 					break;
 				case 2:
 					var waffe_typ = values.waffe_typ_2;
@@ -14103,7 +14101,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_2) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_2) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_2) || 0;
-					var tp_dice_selector = values.waffe_tp_wuerfel_2;
+					var nk_tp_dice_select = values.waffe_tp_wuerfel_2;
 					break;
 				case 3:
 					var waffe_typ = values.waffe_typ_3;
@@ -14117,7 +14115,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_3) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_3) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_3) || 0;
-					var tp_dice_selector = values.waffe_tp_wuerfel_3;
+					var nk_tp_dice_select = values.waffe_tp_wuerfel_3;
 					break;
 				case 4:
 					var waffe_typ = values.waffe_typ_4;
@@ -14131,7 +14129,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_4) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_4) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_4) || 0;
-					var tp_dice_selector = values.waffe_tp_wuerfel_4;
+					var nk_tp_dice_select = values.waffe_tp_wuerfel_4;
 					break;
 				case 5:
 					var waffe_typ = values.waffe_typ_5;
@@ -14145,7 +14143,7 @@
 					var waffe_tp_mod = parseInt(values.waffe_tp_mod_5) || 0;
 					var waffe_at_mod = parseInt(values.waffe_at_mod_5) || 0;
 					var waffe_pa_mod = parseInt(values.waffe_pa_mod_5) || 0;
-					var tp_dice_selector = values.waffe_tp_wuerfel_5;
+					var nk_tp_dice_select = values.waffe_tp_wuerfel_5;
 					break;
 				default:
 					break;
@@ -14260,7 +14258,7 @@
 				kampfstatus_modifier: status_modifier,
 				parade_malus: parade_malus,
 				ausweichen_malus: ausweichen_malus,
-				tp_dice_selector: tp_dice_selector
+				nk_tp_dice_select: nk_tp_dice_select
 	
 			});
 		});
@@ -14331,7 +14329,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_1;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_1) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_1) || 0;
-					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_1;
+					var fk_tp_dice_select = values.fkwaffe_tp_wuerfel_1;
 					break;
 				case 2:
 					var fkwaffe_typ = values.fkwaffe_typ_2;
@@ -14342,7 +14340,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_2;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_2) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_2) || 0;
-					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_2;
+					var fk_tp_dice_select = values.fkwaffe_tp_wuerfel_2;
 					break;
 				case 3:
 					var fkwaffe_typ = values.fkwaffe_typ_3;
@@ -14353,7 +14351,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_3;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_3) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_3) || 0;
-					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_3;
+					var fk_tp_dice_select = values.fkwaffe_tp_wuerfel_3;
 					break;
 				case 4:
 					var fkwaffe_typ = values.fkwaffe_typ_4;
@@ -14364,7 +14362,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_4;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_4) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_4) || 0;
-					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_4;
+					var fk_tp_dice_select = values.fkwaffe_tp_wuerfel_4;
 					break;
 				case 5:
 					var fkwaffe_typ = values.fkwaffe_typ_5;
@@ -14375,7 +14373,7 @@
 					var fkwaffe_rw = values.fkwaffe_rw_5;
 					var fkwaffe_tp_mod = parseInt(values.fkwaffe_tp_mod_5) || 0;
 					var fkwaffe_fk_mod = parseInt(values.fkwaffe_fk_mod_5) || 0;
-					var fk_tp_dice_selector = values.fkwaffe_tp_wuerfel_1;
+					var fk_tp_dice_select = values.fkwaffe_tp_wuerfel_1;
 					break;
 				default:
 					var fkwaffe_typ = '';
@@ -14386,7 +14384,7 @@
 					var fkwaffe_rw = '';
 					var fkwaffe_tp_mod = 0;
 					var fkwaffe_fk_mod = 0;
-					var fk_tp_dice_selector = 'd6';
+					var fk_tp_dice_select = 'd6';
 					break;
 			};
 			switch (fkwaffe_typ) {
@@ -14438,7 +14436,7 @@
 				fk_tp_zusatz_roll: fk_tp_zusatz_roll,
 				fk_reichweite: fk_reichweite,
 				fk_ladezeit: fk_ladezeit,
-				fk_tp_dice_selector: fk_tp_dice_selector
+				fk_tp_dice_select: fk_tp_dice_select
 			});
 		});
 	});
@@ -14561,7 +14559,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_1) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_1) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_1) || 0;
-					var tp_nh_dice_selector = values.schild_tp_wuerfel_1;
+					var nh_tp_dice_select = values.schild_tp_wuerfel_1;
 					break;
 				case 2:
 					var schild_typ = values.schild_typ_2;
@@ -14575,7 +14573,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_2) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_2) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_2) || 0;
-					var tp_nh_dice_selector = values.schild_tp_wuerfel_2;
+					var nh_tp_dice_select = values.schild_tp_wuerfel_2;
 					break;
 				case 3:
 					var schild_typ = values.schild_typ_3;
@@ -14589,7 +14587,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_3) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_3) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_3) || 0;
-					var tp_nh_dice_selector = values.schild_tp_wuerfel_3;
+					var nh_tp_dice_select = values.schild_tp_wuerfel_3;
 					break;
 				case 4:
 					var schild_typ = values.schild_typ_4;
@@ -14603,7 +14601,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_4) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_4) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_4) || 0;
-					var tp_nh_dice_selector = values.schild_tp_wuerfel_4;
+					var nh_tp_dice_select = values.schild_tp_wuerfel_4;
 					break;
 				case 5:
 					var schild_typ = values.schild_typ_5;
@@ -14617,7 +14615,7 @@
 					var schild_tp_mod = parseInt(values.schild_tp_mod_5) || 0;
 					var schild_at_mod = parseInt(values.schild_at_mod_5) || 0;
 					var schild_pa_mod = parseInt(values.schild_pa_mod_5) || 0;
-					var tp_nh_dice_selector = values.schild_tp_wuerfel_5;
+					var nh_tp_dice_select = values.schild_tp_wuerfel_5;
 					break;
 				default:
 					break;
@@ -14727,7 +14725,7 @@
 				tp_nh_dice_roll: tp_nh_dice_roll,
 				tp_nh_zusatz_roll: tp_nh_zusatz_roll,
 				pa_schildpassiv_bonus: pa_schildpassiv_bonus,
-				tp_nh_dice_selector: tp_nh_dice_selector
+				nh_tp_dice_select: nh_tp_dice_select
 			});
 		});
 	});
