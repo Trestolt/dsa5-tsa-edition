@@ -690,6 +690,7 @@
  "d4": "W4",
  "d6": "W6",
  "d20": "W20",
- "zusatz-aktivieren":"Malus für zusätzlichen Status aktivieren"
+ "zusatz-aktivieren":"Malus für zusätzlichen Status aktivieren",
+ "stufe-iv-zustand": "Stufe IV - handlungsunfähig"
 
 }

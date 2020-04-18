@@ -6159,33 +6159,21 @@
 			<div class="zustaende">
 				<h2 data-i18n="zustaende">Zustände</h2>
 				<div class="t1" border=1 data-i18n-list="zustaende-liste">
-					<div class="tr1" align="center">
+					<div class="tr1" >
 						<div class="td1"></div>
-						<div class="td1"> <span data-i18n="keine">Keine</span><br>&nbsp;</div>
-						<div class="td1"> <span data-i18n="stufe-i">Stufe I</span><br>(-1)</div>
-						<div class="td1"> <span data-i18n="stufe-ii">Stufe II</span><br>(-2)</div>
-						<div class="td1"> <span data-i18n="stufe-iii">Stufe III</span><br>(-3)</div>
-						<div class="td1"> <span data-i18n="stufe-iv">Stufe IV</span><br>(<span data-i18n="handlungsunfaehig">Handlungsunfähig</span>)</div>
+						<div class="td1"></div>
 						<div class="td1"> <span data-i18n="modifikator">Modifikator</span><br>&nbsp;</div>
 						<div class="td1"> <span data-i18n="summe">Summe</span><br>&nbsp;</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="belastung">
+					<div class="tr1"  data-i18n-list-item="belastung">
 						<div class="td1" data-i18n="belastung">Belastung</div>
-						<div class="td1">
-							<input type="radio" name="attr_belastung_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_belastung_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_belastung_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_belastung_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_belastung_basis" value="4">
-						</div>
+						<select class="td1" name="attr_belastung_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_belastung_mod" value="0">
 						</div>
@@ -6193,23 +6181,16 @@
 							<input type="number" name="attr_belastung_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="betaeubung">
-						<div class="td1" data-i18n="betaeubung">Betäubung</div>
-						<div class="td1">
-							<input type="radio" name="attr_betaeubung_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_betaeubung_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_betaeubung_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_betaeubung_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_betaeubung_basis" value="4">
-						</div>
+
+					<div class="tr1"  data-i18n-list-item="betaeubung">
+						<div class="td1" data-i18n="betaeubung">Belastung</div>
+						<select class="td1" name="attr_betaeubung_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_betaeubung_mod" value="0">
 						</div>
@@ -6217,23 +6198,16 @@
 							<input type="number" name="attr_betaeubung_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="entrueckung">
+
+					<div class="tr1"  data-i18n-list-item="entrueckung">
 						<div class="td1" data-i18n="entrueckung">Entrückung</div>
-						<div class="td1">
-							<input type="radio" name="attr_entrueckung_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_entrueckung_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_entrueckung_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_entrueckung_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_entrueckung_basis" value="4">
-						</div>
+						<select class="td1" name="attr_entrueckung_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_entrueckung_mod" value="0">
 						</div>
@@ -6241,23 +6215,15 @@
 							<input type="number" name="attr_entrueckung_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="furcht">
+					<div class="tr1" data-i18n-list-item="furcht">
 						<div class="td1" data-i18n="furcht">Furcht</div>
-						<div class="td1">
-							<input type="radio" name="attr_furcht_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_furcht_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_furcht_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_furcht_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_furcht_basis" value="4">
-						</div>
+						<select class="td1" name="attr_furcht_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_furcht_mod" value="0">
 						</div>
@@ -6265,23 +6231,15 @@
 							<input type="number" name="attr_furcht_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="paralyse">
+					<div class="tr1" data-i18n-list-item="paralyse">
 						<div class="td1" data-i18n="paralyse">Paralyse</div>
-						<div class="td1">
-							<input type="radio" name="attr_paralyse_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_paralyse_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_paralyse_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_paralyse_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_paralyse_basis" value="4">
-						</div>
+						<select class="td1" name="attr_paralyse_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_paralyse_mod" value="0">
 						</div>
@@ -6289,23 +6247,15 @@
 							<input type="number" name="attr_paralyse_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="schmerz">
+					<div class="tr1" data-i18n-list-item="schmerz">
 						<div class="td1" data-i18n="schmerz">Schmerz</div>
-						<div class="td1">
-							<input type="radio" name="attr_schmerz_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_schmerz_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_schmerz_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_schmerz_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_schmerz_basis" value="4">
-						</div>
+						<select class="td1" name="attr_schmerz_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_schmerz_mod" value="0">
 						</div>
@@ -6313,23 +6263,15 @@
 							<input type="number" name="attr_schmerz_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="trance">
+					<div class="tr1" data-i18n-list-item="trance">
 						<div class="td1" data-i18n="trance">Trance</div>
-						<div class="td1">
-							<input type="radio" name="attr_trance_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_trance_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_trance_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_trance_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_trance_basis" value="4">
-						</div>
+						<select class="td1" name="attr_trance_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_trance_mod" value="0">
 						</div>
@@ -6337,23 +6279,15 @@
 							<input type="number" name="attr_trance_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="verwirrung">
+					<div class="tr1" data-i18n-list-item="verwirrung">
 						<div class="td1" data-i18n="verwirrung">Verwirrung</div>
-						<div class="td1">
-							<input type="radio" name="attr_verwirrung_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_verwirrung_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_verwirrung_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_verwirrung_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_verwirrung_basis" value="4">
-						</div>
+						<select class="td1" name="attr_verwirrung_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_verwirrung_mod" value="0">
 						</div>
@@ -6361,23 +6295,15 @@
 							<input type="number" name="attr_verwirrung_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="erregung">
+					<div class="tr1" data-i18n-list-item="erregung">
 						<div class="td1" data-i18n="erregung">Erregung</div>
-						<div class="td1">
-							<input type="radio" name="attr_erregung_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_erregung_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_erregung_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_erregung_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_erregung_basis" value="4">
-						</div>
+						<select class="td1" name="attr_erregung_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_erregung_mod" value="0">
 						</div>
@@ -6385,23 +6311,15 @@
 							<input type="number" name="attr_erregung_gesamt" value="0" readonly>
 						</div>
 					</div>
-					<div class="tr1" align="center" data-i18n-list-item="zusatz">
-						<input style="width: 7em;" type ="text" class="td1" name="attr_zusatz_name" value='' />
-						<div class="td1">
-							<input type="radio" name="attr_zusatz_basis" value="0" checked="checked">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_zusatz_basis" value="1">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_zusatz_basis" value="2">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_zusatz_basis" value="3">
-						</div>
-						<div class="td1">
-							<input type="radio" name="attr_zusatz_basis" value="4">
-						</div>
+					<div class="tr1" data-i18n-list-item="zusatz">
+						<div class="td1"><input style="width: 7em;" type ="text"  name="attr_zusatz_name" value='' /></div>
+						<select class="td1" name="attr_zusatz_basis">
+							<option value="0" data-i18n="keine" selected >Keine</option>
+							<option value="1" data-i18n="stufe-i">Stufe I</option>
+							<option value="2" data-i18n="stufe-ii">Stufe II</option>
+							<option value="3" data-i18n="stufe-iii">Stufe III</option>
+							<option value="4" data-i18n="stufe-iv-zustand">Stufe IV</option>
+						</select>
 						<div class="td1">
 							<input type="number" name="attr_zusatz_mod" value="0">
 						</div>
@@ -6409,6 +6327,7 @@
 							<input type="number" name="attr_zusatz_gesamt" value="0" readonly>
 						</div>
 					</div>
+					
 				</div>
 				<div class="t1">
 					<div class="tr1">
