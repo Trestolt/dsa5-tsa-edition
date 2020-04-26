@@ -97,7 +97,7 @@ on("clicked:importnpc", function () {
             anz_angriffe: parseInt(multi[19][3])||1,
             sonstiges: multi[20][3],
             informationen: multi[21][3],
-            gkategorie: multi[23][3],
+            groessekategorie: multi[23][3],
             typus: multi[24][3],
             schwierigkeit: multi[25][3],
             beute: multi[26][3],
