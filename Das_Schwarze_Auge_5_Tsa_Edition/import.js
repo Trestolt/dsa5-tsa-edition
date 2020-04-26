@@ -103,7 +103,7 @@ Beschützerin und ist bereit, für ihn zu kämpfen.\
 Flucht: flieht nicht \
 Schmerz +1 bei: 23 LeP, 16 LeP, 8 LeP, 5 LeP oder weniger';
 
-var endtoken = 'ENDE99';
+var endtoken = 'ENDTOKEN';
 var input = npc2 + endtoken;
 //Keywords to look for
 var keywords = ["Größe:","Gewicht:","MU","KL","IN","CH","FF","GE","KO","KK","LeP","AsP","KaP","INI","VW","SK","ZK","GS","RS/BE","Aktionen","Sonderfertigkeiten","Talente","Zauber","Größenkategorie","Typus","Anrufungsschwierigkeit","Beute","Kampfverhalten","Flucht","Schmerz +1 bei:","Sonderregeln:","Waffenlos","ENDE99"];
