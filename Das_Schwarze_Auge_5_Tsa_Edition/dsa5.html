@@ -7942,8 +7942,56 @@
 					<input class="kampf-fern" type="number" name="attr_fk_ladezeit" value="0" readonly>
 					<input class="kampf-fern" type="number" name="attr_fk_ladezeit_mod" value="0" readonly>
 				</div>
+				<span class="kampf-fern kampf-fern-item22" data-i18n="ausweichen">Ausweichen</span>
+				<div class="kampf-fern-item23">
+					<input class="kampf-fern" type="number" name="attr_ausweichen_zweite_mod" value="0" readonly hidden />
+					<input class="kampf-fern" type="number" name="attr_aw_roll" value="0" readonly />
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+				</div>
+
+				<select class="kampf-fern kampf-fern-item24" name="attr_parade_malus_select">
+					<option value="0" selected data-i18n="1-parade">1. Parade</option>
+					<option value="1" data-i18n="2-parade">2. Parade</option>
+					<option value="2" data-i18n="3-parade">3. Parade</option>
+					<option value="3" data-i18n="4-parade">4. Parade</option>
+					<option value="4" data-i18n="5-parade">5. Parade</option>
+				</select>
 			</div>
 
+			<div class="kampf-nah-npc-grid">
+				<span class="kampf-nah kampf-nah-item1" data-i18n="verteidigungswert">VW</span>
+				<div class="kampf-nah-item2">
+					<input class="kampf-nah" type="number" name="attr_vw_grundwert" value="0" />
+					<input class="kampf-nah" type="number" name="attr_vw_roll" value="0" readonly />
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{parade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{vw_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbeParade}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{vw_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+				</div>
+
+				<span class="kampf-nah kampf-nah-item11" data-i18n="ausweichen">Ausweichen</span>
+				<div class="kampf-nah-item12">
+					<input class="kampf-nah" type="number" name="attr_aw_grundwert" value="0"  />
+					<input class="kampf-nah" type="number" name="attr_ausweichen_zweite_mod" value="0" readonly hidden />
+					<input class="kampf-nah" type="number" name="attr_aw_roll" value="0" readonly />
+					<button class="roll1w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{ausweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}}  {{wert=[[(@{aw_roll}+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" />
+					<button class="roll2w" type="roll" value="@{output_option} &{template:DSA-Nahkampf-VE} {{name=^{halbesAusweichen}}} {{subtags=^{nahkampf}}} {{wurf=[[1d20cs1cf20]]}} {{wert=[[(round(@{aw_roll}/2)+@{mod_option}+@{kampf_modifier})]]}} {{mod=[[(@{mod_option}+@{kampf_modifier})]]}}" data-i18n="1/2">1/2</button>
+				</div>
+
+				<span class="kampf-nah kampf-nah-item3" data-i18n="anzahlaktionen">Anzahl Aktionen</span>
+				<div class="kampf-nah-item4">
+					<input class="kampf-nah" type="number" name="attr_anz_angriffe" value="1"  />
+					<input class="kampf-nah" type="text" name='attr_angriffe_notiz' value='' />
+
+				</div>
+
+				<select class="kampf-nah kampf-nah-item13" name="attr_parade_malus_select">
+					<option value="0" selected data-i18n="1-parade">1. Parade</option>
+					<option value="1" data-i18n="2-parade">2. Parade</option>
+					<option value="2" data-i18n="3-parade">3. Parade</option>
+					<option value="3" data-i18n="4-parade">4. Parade</option>
+					<option value="4" data-i18n="5-parade">5. Parade</option>
+				</select>
+			</div>
 			<div class="kampf-fk-npc-grid2">
 				<fieldset class="repeating_npcfkkampf">
 					<div>
