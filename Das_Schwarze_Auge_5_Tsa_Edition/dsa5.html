@@ -10886,7 +10886,7 @@
 
 <script type="text/worker">
 
-	on("sheet:opened change:attr_mod_option", function () {
+	on("sheet:opened change:mod_option", function () {
 		getAttrs(["query_translation", "erleidet", "SPdurchPatzer"], function (v) {
 			setAttrs({
 				query_translation: getTranslationByKey('query_trans'),
@@ -10896,7 +10896,7 @@
 		});
 	});
 
-	on("change:attr_toggle_npc", function () {
+	on("change:toggle_npc", function () {
 		getAttrs(["toggle_npc"], function (v) {
 			console.log("toggle:" + v.toggle_npc + toggle);
 			var toggle = "on";
@@ -11878,12 +11878,13 @@
 			setAttrs({ koerperkraft_gesamt: parseInt(values.koerperkraft) + parseInt(values.koerperkraft_modifier) });
 		});
 	});
+
 	
-	on("sheet:opened change:ruestung_auswahl change:ruestung_rs_1 change:ruestung_preset_1 change:ruestung_be_mod_1 change:ruestung_ini_mod_1 change:ruestung_gs_mod_1 change:ruestung_rs_mod_1 change:ruestung_rs_2 change:ruestung_preset_2 change:ruestung_be_mod_2 change:ruestung_ini_mod_2 change:ruestung_gs_mod_2 change:ruestung_rs_mod_2 change:ruestung_rs_3 change:ruestung_preset_3 change:ruestung_be_mod_3 change:ruestung_ini_mod_3 change:ruestung_gs_mod_3 change:ruestung_rs_mod_3 change:ruestung_rs_4 change:ruestung_preset_4 change:ruestung_be_mod_4 change:ruestung_ini_mod_4 change:ruestung_gs_mod_4 change:ruestung_rs_mod_4 change:ruestung_rs_5 change:ruestung_preset_5 change:ruestung_be_mod_5 change:ruestung_ini_mod_5 change:ruestung_gs_mod_5 change:ruestung_rs_mod_5", function () {
-		getAttrs(["ruestung_auswahl", "ruestung_rs_1", "ruestung_preset_1", "ruestung_be_mod_1", "ruestung_ini_mod_1", "ruestung_gs_mod_1", "ruestung_rs_mod_1", "ruestung_rs_2", "ruestung_preset_2", "ruestung_be_mod_2", "ruestung_ini_mod_2", "ruestung_gs_mod_2", "ruestung_rs_mod_2", "ruestung_rs_3", "ruestung_preset_3", "ruestung_be_mod_3", "ruestung_ini_mod_3", "ruestung_gs_mod_3", "ruestung_rs_mod_3", "ruestung_rs_4", "ruestung_preset_4", "ruestung_be_mod_4", "ruestung_ini_mod_4", "ruestung_gs_mod_4", "ruestung_rs_mod_4", "ruestung_rs_5", "ruestung_preset_5", "ruestung_be_mod_5", "ruestung_ini_mod_5", "ruestung_gs_mod_5", "ruestung_rs_mod_5"], function (values) {
+	on("sheet:opened change:toggle_npc change:ruestung_auswahl change:ruestung_rs_1 change:ruestung_preset_1 change:ruestung_be_mod_1 change:ruestung_ini_mod_1 change:ruestung_gs_mod_1 change:ruestung_rs_mod_1 change:ruestung_rs_2 change:ruestung_preset_2 change:ruestung_be_mod_2 change:ruestung_ini_mod_2 change:ruestung_gs_mod_2 change:ruestung_rs_mod_2 change:ruestung_rs_3 change:ruestung_preset_3 change:ruestung_be_mod_3 change:ruestung_ini_mod_3 change:ruestung_gs_mod_3 change:ruestung_rs_mod_3 change:ruestung_rs_4 change:ruestung_preset_4 change:ruestung_be_mod_4 change:ruestung_ini_mod_4 change:ruestung_gs_mod_4 change:ruestung_rs_mod_4 change:ruestung_rs_5 change:ruestung_preset_5 change:ruestung_be_mod_5 change:ruestung_ini_mod_5 change:ruestung_gs_mod_5 change:ruestung_rs_mod_5 change:rs_grundwert change:rs_modifikator", function () {
+		getAttrs(["toggle_npc", "ruestung_auswahl", "ruestung_rs_1", "ruestung_preset_1", "ruestung_be_mod_1", "ruestung_ini_mod_1", "ruestung_gs_mod_1", "ruestung_rs_mod_1", "ruestung_rs_2", "ruestung_preset_2", "ruestung_be_mod_2", "ruestung_ini_mod_2", "ruestung_gs_mod_2", "ruestung_rs_mod_2", "ruestung_rs_3", "ruestung_preset_3", "ruestung_be_mod_3", "ruestung_ini_mod_3", "ruestung_gs_mod_3", "ruestung_rs_mod_3", "ruestung_rs_4", "ruestung_preset_4", "ruestung_be_mod_4", "ruestung_ini_mod_4", "ruestung_gs_mod_4", "ruestung_rs_mod_4", "ruestung_rs_5", "ruestung_preset_5", "ruestung_be_mod_5", "ruestung_ini_mod_5", "ruestung_gs_mod_5", "ruestung_rs_mod_5", "rs_grundwert", "rs_modifikator"], function (values) {
 		
-			var ruestung_auswahl = parseInt(values.ruestung_auswahl)||1;
-			
+			if (values.toggle_npc == 'character')
+			{ var ruestung_auswahl = parseInt(values.ruestung_auswahl)||1;
 			switch (ruestung_auswahl) {
 				case 1:
 					var ruestung_rs = parseInt(values.ruestung_rs_1)||0;
@@ -11978,6 +11979,17 @@
 				gs_be_modifikator: be_gs_mod,
 				ini_be_modifikator: be_ini_mod
 			});
+		}
+		else {
+			var rs_modifikator = parseInt(values.rs_modifikator) || 0;
+			var rs_grundwert = parseInt(values.rs_grundwert) || 0;
+			var rs = rs_grundwert + rs_modifikator;
+			setAttrs({
+				rs: rs,
+				rs_grundwert: rs_grundwert,
+				rs_modifikator: rs_modifikator
+			});
+			};
 		});
 	});
 
@@ -12266,18 +12278,7 @@
 	
 	// Rüstungsschutz
 
-	on("sheet:opened change:rs_grundwert change:rs_modifikator", function () {
-		getAttrs(["rs_grundwert", "rs_modifikator"], function (values) {
-			var rs_modifikator = parseInt(values.rs_modifikator) || 0;
-			var rs_grundwert = parseInt(values.rs_grundwert) || 0;
-			var rs = rs_grundwert + rs_modifikator;
-			setAttrs({
-				rs: rs,
-				rs_grundwert: rs_grundwert,
-				rs_modifikator: rs_modifikator
-			});
-		});
-	});
+
 	
 	// Schips
 	
