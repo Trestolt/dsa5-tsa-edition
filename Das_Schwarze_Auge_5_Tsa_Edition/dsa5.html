@@ -5992,6 +5992,11 @@
 				<textarea class="toggle_npc" name="attr_npc_import"></textarea>
 				<button class="toggle_npc" type="action" name="act_importnpc" data-i18n="import">Import</button>
 			</div>
+            <div>
+                <h4 data-i18n="charexport"></h4>
+                <textarea class="char_export"></textarea>
+                <button class="char_export" type="action" name="act_exportchar" data-i18n="charexport">Export</button>
+            </div>
 			<h4 data-i18n="grundwerte"></h4>
 			<div>
 				<span data-i18n="show-le">Lebensenergie anzeigen:</span>
@@ -15087,7 +15092,19 @@
 	
 		});
 	});	
-	
+
+	on("clicked:exportchar", function () {
+	    // hier musste mir mal ein Array rein bauen... Plan wäre der Aufbau wie in Attributes - also charstats[NAME] = CURRENT  => charstats['ap_gesamt'] = 1000
+	    // allerdings sind noch dynamics (also Vorteile, Sonderfertigkeiten, etc.) interessant... da wäre es cool wenn das so oder ähnlich kommt ['dynamics' => ['type' = 'Vorteil', 'name' => '...']]
+        var charstats = [];
+
+        // Roll20 hat JSON.stringify() aktiv gelassen (laut https://wiki.roll20.net/API:Function_documentation#Global_functions):
+        var jsonstring = JSON.stringify(charstats);
+
+        setAttrs({
+            char_export: {jsonstring}
+        });
+	});
 	
 	
 		

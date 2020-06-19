@@ -714,6 +714,6 @@
  "schmerzplus1":"Schmerz +1 bei",
  "ENDTOKEN":"ENDTOKEN",
  "magie_und_glaube": "Magie und Glaube",
- "talente_fw_mod": "Talente FW-Modifikator"
-
+ "talente_fw_mod": "Talente FW-Modifikator",
+ "charexport" : "Charakter-Export"
 }
